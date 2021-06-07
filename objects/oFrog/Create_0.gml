@@ -9,5 +9,7 @@ walkspd = 2;
 ground = 0;
 
 invulnerable = 0;
+runPartTime = room_speed * 0.5;
+runPartDelay = runPartTime;
 
 gunKickX = 0;
