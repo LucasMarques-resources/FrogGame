@@ -1,0 +1,19 @@
+/// @description Insert description here
+// You can write your code in this editor
+x += lengthdir_x(spd, direction);
+y += lengthdir_y(spd, direction);
+
+// Collision with something
+if (place_meeting(x, y, pShootable))
+{
+	with (instance_place(x, y, pShootable))
+	{
+		hp--;
+		flash = 30;
+		hitFrom = other.direction;
+		// knock back
+		velh = lengthdir_x(knockBack, hitFrom);
+		velv = lengthdir_y(knockBack, hitFrom);
+	}
+	instance_destroy();
+}
