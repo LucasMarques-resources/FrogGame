@@ -73,7 +73,11 @@ if (velh != 0 && ground)
 		runPartDelay = runPartTime;
 	}
 }
-else if (!global.hasGun) sprite_index = sFrog;
+else
+{
+	runPartDelay = runPartTime;
+	if (!global.hasGun) sprite_index = sFrog;
+}
 
 if (global.hasGun) sprite_index = sFrogGun;
 

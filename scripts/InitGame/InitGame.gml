@@ -3,6 +3,6 @@
 function scrGame(){
 	global.gameWidth =		240;
 	global.gameHeight =		140;
-	global.zoom =			3;
+	global.zoom =			5;
 	global.resolution =		1;
 }

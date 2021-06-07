@@ -6,7 +6,7 @@ velv = 0;
 grav = 0.3;
 jumpForce = 5;
 walkspd = 2;
-ground = 0;
+ground = false;
 
 invulnerable = 0;
 runPartTime = room_speed * 0.5;
