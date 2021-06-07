@@ -8,4 +8,6 @@ jumpForce = 5;
 walkspd = 2;
 ground = 0;
 
+invulnerable = 0;
+
 gunKickX = 0;

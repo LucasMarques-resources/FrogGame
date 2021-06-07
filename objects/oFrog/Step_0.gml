@@ -66,5 +66,7 @@ if (aimSide != 0) image_xscale = aimSide;
 
 #endregion
 
+invulnerable = max(invulnerable - 1, 0);
+
 x += velh;
 y += velv;
