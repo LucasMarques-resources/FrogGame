@@ -26,8 +26,10 @@
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":6,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":5,},
     {"id":{"name":"sRunParticle","path":"sprites/sRunParticle/sRunParticle.yy",},"order":8,},
+    {"id":{"name":"sBulletShooted","path":"sprites/sBulletShooted/sBulletShooted.yy",},"order":12,},
     {"id":{"name":"sFlyBug","path":"sprites/sFlyBug/sFlyBug.yy",},"order":7,},
     {"id":{"name":"shFlashWhite","path":"shaders/shFlashWhite/shFlashWhite.yy",},"order":0,},
+    {"id":{"name":"oBulletShooted","path":"objects/oBulletShooted/oBulletShooted.yy",},"order":13,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [

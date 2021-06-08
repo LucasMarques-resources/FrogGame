@@ -18,6 +18,19 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		direction = other.image_angle + random_range(-3, 3);
 		image_angle = direction;
 	}
+	with (instance_create_layer(x, y, "Particles", oBulletShooted))
+	{
+		var dir = 0;
+		var dif = 50;
+		var vel = 3.5;
+		
+		if (oFrog.image_xscale = -1) dir = oGun.image_angle - 180 + dif;
+		else dir = oGun.image_angle + 180 - dif;
+		
+		velh = lengthdir_x(vel, dir);
+		velv = lengthdir_y(vel, dir);
+	}
+	
 	firingDelay = 10;
 	
 	// Player gun kick
