@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 velv += grav;
-image_angle += 10;
+if (rotate)
+	image_angle += 5;
+
 
 invulnerable = max(invulnerable - 1, 0);
 
@@ -13,13 +15,14 @@ if (place_meeting(x, y + velv, oWall))
 	{
 		y += sign(velv)
 	}
-	velv *= -.3;
+	velv = 0;
 	velh = lerp(velh, 0, 0.7);
 	if (inv)
 	{
 		invulnerable = 60;
 		inv = false;
 	}
+	rotate = false;
 }
 
 show_debug_message(invulnerable);

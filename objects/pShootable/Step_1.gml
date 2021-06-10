@@ -2,7 +2,11 @@
 // You can write your code in this editor
 
 // Destroying
-if (hp <= 0) instance_destroy();
+if (hp <= 0) 
+{
+	instance_create_layer(x, y, "Particles", oExplosion,)
+	instance_destroy();
+}
 
 // Stop knock back
 if (velh != 0)

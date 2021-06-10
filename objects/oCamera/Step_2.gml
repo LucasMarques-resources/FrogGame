@@ -2,8 +2,9 @@
 // You can write your code in this editor
 if (instance_exists(target))
 {
-	viewX = room_width / 2;
-	viewY = room_height / 2;
+	viewX = oFrog.x;
+	viewY = 140 / 2;
+	viewX = clamp(viewX, 0 + (280 / 2), room_width - (280 / 2));
 	
 	// Screen sahke
 	viewX += random_range(-shake_remain, shake_remain);

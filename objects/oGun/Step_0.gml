@@ -24,8 +24,8 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		var dif = 50;
 		var vel = 3.5;
 		
-		if (oFrog.image_xscale = -1) dir = oGun.image_angle - 180 + dif;
-		else dir = oGun.image_angle + 180 - dif;
+		if (oFrog.image_xscale = -1) dir = 180 - 180 + dif;
+		else dir = 0 + 180 - dif;
 		
 		velh = lengthdir_x(vel, dir);
 		velv = lengthdir_y(vel, dir);
