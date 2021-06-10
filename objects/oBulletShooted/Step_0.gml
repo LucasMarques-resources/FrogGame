@@ -25,8 +25,6 @@ if (place_meeting(x, y + velv, oWall))
 	rotate = false;
 }
 
-show_debug_message(invulnerable);
-
 /*//Horizontal
 if (place_meeting(x + velh, y, oWall))
 {

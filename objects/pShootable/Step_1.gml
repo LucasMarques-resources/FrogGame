@@ -4,7 +4,10 @@
 // Destroying
 if (hp <= 0) 
 {
-	instance_create_layer(x, y, "Particles", oExplosion,)
+	with (instance_create_layer(x, y, "Particles", oExplosion))
+	{
+		scale = other.scaleExplosion;
+	}
 	instance_destroy();
 }
 
