@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sJumpSideParticle","path":"sprites/sJumpSideParticle/sJumpSideParticle.yy",},"order":9,},
+    {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":16,},
     {"id":{"name":"oJumpSideParticle","path":"objects/oJumpSideParticle/oJumpSideParticle.yy",},"order":10,},
     {"id":{"name":"sExplosion","path":"sprites/sExplosion/sExplosion.yy",},"order":14,},
     {"id":{"name":"oRunParticle","path":"objects/oRunParticle/oRunParticle.yy",},"order":9,},
@@ -26,6 +27,7 @@
     {"id":{"name":"pParticle","path":"objects/pParticle/pParticle.yy",},"order":11,},
     {"id":{"name":"sFrogGun","path":"sprites/sFrogGun/sFrogGun.yy",},"order":5,},
     {"id":{"name":"oFallParticle","path":"objects/oFallParticle/oFallParticle.yy",},"order":12,},
+    {"id":{"name":"sCollisionMask","path":"sprites/sCollisionMask/sCollisionMask.yy",},"order":15,},
     {"id":{"name":"sFallParticle","path":"sprites/sFallParticle/sFallParticle.yy",},"order":11,},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":6,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":5,},

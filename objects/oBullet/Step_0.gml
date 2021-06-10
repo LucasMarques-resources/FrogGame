@@ -9,6 +9,7 @@ if (place_meeting(x, y, pShootable))
 	with (instance_place(x, y, pShootable))
 	{
 		hp--;
+		tookHit = true;
 		flash = 30;
 		hitFrom = other.direction;
 		// knock back
