@@ -9,8 +9,10 @@ var left, right, jump
 left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 right = keyboard_check(vk_right) || keyboard_check(ord("D"));
 jump = keyboard_check_pressed(vk_space);
+jumpRel = keyboard_check_released(vk_space);
 
 #endregion
+
 
 #region Movement & Gravity & Jumping
 
@@ -32,6 +34,8 @@ if (ground)
 		else jumpPart.sprite_index = sJumpParticle;
 	}
 }
+
+if (jumpRel && velv < 0) velv *= .5;
 
 #endregion
 
