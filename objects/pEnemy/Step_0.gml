@@ -34,6 +34,7 @@ switch (state)
 		
 		if (attack)
 		{
+			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 			state = STATES.attack;
 		}
 	
@@ -46,12 +47,12 @@ switch (state)
 		with (oFrog)
 		{
 			state = PlStates.knockBack;
-			var dir = point_direction(other.x, other.y, x, y);
-			if (dir > 90 && dir < 270) knockBackDir = 155;
-			else knockBackDir = 35;
+			//var dir = point_direction(other.x, other.y, x, y);
+			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
+			else knockBackDir = 45;
 		}
 		
-		if (oFrog.ground)
+		if (oFrog.ground || timerAttack <= 0)
 		{
 			state = STATES.waiting;
 			timerAttack = timeAttack;

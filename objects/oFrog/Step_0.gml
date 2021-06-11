@@ -47,8 +47,8 @@ switch (state)
 		
 		if (knockBackCol)
 		{
-			velh = lengthdir_x(3, knockBackDir);
-			velv = lengthdir_y(3, knockBackDir)-2;
+			velh = lengthdir_x(2.5, knockBackDir);
+			velv = lengthdir_y(2.5, knockBackDir)-2;
 			
 			knockBackCol = false;
 		}

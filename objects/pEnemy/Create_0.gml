@@ -4,8 +4,9 @@ event_inherited();
 
 vel_Chase = 0;
 tookHit = false;
-timeAttack = room_speed * 0.7;
+timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
+dirKnock = 0;
 
 enum STATES
 {
