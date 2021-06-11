@@ -24,6 +24,7 @@
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":4,},
     {"id":{"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},"order":3,},
     {"id":{"name":"oGun","path":"objects/oGun/oGun.yy",},"order":2,},
+    {"id":{"name":"shFlashRed","path":"shaders/shFlashRed/shFlashRed.yy",},"order":1,},
     {"id":{"name":"pParticle","path":"objects/pParticle/pParticle.yy",},"order":11,},
     {"id":{"name":"sFrogGun","path":"sprites/sFrogGun/sFrogGun.yy",},"order":5,},
     {"id":{"name":"oFallParticle","path":"objects/oFallParticle/oFallParticle.yy",},"order":12,},

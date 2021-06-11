@@ -19,3 +19,13 @@ else
 		image_alpha
 	)
 }
+
+if (flash > 0)
+{
+	flash--;
+	image_speed = 0;
+	shader_set(shFlashRed);
+	draw_self();
+	shader_reset();
+}
+else image_speed = 1;

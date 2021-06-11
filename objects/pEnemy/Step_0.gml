@@ -41,13 +41,23 @@ switch (state)
 	case STATES.attack:
 		
 		image_blend = c_red;
+		timerAttack--;
 		
-		/*var dir = point_direction(x, y, oFrog.x, oFrog.y);
+		with (oFrog)
+		{
+			state = PlStates.knockBack;
+			var dir = point_direction(other.x, other.y, x, y);
+			if (dir > 90 && dir < 270) knockBackDir = 155;
+			else knockBackDir = 35;
+		}
 		
-		oFrog.x = lengthdir_x(4, 135);
-		oFrog.y = lengthdir_y(4, 135);
-		*/
+		if (oFrog.ground)
+		{
+			state = STATES.waiting;
+			timerAttack = timeAttack;
+		}
+		
 		
 	break;
 }
-show_debug_message(state);
+//show_debug_message(state);

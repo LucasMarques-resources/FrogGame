@@ -13,31 +13,56 @@ jumpRel = keyboard_check_released(vk_space);
 
 #endregion
 
-
-#region Movement & Gravity & Jumping
-
-var move = right - left;
-
-velh = (move * walkspd) + gunKickX;
-gunKickX = 0;
-
-velv += grav;
-
-// Jumping
-if (ground)
+switch (state)
 {
-	if (jump)
-	{
-		velv -= jumpForce;
-		var jumpPart = instance_create_layer(x, y, "Particles", oJumpSideParticle);
-		if (velh != 0) jumpPart.image_xscale = sign(velh);
-		else jumpPart.sprite_index = sJumpParticle;
-	}
+	case PlStates.free:
+		
+		knockBackCol = true;
+		
+		// Movement & Gravity & Jumping
+		
+		var move = right - left;
+
+		velh = (move * walkspd) + gunKickX;
+		gunKickX = 0;
+
+		// Jumping
+		if (ground)
+		{
+			if (jump)
+			{
+				velv -= jumpForce;
+				var jumpPart = instance_create_layer(x, y, "Particles", oJumpSideParticle);
+				if (velh != 0) jumpPart.image_xscale = sign(velh);
+				else jumpPart.sprite_index = sJumpParticle;
+			}
+		}
+
+		if (jumpRel && velv < 0) velv *= .5;
+		
+	break;
+	case PlStates.knockBack:
+		
+		flash = 1;
+		
+		if (knockBackCol)
+		{
+			velh = lengthdir_x(3, knockBackDir);
+			velv = lengthdir_y(3, knockBackDir)-2;
+			
+			knockBackCol = false;
+		}
+		
+		if (ground)
+		{
+			state = PlStates.free;
+			flash = 0;
+		}
+		
+	break;
 }
 
-if (jumpRel && velv < 0) velv *= .5;
-
-#endregion
+velv += grav;
 
 #region Collisions
 
@@ -91,6 +116,8 @@ if (aimSide != 0) image_xscale = aimSide;
 #endregion
 
 invulnerable = max(invulnerable - 1, 0);
+
+show_debug_message(state);
 
 x += velh;
 y += velv;
