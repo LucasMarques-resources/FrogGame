@@ -5,8 +5,6 @@ switch (state)
 {
 	case STATES.waiting:
 		
-		image_blend = c_green;
-		
 		vel_Chase = 0;
 		
 		var chaseFrog = collision_circle(x, y, radiusChase, oFrog, false, true);
@@ -19,7 +17,7 @@ switch (state)
 	break;
 	case STATES.chase:
 		
-		image_blend = c_yellow;
+		sprite_index = spriteChase;
 	
 		vel_Chase = velChase;
 	
@@ -32,7 +30,7 @@ switch (state)
 	
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
 		
-		if (attack)
+		if (attack && oFrog.invulnerable = 0)
 		{
 			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 			state = STATES.attack;
@@ -43,22 +41,32 @@ switch (state)
 		
 		image_blend = c_red;
 		timerAttack--;
+		tookHit = true;
 		
 		with (oFrog)
 		{
+			if (other.miniExpo)
+			{
+				instance_create_layer(x, y - 10, "Particles", oMiniExplosion);
+				other.miniExpo = false;
+			}
 			state = PlStates.knockBack;
 			//var dir = point_direction(other.x, other.y, x, y);
 			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
 			else knockBackDir = 45;
 		}
 		
-		if (oFrog.ground || timerAttack <= 0)
+		if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
 		{
-			state = STATES.waiting;
+			miniExpo = true;
+			image_blend = c_white;
+			state = STATES.chase;
 			timerAttack = timeAttack;
 		}
 		
 		
 	break;
 }
+
+if (velh != 0) image_xscale = sign(velh);
 //show_debug_message(state);

@@ -1,5 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+invulnerable = oFrog.invulnerable;
+flash = oFrog.flash;
+
+
 firingDelay--;
 
 var dir = point_direction(x, y-sprite_height/2, mouse_x, mouse_y);

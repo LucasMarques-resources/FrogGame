@@ -44,6 +44,7 @@ switch (state)
 	case PlStates.knockBack:
 		
 		flash = 1;
+		invulnerable = 60;
 		
 		if (knockBackCol)
 		{
@@ -55,8 +56,8 @@ switch (state)
 		
 		if (ground)
 		{
-			state = PlStates.free;
 			flash = 0;
+			state = PlStates.free;
 		}
 		
 	break;

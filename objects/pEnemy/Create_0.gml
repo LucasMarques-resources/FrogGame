@@ -7,6 +7,7 @@ tookHit = false;
 timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
 dirKnock = 0;
+miniExpo = true;
 
 enum STATES
 {
