@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// States
 switch (state)
 {
 	case STATES.waiting:
@@ -45,17 +46,23 @@ switch (state)
 		
 		with (oFrog)
 		{
+			// Create mini explosion
 			if (other.miniExpo)
 			{
+				other.hp--;
+				other.tookHit = true;
+				other.flash = 30;
+				
 				instance_create_layer(x, y - 10, "Particles", oMiniExplosion);
 				other.miniExpo = false;
 			}
+			// Knock back player state
 			state = PlStates.knockBack;
-			//var dir = point_direction(other.x, other.y, x, y);
 			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
 			else knockBackDir = 45;
 		}
 		
+		// Coming back to chase state
 		if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
 		{
 			miniExpo = true;
@@ -68,5 +75,7 @@ switch (state)
 	break;
 }
 
+// Fliping
 if (velh != 0) image_xscale = sign(velh);
+
 //show_debug_message(state);
