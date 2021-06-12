@@ -25,7 +25,7 @@ if (place_meeting(x, y + velv, oWall))
 	rotate = false;
 }
 
-/*//Horizontal
+//Horizontal
 if (place_meeting(x + velh, y, oWall))
 {
 	while(!place_meeting(x + sign(velh), y, oWall))
@@ -34,7 +34,7 @@ if (place_meeting(x + velh, y, oWall))
 	}
 	velh *= -.3;
 }
-*/
+
 
 y += velv;
 x += velh;
