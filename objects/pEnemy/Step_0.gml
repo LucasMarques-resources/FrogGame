@@ -6,6 +6,7 @@ switch (state)
 {
 	case STATES.waiting:
 		
+		sprite_index = spriteWaiting;
 		vel_Chase = 0;
 		
 		var chaseFrog = collision_circle(x, y, radiusChase, oFrog, false, true);
