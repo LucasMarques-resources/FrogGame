@@ -53,10 +53,9 @@ switch (state)
 				// Hurt enemy when jumping above him
 				other.hp--;
 				other.tookHit = true;
-				other.flash = 30;
 				
 				// Create mini explosion
-				instance_create_layer(x, y - 10, "Particles", oMiniExplosion);
+				instance_create_layer(x, y - 10, "Particles", oDust);
 				other.miniExpo = false;
 			}
 			// Knock back player state
