@@ -10,6 +10,7 @@ switch (state)
 		
 		var chaseFrog = collision_circle(x, y, radiusChase, oFrog, false, true);
 		
+		// Chase state
 		if (chaseFrog || tookHit)
 		{
 			state = STATES.chase;
@@ -19,18 +20,19 @@ switch (state)
 	case STATES.chase:
 		
 		sprite_index = spriteChase;
-	
 		vel_Chase = velChase;
-	
+		
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
 		var attack = place_meeting(x, y, oFrog);
-	
+		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
 		velh += lengthdir_x(vel_Chase, dir);
 		velv += lengthdir_y(vel_Chase, dir);
-	
+		
+		// Waiting
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
 		
+		// Attcking
 		if (attack && oFrog.invulnerable = 0)
 		{
 			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
@@ -46,13 +48,14 @@ switch (state)
 		
 		with (oFrog)
 		{
-			// Create mini explosion
 			if (other.miniExpo)
 			{
+				// Hurt enemy when jumping above him
 				other.hp--;
 				other.tookHit = true;
 				other.flash = 30;
 				
+				// Create mini explosion
 				instance_create_layer(x, y - 10, "Particles", oMiniExplosion);
 				other.miniExpo = false;
 			}

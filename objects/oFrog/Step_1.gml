@@ -3,7 +3,7 @@
 
 var temp = place_meeting(x, y + 1, oWall);
 
-if (temp && !ground) //Acabei de tocar no chao
+if (temp && !ground)
 {
 	instance_create_layer(x, y, "Particles", oFallParticle);
 }

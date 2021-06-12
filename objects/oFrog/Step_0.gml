@@ -15,12 +15,12 @@ jumpRel = keyboard_check_released(vk_space);
 
 switch (state)
 {
+	#region FREE STATE
 	case PlStates.free:
 		
 		knockBackCol = true;
 		
-		// Movement & Gravity & Jumping
-		
+		// Movement
 		var move = right - left;
 
 		velh = (move * walkspd) + gunKickX;
@@ -41,11 +41,15 @@ switch (state)
 		if (jumpRel && velv < 0) velv *= .5;
 		
 	break;
+	#endregion
+	
+	#region KNOCK BACK STATE
 	case PlStates.knockBack:
 		
 		flash = 1;
 		invulnerable = 60;
 		
+		// Knock back
 		if (knockBackCol)
 		{
 			velh = lengthdir_x(2.5, knockBackDir);
@@ -54,6 +58,7 @@ switch (state)
 			knockBackCol = false;
 		}
 		
+		// Free state
 		if (ground)
 		{
 			flash = 0;
@@ -61,8 +66,10 @@ switch (state)
 		}
 		
 	break;
+	#endregion
 }
 
+// Gravity
 velv += grav;
 
 #region Collisions
