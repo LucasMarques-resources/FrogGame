@@ -121,9 +121,9 @@ if (global.hasGun) sprite_index = sFrogGun;
 var aimSide = sign(mouse_x - x);
 if (aimSide != 0) image_xscale = aimSide;
 
-#endregion
-
 invulnerable = max(invulnerable - 1, 0);
+
+#endregion
 
 show_debug_message(state);
 

@@ -20,7 +20,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	with (instance_create_layer(x + lengthdir_x(15, dir), y + lengthdir_y(15, dir), "Bullets", oBullet))
 	{
 		spd = 6;
-		direction = other.image_angle + random_range(-3, 3);
+		direction = other.image_angle + random_range(-2, 3);
 		image_angle = direction;
 	}
 	with (instance_create_layer(x, y, "Particles", oBulletShooted))

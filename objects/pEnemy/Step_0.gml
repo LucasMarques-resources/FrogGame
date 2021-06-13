@@ -33,10 +33,11 @@ switch (state)
 		// Waiting
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
 		
+		dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
+		
 		// Attcking
 		if (attack && oFrog.invulnerable = 0)
 		{
-			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 			state = STATES.attack;
 		}
 	
