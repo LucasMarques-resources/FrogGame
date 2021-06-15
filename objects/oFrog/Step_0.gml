@@ -125,7 +125,7 @@ invulnerable = max(invulnerable - 1, 0);
 
 #endregion
 
-show_debug_message(state);
+//show_debug_message(state);
 
 x += velh;
 y += velv;

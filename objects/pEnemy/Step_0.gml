@@ -39,6 +39,7 @@ switch (state)
 		if (attack && oFrog.invulnerable = 0)
 		{
 			state = STATES.attack;
+			global.plHp--;
 		}
 	
 	break;
