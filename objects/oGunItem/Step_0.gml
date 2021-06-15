@@ -2,4 +2,4 @@
 // You can write your code in this editor
 
 // Floating
-y = ystart + sin(get_timer() / 500000) * 2;
+y = ystart + sin(get_timer() / 400000) * 3;
