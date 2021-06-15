@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0ea6a02e-7eb5-486e-97f2-52f5b108e52e","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0ea6a02e-7eb5-486e-97f2-52f5b108e52e","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":{"name":"05230e3b-6944-4e89-8484-90aa6b1043c6","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sFlyBugChase","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"0ea6a02e-7eb5-486e-97f2-52f5b108e52e","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"75a0de8b-b13c-48f0-a9ac-619aa0cbf2d8","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"75a0de8b-b13c-48f0-a9ac-619aa0cbf2d8","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":{"name":"05230e3b-6944-4e89-8484-90aa6b1043c6","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sFlyBugChase","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"75a0de8b-b13c-48f0-a9ac-619aa0cbf2d8","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"31449364-26f0-4506-9355-11fb4ca4b382","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"31449364-26f0-4506-9355-11fb4ca4b382","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":{"name":"70ea77cb-ec80-4e4e-9375-3c8e07fc75f2","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sFlyBugChase","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"31449364-26f0-4506-9355-11fb4ca4b382","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"760e52d7-b143-4225-9733-c5754c15871c","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"760e52d7-b143-4225-9733-c5754c15871c","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"LayerId":{"name":"70ea77cb-ec80-4e4e-9375-3c8e07fc75f2","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sFlyBugChase","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","name":"760e52d7-b143-4225-9733-c5754c15871c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sFlyBugChase","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},
@@ -44,8 +44,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"24e50afa-49d2-40f7-bf65-4b64431a7fb2","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0ea6a02e-7eb5-486e-97f2-52f5b108e52e","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"dfd87ffc-5c8d-46c0-98b5-6d4e93b1fcc8","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"75a0de8b-b13c-48f0-a9ac-619aa0cbf2d8","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a0155d32-7a9b-4ae0-b87b-a0abfe55df9b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"31449364-26f0-4506-9355-11fb4ca4b382","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"fb6d5e70-0697-4152-9d97-0d10de93b11f","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"760e52d7-b143-4225-9733-c5754c15871c","path":"sprites/sFlyBugChase/sFlyBugChase.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -69,7 +69,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"05230e3b-6944-4e89-8484-90aa6b1043c6","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"70ea77cb-ec80-4e4e-9375-3c8e07fc75f2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
