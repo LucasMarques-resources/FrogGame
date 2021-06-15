@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+VknockBack = flyEnemy;
+ground = place_meeting(x, y + 1, oWall);
 
 // States
 switch (state)
@@ -28,7 +30,7 @@ switch (state)
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
 		velh += lengthdir_x(vel_Chase, dir);
-		velv += lengthdir_y(vel_Chase, dir);
+		if (flyEnemy) velv += lengthdir_y(vel_Chase, dir);
 		
 		// Waiting
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
@@ -79,6 +81,14 @@ switch (state)
 		
 	break;
 }
+
+if (!flyEnemy)
+{
+	velv += grav;
+	if (ground) velv = 0;
+}
+
+
 
 // Fliping
 if (velh != 0) image_xscale = sign(velh);

@@ -14,7 +14,7 @@ if (place_meeting(x, y, pShootable))
 		hitFrom = other.direction;
 		// knock back
 		velh = lengthdir_x(knockBack, hitFrom);
-		velv = lengthdir_y(knockBack, hitFrom);
+		if (VknockBack) velv = lengthdir_y(knockBack, hitFrom);
 		if (hp < 1) other.create = false;
 	}
 	instance_destroy();

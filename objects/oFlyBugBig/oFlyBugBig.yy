@@ -33,8 +33,8 @@
     {"propertyId":{"name":"spriteWaiting","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"sFlyBugBig","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Enemys",
+    "path": "folders/Objects/Enemys.yy",
   },
   "resourceVersion": "1.0",
   "name": "oFlyBugBig",
