@@ -55,33 +55,47 @@ switch (state)
 		timerAttack--;
 		tookHit = true;
 		
-		with (oFrog)
+		if (customAttack)
 		{
-			if (other.miniExpo)
+			sprite_index = spriteAttack;
+			
+			if (!instance_exists(oSnakeColAttack) && image_index >= 2)
 			{
-				// Hurt enemy when jumping above him
-				other.hp--;
-				other.tookHit = true;
-				
-				// Create mini explosion
-				instance_create_layer(x, y - 10, "Particles", oDust);
-				other.miniExpo = false;
+				var col = instance_create_layer(x, y, "Col", oSnakeColAttack);
+				col.image_xscale = image_xscale;
 			}
-			// Knock back player state
-			state = PlStates.knockBack;
-			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
-			else knockBackDir = 45;
+			
+			if (image_index >= image_number - 1) state = STATES.chase;
 		}
-		
-		// Coming back to chase state
-		if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
+		else
 		{
-			miniExpo = true;
-			image_blend = c_white;
-			state = STATES.chase;
-			timerAttack = timeAttack;
-		}
+			with (oFrog)
+			{
+				if (other.miniExpo)
+				{
+					// Hurt enemy when jumping above him
+					other.hp--;
+					other.tookHit = true;
+				
+					// Create mini explosion
+					instance_create_layer(x, y - 10, "Particles", oDust);
+					other.miniExpo = false;
+				}
+				// Knock back player state
+				state = PlStates.knockBack;
+				if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
+				else knockBackDir = 45;
+			}
 		
+			// Coming back to chase state
+			if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
+			{
+				miniExpo = true;
+				image_blend = c_white;
+				state = STATES.chase;
+				timerAttack = timeAttack;
+			}
+		}
 		
 	break;
 }
