@@ -34,7 +34,6 @@ if (VknockBack)
 	}
 }
 
-
 // Stop knock back
 if (velh != 0)
 {

@@ -8,8 +8,10 @@ if (place_meeting(x, y, pShootable))
 {
 	with (instance_place(x, y, pShootable))
 	{
+		hp--;
 		colShootable = true;
 		hitFrom = other.direction;
+		if (hp < 1) other.create = false;
 	}
 	instance_destroy();
 }

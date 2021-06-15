@@ -13,5 +13,3 @@ if (global.addLife)
 	global.plTotalHp++;
 	addedLifes++;
 }
-
-show_debug_message(global.plHp);
