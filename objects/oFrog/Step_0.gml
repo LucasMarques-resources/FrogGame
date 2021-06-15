@@ -8,7 +8,7 @@ ground = place_meeting(x, y + 1, oWall);
 var left, right, jump
 left = keyboard_check(vk_left) || keyboard_check(ord("A"));
 right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-jump = keyboard_check_pressed(vk_space);
+jump = keyboard_check_pressed(vk_space) || keyboard_check(ord("C"));
 jumpRel = keyboard_check_released(vk_space);
 
 #endregion
