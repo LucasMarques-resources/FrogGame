@@ -11,6 +11,30 @@ if (hp <= 0)
 	instance_destroy();
 }
 
+//Horizontal Collision
+if (place_meeting(x + velh, y, oWall))
+{
+	while (!place_meeting(x + sign(velh), y, oWall))
+	{
+		x += sign(velh);
+	}
+	velh = 0;
+}
+
+if (VknockBack)
+{
+	// Vertical Collision
+	if (place_meeting(x, y + velv, oWall))
+	{
+		while (!place_meeting(x, y + sign(velv), oWall))
+		{
+			y += sign(velv);
+		}
+		velv = 0;
+	}
+}
+
+
 // Stop knock back
 if (velh != 0)
 {

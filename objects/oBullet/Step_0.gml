@@ -8,14 +8,8 @@ if (place_meeting(x, y, pShootable))
 {
 	with (instance_place(x, y, pShootable))
 	{
-		hp--;
-		tookHit = true;
-		flash = 30;
+		colShootable = true;
 		hitFrom = other.direction;
-		// knock back
-		velh = lengthdir_x(knockBack, hitFrom);
-		if (VknockBack) velv = lengthdir_y(knockBack, hitFrom);
-		if (hp < 1) other.create = false;
 	}
 	instance_destroy();
 }

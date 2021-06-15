@@ -2,6 +2,8 @@
 // You can write your code in this editor
 event_inherited();
 
+path = path_add();
+
 vel_Chase = 0;
 tookHit = false;
 timeAttack = room_speed * 0.6;

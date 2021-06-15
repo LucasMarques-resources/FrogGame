@@ -4,3 +4,4 @@ velh = 0;
 velv = 0;
 hitFrom = 0;
 flash = 0;
+colShootable = false;

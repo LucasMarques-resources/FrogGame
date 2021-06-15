@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
+
 VknockBack = flyEnemy;
 ground = place_meeting(x, y + 1, oWall);
 
@@ -27,8 +29,10 @@ switch (state)
 		
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
 		var attack = place_meeting(x, y, oFrog);
+		
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
+		
 		velh += lengthdir_x(vel_Chase, dir);
 		if (flyEnemy) velv += lengthdir_y(vel_Chase, dir);
 		
