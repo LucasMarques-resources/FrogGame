@@ -48,6 +48,7 @@ switch (state)
 		
 		flash = 1;
 		invulnerable = 60;
+		timerKnockGround--;
 		
 		// Knock back
 		if (knockBackCol)
@@ -59,10 +60,11 @@ switch (state)
 		}
 		
 		// Free state
-		if (ground)
+		if (ground && timerKnockGround <= 0)
 		{
 			flash = 0;
 			state = PlStates.free;
+			timerKnockGround = 2;
 		}
 		
 	break;

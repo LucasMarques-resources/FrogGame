@@ -19,6 +19,7 @@ switch (state)
 		if (chaseFrog || tookHit)
 		{
 			state = STATES.chase;
+			image_index = 0;
 		}
 		
 	break;
@@ -27,8 +28,12 @@ switch (state)
 		sprite_index = spriteChase;
 		vel_Chase = velChase;
 		
+		// Decrease timer custom attack
+		timerCustomAttack--;
+		
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
 		var attack = place_meeting(x, y, oFrog);
+		var attackRadius = collision_circle(x, y - 10, radiusAttack, oFrog, false, true);
 		
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
@@ -41,72 +46,93 @@ switch (state)
 		
 		dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 		
-		// Attcking
-		if (attack && oFrog.invulnerable = 0)
+		// Attacking
+		if (!customAttack)
 		{
-			state = STATES.attack;
-			global.plHp--;
+			if (attack && oFrog.invulnerable = 0)
+			{
+				state = STATES.attack;
+				image_index = 0;
+				global.plHp--;
+			}
+		}
+		else // Custom attack
+		{
+			if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
+			{
+				state = STATES.attack;
+				image_index = 0;
+			}
 		}
 	
 	break;
 	case STATES.attack:
 		
-		image_blend = c_red;
 		timerAttack--;
 		tookHit = true;
 		
+		// Custom attack
 		if (customAttack)
 		{
 			sprite_index = spriteAttack;
 			
+			// Creating collision attack
 			if (!instance_exists(oSnakeColAttack) && image_index >= 2)
 			{
-				var col = instance_create_layer(x, y, "Col", oSnakeColAttack);
+				var col = instance_create_layer(x, y, "Col", colAttack);
 				col.image_xscale = image_xscale;
+				
+				// Set player knock back direction to the collision attack direction
+				if (col.image_xscale == 1) dirKnock = 0;
+				else dirKnock = 180;
+				
+				damagePlayer = true;
 			}
 			
-			if (image_index >= image_number - 1) state = STATES.chase;
-		}
-		else
-		{
-			with (oFrog)
+			// Damaging the player
+			if (instance_exists(colAttack)
+			&& place_meeting(colAttack.x, colAttack.y, oFrog) && damagePlayer)
 			{
-				if (other.miniExpo)
-				{
-					// Hurt enemy when jumping above him
-					other.hp--;
-					other.tookHit = true;
-				
-					// Create mini explosion
-					instance_create_layer(x, y - 10, "Particles", oDust);
-					other.miniExpo = false;
-				}
-				// Knock back player state
-				state = PlStates.knockBack;
-				if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
-				else knockBackDir = 45;
+				global.plHp--;
+				damagePlayer = false;
+				PlayerKnockBack();
 			}
+			
+			// Go to chase state
+			if (image_index > image_number - 1)
+			{
+				timerCustomAttack = timeCustomAttack;
+				state = STATES.chase;
+				image_index = 0;
+			}
+		}
+		else // Normal attack
+		{
+			image_blend = c_red;
+			
+			// Player knock back
+			PlayerKnockBack();
 		
 			// Coming back to chase state
 			if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
 			{
-				miniExpo = true;
+				createDust = true;
 				image_blend = c_white;
 				state = STATES.chase;
 				timerAttack = timeAttack;
+				image_index = 0;
 			}
 		}
 		
 	break;
 }
 
+// Add gravity to some enemys
 if (!flyEnemy)
 {
 	velv += grav;
 	if (ground) velv = 0;
 }
-
-
 
 // Fliping
 if (velh != 0) image_xscale = sign(velh);
