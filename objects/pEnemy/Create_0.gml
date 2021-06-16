@@ -4,18 +4,21 @@ event_inherited();
 
 vel_Chase = 0;
 tookHit = false;
+
 timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
-timeCustomAttack = room_speed;
-timerCustomAttack = timeCustomAttack;
-dirKnock = 0;
 
+timeCustomAttack = room_speed / 3;
+timerCustomAttack = 0;
+
+dirKnock = 0;
 
 ground = true;
 grav = 0.3;
 
 damagePlayer = false;
 createDust = true;
+createColAttack = true;
 
 enum STATES
 {

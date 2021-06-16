@@ -5,9 +5,20 @@ event_inherited();
 VknockBack = flyEnemy;
 ground = place_meeting(x, y + 1, oWall);
 
+// Normal player collision (enemy)
+if (customAttack)
+{
+	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
+	{
+		global.plHp--;
+		PlayerKnockBack();
+	}
+}
+
 // States
 switch (state)
 {
+	#region WAITING
 	case STATES.waiting:
 		
 		sprite_index = spriteWaiting;
@@ -23,6 +34,9 @@ switch (state)
 		}
 		
 	break;
+	#endregion
+	
+	#region CHASE
 	case STATES.chase:
 		
 		sprite_index = spriteChase;
@@ -60,12 +74,16 @@ switch (state)
 		{
 			if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
 			{
+				createColAttack = true;
 				state = STATES.attack;
 				image_index = 0;
 			}
 		}
 	
 	break;
+	#endregion
+	
+	#region ATTACK
 	case STATES.attack:
 		
 		timerAttack--;
@@ -77,7 +95,7 @@ switch (state)
 			sprite_index = spriteAttack;
 			
 			// Creating collision attack
-			if (!instance_exists(oSnakeColAttack) && image_index >= 2)
+			if (createColAttack && image_index >= 2)
 			{
 				var col = instance_create_layer(x, y, "Col", colAttack);
 				col.image_xscale = image_xscale;
@@ -87,11 +105,11 @@ switch (state)
 				else dirKnock = 180;
 				
 				damagePlayer = true;
+				createColAttack = false;
 			}
 			
 			// Damaging the player
-			if (instance_exists(colAttack)
-			&& place_meeting(colAttack.x, colAttack.y, oFrog) && damagePlayer)
+			if ((instance_exists(colAttack) && damagePlayer && place_meeting(oFrog.x, oFrog.y, colAttack)))
 			{
 				global.plHp--;
 				damagePlayer = false;
@@ -125,6 +143,7 @@ switch (state)
 		}
 		
 	break;
+	#endregion
 }
 
 // Add gravity to some enemys
