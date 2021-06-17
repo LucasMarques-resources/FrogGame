@@ -11,6 +11,9 @@ timerAttack = timeAttack;
 timeCustomAttack = room_speed / 3;
 timerCustomAttack = 0;
 
+reattackTime = 50;
+reattackTimer = reattackTime;
+
 dirKnock = 0;
 
 ground = true;

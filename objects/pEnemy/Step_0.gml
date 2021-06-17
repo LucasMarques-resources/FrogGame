@@ -5,7 +5,7 @@ event_inherited();
 VknockBack = flyEnemy;
 ground = place_meeting(x, y + 1, oWall);
 
-// Normal player collision (enemy)
+// Normal player collision with enemy
 if (customAttack)
 {
 	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
@@ -24,10 +24,21 @@ switch (state)
 		sprite_index = spriteWaiting;
 		vel_Chase = 0;
 		
+		// Reattack timer
+		if (reattackTimer > 0) reattackTimer--;
+		
 		var chaseFrog = collision_circle(x, y, radiusChase, oFrog, false, true);
 		
 		// Chase state
-		if (chaseFrog || tookHit)
+		if (customAttack)
+		{
+			if (reattackTimer <= 0 && chaseFrog)
+			{
+				state = STATES.chase;
+				image_index = 0;	
+			}
+		}
+		else if (chaseFrog || tookHit) // Chase state
 		{
 			state = STATES.chase;
 			image_index = 0;
@@ -116,11 +127,12 @@ switch (state)
 				PlayerKnockBack();
 			}
 			
-			// Go to chase state
-			if (image_index > image_number - 1)
+			// Go to waiting state
+			if (image_index >= image_number - 1)
 			{
 				timerCustomAttack = timeCustomAttack;
-				state = STATES.chase;
+				reattackTimer = reattackTime;
+				state = STATES.waiting;
 				image_index = 0;
 			}
 		}

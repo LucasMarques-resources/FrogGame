@@ -4,7 +4,7 @@ if (colShootable)
 {
 	xscaleSaved = image_xscale;
 	tookHit = true;
-	flash = 30;
+	flash = 40;
 	// knock back
 	if (HknockBack) velh = lengthdir_x(knockBack, hitFrom);
 	if (VknockBack) velv = lengthdir_y(knockBack, hitFrom);

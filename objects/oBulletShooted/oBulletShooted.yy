@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Particles",
+    "path": "folders/Objects/Particles.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBulletShooted",
