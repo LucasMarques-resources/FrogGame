@@ -3,7 +3,9 @@
 event_inherited();
 
 vel_Chase = 0;
-tookHit = false;
+
+xscaleSaved = image_xscale;
+flash = 0;
 
 timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
@@ -19,6 +21,7 @@ dirKnock = 0;
 ground = true;
 grav = 0.3;
 
+tookHit = false;
 damagePlayer = false;
 createDust = true;
 createColAttack = true;
@@ -27,7 +30,8 @@ enum STATES
 {
 	waiting,
 	chase,
-	attack
+	attack,
+	hurt
 }
 
 state = STATES.waiting;

@@ -5,4 +5,3 @@ velv = 0;
 hitFrom = 0;
 flash = 0;
 colShootable = false;
-xscaleSaved = image_xscale;

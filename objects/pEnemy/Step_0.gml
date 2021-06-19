@@ -156,6 +156,27 @@ switch (state)
 		
 	break;
 	#endregion
+	
+	#region HURT
+	case STATES.hurt:
+		
+		if (spriteHurt) sprite_index = spriteHurt;
+		
+		tookHit = true;
+		flash = 20;
+		
+		if (instance_exists(colAttack)) instance_destroy(colAttack);
+		
+		// When finish animation go to chase state
+		if (image_index > image_number - 1)
+		{
+			velh = 0;
+			if (spriteHurt) flash = 5;
+			state = STATES.chase;
+		}
+		
+	break;
+	#endregion
 }
 
 // Add gravity to some enemys
@@ -168,4 +189,4 @@ if (!flyEnemy)
 // Fliping
 if (velh != 0) image_xscale = sign(velh);
 
-//show_debug_message(state);
+show_debug_message(state);
