@@ -11,3 +11,5 @@ if (colShootable)
 	state = STATES.hurt;
 	colShootable = false;
 }
+
+if (collision) velv += grav;

@@ -18,12 +18,13 @@ if (place_meeting(x + velh, y, oWall))
 	{
 		x += sign(velh);
 	}
-	velh = 0;
+	if (!collision) velh = 0;
+	else velh *= -.3;
 }
 
+// Vertical Collision
 if (VknockBack)
 {
-	// Vertical Collision
 	if (place_meeting(x, y + velv, oWall))
 	{
 		while (!place_meeting(x, y + sign(velv), oWall))
@@ -34,12 +35,37 @@ if (VknockBack)
 	}
 }
 
+if (!enemy)
+{
+	//Horizontal Collision
+	if (place_meeting(x + velh, y, oFrog))
+	{
+		while (!place_meeting(x + sign(velh), y, oFrog))
+		{
+			x += sign(velh);
+		}
+		velh = 0;
+	}
+	
+	// Vertical Collision
+	if (place_meeting(x, y + velv, oFrog))
+	{
+		while (!place_meeting(x, y + sign(velv), oFrog))
+		{
+			y += sign(velv);
+		}
+		velv = 0;
+	}
+}
+
+
 // Stop knock back
 if (velh != 0)
 {
 	velh = lerp(velh, 0, 0.1);
 	velv = lerp(velv, 0, 0.1);
 }
+
 
 x += velh;
 y += velv;

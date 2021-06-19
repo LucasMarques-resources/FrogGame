@@ -23,7 +23,6 @@ invulnerable = 0;
 runPartTime = room_speed * 0.5;
 runPartDelay = runPartTime;
 
-
 timerKnockGround = 2;
 
 gunKickX = 0;

@@ -86,10 +86,30 @@ if (place_meeting(x + velh, y, oWall))
 	velh = 0;
 }
 
+//Horizontal Collision
+if (place_meeting(x + velh, y, oBox))
+{
+	while (!place_meeting(x + sign(velh), y, oBox))
+	{
+		x += sign(velh);
+	}
+	velh = 0;
+}
+
 // Vertical Collision
 if (place_meeting(x, y + velv, oWall))
 {
 	while (!place_meeting(x, y + sign(velv), oWall))
+	{
+		y += sign(velv);
+	}
+	velv = 0;
+}
+
+// Vertical Collision
+if (place_meeting(x, y + velv, oBox))
+{
+	while (!place_meeting(x, y + sign(velv), oBox))
 	{
 		y += sign(velv);
 	}

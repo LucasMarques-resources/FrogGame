@@ -26,3 +26,7 @@ if (!enemy)
 		)
 	}
 }
+else
+{
+	draw_self();
+}
