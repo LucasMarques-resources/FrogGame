@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-ground = place_meeting(x, y + 1, oWall);
+ground = place_meeting(x, y + 1, oWall) || place_meeting(x, y + 1, oBox);
 
 #region Input
 
@@ -93,6 +93,7 @@ if (place_meeting(x + velh, y, oBox))
 	{
 		x += sign(velh);
 	}
+	oBox.velh = sign(velh);
 	velh = 0;
 }
 

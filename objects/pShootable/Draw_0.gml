@@ -6,7 +6,7 @@ if (!enemy)
 	{
 		flash--;
 		image_speed = 0;
-		shader_set(shFlashBlackWhite);
+		if (shader) shader_set(shFlashBlackWhite);
 		draw_self();
 		shader_reset();
 	}
