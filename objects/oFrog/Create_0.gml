@@ -17,6 +17,7 @@ walkspd = 2;
 ground = true;
 knockBackCol = true;
 knockBackDir = 0;
+jumping = false;
 flash = 0;
 
 invulnerable = 0;
