@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-ground = place_meeting(x, y + 1, oWall) || place_meeting(x, y + 1, oBox);
+ground = place_meeting(x, y + 1, oWall) || place_meeting(x, y + 1, pBox);
 
 #region Input
 
@@ -102,20 +102,20 @@ if (place_meeting(x, y + velv, oWall))
 }
 
 //Horizontal Collision
-if (place_meeting(x + velh, y, oBox))
+if (place_meeting(x + velh, y, pBox))
 {
-	while (!place_meeting(x + sign(velh), y, oBox))
+	while (!place_meeting(x + sign(velh), y, pBox))
 	{
 		x += sign(velh);
 	}
-	oBox.velh = sign(velh);
+	pBox.velh = sign(velh);
 	velh = 0;
 }
 
 // Vertical Collision
-if (place_meeting(x, y + velv, oBox))
+if (place_meeting(x, y + velv, pBox))
 {
-	while (!place_meeting(x, y + sign(velv), oBox))
+	while (!place_meeting(x, y + sign(velv), pBox))
 	{
 		y += sign(velv);
 	}

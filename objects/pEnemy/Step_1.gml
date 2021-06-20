@@ -3,9 +3,9 @@
 
 #region COLLISION WITH BOXES
 //Horizontal Collision
-if (place_meeting(x + velh, y, oBox))
+if (place_meeting(x + velh, y, pBox))
 {
-	while (!place_meeting(x + sign(velh), y, oBox))
+	while (!place_meeting(x + sign(velh), y, pBox))
 	{
 		x += sign(velh);
 	}
@@ -13,9 +13,9 @@ if (place_meeting(x + velh, y, oBox))
 }
 	
 // Vertical Collision
-if (place_meeting(x, y + velv, oBox))
+if (place_meeting(x, y + velv, pBox))
 {
-	while (!place_meeting(x, y + sign(velv), oBox))
+	while (!place_meeting(x, y + sign(velv), pBox))
 	{
 		y += sign(velv);
 	}
