@@ -25,6 +25,7 @@
     {"id":{"name":"oRamp","path":"objects/oRamp/oRamp.yy",},"order":9,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":1,},
     {"id":{"name":"sFlyBugBigChase","path":"sprites/sFlyBugBigChase/sFlyBugBigChase.yy",},"order":2,},
+    {"id":{"name":"pColAttack","path":"objects/pColAttack/pColAttack.yy",},"order":14,},
     {"id":{"name":"sLifeUI","path":"sprites/sLifeUI/sLifeUI.yy",},"order":23,},
     {"id":{"name":"sMiniExplosion","path":"sprites/sMiniExplosion/sMiniExplosion.yy",},"order":16,},
     {"id":{"name":"oFlyBugBig","path":"objects/oFlyBugBig/oFlyBugBig.yy",},"order":1,},
