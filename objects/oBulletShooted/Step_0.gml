@@ -35,6 +35,33 @@ if (place_meeting(x + velh, y, oWall))
 	velh *= -.3;
 }
 
+//Vertical
+if (place_meeting(x, y + velv, pBox))
+{
+	while(!place_meeting(x, y + sign(velv), pBox))
+	{
+		y += sign(velv)
+	}
+	velv = 0;
+	velh = lerp(velh, 0, 0.7);
+	if (inv)
+	{
+		invulnerable = 60;
+		inv = false;
+	}
+	rotate = false;
+}
+
+//Horizontal
+if (place_meeting(x + velh, y, pBox))
+{
+	while(!place_meeting(x + sign(velh), y, pBox))
+	{
+		x += sign(velh);
+	}
+	velh *= -.3;
+}
+
 
 y += velv;
 x += velh;
