@@ -37,6 +37,19 @@ if (VknockBack)
 }
 #endregion
 
+#region COLLISION (HORIZONTAL) WITH BOXES
+//Horizontal Collision
+if (place_meeting(x + velh, y, pBox))
+{
+	while (!place_meeting(x + sign(velh), y, pBox))
+	{
+		x += sign(velh);
+	}
+	if (!collision) velh = 0;
+	else velh *= -.3;
+}
+#endregion
+
 #region COLLISION WITH FROG
 if (!enemy)
 {

@@ -191,4 +191,4 @@ if (!flyEnemy)
 // Fliping
 if (velh != 0) image_xscale = sign(velh);
 
-show_debug_message(state);
+//show_debug_message(state);
