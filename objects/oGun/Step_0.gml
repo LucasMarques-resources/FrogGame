@@ -17,7 +17,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	recoil = 4;
 	ScreenShake(1, 6);
 	// Create bullet
-	with (instance_create_layer(x + lengthdir_x(15, dir), y + lengthdir_y(15, dir), "Bullets", oBullet))
+	with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
 	{
 		spd = 6;
 		direction = other.image_angle + random_range(-2, 3);

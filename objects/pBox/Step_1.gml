@@ -23,6 +23,40 @@ if (place_meeting(x, y + velv, pEnemy))
 }
 #endregion
 
+#region COLLISION WITH SELF
+//Horizontal Collision
+with(self)
+{
+    if (object_index != self)
+	{
+        if (place_meeting(x + velh, y, object_index))
+		{
+			while (!place_meeting(x + sign(velh), y, object_index))
+			{
+				x += sign(velh);
+			}
+			if (!collision) velh = 0;
+			else velh *= -.3;
+		}
+
+		// Vertical Collision
+		if (VknockBack)
+		{
+			if (place_meeting(x, y + velv, object_index))
+			{
+				while (!place_meeting(x, y + sign(velv), object_index))
+				{
+					y += sign(velv);
+				}
+				velv = 0;
+			}
+		}
+        break;
+    }
+}
+
+#endregion
+
 // Make player unable to jump under a box
 if (place_meeting(x, y + velv, oFrog)) oFrog.canJump = false;
 else oFrog.canJump = true;

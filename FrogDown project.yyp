@@ -58,6 +58,7 @@
     {"id":{"name":"pBox","path":"objects/pBox/pBox.yy",},"order":13,},
     {"id":{"name":"sRunParticle","path":"sprites/sRunParticle/sRunParticle.yy",},"order":8,},
     {"id":{"name":"sDust","path":"sprites/sDust/sDust.yy",},"order":21,},
+    {"id":{"name":"oBox","path":"objects/oBox/oBox.yy",},"order":15,},
     {"id":{"name":"sSnakeAttack","path":"sprites/sSnakeAttack/sSnakeAttack.yy",},"order":6,},
     {"id":{"name":"sBulletShooted","path":"sprites/sBulletShooted/sBulletShooted.yy",},"order":12,},
     {"id":{"name":"sFlyBug","path":"sprites/sFlyBug/sFlyBug.yy",},"order":0,},
