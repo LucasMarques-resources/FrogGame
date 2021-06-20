@@ -19,6 +19,7 @@ knockBackCol = true;
 knockBackDir = 0;
 jumping = false;
 canJump = true;
+dragging = false;
 flash = 0;
 
 invulnerable = 0;

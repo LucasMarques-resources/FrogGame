@@ -79,50 +79,7 @@ switch (state)
 // Gravity
 velv += grav;
 
-#region Collisions
 
-//Horizontal Collision
-if (place_meeting(x + velh, y, oWall))
-{
-	while (!place_meeting(x + sign(velh), y, oWall))
-	{
-		x += sign(velh);
-	}
-	velh = 0;
-}
-
-// Vertical Collision
-if (place_meeting(x, y + velv, oWall))
-{
-	while (!place_meeting(x, y + sign(velv), oWall))
-	{
-		y += sign(velv);
-	}
-	velv = 0;
-}
-
-//Horizontal Collision
-if (place_meeting(x + velh, y, pBox))
-{
-	while (!place_meeting(x + sign(velh), y, pBox))
-	{
-		x += sign(velh);
-	}
-	pBox.velh = sign(velh);
-	velh = 0;
-}
-
-// Vertical Collision
-if (place_meeting(x, y + velv, pBox))
-{
-	while (!place_meeting(x, y + sign(velv), pBox))
-	{
-		y += sign(velv);
-	}
-	velv = 0;
-}
-
-#endregion
 
 #region Animation
 
@@ -155,5 +112,3 @@ invulnerable = max(invulnerable - 1, 0);
 
 //show_debug_message(state);
 
-x += velh;
-y += velv;

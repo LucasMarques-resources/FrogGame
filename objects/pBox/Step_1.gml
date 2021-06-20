@@ -23,6 +23,7 @@ if (place_meeting(x, y + velv, pEnemy))
 }
 #endregion
 
+// Make player unable to jump under a box
 if (place_meeting(x, y + velv, oFrog)) oFrog.canJump = false;
 else oFrog.canJump = true;
 
