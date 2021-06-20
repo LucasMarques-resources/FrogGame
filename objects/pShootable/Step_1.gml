@@ -37,7 +37,6 @@ if (VknockBack)
 }
 #endregion
 
-
 #region COLLISION WITH FROG
 if (!enemy)
 {

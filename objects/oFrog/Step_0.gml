@@ -33,10 +33,6 @@ switch (state)
 			{
 				jumping = true;
 				velv -= jumpForce;
-				/*with (instance_place(x, y - 1, oBox))
-				{
-					velv -= other.jumpForce;
-				}*/
 				var jumpPart = instance_create_layer(x, y, "Particles", oJumpSideParticle);
 				if (velh != 0) jumpPart.image_xscale = sign(velh);
 				else jumpPart.sprite_index = sJumpParticle;
@@ -47,10 +43,6 @@ switch (state)
 		if (jumpRel && velv < 0)
 		{
 			velv *= .5;
-			/* with (instance_place(x, y - 1, oBox))
-			{
-				velv *= .5;
-			}*/
 		}
 		
 	break;
@@ -99,6 +91,16 @@ if (place_meeting(x + velh, y, oWall))
 	velh = 0;
 }
 
+// Vertical Collision
+if (place_meeting(x, y + velv, oWall))
+{
+	while (!place_meeting(x, y + sign(velv), oWall))
+	{
+		y += sign(velv);
+	}
+	velv = 0;
+}
+
 //Horizontal Collision
 if (place_meeting(x + velh, y, oBox))
 {
@@ -108,16 +110,6 @@ if (place_meeting(x + velh, y, oBox))
 	}
 	oBox.velh = sign(velh);
 	velh = 0;
-}
-
-// Vertical Collision
-if (place_meeting(x, y + velv, oWall))
-{
-	while (!place_meeting(x, y + sign(velv), oWall))
-	{
-		y += sign(velv);
-	}
-	velv = 0;
 }
 
 // Vertical Collision
