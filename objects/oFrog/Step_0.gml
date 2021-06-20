@@ -27,7 +27,7 @@ switch (state)
 		gunKickX = 0;
 
 		// Jumping
-		if (ground)
+		if (ground && canJump)
 		{
 			if (jump)
 			{

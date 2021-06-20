@@ -18,6 +18,7 @@ ground = true;
 knockBackCol = true;
 knockBackDir = 0;
 jumping = false;
+canJump = true;
 flash = 0;
 
 invulnerable = 0;

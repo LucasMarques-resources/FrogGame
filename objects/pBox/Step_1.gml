@@ -23,4 +23,7 @@ if (place_meeting(x, y + velv, pEnemy))
 }
 #endregion
 
+if (place_meeting(x, y + velv, oFrog)) oFrog.canJump = false;
+else oFrog.canJump = true;
+
 event_inherited();
