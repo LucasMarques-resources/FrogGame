@@ -1,16 +1,16 @@
 {
   "spriteId": {
-    "name": "sSnakeColAttack",
-    "path": "sprites/sSnakeColAttack/sSnakeColAttack.yy",
+    "name": "sSnakeSlash",
+    "path": "sprites/sSnakeSlash/sSnakeSlash.yy",
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
-  "persistent": false,
-  "parentObjectId": {
-    "name": "pColAttack",
-    "path": "objects/pColAttack/pColAttack.yy",
+  "spriteMaskId": {
+    "name": "sSnakeColAttack",
+    "path": "sprites/sSnakeColAttack/sSnakeColAttack.yy",
   },
+  "persistent": false,
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

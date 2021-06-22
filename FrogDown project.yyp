@@ -40,6 +40,7 @@
     {"id":{"name":"sSnakeChase","path":"sprites/sSnakeChase/sSnakeChase.yy",},"order":5,},
     {"id":{"name":"sSnakeColMask","path":"sprites/sSnakeColMask/sSnakeColMask.yy",},"order":9,},
     {"id":{"name":"shFlashBlackWhite","path":"shaders/shFlashBlackWhite/shFlashBlackWhite.yy",},"order":1,},
+    {"id":{"name":"sSnakeSlash","path":"sprites/sSnakeSlash/sSnakeSlash.yy",},"order":11,},
     {"id":{"name":"pParticle","path":"objects/pParticle/pParticle.yy",},"order":7,},
     {"id":{"name":"oMiniExplosion","path":"objects/oMiniExplosion/oMiniExplosion.yy",},"order":6,},
     {"id":{"name":"sTileTest2","path":"sprites/sTileTest2/sTileTest2.yy",},"order":1,},
