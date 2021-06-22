@@ -10,7 +10,10 @@
     "path": "sprites/sSnakeColAttack/sSnakeColAttack.yy",
   },
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "pColAttack",
+    "path": "objects/pColAttack/pColAttack.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,

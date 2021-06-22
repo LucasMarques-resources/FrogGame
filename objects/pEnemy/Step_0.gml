@@ -108,6 +108,8 @@ switch (state)
 			// Creating collision attack
 			if (createColAttack && image_index >= 2)
 			{
+				createDust = true;
+				
 				var col = instance_create_layer(x, y, "Col", colAttack);
 				col.image_xscale = image_xscale;
 				

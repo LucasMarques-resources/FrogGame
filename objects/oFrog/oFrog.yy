@@ -6,8 +6,8 @@
   "solid": false,
   "visible": true,
   "spriteMaskId": {
-    "name": "sSnakeColAttack",
-    "path": "sprites/sSnakeColAttack/sSnakeColAttack.yy",
+    "name": "sCollisionMask",
+    "path": "sprites/sCollisionMask/sCollisionMask.yy",
   },
   "persistent": false,
   "parentObjectId": null,
