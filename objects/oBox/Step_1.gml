@@ -9,6 +9,7 @@ if (place_meeting(x + velh, y, pBox))
 	while (!place_meeting(x + sign(velh), y, pBox))
 	{
 		x += sign(velh);
+		//AW
 	}
 	with (instance_place(x + velh, y, pBox)) velh = sign(other.velh);
 	velh = 0;
