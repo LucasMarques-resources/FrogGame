@@ -3,8 +3,8 @@
 if (instance_exists(target))
 {
 	viewX = oFrog.x;
-	viewY = 140 / 2;
-	viewX = clamp(viewX, 0 + (280 / 2), room_width - (280 / 2));
+	viewY = (140 / 2) + 4;
+	viewX = clamp(viewX, 0 + (272 / 2), room_width - (280 / 2));
 	
 	// Screen sahke
 	viewX += random_range(-shake_remain, shake_remain);
