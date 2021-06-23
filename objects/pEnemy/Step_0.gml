@@ -110,7 +110,7 @@ switch (state)
 			{
 				createDust = true;
 				
-				var col = instance_create_layer(x, y, "Col", colAttack);
+				var col = instance_create_layer(x, y, "Particles", colAttack);
 				col.image_xscale = image_xscale;
 				
 				// Set player knock back direction to the collision attack direction
@@ -121,8 +121,9 @@ switch (state)
 				createColAttack = false;
 			}
 			
+			var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
 			// Damaging the player
-			if ((instance_exists(colAttack) && damagePlayer && place_meeting(oFrog.x, oFrog.y, colAttack)))
+			if ((instance_exists(colAttack) && damagePlayer && colAtt && !colAtt.disable))
 			{
 				global.plHp--;
 				damagePlayer = false;

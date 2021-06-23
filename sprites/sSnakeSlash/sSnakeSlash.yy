@@ -77,8 +77,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Sprites/Enemys.yy",
+    "name": "Snake",
+    "path": "folders/Sprites/Enemys/Snake.yy",
   },
   "resourceVersion": "1.0",
   "name": "sSnakeSlash",

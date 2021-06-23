@@ -73,8 +73,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Sprites/Enemys.yy",
+    "name": "FlyBugs",
+    "path": "folders/Sprites/Enemys/FlyBugs.yy",
   },
   "resourceVersion": "1.0",
   "name": "sFlyBug",

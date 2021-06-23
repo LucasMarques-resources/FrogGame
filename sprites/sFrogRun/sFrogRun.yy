@@ -85,8 +85,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Frog",
+    "path": "folders/Sprites/Frog.yy",
   },
   "resourceVersion": "1.0",
   "name": "sFrogRun",
