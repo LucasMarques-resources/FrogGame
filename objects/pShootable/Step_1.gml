@@ -81,10 +81,21 @@ if (!enemy)
 #endregion
 
 // Stop knock back
-if (velh != 0 && !oFrog.dragging)
+if (velh != 0)
 {
-	velh = lerp(velh, 0, 0.1);
-	velv = lerp(velv, 0, 0.1);
+	if (enemy)
+	{
+		velh = lerp(velh, 0, 0.1);
+		velv = lerp(velv, 0, 0.1);
+	}
+	else
+	{
+		if (!oFrog.dragging)
+		{
+			velh = lerp(velh, 0, 0.1);
+			velv = lerp(velv, 0, 0.1);
+		}
+	}
 }
 
 x += velh;

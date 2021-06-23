@@ -36,7 +36,7 @@ else dragging = false;
 
 x += velh;
 
-// Vertical Collisions
+// Vertical Collision
 if (place_meeting(x, y + velv, oWall)) {
    repeat (abs(velv) + 1) {
       if (place_meeting(x, y + sign(velv), oWall))
