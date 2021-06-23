@@ -27,7 +27,7 @@ switch (state)
 		gunKickX = 0;
 
 		// Jumping
-		if (ground && canJump)
+		if (ground && !place_meeting(x, y - 1, pBox))
 		{
 			if (jump)
 			{
