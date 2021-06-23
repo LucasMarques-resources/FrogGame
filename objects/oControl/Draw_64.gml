@@ -14,6 +14,15 @@ draw_sprite_ext(
 	image_alpha
 )
 
+draw_sprite_ext(sGunItem, 0, 10, 23, 1, 1, 0, c_white, 1);
+draw_set_font(fntText);
+draw_set_halign(fa_left);
+draw_set_valign(fa_center);
+draw_text(25, 23, global.ammo);
+draw_set_halign(-1);
+draw_set_valign(-1);
+draw_set_font(-1);
+
 // Draw destroyed life
 for (var i = 0; i < global.plTotalHp; i++)
 {
