@@ -16,6 +16,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 {
 	recoil = 4;
 	ScreenShake(1, 6);
+	
 	// Create bullet
 	if (global.ammo > 0)
 	{
@@ -41,7 +42,9 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	}
 	else
 	{
+		// Create mini dust
 		with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
+		oControl.draw = true;
 	}
 	
 	firingDelay = 10;
