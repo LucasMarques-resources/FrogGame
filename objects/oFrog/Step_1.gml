@@ -10,50 +10,53 @@ if (temp && !ground)
 
 #region Collisions
 
-//Horizontal Collision
-if (place_meeting(x + velh, y, oWall))
-{
-	while (!place_meeting(x + sign(velh), y, oWall))
-	{
-		x += sign(velh);
-	}
-	velh = 0;
-}
-
-// Vertical Collision
-if (place_meeting(x, y + velv, oWall))
-{
-	while (!place_meeting(x, y + sign(velv), oWall))
-	{
-		y += sign(velv);
-	}
-	velv = 0;
+// Horizontal Collision
+if (place_meeting(x + velh, y, oWall)) {
+   repeat (abs(velh) + 1) {
+      if (place_meeting(x + sign(velh), y, oWall))
+         break;
+      x += sign(velh);
+   }
+   velh = 0;
 }
 
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
 {
 	dragging = true;
-	while (!place_meeting(x + sign(velh), y, pBox))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+      if (place_meeting(x + sign(velh), y, pBox))
+         break;
+      x += sign(velh);
 	}
 	with (instance_place(x + velh, y, pBox)) velh = sign(other.velh);
 	velh = 0;
 }
 else dragging = false;
 
+x += velh;
+
+// Vertical Collisions
+if (place_meeting(x, y + velv, oWall)) {
+   repeat (abs(velv) + 1) {
+      if (place_meeting(x, y + sign(velv), oWall))
+         break;
+      y += sign(velv);
+   }
+   velv = 0;
+}
+
 // Vertical Collision
 if (place_meeting(x, y + velv, pBox))
 {
-	while (!place_meeting(x, y + sign(velv), pBox))
-	{
-		y += sign(velv);
-	}
+   repeat (abs(velv) + 1) {
+      if (place_meeting(x, y + sign(velv), pBox))
+         break;
+      y += sign(velv);
+   }
 	velv = 0;
 }
 
-#endregion
-
-x += velh;
 y += velv;
+
+#endregion

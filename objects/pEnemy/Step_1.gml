@@ -5,9 +5,10 @@
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
 {
-	while (!place_meeting(x + sign(velh), y, pBox))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+	    if (place_meeting(x + sign(velh), y, pBox))
+	        break;
+	    x += sign(velh);
 	}
 	velh = 0;
 }
@@ -15,9 +16,10 @@ if (place_meeting(x + velh, y, pBox))
 // Vertical Collision
 if (place_meeting(x, y + velv, pBox))
 {
-	while (!place_meeting(x, y + sign(velv), pBox))
-	{
-		y += sign(velv);
+	repeat (abs(velv) + 1) {
+	    if (place_meeting(x, y + sign(velv), pBox))
+	        break;
+	    y += sign(velv);
 	}
 	velv = 0;
 }

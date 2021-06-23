@@ -11,9 +11,10 @@ invulnerable = max(invulnerable - 1, 0);
 //Vertical
 if (place_meeting(x, y + velv, oWall))
 {
-	while(!place_meeting(x, y + sign(velv), oWall))
-	{
-		y += sign(velv)
+	repeat (abs(velv) + 1) {
+	    if (place_meeting(x, y + sign(velv), oWall))
+	        break;
+	    y += sign(velv);
 	}
 	velv = 0;
 	velh = lerp(velh, 0, 0.7);
@@ -28,9 +29,10 @@ if (place_meeting(x, y + velv, oWall))
 //Horizontal
 if (place_meeting(x + velh, y, oWall))
 {
-	while(!place_meeting(x + sign(velh), y, oWall))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+	    if (place_meeting(x + sign(velh), y, oWall))
+	        break;
+	    x += sign(velh);
 	}
 	velh *= -.3;
 }
@@ -38,9 +40,10 @@ if (place_meeting(x + velh, y, oWall))
 //Vertical
 if (place_meeting(x, y + velv, pBox))
 {
-	while(!place_meeting(x, y + sign(velv), pBox))
-	{
-		y += sign(velv)
+	repeat (abs(velv) + 1) {
+	    if (place_meeting(x, y + sign(velv), pBox))
+	        break;
+	    y += sign(velv);
 	}
 	velv = 0;
 	velh = lerp(velh, 0, 0.7);
@@ -55,9 +58,10 @@ if (place_meeting(x, y + velv, pBox))
 //Horizontal
 if (place_meeting(x + velh, y, pBox))
 {
-	while(!place_meeting(x + sign(velh), y, pBox))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+	    if (place_meeting(x + sign(velh), y, pBox))
+	        break;
+	    x += sign(velh);
 	}
 	velh *= -.3;
 }

@@ -15,9 +15,10 @@ if (hp <= 0)
 //Horizontal Collision
 if (place_meeting(x + velh, y, oWall))
 {
-	while (!place_meeting(x + sign(velh), y, oWall))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+      if (place_meeting(x + sign(velh), y, oWall))
+         break;
+      x += sign(velh);
 	}
 	if (!collision) velh = 0;
 	else velh *= -.3;
@@ -28,8 +29,9 @@ if (VknockBack)
 {
 	if (place_meeting(x, y + velv, oWall))
 	{
-		while (!place_meeting(x, y + sign(velv), oWall))
-		{
+		repeat (abs(velv) + 1) {
+			if (place_meeting(x, y + sign(velv), oWall))
+				break;
 			y += sign(velv);
 		}
 		velv = 0;
@@ -40,11 +42,12 @@ if (VknockBack)
 #region COLLISION (HORIZONTAL) WITH BOXES
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
-{
-	while (!place_meeting(x + sign(velh), y, pBox))
-	{
-		x += sign(velh);
-	}
+{	
+	repeat (abs(velh) + 1) {
+      if (place_meeting(x + sign(velh), y, pBox))
+         break;
+      x += sign(velh);
+    }
 	if (!collision) velh = 0;
 	else velh *= -.3;
 }
@@ -56,20 +59,22 @@ if (!enemy)
 	//Horizontal Collision
 	if (place_meeting(x + velh, y, oFrog))
 	{
-		while (!place_meeting(x + sign(velh), y, oFrog))
-		{
-			x += sign(velh);
-		}
+		repeat (abs(velh) + 1) {
+	      if (place_meeting(x + sign(velh), y, oFrog))
+	         break;
+	      x += sign(velh);
+	    }
 		velh = 0;
 	}
 	
 	// Vertical Collision
 	if (place_meeting(x, y + velv, oFrog))
 	{
-		while (!place_meeting(x, y + sign(velv), oFrog))
-		{
-			y += sign(velv);
-		}
+		repeat (abs(velv) + 1) {
+	      if (place_meeting(x, y + sign(velv), oFrog))
+	         break;
+	      y += sign(velv);
+	    }
 		velv = 0;
 	}
 }

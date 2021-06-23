@@ -5,9 +5,10 @@
 //Horizontal Collision
 if (place_meeting(x + velh, y, pEnemy))
 {
-	while (!place_meeting(x + sign(velh), y, pEnemy))
-	{
-		x += sign(velh);
+	repeat (abs(velh) + 1) {
+	    if (place_meeting(x + sign(velh), y, pEnemy))
+	        break;
+	    x += sign(velh);
 	}
 	velh = 0;
 }
@@ -15,9 +16,10 @@ if (place_meeting(x + velh, y, pEnemy))
 // Vertical Collision
 if (place_meeting(x, y + velv, pEnemy))
 {
-	while (!place_meeting(x, y + sign(velv), pEnemy))
-	{
-		y += sign(velv);
+	repeat (abs(velv) + 1) {
+	    if (place_meeting(x, y + sign(velv), pEnemy))
+	        break;
+	    y += sign(velv);
 	}
 	velv = 0;
 }
@@ -31,8 +33,9 @@ with(self)
 		//Horizontal Collision
         if (place_meeting(x + velh, y, object_index))
 		{
-			while (!place_meeting(x + sign(velh), y, object_index))
-			{
+			repeat (abs(velh) + 1) {
+				if (place_meeting(x + sign(velh), y, object_index))
+				    break;
 				x += sign(velh);
 			}
 			if (!collision) velh = 0;
@@ -42,9 +45,10 @@ with(self)
 		// Vertical Collision
 		if (place_meeting(x, y + velv, object_index))
 		{
-			while (!place_meeting(x, y + sign(velv), object_index))
-			{
-				y += sign(velv);
+			repeat (abs(velv) + 1) {
+			    if (place_meeting(x, y + sign(velv), object_index))
+			        break;
+			    y += sign(velv);
 			}
 			velv = 0;
 		}
