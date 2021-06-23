@@ -13,3 +13,6 @@ if (global.addLife)
 	global.plTotalHp++;
 	addedLifes++;
 }
+
+// Destroying oAim when player have not a gun
+if (instance_exists(oAim) && !global.hasGun) instance_destroy(oAim);
