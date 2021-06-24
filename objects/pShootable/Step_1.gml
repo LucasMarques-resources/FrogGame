@@ -2,13 +2,22 @@
 // You can write your code in this editor
 
 // Destroying
-if (hp <= 0) 
+if (hp <= 0 && destructible)
 {
 	with (instance_create_layer(x, y, "Particles", oExplosion))
 	{
 		scale = other.scaleExplosion;
 	}
-	instance_destroy();
+	
+	if (itemDropper)
+	{
+		entityDropList = choose
+		(
+			[oLife]
+		)
+		instance_destroy();
+	}
+	else instance_destroy();
 }
 
 #region COLLISION WITH WALL
@@ -42,7 +51,7 @@ if (VknockBack)
 #region COLLISION (HORIZONTAL) WITH BOXES
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
-{	
+{
 	repeat (abs(velh) + 1) {
       if (place_meeting(x + sign(velh), y, pBox))
          break;

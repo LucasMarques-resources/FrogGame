@@ -2,7 +2,8 @@
 // You can write your code in this editor
 
 global.hasGun = false;
-global.ammo = 11;
+global.ammo = 300;
+global.ammoAdded = false;
 
 global.plHp = 4;
 global.plTotalHp = 4;

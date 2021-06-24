@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 // DEBUG
-if (keyboard_check_pressed(ord("H")))
+if (global.plHp > global.plTotalHp)
 {
 	global.addLife = true;
 }

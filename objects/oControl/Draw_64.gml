@@ -37,10 +37,16 @@ draw_set_valign(fa_center);
 // Draw ammo
 draw_text(25, 23, global.ammo);
 
+if (global.ammoAdded)
+{
+	
+}
+
 if (global.ammo < 10)
 {
 	skipDraw--;
 	
+	// Low ammo message
 	if (global.ammo > 0)
 	{
 		if (abs(skipDraw) mod 11 < 4)
@@ -51,14 +57,14 @@ if (global.ammo < 10)
 		{
 			draw_text(35, 23, "low ammo");
 		}
-	}
+	} // No ammo message
 	if (global.ammo <= 0)
 	{
 		if (draw)
 		{
 			yy -= 0.2;
 			alpha -= 0.02;
-			draw_text_color(35, yy, "no ammo", c_white, c_white, c_white, c_white, alpha);
+			draw_text_color(35, floor(yy), "no ammo", c_white, c_white, c_white, c_white, alpha);
 			if (alpha < 0)
 			{
 				draw = false;
