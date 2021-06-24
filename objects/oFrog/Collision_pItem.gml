@@ -1,20 +1,24 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Switch by item types
-switch (other.object_index)
+if (other.timerCatch <= 0)
 {
-	case oLife:
+	// Switch by item types
+	switch (other.object_index)
+	{
+		case oLife:
 	
-		global.plHp++;
+			global.plHp++;
 		
-	break;
-	case oLoader:
+		break;
+		case oLoader:
 	
-		global.ammo += other.ammo;
-		global.ammoAdded = true;
+			global.ammo += other.ammo;
+			global.ammoAdd += other.ammo;
+			global.ammoAdded = true;
 		
-	break;
-}
+		break;
+	}
 
-instance_destroy(other);
+	instance_destroy(other);
+}

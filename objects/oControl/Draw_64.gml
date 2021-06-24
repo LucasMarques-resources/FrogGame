@@ -39,7 +39,8 @@ draw_text(25, 23, global.ammo);
 
 if (global.ammoAdded)
 {
-	
+	if (ammoAddCrea) instance_create_layer(25, 23, "Instances", oText); ammoAddCrea = false;
+	oText.textString = string(global.ammoAdd) + " ammo";
 }
 
 if (global.ammo < 10)
@@ -60,17 +61,16 @@ if (global.ammo < 10)
 	} // No ammo message
 	if (global.ammo <= 0)
 	{
-		if (draw)
+		timerNoAmmo--;
+		
+		if (draw && timerNoAmmo <= 0)
 		{
-			yy -= 0.2;
-			alpha -= 0.02;
-			draw_text_color(35, floor(yy), "no ammo", c_white, c_white, c_white, c_white, alpha);
-			if (alpha < 0)
+			with (instance_create_layer(25, 23, "Instances", oText))
 			{
-				draw = false;
-				alpha = 1;
-				yy = 23;
+				textString = "no ammo";
 			}
+			timerNoAmmo = timeNoAmmo;
+			draw = false;
 		}
 	}
 }

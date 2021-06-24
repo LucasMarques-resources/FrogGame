@@ -21,6 +21,7 @@
     {"id":{"name":"sFrog","path":"sprites/sFrog/sFrog.yy",},"order":0,},
     {"id":{"name":"sLifeTopUI","path":"sprites/sLifeTopUI/sLifeTopUI.yy",},"order":22,},
     {"id":{"name":"PlayerKnockBack","path":"scripts/PlayerKnockBack/PlayerKnockBack.yy",},"order":2,},
+    {"id":{"name":"oText","path":"objects/oText/oText.yy",},"order":15,},
     {"id":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"order":3,},
     {"id":{"name":"oFrog","path":"objects/oFrog/oFrog.yy",},"order":0,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},
