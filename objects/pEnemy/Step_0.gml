@@ -5,16 +5,6 @@ event_inherited();
 VknockBack = flyEnemy;
 ground = place_meeting(x, y + 1, oWall);
 
-// Normal player collision with enemy
-if (customAttack)
-{
-	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
-	{
-		global.plHp--;
-		PlayerKnockBack();
-	}
-}
-
 // States
 switch (state)
 {
@@ -123,7 +113,7 @@ switch (state)
 			
 			var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
 			// Damaging the player
-			if ((instance_exists(colAttack) && damagePlayer && colAtt && !colAtt.disable))
+			if (instance_exists(colAttack)&& oFrog.state != PlStates.knockBack && damagePlayer && colAtt && !colAtt.disable)
 			{
 				global.plHp--;
 				damagePlayer = false;
@@ -180,6 +170,16 @@ switch (state)
 		
 	break;
 	#endregion
+}
+
+// Normal player collision with enemy
+if (customAttack && !instance_exists(colAttack))
+{
+	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
+	{
+		global.plHp--;
+		PlayerKnockBack();
+	}
 }
 
 // Add gravity to some enemys
