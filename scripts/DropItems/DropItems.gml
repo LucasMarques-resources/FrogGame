@@ -7,9 +7,9 @@ function DropItems(argument0, argument1, argument2){
 	
 	var _items = array_length_1d(argument2);
 	
-	var _angle = choose(135, 45);
 	for (var i = 0; i < _items; i++)
 	{
+		var _angle = choose(135, 120, 30, 140, 60, 45);
 		with (instance_create_layer(argument0, argument1, "Instances", argument2[i]))
 		{
 			direction = _angle;

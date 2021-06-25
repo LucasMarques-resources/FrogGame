@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+event_inherited();
+
 sprite_index = imgIndex;
 
-event_inherited();
+uniqueEntityDropList = choose
+(
+	[oLife],
+	[oLoader, oLoader, oLoader, oLoader]
+)

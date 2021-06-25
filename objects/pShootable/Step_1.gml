@@ -11,13 +11,10 @@ if (hp <= 0 && destructible)
 	
 	if (itemDropper)
 	{
-		entityDropList = choose
-		(
-			[oLife]
-		)
-		instance_destroy();
+		entityDropList = uniqueEntityDropList;
 	}
-	else instance_destroy();
+	
+	instance_destroy();
 }
 
 #region COLLISION WITH WALL

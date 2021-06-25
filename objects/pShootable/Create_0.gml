@@ -8,3 +8,12 @@ flash = 0;
 colShootable = false;
 
 entityDropList = 0;
+
+uniqueEntityDropList = choose
+(
+	[oLife],
+	[oLoader],
+	[oLoader],
+	-1,
+	-1
+)
