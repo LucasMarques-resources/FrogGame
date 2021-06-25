@@ -7,10 +7,11 @@ if (other.timerCatch <= 0)
 	switch (other.object_index)
 	{
 		case oLife:
-	
-			if (global.plHp < global.plTotalHp)
+			
+			if (global.plHp < global.plTotalHp && invulnerable = 0)
 			{
 				global.plHp++;
+				global.lifeAdded = true;
 				instance_destroy(other);
 			}
 		

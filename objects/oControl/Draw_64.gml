@@ -53,10 +53,8 @@ if (!instance_exists(objAmmoBeingAdded)) ammoBeingAdded = 0;
 // Draw ammo added on item position
 if (global.ammoAdded)
 {	
-	if (objAmmoBeingAdded)
-	{
-		objAmmoBeingAdded.alpha = 1;
-	}
+	// Reset alpha
+	if (objAmmoBeingAdded) objAmmoBeingAdded.alpha = 1;
 	
 	with (instance_create_layer(oFrog.x - 7, oFrog.y - 20, "Instances", oText))
 	{
@@ -65,6 +63,18 @@ if (global.ammoAdded)
 		textString = string(global.ammoAdd) + " ammo";
 	}
 	global.ammoAdded = false;
+}
+
+// Draw lifes added
+if (global.lifeAdded)
+{
+	with (instance_create_layer(oFrog.x - 7, oFrog.y - 20, "Instances", oText))
+	{
+		textTop = false;
+		fontText = fntMiniText;
+		textString = "1 LIFE";
+	}
+	global.lifeAdded = false;
 }
 
 if (global.ammo < 10)
