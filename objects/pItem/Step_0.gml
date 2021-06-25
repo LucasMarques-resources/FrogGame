@@ -3,3 +3,11 @@
 event_inherited();
 
 timerCatch--;
+
+if (object_index != oLife || (object_index = oLife && global.plHp < global.plTotalHp))
+{
+	if (collision_rectangle(x - 20, y - 5, x + 20, y + 5, oFrog, false, true))
+	{
+		velh += lengthdir_x(0.2, point_direction(x, y, oFrog.x, oFrog.y));
+	}
+}

@@ -58,7 +58,7 @@ if (global.ammoAdded)
 		objAmmoBeingAdded.alpha = 1;
 	}
 	
-	with (instance_create_layer(xItem, yItem, "Instances", oText))
+	with (instance_create_layer(oFrog.x - 7, oFrog.y - 20, "Instances", oText))
 	{
 		textTop = false;
 		fontText = fntMiniText;
