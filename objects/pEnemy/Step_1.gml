@@ -12,17 +12,7 @@ if (place_meeting(x + velh, y, pBox))
 	}
 	velh = 0;
 }
-	
-// Vertical Collision
-if (place_meeting(x, y + velv, pBox))
-{
-	repeat (abs(velv) + 1) {
-	    if (place_meeting(x, y + sign(velv), pBox))
-	        break;
-	    y += sign(velv);
-	}
-	velv = 0;
-}
+
 #endregion
 
 event_inherited();

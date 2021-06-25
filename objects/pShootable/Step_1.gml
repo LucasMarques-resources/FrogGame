@@ -29,7 +29,7 @@ if (place_meeting(x + velh, y, oWall))
          break;
       x += sign(velh);
 	}
-	if (!collision) velh = 0;
+	if (!colBounce) velh = 0;
 	else velh *= -.3;
 }
 
@@ -57,13 +57,23 @@ if (place_meeting(x + velh, y, pBox))
          break;
       x += sign(velh);
     }
-	if (!collision) velh = 0;
+	if (!colBounce) velh = 0;
 	else velh *= -.3;
+}
+// Vertical Collision
+if (place_meeting(x, y + velv, pBox))
+{
+	repeat (abs(velv) + 1) {
+	    if (place_meeting(x, y + sign(velv), pBox))
+	        break;
+	    y += sign(velv);
+	}
+	velv = 0;
 }
 #endregion
 
 #region COLLISION WITH FROG
-if (!enemy)
+if (!enemy && colFrog)
 {
 	//Horizontal Collision
 	if (place_meeting(x + velh, y, oFrog))

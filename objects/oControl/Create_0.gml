@@ -16,12 +16,18 @@ addedLifes = 0;
 
 skipDraw = 60;
 draw = false;
-t = noone;
+xItem = 0;
+yItem = 0;
 
 timeNoAmmo = room_speed / 1.3;
 timerNoAmmo = timeNoAmmo;
-ammoAddCrea = true;
-depth = -100;
+
+// Ammo added
+ammoBeingAdded = 0;
+ammoBeingAddedCrea = true;
+ammoBeingAddedCreaRepeat = true;
+objAmmoBeingAdded = noone;
+
 
 // Creating oAim
 if (!instance_exists(oAim) && !global.hasGun) instance_create_layer(mouse_x, mouse_y, "Top", oAim);

@@ -38,7 +38,7 @@ with(self)
 				    break;
 				x += sign(velh);
 			}
-			if (!collision) velh = 0;
+			if (!colBounce) velh = 0;
 			else velh *= -.3;
 		}
 

@@ -37,10 +37,34 @@ draw_set_valign(fa_center);
 // Draw ammo
 draw_text(25, 23, global.ammo);
 
-if (global.ammoAdded)
+// Draw ammo added on top
+if (global.ammoAdded && ammoBeingAddedCrea && ammoBeingAddedCreaRepeat)
 {
-	if (ammoAddCrea) instance_create_layer(25, 23, "Instances", oText); ammoAddCrea = false;
-	oText.textString = string(global.ammoAdd) + " ammo";
+	objAmmoBeingAdded = instance_create_layer(25, 23, "Instances", oText);
+	objAmmoBeingAdded.textTop = true;
+	objAmmoBeingAdded.yMove = false;
+	
+	ammoBeingAddedCreaRepeat = false;
+	ammoBeingAddedCrea = false;
+}
+// Reset ammo added
+if (!instance_exists(objAmmoBeingAdded)) ammoBeingAdded = 0;
+
+// Draw ammo added on item position
+if (global.ammoAdded)
+{	
+	if (objAmmoBeingAdded)
+	{
+		objAmmoBeingAdded.alpha = 1;
+	}
+	
+	with (instance_create_layer(xItem, yItem, "Instances", oText))
+	{
+		textTop = false;
+		fontText = fntMiniText;
+		textString = string(global.ammoAdd) + " ammo";
+	}
+	global.ammoAdded = false;
 }
 
 if (global.ammo < 10)
@@ -67,6 +91,7 @@ if (global.ammo < 10)
 		{
 			with (instance_create_layer(25, 23, "Instances", oText))
 			{
+				textTop = true;
 				textString = "no ammo";
 			}
 			timerNoAmmo = timeNoAmmo;

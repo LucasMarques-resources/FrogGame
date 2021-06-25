@@ -1,5 +1,4 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.ammoAdded = false;
+if (textTop) oControl.ammoBeingAddedCreaRepeat = true;
 global.ammoAdd = 0;
-oControl.ammoAddCrea = true;
