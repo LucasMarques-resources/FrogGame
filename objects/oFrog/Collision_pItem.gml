@@ -8,7 +8,11 @@ if (other.timerCatch <= 0)
 	{
 		case oLife:
 	
-			global.plHp++;
+			if (global.plHp < global.plTotalHp)
+			{
+				global.plHp++;
+				instance_destroy(other);
+			}
 		
 		break;
 		case oLoader:
@@ -20,9 +24,9 @@ if (other.timerCatch <= 0)
 			oControl.xItem = other.x;
 			oControl.yItem = other.y;
 			global.ammoAdded = true;
+			
+			instance_destroy(other);
 		
 		break;
 	}
-
-	instance_destroy(other);
 }

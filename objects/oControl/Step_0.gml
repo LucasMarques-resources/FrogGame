@@ -1,11 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
-// DEBUG
+
+// Add lifes
+/*
 if (global.plHp > global.plTotalHp)
 {
 	global.addLife = true;
 }
 else global.addLife = false;
+*/
 
 // Adding lifes
 if (global.addLife)
