@@ -4,11 +4,10 @@
 image_index = typeItem;
 show_debug_message(itemOwnAmmo);
 
-var radius = point_in_circle(oFrog.x, oFrog.y, x, y, 30);
-var longRadius = point_in_circle(oFrog.x, oFrog.y, x, y, 40);
+var radius = point_in_circle(oFrog.x, oFrog.y, x, y, 25);
 
 if (radius && global.hasGun && velh == 0)
-{	
+{
 	//with (oFrog) other.radiusId = collision_circle(x, y, 30, other, false, true);
 	
 	activate = true;
@@ -25,17 +24,17 @@ if (radius && global.hasGun && velh == 0)
 	}
 			
 	if (keyboard_check_pressed(ord("E")))
-	{/*
-		global.currentGun.velh = lengthdir_x(3, 45);
-		global.currentGun.velv = lengthdir_y(3, 45);*/
-
+	{
 		activate = false;
 		textCrea = true;
 		
-		with (instance_create_layer(oGun.x, oGun.y - 20, "Instances", oGunItem))
+		with (instance_create_layer(oGun.x, oGun.y - 10, "Instances", oGunItem))
 		{
-			velh = lengthdir_x(3, 45);
-			velv = lengthdir_y(3, 45);
+			image_xscale = oFrog.image_xscale;
+			if (image_xscale = 1) var dir = 45; else dir = 135;
+			
+			velh = lengthdir_x(3, dir);
+			velv = lengthdir_y(3, dir);
 			
 			itemOwnAmmo = oGun.ownAmmo;
 			typeItem = oGun.typeGun;
@@ -48,7 +47,7 @@ if (radius && global.hasGun && velh == 0)
 		pickUpGun = true;
 	}	
 }
-if (!longRadius)
+if (!radius)
 {
 	activate = false;
 	textCrea = true;

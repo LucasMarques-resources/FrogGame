@@ -7,6 +7,13 @@ hitFrom = 0;
 flash = 0;
 colShootable = false;
 
+loseHp = false;
+loseHpTime = room_speed;
+loseHpTimer = loseHpTime;
+losingHpTime = room_speed;
+losingHpTimer = losingHpTime;
+
+
 entityDropList = 0;
 
 uniqueEntityDropList = choose

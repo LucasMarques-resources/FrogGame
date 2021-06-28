@@ -26,7 +26,6 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		{
 			typeBullet = other.typeGun;
 			global.ammo--;
-			spd = 6;
 			direction = other.image_angle + random_range(-2, 3);
 			image_angle = direction;
 		}

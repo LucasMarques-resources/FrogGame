@@ -12,4 +12,28 @@ if (colShootable)
 	colShootable = false;
 }
 
+// Losing hp by time
+if (loseHp)
+{
+	loseHpTimer--;
+	losingHpTimer--;
+
+	if (loseHpTimer <= 0)
+	{
+		hp--;
+		knockBack = 1;
+		colShootable = true;
+		hitFrom = other.direction;
+		if (hp < 1) other.create = false;
+		
+		loseHpTimer = loseHpTime;
+	}
+	
+	if (losingHpTimer <= 0)
+	{
+		loseHp = false;
+		losingHpTimer = losingHpTime;
+	}
+}
+
 if (collision) velv += grav;
