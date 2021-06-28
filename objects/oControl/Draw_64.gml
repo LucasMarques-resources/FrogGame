@@ -33,7 +33,7 @@ draw_set_valign(fa_center);
 if (global.hasGun)
 {
 	// Draw gun
-	draw_sprite_ext(sGunItem, 0, 10, 23, 1, 1, 0, c_white, 1);
+	draw_sprite_ext(sGunItem, global.currentGun.typeGun, 10, 23, 1, 1, 0, c_white, 1);
 
 	// Draw ammo
 	draw_text(25, 23, global.ammo);
