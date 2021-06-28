@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 global.hasGun = false;
-global.ammo = 20;
+global.currentGun = noone;
+
+global.ammo = 0;
 global.ammoAdded = false;
 global.ammoAdd = 0;
 

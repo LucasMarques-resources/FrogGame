@@ -1,9 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Change de sprite depending on the type
+image_index = typeGun;
+
 invulnerable = oFrog.invulnerable;
 flash = oFrog.flash;
-
 
 firingDelay--;
 
@@ -22,6 +24,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	{
 		with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
 		{
+			typeBullet = other.typeGun;
 			global.ammo--;
 			spd = 6;
 			direction = other.image_angle + random_range(-2, 3);
@@ -59,3 +62,8 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 // Recoil
 x -= lengthdir_x(recoil, image_angle);
 y -= lengthdir_y(recoil, image_angle);
+
+if (velv != 0) velv += grav;
+
+x += velh;
+y += velv;

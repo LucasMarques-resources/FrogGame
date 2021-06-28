@@ -26,16 +26,51 @@ for (var i = 0; i < global.plHp; i++)
 	draw_sprite(sLifeUI, 0, 9 + 12 * i, 7);
 }
 
-
-// Draw gun
-draw_sprite_ext(sGunItem, 0, 10, 23, 1, 1, 0, c_white, 1);
-
 draw_set_font(fntText);
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 
-// Draw ammo
-draw_text(25, 23, global.ammo);
+if (global.hasGun)
+{
+	// Draw gun
+	draw_sprite_ext(sGunItem, 0, 10, 23, 1, 1, 0, c_white, 1);
+
+	// Draw ammo
+	draw_text(25, 23, global.ammo);
+	
+	if (global.ammo < 10)
+	{
+		skipDraw--;
+	
+		// Low ammo message
+		if (global.ammo > 0)
+		{
+			if (abs(skipDraw) mod 11 < 4)
+			{
+				// Skip draw
+			}
+			else
+			{
+				draw_text(35, 23, "low ammo");
+			}
+		} // No ammo message
+		if (global.ammo <= 0)
+		{
+			timerNoAmmo--;
+		
+			if (draw && timerNoAmmo <= 0)
+			{
+				with (instance_create_layer(25, 23, "Instances", oText))
+				{
+					textTop = true;
+					textString = "no ammo";
+				}
+				timerNoAmmo = timeNoAmmo;
+				draw = false;
+			}
+		}
+	}
+}
 
 // Draw ammo added on top
 if (global.ammoAdded && ammoBeingAddedCrea && ammoBeingAddedCreaRepeat)
@@ -75,39 +110,6 @@ if (global.lifeAdded)
 		textString = "1 LIFE";
 	}
 	global.lifeAdded = false;
-}
-
-if (global.ammo < 10)
-{
-	skipDraw--;
-	
-	// Low ammo message
-	if (global.ammo > 0)
-	{
-		if (abs(skipDraw) mod 11 < 4)
-		{
-			// Skip draw
-		}
-		else
-		{
-			draw_text(35, 23, "low ammo");
-		}
-	} // No ammo message
-	if (global.ammo <= 0)
-	{
-		timerNoAmmo--;
-		
-		if (draw && timerNoAmmo <= 0)
-		{
-			with (instance_create_layer(25, 23, "Instances", oText))
-			{
-				textTop = true;
-				textString = "no ammo";
-			}
-			timerNoAmmo = timeNoAmmo;
-			draw = false;
-		}
-	}
 }
 
 draw_set_halign(-1);

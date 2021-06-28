@@ -1,6 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-alarm[0] = 14;
-create = true;
-
-typeBullet = 0;
+with (instance_create_layer(x, y, "Particles", oDust)) sprite_index = sMiniDust;

@@ -17,14 +17,17 @@ if (other.timerCatch <= 0)
 		
 		break;
 		case oLoader:
-	
-			global.ammo += other.ammo;
-			global.ammoAdd = other.ammo;
-			oControl.ammoBeingAdded += other.ammo;
-			oControl.ammoBeingAddedCrea = true;
-			oControl.xItem = other.x;
-			oControl.yItem = other.y;
-			global.ammoAdded = true;
+			
+			if (global.hasGun)
+			{
+				global.ammo += other.ammo;
+				global.ammoAdd = other.ammo;
+				oControl.ammoBeingAdded += other.ammo;
+				oControl.ammoBeingAddedCrea = true;
+				oControl.xItem = other.x;
+				oControl.yItem = other.y;
+				global.ammoAdded = true;
+			}
 			
 			instance_destroy(other);
 		

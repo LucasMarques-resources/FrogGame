@@ -14,6 +14,7 @@ if (hp <= 0 && destructible)
 		entityDropList = uniqueEntityDropList;
 	}
 	
+	ScreenShake(5, 6);
 	instance_destroy();
 }
 

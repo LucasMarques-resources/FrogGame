@@ -10,6 +10,7 @@ if (global.plHp > global.plTotalHp)
 else global.addLife = false;
 */
 
+
 // Adding lifes
 if (global.addLife)
 {
