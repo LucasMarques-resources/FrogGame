@@ -11,8 +11,6 @@ velh = 0;
 velv = 0;
 grav = 0.3;
 
-dropped = false;
-
 typeGun = 0;
 ownAmmo = 0;
 

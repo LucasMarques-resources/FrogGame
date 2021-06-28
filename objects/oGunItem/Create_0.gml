@@ -14,4 +14,11 @@ textObj = noone;
 
 itemOwnAmmo = 20;
 
-show_message(typeItem);
+pickUpGun = false;
+
+velh = 0;
+velv = 0;
+
+yStart = y;
+
+grav = 0.3;

@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Pick up items
 
 if (other.timerCatch <= 0)
 {
@@ -27,9 +26,9 @@ if (other.timerCatch <= 0)
 				oControl.xItem = other.x;
 				oControl.yItem = other.y;
 				global.ammoAdded = true;
+				
+				instance_destroy(other);
 			}
-			
-			instance_destroy(other);
 		
 		break;
 	}
