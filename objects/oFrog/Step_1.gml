@@ -23,13 +23,16 @@ if (place_meeting(x + velh, y, oWall)) {
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
 {
-	dragging = true;
 	repeat (abs(velh) + 1) {
       if (place_meeting(x + sign(velh), y, pBox))
          break;
       x += sign(velh);
 	}
-	with (instance_place(x + velh, y, pBox)) velh = sign(other.velh);
+	with (instance_place(x + velh, y, pBox))
+	{
+		other.dragging = true;
+		velh = other.velh;
+	}
 	velh = 0;
 }
 else dragging = false;

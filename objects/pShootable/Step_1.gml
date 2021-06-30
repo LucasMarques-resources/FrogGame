@@ -46,6 +46,7 @@ if (VknockBack)
 }
 #endregion
 
+
 #region COLLISION (HORIZONTAL) WITH BOXES
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
@@ -69,6 +70,7 @@ if (place_meeting(x, y + velv, pBox))
 	velv = 0;
 }
 #endregion
+
 
 #region COLLISION WITH FROG
 if (!enemy && colFrog)
@@ -96,24 +98,6 @@ if (!enemy && colFrog)
 	}
 }
 #endregion
-
-// Stop knock back
-if (velh != 0)
-{
-	if (enemy)
-	{
-		velh = lerp(velh, 0, 0.1);
-		velv = lerp(velv, 0, 0.1);
-	}
-	else
-	{
-		if (!oFrog.dragging)
-		{
-			velh = lerp(velh, 0, 0.1);
-			velv = lerp(velv, 0, 0.1);
-		}
-	}
-}
 
 x += velh;
 y += velv;

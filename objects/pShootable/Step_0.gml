@@ -1,5 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if (!instance_place(x, y, pDamager))
+{
+	show_debug_message("_COL.COL = FALSE STOP COL" + string(id));
+	colDamager = true;
+}
+
 if (colShootable)
 {
 	if (!enemy) flash = 40;
@@ -12,28 +19,5 @@ if (colShootable)
 	colShootable = false;
 }
 
-// Losing hp by time
-if (loseHp)
-{
-	loseHpTimer--;
-	losingHpTimer--;
-
-	if (loseHpTimer <= 0)
-	{
-		hp--;
-		knockBack = 1;
-		colShootable = true;
-		hitFrom = other.direction;
-		if (hp < 1) other.create = false;
-		
-		loseHpTimer = loseHpTime;
-	}
-	
-	if (losingHpTimer <= 0)
-	{
-		loseHp = false;
-		losingHpTimer = losingHpTime;
-	}
-}
-
+//show_debug_message(damagerCrea);
 if (collision) velv += grav;

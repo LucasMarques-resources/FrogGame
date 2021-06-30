@@ -11,6 +11,10 @@ if (place_meeting(x + velh, y, pBox))
 	        break;
 	    x += sign(velh);
 	}
-	with (instance_place(x + velh, y, pBox)) velh = sign(other.velh);
+	with (instance_place(x + velh, y, pBox))
+	{
+		oFrog.dragging = true;
+		velh = sign(other.velh);
+	}
 	velh = 0;
 }

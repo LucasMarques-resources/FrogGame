@@ -40,11 +40,14 @@ switch (typeBullet)
 		{
 			with (instance_place(x, y, pShootable))
 			{
-				loseHp = true;
-				loseHpTime = room_speed / 1.5;
-				loseHpTimer = 0;
-				losingHpTime = room_speed * 3;
-				losingHpTimer = losingHpTime;	
+				if (damagerCrea)
+				{
+					with (instance_create_layer(x, y, "Instances", fireDamager))
+					{
+						followId = other.id;
+					}
+					damagerCrea = false;
+				}
 			}
 			instance_destroy();
 		}

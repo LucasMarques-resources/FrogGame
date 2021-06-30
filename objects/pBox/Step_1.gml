@@ -10,6 +10,11 @@ if (place_meeting(x + velh, y, pShootable))
 	        break;
 	    x += sign(velh);
 	}
+	with (instance_place(x + velh, y, pShootable))
+	{
+		oFrog.dragging = true;
+		velh = sign(other.velh);
+	}
 	velh = 0;
 }
 	
@@ -37,6 +42,12 @@ with(self)
 				if (place_meeting(x + sign(velh), y, object_index))
 				    break;
 				x += sign(velh);
+			}
+
+			with (instance_place(x + velh, y, self))
+			{
+				oFrog.dragging = true;
+				velh = sign(other.velh);
 			}
 			if (!colBounce) velh = 0;
 			else velh *= -.3;

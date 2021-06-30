@@ -2,7 +2,6 @@
 // You can write your code in this editor
 
 image_index = typeItem;
-show_debug_message(itemOwnAmmo);
 
 var radius = point_in_circle(oFrog.x, oFrog.y, x, y, 25);
 
