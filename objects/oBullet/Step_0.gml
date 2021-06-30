@@ -40,9 +40,23 @@ switch (typeBullet)
 		{
 			with (instance_place(x, y, pShootable))
 			{
+				hitFrom = other.direction;
 				if (damagerCrea)
 				{
-					with (instance_create_layer(x, y, "Instances", fireDamager))
+					var xx = x;
+					var yy = y;
+					if (enemy)
+					{
+						xx = x;
+						yy = y;
+					}
+					else
+					{
+						xx = x + sprite_width / 2;
+						yy = y + sprite_height / 2;
+					}
+					
+					with (instance_create_layer(xx, yy, "Instances", fireDamager))
 					{
 						followId = other.id;
 					}

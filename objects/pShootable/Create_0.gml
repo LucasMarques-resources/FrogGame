@@ -16,7 +16,6 @@ losingHpTimer = losingHpTime;
 damagerCrea = true;
 colDamager = true;
 
-
 // Drop list
 entityDropList = 0;
 

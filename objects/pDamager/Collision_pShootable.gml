@@ -6,7 +6,7 @@ with (other)
 	image_blend = c_red;
 	if (colDamager)
 	{
-		show_message("COL MENSAGEM" + string(id));
+		//show_message("COL MENSAGEM" + string(id));
 		loseHpTimer = 0;
 		loseHpTime = other.loseHpTimeD;
 		losingHpTime = other.losingHpTimeD;
@@ -23,7 +23,6 @@ with (other)
 		hp--;
 		knockBack = 1;
 		colShootable = true;
-		hitFrom = other.direction;
 		if (hp < 1) other.create = false;
 		
 		loseHpTimer = loseHpTime;
