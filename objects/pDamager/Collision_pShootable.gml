@@ -41,7 +41,7 @@ else
 	if (!other.beingDamaged)
 	{
 		with (other)
-		{
+		{	
 			var xx = x;
 			var yy = y;
 			if (enemy)
@@ -60,6 +60,5 @@ else
 			}
 			beingDamaged = true;
 		}
-		show_message("COLIDINDO COM DIF E NAO TA A ARDER");
 	}
 }

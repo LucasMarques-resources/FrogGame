@@ -12,7 +12,7 @@ activate = true;
 textCrea = true;
 textObj = noone;
 
-itemOwnAmmo = 20;
+itemOwnAmmo = 40;
 
 pickUpGun = false;
 

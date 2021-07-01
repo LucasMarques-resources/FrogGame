@@ -5,6 +5,7 @@ if (!instance_place(x, y, pDamager))
 {
 	colDamager = true;
 	beingDamaged = false;
+	image_blend = c_white;
 }
 
 if (colShootable)

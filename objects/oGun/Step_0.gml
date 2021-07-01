@@ -29,8 +29,10 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			direction = other.image_angle + random_range(-2, 3);
 			image_angle = direction;
 		}
-		with (instance_create_layer(x, y, "Particles", oBulletShooted))
+		with (instance_create_layer(x, y, "Particles", pParticleComplex))
 		{
+			sprite_index = sBulletShooted;
+			
 			var dir = 0;
 			var dif = 50;
 			var vel = 3.5;

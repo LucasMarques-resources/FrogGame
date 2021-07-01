@@ -63,6 +63,7 @@ switch (typeBullet)
 					{
 						followId = other.id;
 					}
+
 					colDamager = true;
 					damagerCrea = false;
 				}
