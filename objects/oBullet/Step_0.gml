@@ -40,7 +40,10 @@ switch (typeBullet)
 		{
 			with (instance_place(x, y, pShootable))
 			{
+				colShootable = true;
 				hitFrom = other.direction;
+				if (hp < 1) other.create = false;
+				
 				if (damagerCrea)
 				{
 					var xx = x;
@@ -56,12 +59,14 @@ switch (typeBullet)
 						yy = y + sprite_height / 2;
 					}
 					
-					with (instance_create_layer(xx, yy, "Instances", fireDamager))
+					with (instance_create_layer(xx, yy, "Instances", oFireDamager))
 					{
 						followId = other.id;
 					}
+					colDamager = true;
 					damagerCrea = false;
 				}
+				beingDamaged = true;
 			}
 			instance_destroy();
 		}

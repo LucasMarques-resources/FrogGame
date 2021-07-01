@@ -9,12 +9,9 @@ flash = 0;
 colShootable = false;
 
 // Damager
-loseHpTime = room_speed;
-loseHpTimer = loseHpTime;
-losingHpTime = room_speed;
-losingHpTimer = losingHpTime;
 damagerCrea = true;
 colDamager = true;
+beingDamaged = false;
 
 // Drop list
 entityDropList = 0;

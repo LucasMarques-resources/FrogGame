@@ -16,16 +16,3 @@ if (instance_exists(followId))
 		}
 	}
 } else instance_destroy();
-
-
-/*
-//var colId = instance_place(x, y, followId);
-var colId = instance_place(x, y, pShootable);
-if (colId)
-{
-	with (colId)
-	{
-		
-
-	}
-}

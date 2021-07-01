@@ -54,7 +54,7 @@
     {"id":{"name":"pParticle","path":"objects/pParticle/pParticle.yy",},"order":3,},
     {"id":{"name":"sFireDamager","path":"sprites/sFireDamager/sFireDamager.yy",},"order":35,},
     {"id":{"name":"oMiniExplosion","path":"objects/oMiniExplosion/oMiniExplosion.yy",},"order":5,},
-    {"id":{"name":"fireDamager","path":"objects/fireDamager/fireDamager.yy",},"order":16,},
+    {"id":{"name":"oFireDamager","path":"objects/oFireDamager/oFireDamager.yy",},"order":16,},
     {"id":{"name":"sTileTest2","path":"sprites/sTileTest2/sTileTest2.yy",},"order":1,},
     {"id":{"name":"sFrogGun","path":"sprites/sFrogGun/sFrogGun.yy",},"order":1,},
     {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"order":0,},

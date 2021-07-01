@@ -1,38 +1,65 @@
 /// @description Colliding with pShootable
 
-with (other)
+if (other.id = followId)
 {
-	//show_message("COL " + string(id));
-	image_blend = c_red;
-	if (colDamager)
-	{
-		//show_message("COL MENSAGEM" + string(id));
-		loseHpTimer = 0;
-		loseHpTime = other.loseHpTimeD;
-		losingHpTime = other.losingHpTimeD;
-		losingHpTimer = losingHpTime;
-	}
-	colDamager = false;
-	//show_message("pShootable col = false " + string(id));
-	
-	loseHpTimer--;
-	losingHpTimer--;
+	other.image_blend = c_red;
 
-	if (loseHpTimer <= 0)
+	if (other.colDamager)
 	{
-		hp--;
-		knockBack = 1;
-		colShootable = true;
-		if (hp < 1) other.create = false;
-		
-		loseHpTimer = loseHpTime;
+		loseHpTimerD = 0;
+		losingHpTimerD = losingHpTimeD;
 	}
-	show_debug_message(losingHpTimer);
-	if (losingHpTimer <= 0)
+	other.colDamager = false;
+	
+	loseHpTimerD--;
+	losingHpTimerD--;
+
+	// Being damage
+	if (loseHpTimerD <= 0)
 	{
-		instance_destroy(other);
-		damagerCrea = true;
-		//show_message(damagerCrea);
-		losingHpTimer = losingHpTime;
+		with (other)
+		{
+			hp--;
+			knockBack = 1;
+			colShootable = true;
+		}
+		
+		loseHpTimerD = loseHpTimeD;
+	}
+	show_debug_message(losingHpTimerD);
+	
+	// Stop damaging
+	if (losingHpTimerD <= 0)
+	{
+		other.damagerCrea = true;
+		instance_destroy();
+		losingHpTimerD = losingHpTimeD;
+	}
+}
+else
+{
+	if (!other.beingDamaged)
+	{
+		with (other)
+		{
+			var xx = x;
+			var yy = y;
+			if (enemy)
+			{
+				xx = x;
+				yy = y;
+			}
+			else
+			{
+				xx = x + sprite_width / 2;
+				yy = y + sprite_height / 2;
+			}
+			with (instance_create_layer(xx, yy, "Instances", oFireDamager))
+			{
+				followId = other.id;
+			}
+			beingDamaged = true;
+		}
+		show_message("COLIDINDO COM DIF E NAO TA A ARDER");
 	}
 }

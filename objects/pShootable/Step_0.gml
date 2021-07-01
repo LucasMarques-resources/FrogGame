@@ -3,8 +3,8 @@
 
 if (!instance_place(x, y, pDamager))
 {
-	show_debug_message("_COL.COL = FALSE STOP COL" + string(id));
 	colDamager = true;
+	beingDamaged = false;
 }
 
 if (colShootable)
