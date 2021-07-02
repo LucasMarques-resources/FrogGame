@@ -72,7 +72,7 @@
     {"id":{"name":"sBox2","path":"sprites/sBox2/sBox2.yy",},"order":27,},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":6,},
     {"id":{"name":"oDust","path":"objects/oDust/oDust.yy",},"order":1,},
-    {"id":{"name":"sBox","path":"sprites/sBox/sBox.yy",},"order":26,},
+    {"id":{"name":"sBox1","path":"sprites/sBox1/sBox1.yy",},"order":26,},
     {"id":{"name":"sMarker","path":"sprites/sMarker/sMarker.yy",},"order":34,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"pBox","path":"objects/pBox/pBox.yy",},"order":0,},

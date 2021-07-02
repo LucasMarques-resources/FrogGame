@@ -48,7 +48,7 @@ if (VknockBack)
 #endregion
 
 
-#region COLLISION (HORIZONTAL) WITH BOXES
+#region COLLISION WITH BOXES
 //Horizontal Collision
 if (place_meeting(x + velh, y, pBox))
 {

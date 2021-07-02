@@ -20,9 +20,6 @@ knockBackDir = 0;
 jumping = false;
 flash = 0;
 
-dragging = false;
-draggingId = noone;
-
 invulnerable = 0;
 runPartTime = room_speed * 0.5;
 runPartDelay = runPartTime;

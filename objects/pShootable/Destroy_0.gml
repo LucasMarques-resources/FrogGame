@@ -4,5 +4,5 @@ damagerCrea = true;
 
 if (entityDropList != -1)
 {
-	DropItems(x, bbox_top, entityDropList);
+	DropItems(x, bbox_bottom, entityDropList);
 }

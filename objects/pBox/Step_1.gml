@@ -12,8 +12,8 @@ if (place_meeting(x + velh, y, pShootable))
 	}
 	with (instance_place(x + velh, y, pShootable))
 	{
-		oFrog.dragging = true;
 		velh = sign(other.velh);
+		beingDragged = true;
 	}
 	velh = 0;
 }
@@ -29,7 +29,7 @@ if (place_meeting(x, y + velv, pShootable))
 	velv = 0;
 }
 #endregion
-
+/*
 #region COLLISION WITH SELF
 with(self)
 {
@@ -46,8 +46,8 @@ with(self)
 
 			with (instance_place(x + velh, y, self))
 			{
-				oFrog.dragging = true;
 				velh = sign(other.velh);
+				beingDragged = true;
 			}
 			if (!colBounce) velh = 0;
 			else velh *= -.3;
@@ -67,6 +67,6 @@ with(self)
     }
 }
 #endregion
-
+*/
 
 event_inherited();

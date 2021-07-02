@@ -44,36 +44,39 @@ switch (typeBullet)
 		{
 			with (instance_place(x, y, pShootable))
 			{
-				colShootable = true;
-				hitFrom = other.direction;
-				if (hp < 1) other.create = false;
-				
-				if (damagerCrea)
+				if (!item)
 				{
-					var xx = x;
-					var yy = y;
-					if (enemy)
+					colShootable = true;
+					hitFrom = other.direction;
+					if (hp < 1) other.create = false;
+				
+					if (damagerCrea)
 					{
-						xx = x;
-						yy = y;
-					}
-					else
-					{
-						xx = x + sprite_width / 2;
-						yy = y + sprite_height / 2;
-					}
+						var xx = x;
+						var yy = y;
+						if (enemy)
+						{
+							xx = x;
+							yy = y;
+						}
+						else
+						{
+							xx = x + sprite_width / 2;
+							yy = y + sprite_height / 2;
+						}
 					
-					with (instance_create_layer(xx, yy, "Instances", oFireDamager))
-					{
-						followId = other.id;
-					}
+						with (instance_create_layer(xx, yy, "Instances", oFireDamager))
+						{
+							followId = other.id;
+						}
 
-					colDamager = true;
-					damagerCrea = false;
+						colDamager = true;
+						damagerCrea = false;
+					}
+					beingDamaged = true;
+					instance_destroy(other);
 				}
-				beingDamaged = true;
 			}
-			instance_destroy();
 		}
 		
 		

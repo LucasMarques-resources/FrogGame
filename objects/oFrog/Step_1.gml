@@ -31,7 +31,6 @@ if (place_meeting(x + velh, y, pBox))
 	with (instance_place(x + velh, y, pBox))
 	{
 		velh = sign(other.velh);
-		other.dragging = true;
 		beingDragged = true;
 	}
 	velh = 0;

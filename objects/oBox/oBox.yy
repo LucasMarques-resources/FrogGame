@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sBox",
-    "path": "sprites/sBox/sBox.yy",
+    "name": "sBox1",
+    "path": "sprites/sBox1/sBox1.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,7 +24,6 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
