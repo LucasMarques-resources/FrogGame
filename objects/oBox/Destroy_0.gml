@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-CreateParticles(x + sprite_width / 2, y, choose(4,6), sBox1Particle, 100, 7, room_speed * 1.5, 0.1, 1.5, false, true);
+CreateParticles(x + sprite_width / 2, y, 5, sBox1Particle, 70, 7, .7, 0.2, 1.7, false, true, room_speed / 1.8);

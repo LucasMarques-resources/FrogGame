@@ -7,6 +7,7 @@ grav = 0.3;
 hitFrom = 0;
 flash = 0;
 colShootable = false;
+beingDragged = false;
 
 // Damager
 damagerCrea = true;

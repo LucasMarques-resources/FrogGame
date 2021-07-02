@@ -10,7 +10,7 @@ if (velh != 0)
 	}
 	else
 	{
-		if (!oFrog.dragging)
+		if (!beingDragged)
 		{
 			//show_message("STOP DRAG");
 			velh = lerp(velh, 0, 0.1);

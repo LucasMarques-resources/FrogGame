@@ -17,12 +17,16 @@ switch (typeBullet)
 		{
 			with (instance_place(x, y, pShootable))
 			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				if (hp < 1) other.create = false;
+				if (shootable)
+				{
+					hp--;
+					colShootable = true;
+					hitFrom = other.direction;
+					if (hp < 1) other.create = false;
+					
+					instance_destroy(other);
+				}
 			}
-			instance_destroy();
 		}
 	}
 	

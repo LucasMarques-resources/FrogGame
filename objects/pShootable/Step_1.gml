@@ -41,7 +41,8 @@ if (VknockBack)
 				break;
 			y += sign(velv);
 		}
-		velv = 0;
+		if (!colBounce) velv = 0;
+		else velv *= -.3;
 	}
 }
 #endregion

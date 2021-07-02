@@ -8,6 +8,14 @@ if (!instance_place(x, y, pDamager))
 	image_blend = c_white;
 }
 
+with (oFrog)
+{
+	if (!place_meeting(x + velh, y, pBox))
+	{
+		other.beingDragged = false;
+	}
+}
+
 if (colShootable)
 {
 	if (!enemy) flash = 40;

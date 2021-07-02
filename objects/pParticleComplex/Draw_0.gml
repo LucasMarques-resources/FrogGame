@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (invulnerable != 0) && ((invulnerable mod 8 < 2) == 0)
+if (invulnerableTimer <= 0) && (invulnerable != 0) && ((invulnerable mod 8 < 2) == 0)
 {
 	// Skip draw
 }

@@ -18,8 +18,10 @@ ground = true;
 knockBackCol = true;
 knockBackDir = 0;
 jumping = false;
-dragging = false;
 flash = 0;
+
+dragging = false;
+draggingId = noone;
 
 invulnerable = 0;
 runPartTime = room_speed * 0.5;
