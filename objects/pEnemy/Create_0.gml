@@ -26,6 +26,8 @@ damagePlayer = false;
 createDust = true;
 createColAttack = true;
 
+hurtTime = hurtTimer;
+
 enum STATES
 {
 	waiting,

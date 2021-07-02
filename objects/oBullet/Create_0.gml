@@ -8,3 +8,5 @@ create = true;
 typeBullet = 0;
 
 spd = 0;
+
+image_index = typeBullet;

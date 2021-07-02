@@ -27,6 +27,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			typeBullet = other.typeGun;
 			global.ammo--;
 			direction = other.image_angle + random_range(-2, 3);
+			image_index = typeBullet;
 			image_angle = direction;
 		}
 		with (instance_create_layer(x, y, "Particles", pParticleComplex))

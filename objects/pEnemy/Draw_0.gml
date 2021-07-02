@@ -20,7 +20,7 @@ if (flash > 0)
 	draw_self();
 	shader_reset();
 }
-else
+else if (state = STATES.chase)
 {
 	image_speed = 1;
 	xscaleSaved = image_xscale;

@@ -155,19 +155,28 @@ switch (state)
 	#region HURT
 	case STATES.hurt:
 		
+		hurtTimer--;
+		
 		if (spriteHurt) sprite_index = spriteHurt;
 		
 		tookHit = true;
-		flash = 20;
 		
 		if (instance_exists(colAttack)) instance_destroy(colAttack);
 		
 		// When finish animation go to chase state
-		if (image_index > image_number - 1)
+		if (spriteHurt)
+		{
+			if (image_index > image_number - 1)
+			{
+				velh = 0;
+				state = STATES.chase;
+			}
+		}
+		else if (hurtTimer <= -1)
 		{
 			velh = 0;
-			if (spriteHurt) flash = 5;
 			state = STATES.chase;
+			hurtTimer = hurtTime;
 		}
 		
 	break;

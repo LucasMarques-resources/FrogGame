@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-image_index = typeBullet;
 
 switch (typeBullet)
 {
@@ -19,6 +18,8 @@ switch (typeBullet)
 			{
 				if (shootable)
 				{
+					xscaleSaved = image_xscale;
+					//show_message(xscaleSaved);
 					hp--;
 					colShootable = true;
 					hitFrom = other.direction;
@@ -46,6 +47,7 @@ switch (typeBullet)
 			{
 				if (!item)
 				{
+					hp--;
 					colShootable = true;
 					hitFrom = other.direction;
 					if (hp < 1) other.create = false;
