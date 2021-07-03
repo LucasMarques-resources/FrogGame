@@ -6,6 +6,9 @@ vel_Chase = 0;
 
 flash = 0;
 
+velh = 0;
+velv = 0;
+
 timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
 

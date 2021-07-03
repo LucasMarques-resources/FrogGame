@@ -21,8 +21,7 @@ if (flash > 0)
 }
 
 
-//draw_circle_color(x, y - 10, radiusAttack, c_red, c_red, true);
-
+draw_circle_color(x, y - 10, radiusAttack, c_red, c_red, true);
 /*
 draw_set_alpha(.2);
 // Area to chase

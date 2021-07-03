@@ -32,19 +32,17 @@ if (place_meeting(x + velh, y, oWall))
 }
 
 // Vertical Collision
-if (VknockBack)
+if (place_meeting(x, y + velv, oWall))
 {
-	if (place_meeting(x, y + velv, oWall))
-	{
-		repeat (abs(velv) + 1) {
-			if (place_meeting(x, y + sign(velv), oWall))
-				break;
-			y += sign(velv);
-		}
-		if (!colBounce) velv = 0;
-		else velv *= -.3;
+	repeat (abs(velv) + 1) {
+		if (place_meeting(x, y + sign(velv), oWall))
+			break;
+		y += sign(velv);
 	}
+	if (!colBounce) velv = 0;
+	else velv *= -.3;
 }
+
 #endregion
 
 
