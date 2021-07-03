@@ -13,6 +13,7 @@ beingDragged = false;
 damagerCrea = true;
 colDamager = true;
 beingDamaged = false;
+resetDestroyDamagerTimer = false;
 
 // Drop list
 entityDropList = 0;

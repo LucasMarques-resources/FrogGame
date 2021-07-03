@@ -4,3 +4,5 @@ followId = noone;
 
 loseHpTimerD = loseHpTimeD;
 losingHpTimerD = losingHpTimeD;
+
+resetDestroyDamagerTimer = false;

@@ -19,11 +19,6 @@ if (flash > 0)
 	draw_self();
 	shader_reset();
 }
-else if (state = STATES.chase)
-{
-	image_speed = 1;
-	xscaleSaved = image_xscale;
-}
 
 
 //draw_circle_color(x, y - 10, radiusAttack, c_red, c_red, true);

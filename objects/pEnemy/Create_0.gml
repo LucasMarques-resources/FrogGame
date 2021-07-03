@@ -4,7 +4,6 @@ event_inherited();
 
 vel_Chase = 0;
 
-xscaleSaved = image_xscale;
 flash = 0;
 
 timeAttack = room_speed * 0.6;

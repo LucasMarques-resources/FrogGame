@@ -18,8 +18,6 @@ switch (typeBullet)
 			{
 				if (shootable)
 				{
-					xscaleSaved = image_xscale;
-					//show_message(xscaleSaved);
 					hp--;
 					colShootable = true;
 					hitFrom = other.direction;
@@ -78,6 +76,7 @@ switch (typeBullet)
 					beingDamaged = true;
 					instance_destroy(other);
 				}
+				if (beingDamaged) resetDestroyDamagerTimer = true;
 			}
 		}
 		

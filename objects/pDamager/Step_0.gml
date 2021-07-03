@@ -14,5 +14,12 @@ if (instance_exists(followId))
 			other.x = x + sprite_width / 2;
 			other.y = y + sprite_height / 2;
 		}
+		
+		if (resetDestroyDamagerTimer)
+		{
+			other.losingHpTimerD = other.losingHpTimeD;
+			resetDestroyDamagerTimer = false;
+		}
 	}
+	
 } else instance_destroy();
