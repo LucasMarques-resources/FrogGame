@@ -163,7 +163,6 @@ switch (state)
 		
 		if (instance_exists(colAttack)) instance_destroy(colAttack);
 		
-		// When finish animation go to chase state
 		if (spriteHurt)
 		{
 			if (image_index > image_number - 1)
@@ -172,7 +171,7 @@ switch (state)
 				state = STATES.chase;
 			}
 		}
-		else if (hurtTimer <= -1)
+		else if (hurtTimer <= 0)
 		{
 			velh = 0;
 			state = STATES.chase;
@@ -204,6 +203,6 @@ if (!flyEnemy)
 
 
 // Fliping
-if (velh != 0) image_xscale = sign(velh);
+if (velh != 0 && state != STATES.hurt) image_xscale = sign(velh);
 
 //show_debug_message(state);

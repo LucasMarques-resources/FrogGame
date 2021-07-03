@@ -5,7 +5,7 @@ draw_sprite_ext(
 	image_index,
 	x,
 	y,
-	xscaleSaved,
+	image_xscale,
 	image_yscale,
 	image_angle,
 	image_blend,
@@ -16,7 +16,6 @@ if (flash > 0)
 {
 	flash--;
 	shader_set(shFlashWhite);
-	image_xscale = xscaleSaved;
 	draw_self();
 	shader_reset();
 }
