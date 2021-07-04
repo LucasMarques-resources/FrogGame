@@ -8,7 +8,7 @@ if (!other.item)
 
 		if (other.colDamager)
 		{
-			loseHpTimerD = 0;
+			loseHpTimerD = loseHpTimeD;
 			losingHpTimerD = losingHpTimeD;
 		}
 		other.colDamager = false;
@@ -34,6 +34,7 @@ if (!other.item)
 		if (losingHpTimerD <= 0)
 		{
 			other.damagerCrea = true;
+			other.beingDamaged = false;
 			instance_destroy();
 			losingHpTimerD = losingHpTimeD;
 		}

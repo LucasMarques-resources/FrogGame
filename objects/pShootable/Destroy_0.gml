@@ -9,7 +9,7 @@ if (entityDropList != -1)
 	if (enemy)
 	{
 		xx = x;
-		yy = y;
+		yy = y - 3;
 	}
 	else
 	{
