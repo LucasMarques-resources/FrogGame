@@ -1,5 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+if (secondParticle)
+{
+	var p = CreateParticleSystem(sParticle, room_speed / 6, room_speed / 5, .6, .8, c_red, c_yellow, 70, 100, 0.5, 1, 0.6, 0.3, 0);
+	part_particles_create(global.mySystem, x, y, p, 1);
+}
 
 invulnerableTimer--;
 
@@ -26,7 +31,7 @@ if (place_meeting(x, y + velv, oWall))
 	velh = lerp(velh, 0, 0.7);
 	if (inv)
 	{
-		invulnerable = invulnerableNumber;
+		invulnerableTimer = 0;
 		inv = false;
 	}
 	rotate = false;
@@ -57,7 +62,7 @@ if (collideBoxes)
 		velh = lerp(velh, 0, 0.7);
 		if (inv)
 		{
-			invulnerable = invulnerableNumber;
+			invulnerableTimer = 0;
 			inv = false;
 		}
 		rotate = false;

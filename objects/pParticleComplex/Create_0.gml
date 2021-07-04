@@ -9,6 +9,8 @@ rotate = true;
 inv = true;
 invulnerableTimer = room_speed / 3;
 invulnerableNumber = 60;
-invulnerable = 0;
+invulnerable = invulnerableNumber;
 angleRotate = 5;
 collideBoxes = true;
+
+secondParticle = false;

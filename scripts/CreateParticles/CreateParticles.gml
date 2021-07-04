@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function CreateParticles(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11){
+function CreateParticles(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11, argument12){
 	/// @arg x
 	/// @arg y
 	/// @arg amount
@@ -13,6 +13,7 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 	/// @arg colideWithBoxes
 	/// @arg randomScale
 	/// @arg invulnerableTimer
+	/// @arg secondParticle
 	
 	for (var i = 0; i < argument2; i++)
 	{
@@ -31,6 +32,7 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 			velv += lengthdir_y(argument8, _angle);
 			collideBoxes = argument9;
 			invulnerableTimer = argument11;
+			secondParticle = argument12;
 			
 			if (argument10)
 			{
