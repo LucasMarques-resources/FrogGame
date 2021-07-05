@@ -18,8 +18,9 @@ if (hp <= 0 && destructible)
 	instance_destroy();
 }
 
-#region COLLISION WITH WALL
-//Horizontal Collision
+#region COLLISIONS
+
+//Horizontal Collision WALL
 if (place_meeting(x + velh, y, oWall))
 {
 	repeat (abs(velh) + 1) {
@@ -31,7 +32,21 @@ if (place_meeting(x + velh, y, oWall))
 	else velh *= -.3;
 }
 
-// Vertical Collision
+//Horizontal Collision BOX
+if (place_meeting(x + velh, y, pBox))
+{
+	repeat (abs(velh) + 1) {
+      if (place_meeting(x + sign(velh), y, pBox))
+         break;
+      x += sign(velh);
+    }
+	if (!colBounce) velh = 0;
+	else velh *= -.3;
+}
+
+x += velh;
+
+// Vertical Collision WALL
 if (place_meeting(x, y + velv, oWall))
 {
 	repeat (abs(velv) + 1) {
@@ -43,22 +58,7 @@ if (place_meeting(x, y + velv, oWall))
 	else velv *= -.3;
 }
 
-#endregion
-
-
-#region COLLISION WITH BOXES
-//Horizontal Collision
-if (place_meeting(x + velh, y, pBox))
-{
-	repeat (abs(velh) + 1) {
-      if (place_meeting(x + sign(velh), y, pBox))
-         break;
-      x += sign(velh);
-    }
-	if (!colBounce) velh = 0;
-	else velh *= -.3;
-}
-// Vertical Collision
+// Vertical Collision BOX
 if (place_meeting(x, y + velv, pBox))
 {
 	repeat (abs(velv) + 1) {
@@ -68,10 +68,9 @@ if (place_meeting(x, y + velv, pBox))
 	}
 	velv = 0;
 }
-#endregion
 
 
-#region COLLISION WITH FROG
+// COLLISIONS WITH FROG
 if (!enemy && colFrog)
 {
 	//Horizontal Collision
@@ -96,7 +95,7 @@ if (!enemy && colFrog)
 		velv = 0;
 	}
 }
+
 #endregion
 
-x += velh;
 y += velv;
