@@ -9,7 +9,7 @@ function CreateParticleSystem(sprite, lifeMin, lifeMax, sizeMin, sizeMax, color1
 	part_type_life(myParticle, lifeMin, lifeMax);
 	part_type_size(myParticle, sizeMin, sizeMax, 0, 0);
 	part_type_orientation(myParticle, 0, 359, 0, 20, 1);
-	part_type_color_mix(myParticle, color1, color2)
+	part_type_color2(myParticle, color1, color2)
 	part_type_blend(myParticle, true);
 	part_type_direction(myParticle, dirMin, dirMax, 1, 1);
 	part_type_speed(myParticle, spdMin, spdMax, .01, .01);

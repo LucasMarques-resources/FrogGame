@@ -44,6 +44,21 @@ if (place_meeting(x + velh, y, pBox))
 	else velh *= -.3;
 }
 
+// Horizontal Collision FROG
+if (!enemy && colFrog)
+{
+	//Horizontal Collision
+	if (place_meeting(x + velh, y, oFrog))
+	{
+		repeat (abs(velh) + 1) {
+	      if (place_meeting(x + sign(velh), y, oFrog))
+	         break;
+	      x += sign(velh);
+	    }
+		velh = 0;
+	}
+}
+
 x += velh;
 
 // Vertical Collision WALL
@@ -69,22 +84,9 @@ if (place_meeting(x, y + velv, pBox))
 	velv = 0;
 }
 
-
-// COLLISIONS WITH FROG
+// Vertical Collision FROG
 if (!enemy && colFrog)
 {
-	//Horizontal Collision
-	if (place_meeting(x + velh, y, oFrog))
-	{
-		repeat (abs(velh) + 1) {
-	      if (place_meeting(x + sign(velh), y, oFrog))
-	         break;
-	      x += sign(velh);
-	    }
-		velh = 0;
-	}
-	
-	// Vertical Collision
 	if (place_meeting(x, y + velv, oFrog))
 	{
 		repeat (abs(velv) + 1) {

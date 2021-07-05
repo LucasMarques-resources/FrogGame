@@ -20,7 +20,7 @@ if (global.addLife)
 
 // Destroying oAim when player have not a gun
 if (instance_exists(oAim) && !global.hasGun) instance_destroy(oAim);
-
+/*
 if (keyboard_check_pressed(ord("P"))) activateParticles = true;
 
 if (activateParticles)
