@@ -22,14 +22,47 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	// Create bullet
 	if (global.ammo > 0)
 	{
-		with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+		switch (typeGun)
 		{
-			typeBullet = other.typeGun;
-			global.ammo--;
-			direction = other.image_angle + random_range(-2, 3);
-			image_index = typeBullet;
-			image_angle = direction;
+			// CASE NORMAL / FIRE
+			default:
+			
+				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+				{
+					typeBullet = other.typeGun;
+					global.ammo--;
+					direction = other.image_angle + random_range(-2, 3);
+					image_index = typeBullet;
+					image_angle = direction;
+				}
+				
+			break;
+			
+			// Shotgun
+			case 2:
+				
+				for (var i = 1; i > -2; i--)
+				{
+					ammoShotgunCount = max(0, ammoShotgunCount - 1);
+					if (ammoShotgunCount <= global.ammo)
+					{
+						with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+						{
+							typeBullet = other.typeGun;
+							direction = other.image_angle + random_range(-2, 3) + i * 10;
+							image_index = typeBullet;
+							image_angle = direction;
+						}
+						global.ammo--;
+						//show_message("i" + string(i));
+						//show_message("ammo" + string(global.ammo));
+					}
+					if (ammoShotgunCount = 1) ammoShotgunCount = 4;
+				}
+				
+			break;
 		}
+		
 		with (instance_create_layer(x, y, "Particles", pParticleComplex))
 		{
 			sprite_index = sBulletShooted;

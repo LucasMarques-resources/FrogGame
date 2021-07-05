@@ -14,8 +14,4 @@ grav = 0.3;
 typeGun = 0;
 ownAmmo = 0;
 
-switch (typeGun)
-{
-	case 0: ownAmmo = 30; break;
-	case 1: ownAmmo = 10; break;
-}
+ammoShotgunCount = 4;

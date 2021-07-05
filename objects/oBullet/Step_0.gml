@@ -86,4 +86,31 @@ switch (typeBullet)
 		
 		
 	break;
+	
+	// Shotgun
+	case 2:
+	
+		spd = 6;
+		
+		x += lengthdir_x(spd, direction);
+		y += lengthdir_y(spd, direction);
+
+		// Collision with something
+		if (place_meeting(x, y, pShootable))
+		{
+			with (instance_place(x, y, pShootable))
+			{
+				if (shootable)
+				{
+					hp--;
+					colShootable = true;
+					hitFrom = other.direction;
+					if (hp < 1) other.create = false;
+					
+					instance_destroy(other);
+				}
+			}
+		}
+	
+	break;
 }
