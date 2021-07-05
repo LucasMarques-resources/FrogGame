@@ -4,7 +4,7 @@ event_inherited();
 
 timerCatch--;
 
-if (object_index != oLife || (object_index = oLife && global.plHp < global.plTotalHp))
+if ((object_index = oLoader && global.hasGun) && (object_index != oLife || (object_index = oLife && global.plHp < global.plTotalHp)))
 {
 	if (collision_rectangle(x - 15, y - 5, x + 15, y + 5, oFrog, false, true))
 	{
