@@ -1,4 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
 image_alpha = 0.8;
-event_inherited();
+
+followId = noone;
+
+loseHpTimerD = loseHpTimeD;
+losingHpTimerD = losingHpTimeD;
+
+resetDestroyDamagerTimer = false;

@@ -34,6 +34,7 @@
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},
     {"id":{"name":"sFlyBugBigChase","path":"sprites/sFlyBugBigChase/sFlyBugBigChase.yy",},"order":2,},
     {"id":{"name":"pColAttack","path":"objects/pColAttack/pColAttack.yy",},"order":1,},
+    {"id":{"name":"CollisionsScript","path":"scripts/CollisionsScript/CollisionsScript.yy",},"order":7,},
     {"id":{"name":"CreateParticles","path":"scripts/CreateParticles/CreateParticles.yy",},"order":5,},
     {"id":{"name":"sLifeUI","path":"sprites/sLifeUI/sLifeUI.yy",},"order":14,},
     {"id":{"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},"order":1,},

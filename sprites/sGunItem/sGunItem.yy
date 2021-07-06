@@ -33,6 +33,9 @@
     {"compositeImage":{"FrameId":{"name":"be785576-22da-44df-8249-84e09297a725","path":"sprites/sGunItem/sGunItem.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"be785576-22da-44df-8249-84e09297a725","path":"sprites/sGunItem/sGunItem.yy",},"LayerId":{"name":"48cd34c3-5c79-45e0-83a2-6d64b3624538","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","name":"be785576-22da-44df-8249-84e09297a725","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"f3448b75-9b4c-47f0-9390-0a119286c01c","path":"sprites/sGunItem/sGunItem.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"f3448b75-9b4c-47f0-9390-0a119286c01c","path":"sprites/sGunItem/sGunItem.yy",},"LayerId":{"name":"48cd34c3-5c79-45e0-83a2-6d64b3624538","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","name":"f3448b75-9b4c-47f0-9390-0a119286c01c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},
@@ -42,7 +45,7 @@
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
-    "length": 3.0,
+    "length": 4.0,
     "events": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MessageEventKeyframe>",},
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
@@ -50,6 +53,7 @@
             {"id":"e30622df-5b87-45ce-be48-a3a535c2b77c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2494726f-31a6-4050-b58b-36aeeaa3b247","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"679c116e-2c8f-4f76-adb1-02b268e9345f","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ee46c1eb-9169-4a70-94ec-0b084c9be997","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
             {"id":"3fee4ac8-d0ed-42cf-97c7-50c224477b0c","Key":2.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"be785576-22da-44df-8249-84e09297a725","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"a302f1bd-37e2-4851-a7db-15a07b8fe7f4","Key":3.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"f3448b75-9b4c-47f0-9390-0a119286c01c","path":"sprites/sGunItem/sGunItem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,

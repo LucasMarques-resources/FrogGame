@@ -6,6 +6,8 @@ switch (typeBullet)
 	// Normal
 	case 0:
 	{
+		destroyTimer--;
+		
 		spd = 6;
 		
 		x += lengthdir_x(spd, direction);
@@ -32,6 +34,8 @@ switch (typeBullet)
 	break;
 	// Fire
 	case 1:
+		
+		destroyTimer--;
 		
 		var dir = point_direction(x, y, mouse_x, mouse_y);
 		var p = CreateParticleSystem(sprite_index, 4, 5, .6, .8, c_yellow, c_red, dir, dir, 0.5, 1, 0.4, 0.2, 0);
@@ -90,6 +94,8 @@ switch (typeBullet)
 	// Shotgun
 	case 2:
 		
+		destroyTimer--;
+		
 		spd = 6;
 		
 		x += lengthdir_x(spd, direction);
@@ -114,4 +120,28 @@ switch (typeBullet)
 		}
 	
 	break;
+	
+	// GrenadeLauncher
+	case 3:
+		
+		velv += grav;
+		
+		destroyTimer--;
+		
+		var bouncingValue = .6;
+		
+		HorizontalCollision(pBox, true, bouncingValue);
+		HorizontalCollision(oWall, true, bouncingValue);
+		
+		VerticalCollision(pBox, true, bouncingValue);
+		VerticalCollision(oWall, true, bouncingValue);
+		
+	break;
 }
+
+// Being destroyed
+if (destroyTimer <= 0) instance_destroy();
+
+
+x += velh;
+y += velv;

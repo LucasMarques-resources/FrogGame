@@ -6,7 +6,8 @@ enum TYPES
 {
 	normal,
 	fire,
-	shotgun
+	shotgun,
+	nadeLauncher
 }
 
 activate = true;
@@ -29,4 +30,5 @@ switch (typeItem)
 	case 0: itemOwnAmmo = 30; break; // Normal
 	case 1: itemOwnAmmo = 10; break; // Fire
 	case 2: itemOwnAmmo = 600; break;  // Shotgun
+	case 3: itemOwnAmmo = 5; break;  // Grenade launcher
 }
