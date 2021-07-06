@@ -26,7 +26,7 @@ grav = 0.3;
 
 switch (typeItem)
 {
-	case 0: itemOwnAmmo = 30; break;
-	case 1: itemOwnAmmo = 10; break;
-	case 2: itemOwnAmmo = 6; break;
+	case 0: itemOwnAmmo = 30; break; // Normal
+	case 1: itemOwnAmmo = 10; break; // Fire
+	case 2: itemOwnAmmo = 600; break;  // Shotgun
 }

@@ -9,15 +9,13 @@ flash = oFrog.flash;
 
 firingDelay--;
 
-var dir = point_direction(x, y-sprite_height/2, mouse_x, mouse_y);
+var dir = point_direction(x - 1, y-sprite_height/2, mouse_x, mouse_y);
 
 recoil = max(0, recoil - 1);
 
 // Shooting
 if (mouse_check_button(mb_left) && firingDelay < 0)
 {
-	recoil = 4;
-	ScreenShake(1, 6);
 	
 	// Create bullet
 	if (global.ammo > 0)
@@ -26,6 +24,9 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		{
 			// CASE NORMAL / FIRE
 			default:
+			
+				recoil = 4;
+				ScreenShake(1, 6);
 			
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
 				{
@@ -36,10 +37,23 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
+				firingDelay = 10;
+	
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(1.5, other.image_angle - 180);
+				}
+				
 			break;
 			
 			// Shotgun
 			case 2:
+				
+				recoil = 8;
+				ScreenShake(3, 6);
+				
+				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 				
 				for (var i = 1; i > -2; i--)
 				{
@@ -49,7 +63,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 						with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
 						{
 							typeBullet = other.typeGun;
-							direction = other.image_angle + random_range(-2, 3) + i * 10;
+							direction = other.image_angle + random_range(-2, 3) + i * 12;
 							image_index = typeBullet;
 							image_angle = direction;
 						}
@@ -58,6 +72,14 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 						//show_message("ammo" + string(global.ammo));
 					}
 					if (ammoShotgunCount = 1) ammoShotgunCount = 4;
+				}
+				
+				firingDelay = 20;
+				
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
 				}
 				
 			break;
@@ -83,14 +105,14 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		// Create mini dust
 		with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 		oControl.draw = true;
-	}
+		
+		firingDelay = 10;
 	
-	firingDelay = 10;
-	
-	// Player gun kick
-	with (oFrog)
-	{
-		gunKickX = lengthdir_x(1.5, other.image_angle - 180);
+		// Player gun kick
+		with (oFrog)
+		{
+			gunKickX = lengthdir_x(1.5, other.image_angle - 180);
+		}
 	}
 }
 
