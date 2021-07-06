@@ -136,6 +136,29 @@ switch (typeBullet)
 		VerticalCollision(pBox, true, bouncingValue);
 		VerticalCollision(oWall, true, bouncingValue);
 		
+		if (collideWithEnemy)
+		{
+			with (instance_place(x + velh, y + velv, pEnemy))
+			{
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				knockBack = 4.5;
+				if (hp < 1) other.create = false;
+			
+				with (other)
+				{
+					velv *= -.4;
+					velh = lerp(velh, 0, 0.7);
+				}
+			}
+		}
+		
+		if (place_meeting(x, y + velv, pBox))
+			show_message("COL");
+			
+		show_message(collideWithEnemy);
+		
 	break;
 }
 

@@ -25,7 +25,7 @@ if (create)
 				scaleMin = 1.5;
 			}
 			
-			instance_create_layer(x, y, "Particles", pDamager);
+			with (instance_create_layer(x, y, "Particles", pDamager)) damagerRadius = 45;
 			
 			ScreenShake(5, 6);
 		

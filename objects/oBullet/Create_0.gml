@@ -15,6 +15,8 @@ velv = 0;
 
 grav = 0.3;
 
+collideWithEnemy = true;
+
 // Initial force to grenade launcher bullet
 if (global.currentGun.typeGun = 3)
 {
