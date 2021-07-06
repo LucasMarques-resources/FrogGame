@@ -32,6 +32,3 @@ ammoBeingAddedCrea = true;
 ammoBeingAddedCreaRepeat = true;
 objAmmoBeingAdded = noone;
 
-
-// Creating oAim
-if (!instance_exists(oAim) && !global.hasGun) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
