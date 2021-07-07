@@ -18,16 +18,9 @@ if (place_meeting(x + velh, y, pShootable))
 	velh = 0;
 }
 	
-// Vertical pShootable
-if (place_meeting(x, y + velv, pShootable))
-{
-	repeat (abs(velv) + 1) {
-	    if (place_meeting(x, y + sign(velv), pShootable))
-	        break;
-	    y += sign(velv);
-	}
-	velv = 0;
-}
+// Vertical Collision pShootable
+VerticalCollision(pShootable, false, 0, 0);
+
 #endregion
 
 event_inherited();

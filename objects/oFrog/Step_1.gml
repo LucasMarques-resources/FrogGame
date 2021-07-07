@@ -10,17 +10,10 @@ if (temp && !ground)
 
 #region Collisions
 
-// Horizontal Collision
-if (place_meeting(x + velh, y, oWall)) {
-   repeat (abs(velh) + 1) {
-      if (place_meeting(x + sign(velh), y, oWall))
-         break;
-      x += sign(velh);
-   }
-   velh = 0;
-}
+// Horizontal Collision WALL
+HorizontalCollision(oWall, false, 0);
 
-//Horizontal Collision
+//Horizontal Collision BOX
 if (place_meeting(x + velh, y, pBox))
 {
 	repeat (abs(velh) + 1) {
@@ -39,25 +32,10 @@ if (place_meeting(x + velh, y, pBox))
 x += velh;
 
 // Vertical Collision
-if (place_meeting(x, y + velv, oWall)) {
-   repeat (abs(velv) + 1) {
-      if (place_meeting(x, y + sign(velv), oWall))
-         break;
-      y += sign(velv);
-   }
-   velv = 0;
-}
+VerticalCollision(oWall, false, 0, 0);
 
 // Vertical Collision
-if (place_meeting(x, y + velv, pBox))
-{
-   repeat (abs(velv) + 1) {
-      if (place_meeting(x, y + sign(velv), pBox))
-         break;
-      y += sign(velv);
-   }
-	velv = 0;
-}
+VerticalCollision(pBox, false, 0, 0);
 
 y += velv;
 

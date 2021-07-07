@@ -12,7 +12,6 @@ velv += grav;
 if (rotate)
 	image_angle += angleRotate;
 
-
 if (invulnerableTimer <= 0)
 {
 	invulnerable = max(invulnerable - 1, 0);
@@ -37,20 +36,12 @@ if (place_meeting(x, y + velv, oWall))
 	rotate = false;
 }
 
-//Horizontal
-if (place_meeting(x + velh, y, oWall))
-{
-	repeat (abs(velh) + 1) {
-	    if (place_meeting(x + sign(velh), y, oWall))
-	        break;
-	    x += sign(velh);
-	}
-	velh *= -bouncingValue;
-}
+//Horizontal Collision WALL
+HorizontalCollision(oWall, true, bouncingValue);
 
 if (collideBoxes)
 {
-	//Vertical
+	//Vertical Collision BOX
 	if (place_meeting(x, y + velv, pBox))
 	{
 		repeat (abs(velv) + 1) {
@@ -58,7 +49,7 @@ if (collideBoxes)
 		        break;
 		    y += sign(velv);
 		}
-		velv = 0;
+		velv *= -bouncingValue;
 		velh = lerp(velh, 0, 0.7);
 		if (inv)
 		{
@@ -68,16 +59,8 @@ if (collideBoxes)
 		rotate = false;
 	}
 
-	//Horizontal
-	if (place_meeting(x + velh, y, pBox))
-	{
-		repeat (abs(velh) + 1) {
-		    if (place_meeting(x + sign(velh), y, pBox))
-		        break;
-		    x += sign(velh);
-		}
-		velh *= -bouncingValue;
-	}
+	//Horizontal Collision BOX
+	HorizontalCollision(pBox, true, bouncingValue);
 }
 
 

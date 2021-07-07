@@ -27,11 +27,7 @@ HorizontalCollision(oWall, colBounce, .3);
 HorizontalCollision(pBox, colBounce, .3);
 
 // Horizontal Collision FROG
-if (!enemy && colFrog)
-{
-	//Horizontal Collision
-	HorizontalCollision(oFrog, false, 0);
-}
+if (!enemy && colFrog) HorizontalCollision(oFrog, false, 0);
 
 x += velh;
 
@@ -42,11 +38,8 @@ VerticalCollision(oWall, colBounce, .3, false);
 VerticalCollision(pBox, false, .0, false);
 
 // Vertical Collision FROG
-if (!enemy && colFrog)
-{
-	VerticalCollision(oFrog, false, .0, false);
-}
-
-#endregion
+if (!enemy && colFrog) VerticalCollision(oFrog, false, .0, false);
 
 y += velv;
+
+#endregion
