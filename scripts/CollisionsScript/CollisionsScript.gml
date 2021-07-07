@@ -14,7 +14,7 @@ function HorizontalCollision(object, bouncing, bouncingValue){
 	}
 }
 
-function VerticalCollision(object, bouncing, bouncingValue){
+function VerticalCollision(object, bouncing, bouncingValue, bouncingH){
 	//Vertical
 	if (place_meeting(x, y + velv, object))
 	{
@@ -26,7 +26,7 @@ function VerticalCollision(object, bouncing, bouncingValue){
 		if (bouncing)
 		{
 			velv *= -bouncingValue;
-			velh = lerp(velh, 0, 0.7);
+			if (bouncingH) velh = lerp(velh, 0, 0.7);
 		}
 		else velv = 0;
 	}

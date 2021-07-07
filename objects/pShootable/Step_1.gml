@@ -21,81 +21,30 @@ if (hp <= 0 && destructible)
 #region COLLISIONS
 
 //Horizontal Collision WALL
-if (place_meeting(x + velh, y, oWall))
-{
-	repeat (abs(velh) + 1) {
-      if (place_meeting(x + sign(velh), y, oWall))
-         break;
-      x += sign(velh);
-	}
-	if (!colBounce) velh = 0;
-	else velh *= -.3;
-}
+HorizontalCollision(oWall, colBounce, .3);
 
 //Horizontal Collision BOX
-if (place_meeting(x + velh, y, pBox))
-{
-	repeat (abs(velh) + 1) {
-      if (place_meeting(x + sign(velh), y, pBox))
-         break;
-      x += sign(velh);
-    }
-	if (!colBounce) velh = 0;
-	else velh *= -.3;
-}
+HorizontalCollision(pBox, colBounce, .3);
 
 // Horizontal Collision FROG
 if (!enemy && colFrog)
 {
 	//Horizontal Collision
-	if (place_meeting(x + velh, y, oFrog))
-	{
-		repeat (abs(velh) + 1) {
-	      if (place_meeting(x + sign(velh), y, oFrog))
-	         break;
-	      x += sign(velh);
-	    }
-		velh = 0;
-	}
+	HorizontalCollision(oFrog, false, 0);
 }
 
 x += velh;
 
 // Vertical Collision WALL
-if (place_meeting(x, y + velv, oWall))
-{
-	repeat (abs(velv) + 1) {
-		if (place_meeting(x, y + sign(velv), oWall))
-			break;
-		y += sign(velv);
-	}
-	if (!colBounce) velv = 0;
-	else velv *= -.3;
-}
+VerticalCollision(oWall, colBounce, .3, false);
 
 // Vertical Collision BOX
-if (place_meeting(x, y + velv, pBox))
-{
-	repeat (abs(velv) + 1) {
-	    if (place_meeting(x, y + sign(velv), pBox))
-	        break;
-	    y += sign(velv);
-	}
-	velv = 0;
-}
+VerticalCollision(pBox, false, .0, false);
 
 // Vertical Collision FROG
 if (!enemy && colFrog)
 {
-	if (place_meeting(x, y + velv, oFrog))
-	{
-		repeat (abs(velv) + 1) {
-	      if (place_meeting(x, y + sign(velv), oFrog))
-	         break;
-	      y += sign(velv);
-	    }
-		velv = 0;
-	}
+	VerticalCollision(oFrog, false, .0, false);
 }
 
 #endregion

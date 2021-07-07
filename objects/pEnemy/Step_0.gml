@@ -193,7 +193,7 @@ if (customAttack && !instance_exists(colAttack))
 	}
 }
 
-// Add gravity to some enemys
+// Add gravity to some enemies
 if (!flyEnemy)
 {
 	velv += grav;

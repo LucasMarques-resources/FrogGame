@@ -14,19 +14,16 @@ switch (typeBullet)
 		y += lengthdir_y(spd, direction);
 
 		// Collision with something
-		if (place_meeting(x, y, pShootable))
+		with (instance_place(x, y, pShootable))
 		{
-			with (instance_place(x, y, pShootable))
+			if (shootable)
 			{
-				if (shootable)
-				{
-					hp--;
-					colShootable = true;
-					hitFrom = other.direction;
-					if (hp < 1) other.create = false;
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				if (hp < 1) other.create = false;
 					
-					instance_destroy(other);
-				}
+				instance_destroy(other);
 			}
 		}
 	}
@@ -47,45 +44,42 @@ switch (typeBullet)
 		y += lengthdir_y(spd, direction);
 
 		// Collision with something
-		if (place_meeting(x, y, pShootable))
+		with (instance_place(x, y, pShootable))
 		{
-			with (instance_place(x, y, pShootable))
+			if (!item)
 			{
-				if (!item)
-				{
-					hp--;
-					colShootable = true;
-					hitFrom = other.direction;
-					if (hp < 1) other.create = false;
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				if (hp < 1) other.create = false;
 				
-					if (damagerCrea)
+				if (damagerCrea)
+				{
+					var xx = x;
+					var yy = y;
+					if (enemy)
 					{
-						var xx = x;
-						var yy = y;
-						if (enemy)
-						{
-							xx = x;
-							yy = y;
-						}
-						else
-						{
-							xx = x + sprite_width / 2;
-							yy = y + sprite_height / 2;
-						}
-					
-						with (instance_create_layer(xx, yy, "Instances", oFireDamager))
-						{
-							followId = other.id;
-						}
-
-						colDamager = true;
-						damagerCrea = false;
+						xx = x;
+						yy = y;
 					}
-					beingDamaged = true;
-					instance_destroy(other);
+					else
+					{
+						xx = x + sprite_width / 2;
+						yy = y + sprite_height / 2;
+					}
+					
+					with (instance_create_layer(xx, yy, "Instances", oFireDamager))
+					{
+						followId = other.id;
+					}
+
+					colDamager = true;
+					damagerCrea = false;
 				}
-				if (beingDamaged) resetDestroyDamagerTimer = true;
+				beingDamaged = true;
+				instance_destroy(other);
 			}
+			if (beingDamaged) resetDestroyDamagerTimer = true;
 		}
 		
 		
@@ -102,20 +96,17 @@ switch (typeBullet)
 		y += lengthdir_y(spd, direction);
 
 		// Collision with something
-		if (place_meeting(x, y, pShootable))
+		with (instance_place(x, y, pShootable))
 		{
-			with (instance_place(x, y, pShootable))
+			if (shootable)
 			{
-				if (shootable)
-				{
-					hp--;
-					colShootable = true;
-					hitFrom = other.direction;
-					knockBack = 4.5;
-					if (hp < 1) other.create = false;
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				knockBack = 4.5;
+				if (hp < 1) other.create = false;
 					
-					instance_destroy(other);
-				}
+				instance_destroy(other);
 			}
 		}
 	
@@ -133,17 +124,18 @@ switch (typeBullet)
 		HorizontalCollision(pBox, true, bouncingValue);
 		HorizontalCollision(oWall, true, bouncingValue);
 		
-		VerticalCollision(pBox, true, bouncingValue);
-		VerticalCollision(oWall, true, bouncingValue);
+		VerticalCollision(pBox, true, bouncingValue, true);
+		VerticalCollision(oWall, true, bouncingValue, true);
 		
+		// COLLISION WITH ENEMIES
+		/*
 		if (collideWithEnemy)
 		{
 			with (instance_place(x + velh, y + velv, pEnemy))
 			{
-				hp--;
 				colShootable = true;
 				hitFrom = other.direction;
-				knockBack = 4.5;
+				knockBack = 2;
 				if (hp < 1) other.create = false;
 			
 				with (other)
@@ -151,13 +143,10 @@ switch (typeBullet)
 					velv *= -.4;
 					velh = lerp(velh, 0, 0.7);
 				}
+				//other.collideWithEnemy = false;
 			}
 		}
-		
-		if (place_meeting(x, y + velv, pBox))
-			show_message("COL");
-			
-		show_message(collideWithEnemy);
+		*/
 		
 	break;
 }
