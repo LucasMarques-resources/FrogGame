@@ -21,13 +21,15 @@ if (create)
 		
 			with (instance_create_layer(x, y, "Particles", oExplosion))
 			{
+				sprite_index = sExplosion2;
 				scale = 1.7;
 				scaleMin = 1.5;
+				CreateParticles(x, y - 5, 8, sPixel, 70, 7, .2, 0.3, 2.5, true, true, room_speed / 1.8, 1, .8, 1.3);
 			}
 			
 			with (instance_create_layer(x, y, "Particles", pDamager)) damagerRadius = 45;
 			
-			ScreenShake(5, 6);
+			ScreenShake(7, 6);
 		
 		break;
 	}

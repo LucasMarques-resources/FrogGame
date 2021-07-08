@@ -13,15 +13,16 @@ function Raycast(size, obj, dir, pShoot, damage, knockBackValue){
 		var xx =  x + lengthdir_x(i, dir);
 		var yy =  y + lengthdir_y(i, dir);
 		
+		// Colliding with the some object
 		var _other = collision_line(x, y, xx, yy, obj, 1, 1);
+		// Colliding with pShootable just if pShoot is true
 		if (pShoot) var shootableCol = collision_line(x, y, xx, yy, pShootable, 1, 1);
 		
-		draw_line(x, y, xx, yy);
+		//draw_line_color(x, y, xx, yy, c_red, c_red);
 		
 		if (_other)
 		{	
 			return _other;
-
 			break;
 		}
 		
@@ -36,7 +37,7 @@ function Raycast(size, obj, dir, pShoot, damage, knockBackValue){
 					colShootable = true;
 					knockBack = knockBackValue;
 					hitFrom = other.direction;
-					if (hp < 1) other.create = false;
+					if (oBox) createFireParticles = true;
 				}
 			}
 		}

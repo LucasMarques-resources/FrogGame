@@ -13,4 +13,15 @@ invulnerable = invulnerableNumber;
 angleRotate = 5;
 collideBoxes = true;
 
-secondParticle = false;
+// Particle
+partSizeMin = .6
+partSizeMax = .8;
+
+
+enum TYPES_PARTICLE
+{
+	normal,
+	fire
+}
+
+particleType = TYPES_PARTICLE.normal;
