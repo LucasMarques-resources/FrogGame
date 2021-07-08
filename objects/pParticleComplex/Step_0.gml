@@ -18,7 +18,7 @@ if (invulnerableTimer <= 0)
 	if (invulnerable <= 0) instance_destroy();
 }
 
-//Vertical
+// Vertical
 if (place_meeting(x, y + velv, oWall))
 {
 	repeat (abs(velv) + 1) {
@@ -36,12 +36,12 @@ if (place_meeting(x, y + velv, oWall))
 	rotate = false;
 }
 
-//Horizontal Collision WALL
+// Horizontal Collision WALL
 HorizontalCollision(oWall, true, bouncingValue);
 
 if (collideBoxes)
 {
-	//Vertical Collision BOX
+	// Vertical Collision BOX
 	if (place_meeting(x, y + velv, pBox))
 	{
 		repeat (abs(velv) + 1) {
@@ -59,7 +59,7 @@ if (collideBoxes)
 		rotate = false;
 	}
 
-	//Horizontal Collision BOX
+	// Horizontal Collision BOX
 	HorizontalCollision(pBox, true, bouncingValue);
 }
 

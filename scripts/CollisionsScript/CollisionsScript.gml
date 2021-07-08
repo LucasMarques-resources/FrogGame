@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function HorizontalCollision(object, bouncing, bouncingValue){
-	//Horizontal
+	// Horizontal
 	if (place_meeting(x + velh, y, object))
 	{
 		repeat (abs(velh) + 1) {
@@ -15,7 +15,7 @@ function HorizontalCollision(object, bouncing, bouncingValue){
 }
 
 function VerticalCollision(object, bouncing, bouncingValue, bouncingH){
-	//Vertical
+	// Vertical
 	if (place_meeting(x, y + velv, object))
 	{
 		repeat (abs(velv) + 1) {

@@ -13,7 +13,7 @@ if (temp && !ground)
 // Horizontal Collision WALL
 HorizontalCollision(oWall, false, 0);
 
-//Horizontal Collision BOX
+// Horizontal Collision BOX
 if (place_meeting(x + velh, y, pBox))
 {
 	repeat (abs(velh) + 1) {

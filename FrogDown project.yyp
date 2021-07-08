@@ -56,6 +56,7 @@
     {"id":{"name":"shFlashBlackWhite","path":"shaders/shFlashBlackWhite/shFlashBlackWhite.yy",},"order":1,},
     {"id":{"name":"sSnakeSlash","path":"sprites/sSnakeSlash/sSnakeSlash.yy",},"order":7,},
     {"id":{"name":"pParticle","path":"objects/pParticle/pParticle.yy",},"order":3,},
+    {"id":{"name":"Raycast","path":"scripts/Raycast/Raycast.yy",},"order":8,},
     {"id":{"name":"sFireDamager","path":"sprites/sFireDamager/sFireDamager.yy",},"order":24,},
     {"id":{"name":"oMiniExplosion","path":"objects/oMiniExplosion/oMiniExplosion.yy",},"order":5,},
     {"id":{"name":"oFireDamager","path":"objects/oFireDamager/oFireDamager.yy",},"order":13,},

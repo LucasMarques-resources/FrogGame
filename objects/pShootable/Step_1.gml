@@ -20,10 +20,10 @@ if (hp <= 0 && destructible)
 
 #region COLLISIONS
 
-//Horizontal Collision WALL
+// Horizontal Collision WALL
 HorizontalCollision(oWall, colBounce, .3);
 
-//Horizontal Collision BOX
+// Horizontal Collision BOX
 HorizontalCollision(pBox, colBounce, .3);
 
 // Horizontal Collision FROG

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 #region COLLISION WITH pShootable
-//Horizontal Collision
+// Horizontal Collision
 if (place_meeting(x + velh, y, pShootable))
 {
 	repeat (abs(velh) + 1) {
