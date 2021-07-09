@@ -15,6 +15,8 @@ velv = 0;
 
 grav = 0.3;
 
+angle = 2
+
 collideWithEnemy = true;
 
 // Initial force to grenade launcher bullet

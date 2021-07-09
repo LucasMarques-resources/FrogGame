@@ -22,13 +22,13 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	{
 		switch (typeGun)
 		{
-			// CASE NORMAL / FIRE
+			// CASE NORMAL / FIRE / GRENADE LAUNCHER
 			default:
 			
-				recoil = 4;
-				ScreenShake(1, 6);
+				recoil = 5;
+				ScreenShake(2, 6);
 			
-				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
 					global.ammo--;
@@ -42,7 +42,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				// Player gun kick
 				with (oFrog)
 				{
-					gunKickX = lengthdir_x(1.5, other.image_angle - 180);
+					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
 				}
 				
 			break;
@@ -75,6 +75,33 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				}
 				
 				firingDelay = 20;
+				
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
+				}
+				
+			break;
+			
+			// Machine Gun
+			case 4:
+				
+				recoil = 6;
+				ScreenShake(2, 4);
+				
+				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
+				
+				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+				{
+					typeBullet = other.typeGun;
+					global.ammo--;
+					direction = other.image_angle + random_range(-7, 7);
+					image_index = typeBullet;
+					image_angle = direction;
+				}
+				
+				firingDelay = 7;
 				
 				// Player gun kick
 				with (oFrog)

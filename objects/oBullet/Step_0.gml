@@ -112,12 +112,14 @@ switch (typeBullet)
 	
 	break;
 	
-	// GrenadeLauncher
+	// Grenade Launcher
 	case 3:
 		
-		velv += grav;
-		
 		destroyTimer--;
+		
+		velv += grav
+		
+		image_angle += sign(velh) * 6;
 		
 		var bouncingValue = .6;
 		
@@ -147,6 +149,33 @@ switch (typeBullet)
 			}
 		}
 		*/
+		
+	break;
+	
+	// Machine gun
+	case 4:
+		
+		destroyTimer--;
+		
+		spd = 6;
+		
+		x += lengthdir_x(spd, direction);
+		y += lengthdir_y(spd, direction);
+
+		// Collision with something
+		with (instance_place(x, y, pShootable))
+		{
+			if (shootable)
+			{
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				knockBack = 4.5;
+				if (hp < 1) other.create = false;
+					
+				instance_destroy(other);
+			}
+		}
 		
 	break;
 }
