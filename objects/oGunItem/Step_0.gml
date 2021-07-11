@@ -3,9 +3,9 @@
 
 image_index = typeItem;
 
-var radius = point_in_circle(oFrog.x, oFrog.y, x, y, 25);
+var radius = point_distance(x, y, oFrog.x, oFrog.y);
 
-if (radius && global.hasGun && velh == 0)
+if (radius < 25 && global.hasGun && velh == 0)
 {
 	//with (oFrog) other.radiusId = collision_circle(x, y, 30, other, false, true);
 	
@@ -43,10 +43,23 @@ if (radius && global.hasGun && velh == 0)
 		global.currentGun = noone;
 		global.hasGun = false;
 		instance_destroy(textObj);
-		pickUpGun = true;
+
+		with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+		{
+			typeGun = other.typeItem;
+			global.currentGun = self;
+		
+			ownAmmo = other.itemOwnAmmo;
+		
+			global.ammo = ownAmmo;
+		}
+		if (!instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
+		instance_destroy();
+		global.hasGun = true;
+		
 	}	
 }
-if (!radius)
+if (!(radius < 25))
 {
 	activate = false;
 	textCrea = true;

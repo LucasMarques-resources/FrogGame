@@ -21,7 +21,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	{
 		switch (typeGun)
 		{
-			// CASE NORMAL / FIRE / GRENADE LAUNCHER
+			// CASE NORMAL
 			default:
 			
 				recoil = 5;
@@ -44,6 +44,37 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
+				}
+				
+			break;
+			
+			// Fire
+			case 1:
+				
+				recoil = 5;
+				ScreenShake(2, 6);
+				
+				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust))
+				{
+					sprite_index = sMiniDust;
+					image_blend = c_orange;
+				}
+			
+				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
+				{
+					typeBullet = other.typeGun;
+					global.ammo--;
+					direction = other.image_angle + random_range(-2, 3);
+					image_index = typeBullet;
+					image_angle = direction;
+				}
+				
+				firingDelay = 17;
+	
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(1.5, other.image_angle - 180);
 				}
 				
 			break;
@@ -81,6 +112,33 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
+				}
+				
+			break;
+			
+			// Grenade Launcher
+			case 3:
+				
+				recoil = 5;
+				ScreenShake(2, 6);
+				
+				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
+			
+				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
+				{
+					typeBullet = other.typeGun;
+					global.ammo--;
+					direction = other.image_angle + random_range(-2, 3);
+					image_index = typeBullet;
+					image_angle = direction;
+				}
+				
+				firingDelay = 40;
+	
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
 				}
 				
 			break;
