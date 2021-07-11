@@ -11,7 +11,10 @@ function HorizontalCollision(object, bouncing, bouncingValue){
 		}
 		if (bouncing) velh *= -bouncingValue;
 		else velh = 0;
+		
+		return true;
 	}
+	else return false;
 }
 
 function VerticalCollision(object, bouncing, bouncingValue, bouncingH){

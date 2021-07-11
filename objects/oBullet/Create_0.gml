@@ -24,7 +24,8 @@ if (global.currentGun.typeGun = 3)
 {
 	velh = lengthdir_x(4, point_direction(x, y, mouse_x, mouse_y));
 	velv = lengthdir_y(7, point_direction(x, y, mouse_x, mouse_y));
-	destroyTime = room_speed * 2;
+	destroyTime = 5;
 }
 
+beDestroy = false;
 destroyTimer = destroyTime;

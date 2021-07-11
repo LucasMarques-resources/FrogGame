@@ -115,25 +115,43 @@ switch (typeBullet)
 	// Grenade Launcher
 	case 3:
 		
-		destroyTimer--;
-		
-		velv += grav
+		velv += grav;
 		
 		image_angle += sign(velh) * 6;
 		
 		var bouncingValue = .6;
 		
-		HorizontalCollision(pBox, true, bouncingValue);
-		HorizontalCollision(oWall, true, bouncingValue);
+		// Horizontal Collision WALL & BOX
+		if (place_meeting(x, y + velv, oWall) || place_meeting(x, y + velv, pBox))
+		{
+			repeat (abs(velv) + 1) {
+				if (place_meeting(x, y + sign(velv), oWall) || place_meeting(x, y + velv, pBox))
+				    break;
+				y += sign(velv);
+			}
+			velv *= -bouncingValue;
+			velh = lerp(velh, 0, 0.7);
+			
+			beDestroy = true;
+		}
 		
-		VerticalCollision(pBox, true, bouncingValue, true);
-		VerticalCollision(oWall, true, bouncingValue, true);
+		// Vertical Collision WALL & BOX
+		if (place_meeting(x + velh, y, oWall) || place_meeting(x + velh, y, pBox))
+		{
+			repeat (abs(velh) + 1) {
+				if (place_meeting(x, y + sign(velh), oWall) || place_meeting(x, y + velh, pBox))
+				    break;
+				x += sign(velh);
+			}
+			velh *= -bouncingValue;
+			
+			beDestroy = true;
+		}
 		
-		// COLLISION WITH ENEMIES
-		/*
+		// Collision ENEMY
 		if (collideWithEnemy)
 		{
-			with (instance_place(x + velh, y + velv, pEnemy))
+			with (instance_place(x, y, pEnemy))
 			{
 				colShootable = true;
 				hitFrom = other.direction;
@@ -145,10 +163,16 @@ switch (typeBullet)
 					velv *= -.4;
 					velh = lerp(velh, 0, 0.7);
 				}
-				//other.collideWithEnemy = false;
+				other.beDestroy = true;
+				other.collideWithEnemy = false;
 			}
 		}
-		*/
+		
+		// Destroy timer
+		if (beDestroy)
+		{
+			destroyTimer--;
+		}
 		
 	break;
 	
