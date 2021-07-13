@@ -16,11 +16,14 @@ if (normalText)
 	draw_roundrect_ext(x - halfw - border, y - h, x + halfw + border, y, 10, 10, false);
 	draw_set_alpha(1);
 
-	// Draw text
 	DrawSetText(c_white, fntMiniText, fa_center, fa_top);
+	// Shadow
+	draw_text_color(x + 1, (y - h) + 1, textCurrent, c_gray, c_gray, c_gray, c_gray, 1);
+	// Draw text
 	draw_text(x + 1, y - h, textCurrent);
 }
 
 draw_set_halign(-1);
 draw_set_valign(-1);
+draw_set_colour(c_white);
 draw_set_font(-1);

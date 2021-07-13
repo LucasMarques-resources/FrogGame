@@ -4,6 +4,7 @@
 activateParticles = false;
 global.hasGun = false;
 global.currentGun = noone;
+global.gunToPickUp = noone;
 
 global.ammo = 0;
 global.ammoAdded = false;

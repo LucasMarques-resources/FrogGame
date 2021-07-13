@@ -11,8 +11,7 @@ cor4 = c_white;
 fontText = fntText;
 depth = 100;
 
-/// @description Insert description here
-// You can write your code in this editor
+itemCreator = noone;
 
 normalText = false;
 

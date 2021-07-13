@@ -11,13 +11,13 @@ enum TYPES
 	machineGun
 }
 
-activate = true;
 textCrea = true;
 textObj = noone;
 
 itemOwnAmmo = 40;
 
 pickUpGun = false;
+gunItemToPickUp = noone;
 
 velh = 0;
 velv = 0;

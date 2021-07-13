@@ -5,26 +5,36 @@ image_index = typeItem;
 
 var radius = point_distance(x, y, oFrog.x, oFrog.y);
 
-if (radius < 25 && global.hasGun && velh == 0)
-{
-	//with (oFrog) other.radiusId = collision_circle(x, y, 30, other, false, true);
-	
-	activate = true;
+// Create text
+if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oText))
+{	
 	if (textCrea)
 	{
 		with (instance_create_layer(x, y - 10, layer, oText))
 		{
 			other.textObj = self;
+			itemCreator = other.id;
 			normalText = true;
 			textString = "PRESS E";
 			length = string_length(textString);
 		}
 		textCrea = false;
-	}
-			
+	}	
+}
+
+// Destroy text object when player leaves radius
+if (!(radius < 25))
+{
+	textCrea = true;
+	if (textObj) textObj.itemCreator = noone;
+	instance_destroy(textObj);
+}
+/*
+// Create gun
+if (instance_exists(textObj))
+{
 	if (keyboard_check_pressed(ord("E")))
 	{
-		activate = false;
 		textCrea = true;
 		
 		with (instance_create_layer(oGun.x, oGun.y - 10, "Instances", oGunItem))
@@ -38,35 +48,18 @@ if (radius < 25 && global.hasGun && velh == 0)
 			itemOwnAmmo = oGun.ownAmmo;
 			typeItem = oGun.typeGun;
 		}
+
 		instance_destroy(oGun);
 
 		global.currentGun = noone;
 		global.hasGun = false;
 		instance_destroy(textObj);
-
-		with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
-		{
-			typeGun = other.typeItem;
-			global.currentGun = self;
 		
-			ownAmmo = other.itemOwnAmmo;
-		
-			global.ammo = ownAmmo;
-		}
-		if (!instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
-		instance_destroy();
-		global.hasGun = true;
-		
-	}	
+		pickUpGun = true;
+	}
 }
-if (!(radius < 25))
-{
-	activate = false;
-	textCrea = true;
-	instance_destroy(textObj);
-}
+*/
 
-// Create gun
 if (!global.hasGun && pickUpGun)
 {
 	with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))

@@ -18,7 +18,7 @@ function Raycast(size, obj, dir, pShoot, damage, knockBackValue){
 		// Colliding with pShootable just if pShoot is true
 		if (pShoot) var shootableCol = collision_line(x, y, xx, yy, pShootable, 1, 1);
 		
-		//draw_line_color(x, y, xx, yy, c_red, c_red);
+		draw_line_color(x, y, xx, yy, c_red, c_red);
 		
 		if (_other)
 		{	
