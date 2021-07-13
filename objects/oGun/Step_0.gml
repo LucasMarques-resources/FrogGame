@@ -171,19 +171,25 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			break;
 		}
 		
-		with (instance_create_layer(x, y, "Particles", pParticleComplex))
+		for (var i = 0; i < bulletsShootedNumb; i++)
 		{
-			sprite_index = sBulletShooted;
+			with (instance_create_layer(x, y, "Particles", pParticleComplex))
+			{
+				image_speed = 0;
+				sprite_index = sBulletShooted;
 			
-			var dir = 0;
-			var dif = 50;
-			var vel = 3.5;
+				image_index = other.typeGun;
+			
+				var dir = 0;
+				var dif = 50;
+				var vel = 3;
 		
-			if (oFrog.image_xscale = -1) dir = 180 - 180 + dif;
-			else dir = 0 + 180 - dif;
+				if (oFrog.image_xscale = -1) dir = 180 - 180 + dif;
+				else dir = 0 + 180 - dif;
 		
-			velh = lengthdir_x(vel, dir);
-			velv = lengthdir_y(vel, dir);
+				velh = lengthdir_x(vel, dir + (random_range(25, -25) * i));
+				velv = lengthdir_y(vel, dir + (random_range(25, -25) * i));
+			}
 		}
 	}
 	else
