@@ -1,3 +1,3 @@
 /// @description Insert description here
 // You can write your code in this editor
-show_message(image_index);
+if (global.debugMode) show_message(image_index);
