@@ -1,6 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Switch by debug mode
+if (keyboard_check_pressed(vk_f1)) global.debugMode = !global.debugMode;
+
+if (global.debugMode)
+{
+	if (keyboard_check_pressed(vk_f2)) global.drawGrid = !global.drawGrid;
+	if (keyboard_check_pressed(vk_f3)) global.createWalls = !global.createWalls;
+}
+
 // Add lifes
 /*
 if (global.plHp > global.plTotalHp)
@@ -9,7 +18,6 @@ if (global.plHp > global.plTotalHp)
 }
 else global.addLife = false;
 */
-
 
 // Adding lifes
 if (global.addLife)
@@ -29,7 +37,11 @@ if (activateParticles)
 	part_particles_create(global.mySystem, mouse_x, mouse_y, p, 1);
 }
 */
-if (mouse_check_button_pressed(mb_left))
+
+if (global.createWalls)
 {
-	instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
+	if (mouse_check_button_pressed(mb_left))
+	{
+		instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
+	}
 }

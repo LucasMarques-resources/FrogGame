@@ -1,10 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-activateParticles = false;
+// DEBUG
+global.debugMode = false;
+global.createWalls = false;
+global.drawGrid = false;
+
 global.hasGun = false;
 global.currentGun = noone;
-global.gunToPickUp = noone;
 
 global.ammo = 0;
 global.ammoAdded = false;
