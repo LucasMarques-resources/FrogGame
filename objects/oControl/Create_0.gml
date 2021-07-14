@@ -36,3 +36,10 @@ ammoBeingAddedCrea = true;
 ammoBeingAddedCreaRepeat = true;
 objAmmoBeingAdded = noone;
 
+for (var i = 0; i < room_width / 16; i++)
+{
+	with (instance_create_layer(i * 16, room_height - 12, "ColWall", oWall))
+	{
+		sprite_index = sBedRock;
+	}
+}

@@ -7,7 +7,7 @@ for (var i = 0; i < n; i++)
 	
 	Raycast(damagerRadius, oWall, dir, true, 5, 2);
 	var c = Raycast(30, oWall, dir, false, 0, 0);
-	if (c) with (c) instance_destroy();
+	if (c) with (c) hp -= hp;
 	
 }
 instance_destroy();

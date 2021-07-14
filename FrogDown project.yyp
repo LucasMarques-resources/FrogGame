@@ -28,6 +28,7 @@
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},
     {"id":{"name":"sFrogRun","path":"sprites/sFrogRun/sFrogRun.yy",},"order":2,},
     {"id":{"name":"sMiniDust","path":"sprites/sMiniDust/sMiniDust.yy",},"order":21,},
+    {"id":{"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},"order":34,},
     {"id":{"name":"DropItems","path":"scripts/DropItems/DropItems.yy",},"order":3,},
     {"id":{"name":"sSlime","path":"sprites/sSlime/sSlime.yy",},"order":14,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},
