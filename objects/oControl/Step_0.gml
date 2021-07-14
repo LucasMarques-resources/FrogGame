@@ -28,3 +28,8 @@ if (activateParticles)
 	var p = CreateParticleSystem(sParticle, room_speed / 6, room_speed / 5, .6, .8, c_red, c_yellow, 70, 100, 0.5, 1, 1, 0.5, 0);
 	part_particles_create(global.mySystem, mouse_x, mouse_y, p, 1);
 }
+*/
+if (mouse_check_button_pressed(mb_left))
+{
+	instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
+}
