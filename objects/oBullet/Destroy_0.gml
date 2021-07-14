@@ -27,7 +27,7 @@ if (create)
 				CreateParticles(x, y - 5, 8, sPixel, 70, 7, .2, 0.3, 2.5, true, true, room_speed / 1.8, 1, .8, 1.3);
 			}
 			
-			with (instance_create_layer(x, y, "Particles", pDamager)) damagerRadius = 45;
+			with (instance_create_layer(x, y, "Particles", oExplosionDamager)) damagerRadius = 45;
 			
 			ScreenShake(7, 6);
 		

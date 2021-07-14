@@ -112,7 +112,12 @@ if (global.lifeAdded)
 	global.lifeAdded = false;
 }
 
-draw_set_halign(-1);
-draw_set_valign(-1);
 draw_set_font(-1);
 
+// Draw debug mode state
+draw_set_halign(fa_right);
+draw_set_valign(fa_top);
+draw_text_transformed(global.gameWidth, 0, string(global.debugMode), 0.5, 0.5, 0);
+
+draw_set_halign(-1);
+draw_set_valign(-1);
