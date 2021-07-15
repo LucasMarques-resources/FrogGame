@@ -17,6 +17,7 @@
     {"id":{"name":"oExplosion","path":"objects/oExplosion/oExplosion.yy",},"order":2,},
     {"id":{"name":"InitGame","path":"scripts/InitGame/InitGame.yy",},"order":0,},
     {"id":{"name":"sFrog","path":"sprites/sFrog/sFrog.yy",},"order":0,},
+    {"id":{"name":"sDestroyedBulletParticle","path":"sprites/sDestroyedBulletParticle/sDestroyedBulletParticle.yy",},"order":36,},
     {"id":{"name":"sLifeTopUI","path":"sprites/sLifeTopUI/sLifeTopUI.yy",},"order":13,},
     {"id":{"name":"PlayerKnockBack","path":"scripts/PlayerKnockBack/PlayerKnockBack.yy",},"order":2,},
     {"id":{"name":"oText","path":"objects/oText/oText.yy",},"order":12,},
@@ -27,6 +28,7 @@
     {"id":{"name":"oFrog","path":"objects/oFrog/oFrog.yy",},"order":0,},
     {"id":{"name":"oWall","path":"objects/oWall/oWall.yy",},"order":1,},
     {"id":{"name":"sFrogRun","path":"sprites/sFrogRun/sFrogRun.yy",},"order":2,},
+    {"id":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},"order":1,},
     {"id":{"name":"sMiniDust","path":"sprites/sMiniDust/sMiniDust.yy",},"order":21,},
     {"id":{"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},"order":34,},
     {"id":{"name":"DropItems","path":"scripts/DropItems/DropItems.yy",},"order":3,},
@@ -114,6 +116,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
