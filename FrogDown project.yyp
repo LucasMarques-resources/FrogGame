@@ -45,6 +45,7 @@
     {"id":{"name":"pParticleComplex","path":"objects/pParticleComplex/pParticleComplex.yy",},"order":7,},
     {"id":{"name":"sExplosion3","path":"sprites/sExplosion3/sExplosion3.yy",},"order":29,},
     {"id":{"name":"sSnakeColAttack","path":"sprites/sSnakeColAttack/sSnakeColAttack.yy",},"order":2,},
+    {"id":{"name":"sGrassTileParticles","path":"sprites/sGrassTileParticles/sGrassTileParticles.yy",},"order":35,},
     {"id":{"name":"oExplosionDamager","path":"objects/oExplosionDamager/oExplosionDamager.yy",},"order":15,},
     {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":1,},
     {"id":{"name":"CreateParticleSystem","path":"scripts/CreateParticleSystem/CreateParticleSystem.yy",},"order":6,},

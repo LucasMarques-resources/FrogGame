@@ -27,7 +27,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				recoil = 5;
 				ScreenShake(2, 6);
 				
-				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
+				//with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 			
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{

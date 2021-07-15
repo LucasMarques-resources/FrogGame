@@ -10,8 +10,8 @@ function Raycast(size, obj, dir, pShoot, damage, knockBackValue){
 	
 	for (var i = 0; i < size; i++)
 	{
-		var xx =  x + lengthdir_x(i, dir);
-		var yy =  y + lengthdir_y(i, dir);
+		var xx = x + lengthdir_x(i, dir);
+		var yy = y + lengthdir_y(i, dir);
 		
 		// Colliding with the some object
 		var _other = collision_line(x, y, xx, yy, obj, 1, 1);

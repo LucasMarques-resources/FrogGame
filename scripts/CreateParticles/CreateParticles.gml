@@ -5,7 +5,7 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 	/// @arg y
 	/// @arg amount
 	/// @arg sprite
-	/// @arg invulnerable
+	/// @arg invulnerableNumber
 	/// @arg angleRotate
 	/// @arg bouncingValue
 	/// @arg grav
