@@ -8,7 +8,7 @@ if (typeBullet != 3)
 		hp--;
 		with (other)
 		{
-			CreateParticles(x, y, 3, sDestroyedBulletParticle, 50, 4, .2, .3, 2, false, false, room_speed / 1.8, 0, 0, 0);
+			//CreateParticles(x, y, 3, sDestroyedBulletParticle, 50, 4, .2, .3, 2, false, false, room_speed / 1.8, 0, 0, 0);
 		}
 		instance_destroy(other);
 	}

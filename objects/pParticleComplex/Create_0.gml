@@ -14,6 +14,7 @@ angleRotate = 5;
 collideBoxes = true;
 
 // Particle
+particle = noone;
 partSizeMin = .6
 partSizeMax = .8;
 

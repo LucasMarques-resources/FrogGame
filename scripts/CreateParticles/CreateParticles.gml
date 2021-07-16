@@ -45,6 +45,36 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 				image_xscale = random_range(1, 1.4);
 				image_yscale = image_xscale;
 			}
+			
+			switch (particleType)
+			{
+				case TYPES_PARTICLE.normal:
+		
+				break;
+	
+				case TYPES_PARTICLE.fire:
+		
+					particle = CreateParticleSystem(sParticle, room_speed, room_speed * 2, partSizeMin, partSizeMax, c_red, c_yellow, 70, 100, 0.5, 1, 0.6, 0.3, 0);
+					//part_particles_create(global.mySystem, x, y, particle, 1);
+					partSystem = part_system_create();
+		
+					partEmitter = part_emitter_create(partSystem);
+		
+					partType = part_type_create();
+					part_type_sprite(partType, sParticle, false, false, false);
+					part_type_life(partType, room_speed / 6, room_speed / 4);
+					part_type_size(partType, partSizeMin, partSizeMax, 0, 0);
+					part_type_orientation(partType, 0, 359, 0, 20, 1);
+					part_type_color2(partType, c_red, c_yellow)
+					part_type_blend(partType, true);
+					part_type_direction(partType, 70, 100, 1, 1);
+					part_type_speed(partType, 0.5, 1, .01, .01);
+					part_type_alpha3(partType, 0.6, 0.3, 0);
+		
+		
+	
+				break;
+			}
 		}
 	}
 }

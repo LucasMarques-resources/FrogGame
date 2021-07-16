@@ -7,9 +7,10 @@ switch (particleType)
 	break;
 	
 	case TYPES_PARTICLE.fire:
-	
-		var p = CreateParticleSystem(sParticle, room_speed / 6, room_speed / 5, partSizeMin, partSizeMax, c_red, c_yellow, 70, 100, 0.5, 1, 0.6, 0.3, 0);
-		part_particles_create(global.mySystem, x, y, p, 1);
+		
+		part_emitter_region(partSystem, partEmitter, x, x, y, y, ps_shape_ellipse, ps_distr_gaussian);
+		
+		part_emitter_burst(partSystem, partEmitter, partType, 1);
 	
 	break;
 }
