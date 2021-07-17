@@ -11,6 +11,19 @@ if (global.debugMode)
 	if (keyboard_check_pressed(vk_f3)) global.createWalls = !global.createWalls;
 }
 
+if (doAutoTile)
+{
+	for (var i = 0; i < ds_list_size(raycastWallsChecked); i++)
+	{
+		with (raycastWallsChecked[| i])
+		{
+			image_index = AutoTile();
+		}
+	}
+	doAutoTile = false;
+}
+
+
 // Add lifes
 /*
 if (global.plHp > global.plTotalHp)

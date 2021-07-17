@@ -9,11 +9,11 @@ if (sprite_index != sBedRock)
 		if (oFrog.image_xscale = 1)
 		{
 			var x1 = x;
-			var x2 = x + choose(16, 32);
+			var x2 = x + 16;
 		}
 		else
 		{
-			var x1 = x - choose(16, 32);
+			var x1 = x - 16;
 			var x2 = x;
 		}
 		var _num = collision_rectangle_list(x1, y - 10, x2, y, oWall, false, true, _list, false);
@@ -30,6 +30,17 @@ if (sprite_index != sBedRock)
 		}
 		ds_list_destroy(_list);
 		
+		var _list = ds_list_create();
+		var _num = collision_circle_list(x, y, 64, oWall, false, true, _list, false);
+		if (_num > 0)
+		{
+			for (var i = 0; i < _num; ++i)
+			{
+				ds_list_add(oControl.raycastWallsChecked, _list[| i]);
+			}
+		}
+		ds_list_destroy(_list);
+		
 		instance_destroy();
 	}
 	
@@ -40,7 +51,6 @@ if (sprite_index != sBedRock)
 			destroyTimer--;
 			if (destroyTimer <= 0)
 			{
-				with (oWall) image_index = AutoTile();
 				instance_destroy();
 			}
 		}

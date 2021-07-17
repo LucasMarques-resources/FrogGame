@@ -118,6 +118,7 @@ draw_set_font(-1);
 draw_set_halign(fa_right);
 draw_set_valign(fa_top);
 draw_text_transformed(global.gameWidth, 0, string(global.debugMode), 0.5, 0.5, 0);
+draw_text_transformed(global.gameWidth, 10, string(instance_count), 0.5, 0.5, 0);
 
 draw_set_halign(-1);
 draw_set_valign(-1);

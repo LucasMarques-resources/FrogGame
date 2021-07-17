@@ -36,11 +36,12 @@ ammoBeingAddedCrea = true;
 ammoBeingAddedCreaRepeat = true;
 objAmmoBeingAdded = noone;
 
+doAutoTile = false;
+raycastWallsChecked = ds_list_create();
+
 // Create BedRock
-for (var i = 0; i < room_width / 16; i++)
+with (instance_create_layer(0, room_height - 12, "ColWall", oWall))
 {
-	with (instance_create_layer(i * 16, room_height - 12, "ColWall", oWall))
-	{
-		sprite_index = sBedRock;
-	}
+	sprite_index = sBedRock;
+	image_xscale = room_width / 16;
 }
