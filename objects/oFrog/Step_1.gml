@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-var temp = place_meeting(x, y + 1, oWall);
+var temp = place_meeting(x, y + 1, pCollider);
 
 if (temp && !ground)
 {
@@ -11,7 +11,7 @@ if (temp && !ground)
 #region Collisions
 
 // Horizontal Collision WALL
-HorizontalCollision(oWall, false, 0);
+HorizontalCollision(pCollider, false, 0);
 
 // Horizontal Collision BOX
 if (place_meeting(x + velh, y, pBox))
@@ -32,7 +32,7 @@ if (place_meeting(x + velh, y, pBox))
 x += velh;
 
 // Vertical Collision
-VerticalCollision(oWall, false, 0, 0);
+VerticalCollision(pCollider, false, 0, 0);
 
 // Vertical Collision
 VerticalCollision(pBox, false, 0, 0);

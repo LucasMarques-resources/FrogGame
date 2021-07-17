@@ -30,7 +30,7 @@ else
 		)
 	}
 }
-
+/*
 if (drawInitialBulletSprite)
 {
 	// Create bullet
@@ -41,3 +41,4 @@ if (drawInitialBulletSprite)
 		draw_sprite(sDust, 0, x + lengthdir_x(15, dir), y + lengthdir_y(10, dir) - 3);
 	}
 }
+*/

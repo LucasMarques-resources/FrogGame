@@ -13,12 +13,12 @@ var dir = point_direction(x, y, mouse_x, mouse_y);
 
 recoil = max(0, recoil - 1);
 
-drawInitialBulletSprite = false;
+//drawInitialBulletSprite = false;
 
 // Shooting
 if (mouse_check_button(mb_left) && firingDelay < 0)
 {
-	drawInitialBulletSprite = true;
+	//drawInitialBulletSprite = true;
 	
 	// Create bullet
 	if (global.ammo > 0)

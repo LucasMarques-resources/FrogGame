@@ -123,10 +123,10 @@ switch (typeBullet)
 		var bouncingValue = .6;
 		
 		// Horizontal Collision WALL & BOX
-		if (place_meeting(x, y + velv, oWall) || place_meeting(x, y + velv, pBox))
+		if (place_meeting(x, y + velv, pCollider) || place_meeting(x, y + velv, pBox))
 		{
 			repeat (abs(velv) + 1) {
-				if (place_meeting(x, y + sign(velv), oWall) || place_meeting(x, y + velv, pBox))
+				if (place_meeting(x, y + sign(velv), pCollider) || place_meeting(x, y + velv, pBox))
 				    break;
 				y += sign(velv);
 			}
@@ -137,10 +137,10 @@ switch (typeBullet)
 		}
 		
 		// Vertical Collision WALL & BOX
-		if (place_meeting(x + velh, y, oWall) || place_meeting(x + velh, y, pBox))
+		if (place_meeting(x + velh, y, pCollider) || place_meeting(x + velh, y, pBox))
 		{
 			repeat (abs(velh) + 1) {
-				if (place_meeting(x, y + sign(velh), oWall) || place_meeting(x, y + velh, pBox))
+				if (place_meeting(x, y + sign(velh), pCollider) || place_meeting(x, y + velh, pBox))
 				    break;
 				x += sign(velh);
 			}

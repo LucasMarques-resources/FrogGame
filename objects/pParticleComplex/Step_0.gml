@@ -39,10 +39,10 @@ if (rotate)
 	image_angle += angleRotate;
 
 // Vertical
-if (place_meeting(x, y + velv, oWall))
+if (place_meeting(x, y + velv, pCollider))
 {
 	repeat (abs(velv) + 1) {
-	    if (place_meeting(x, y + sign(velv), oWall))
+	    if (place_meeting(x, y + sign(velv), pCollider))
 	        break;
 	    y += sign(velv);
 	}
@@ -57,7 +57,7 @@ if (place_meeting(x, y + velv, oWall))
 }
 
 // Horizontal Collision WALL
-HorizontalCollision(oWall, true, bouncingValue);
+HorizontalCollision(pCollider, true, bouncingValue);
 
 if (collideBoxes)
 {

@@ -2,9 +2,9 @@
 // You can write your code in this editor
 
 // Horizontal Collision WALL
-if (place_meeting(x + velh, y, oWall)) {
+if (place_meeting(x + velh, y, pCollider)) {
 	repeat (abs(velh) + 1) {
-	    if (place_meeting(x + sign(velh), y, oWall))
+	    if (place_meeting(x + sign(velh), y, pCollider))
 	        break;
 	    x += sign(velh);
 	}
@@ -24,9 +24,9 @@ if (place_meeting(x + velh, y, pBox)) {
 }
 
 // Vertical Collision WALL
-if (place_meeting(x, y + velv, oWall)) {
+if (place_meeting(x, y + velv, pCollider)) {
 	repeat (abs(velv) + 1) {
-	    if (place_meeting(x, y + sign(velv), oWall))
+	    if (place_meeting(x, y + sign(velv), pCollider))
 	        break;
 	    y += sign(velv);
 	}

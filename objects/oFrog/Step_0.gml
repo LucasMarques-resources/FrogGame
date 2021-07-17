@@ -3,7 +3,7 @@
 
 show_debug_overlay(true);
 
-ground = place_meeting(x, y + 1, oWall) || place_meeting(x, y + 1, pBox);
+ground = place_meeting(x, y + 1, pCollider) || place_meeting(x, y + 1, pBox);
 
 #region Input
 

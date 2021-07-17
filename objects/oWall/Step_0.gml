@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (sprite_index != sBedRock)
+if (destructible)
 {
 	if (hp <= 0 && raycastCheck)
 	{
@@ -16,7 +16,7 @@ if (sprite_index != sBedRock)
 			var x1 = x - 16;
 			var x2 = x;
 		}
-		var _num = collision_rectangle_list(x1, y - 10, x2, y, oWall, false, true, _list, false);
+		var _num = collision_rectangle_list(x1, y - 10, x2, y, pCollider, false, true, _list, false);
 		if (_num > 0)
 		{
 			for (var i = 0; i < _num; ++i)
@@ -31,7 +31,7 @@ if (sprite_index != sBedRock)
 		ds_list_destroy(_list);
 		
 		var _list = ds_list_create();
-		var _num = collision_circle_list(x, y, 64, oWall, false, true, _list, false);
+		var _num = collision_circle_list(x, y, 64, pCollider, false, true, _list, false);
 		if (_num > 0)
 		{
 			for (var i = 0; i < _num; ++i)
