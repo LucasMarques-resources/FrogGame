@@ -15,17 +15,28 @@ switch (particleType)
 	break;
 }
 
-invulnerableTimer--;
+if (scaleDown)
+{
+	inv = false;
+	image_xscale -= 0.008;
+	image_yscale = image_xscale;
+	
+	if (image_xscale <= 0.5) instance_destroy();
+}
+else
+{
+	invulnerableTimer--;
+	
+	if (invulnerableTimer <= 0)
+	{
+		invulnerable = max(invulnerable - 1, 0);
+		if (invulnerable <= 0) instance_destroy();
+	}
+}
 
 velv += grav;
 if (rotate)
 	image_angle += angleRotate;
-
-if (invulnerableTimer <= 0)
-{
-	invulnerable = max(invulnerable - 1, 0);
-	if (invulnerable <= 0) instance_destroy();
-}
 
 // Vertical
 if (place_meeting(x, y + velv, oWall))

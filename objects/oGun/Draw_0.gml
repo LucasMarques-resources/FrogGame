@@ -30,3 +30,14 @@ else
 		)
 	}
 }
+
+if (drawInitialBulletSprite)
+{
+	// Create bullet
+	if (global.ammo > 0)
+	{
+		var dir = point_direction(x, y, mouse_x, mouse_y);
+		
+		draw_sprite(sDust, 0, x + lengthdir_x(15, dir), y + lengthdir_y(10, dir) - 3);
+	}
+}

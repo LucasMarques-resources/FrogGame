@@ -35,8 +35,9 @@ switch (typeBullet)
 		destroyTimer--;
 		
 		var dir = point_direction(x, y, mouse_x, mouse_y);
-		var p = CreateParticleSystem(sprite_index, 4, 5, .6, .8, c_yellow, c_red, dir, dir, 0.5, 1, 0.4, 0.2, 0);
-		part_particles_create(global.mySystem, x, y, p, 1);
+		particleTypeId = CreateParticleSystem(sprite_index, 4, 5, .6, .8, c_yellow, c_red, dir, dir, 0.5, 1, 0.4, 0.2, 0);
+		particleSystem = part_system_create();
+		part_particles_create(particleSystem, x, y, particleTypeId, 1);
 		
 		spd = 5;
 		

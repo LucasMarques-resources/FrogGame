@@ -10,6 +10,18 @@ if (create)
 			instance_create_layer(x, y, "Particles", oMiniExplosion);
 			
 		break;
+		
+		case 1:
+			
+			//part_type_destroy(particleTypeId);
+			//part_particles_clear(particleSystem);
+			//part_system_destroy(particleSystem);
+			
+			CleanParticles(particleTypeId, particleSystem, false, noone);
+			
+			instance_create_layer(x, y, "Particles", oMiniExplosion);
+			
+		break;
 		// Shotgun
 		case 2:
 		

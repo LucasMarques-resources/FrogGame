@@ -13,8 +13,9 @@ grav = 0.3;
 
 typeGun = 0;
 ownAmmo = 0;
-
 ammoShotgunCount = 4;
+
+drawInitialBulletSprite = false;
 
 // Number of bullets particle object to create
 bulletsShootedNumb = 1;

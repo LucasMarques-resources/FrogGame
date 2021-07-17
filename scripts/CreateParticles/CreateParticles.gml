@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function CreateParticles(argument0, argument1, argument2, argument3, argument4, argument5, argument6, argument7, argument8, argument9, argument10, argument11, argument12, argument13, argument14){
+function CreateParticles(xx, yy, amount, sprite, invNumb, angRotate, bounceValue, grav, vel, colWithBoxes, randomScale, invTimer, _partType, _partSizeMin, _partSizeMax, _scaleDown){
 	/// @arg x
 	/// @arg y
 	/// @arg amount
@@ -17,30 +17,31 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 	/// @arg partSizeMin
 	/// @arg partSizeMax
 	
-	for (var i = 0; i < argument2; i++)
+	for (var i = 0; i < amount; i++)
 	{
 		var _angle = choose(135, 120, 30, 140, 60, 45, 80, 89, 100);
-		with (instance_create_layer(argument0, argument1, "Particles", pParticleComplex))
+		with (instance_create_layer(xx, yy, "Particles", pParticleComplex))
 		{
 			image_speed = 0;
-			sprite_index = argument3;
+			sprite_index = sprite;
 			direction = _angle;
 			image_index = i;
-			invulnerableNumber = argument4;
-			angleRotate = argument5;
-			bouncingValue = argument6;
-			grav = argument7;
-			velh += lengthdir_x(argument8, _angle);
-			velv += lengthdir_y(argument8, _angle);
-			collideBoxes = argument9;
-			invulnerableTimer = argument11;
+			invulnerableNumber = invNumb;
+			angleRotate = angRotate;
+			bouncingValue = bounceValue;
+			grav = grav;
+			velh += lengthdir_x(vel, _angle);
+			velv += lengthdir_y(vel, _angle);
+			collideBoxes = colWithBoxes;
+			invulnerableTimer = invTimer;
+			scaleDown = _scaleDown;
 			
 			// Second particle
-			particleType = argument12;
-			partSizeMin = argument13;
-			partSizeMax = argument14;
+			particleType = _partType;
+			partSizeMin = _partSizeMin;
+			partSizeMax = _partSizeMax;
 			
-			if (argument10)
+			if (randomScale)
 			{
 				image_xscale = random_range(1, 1.4);
 				image_yscale = image_xscale;
@@ -53,9 +54,7 @@ function CreateParticles(argument0, argument1, argument2, argument3, argument4, 
 				break;
 	
 				case TYPES_PARTICLE.fire:
-		
-					particle = CreateParticleSystem(sParticle, room_speed, room_speed * 2, partSizeMin, partSizeMax, c_red, c_yellow, 70, 100, 0.5, 1, 0.6, 0.3, 0);
-					//part_particles_create(global.mySystem, x, y, particle, 1);
+					
 					partSystem = part_system_create();
 		
 					partEmitter = part_emitter_create(partSystem);

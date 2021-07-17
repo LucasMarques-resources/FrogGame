@@ -12,9 +12,12 @@ invulnerableNumber = 60;
 invulnerable = invulnerableNumber;
 angleRotate = 5;
 collideBoxes = true;
+scaleDown = false;
 
 // Particle
-particle = noone;
+partSystem = noone;
+partType = noone;
+partEmitter = noone;
 partSizeMin = .6
 partSizeMax = .8;
 

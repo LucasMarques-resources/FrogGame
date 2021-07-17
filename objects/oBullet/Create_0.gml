@@ -9,10 +9,8 @@ create = true;
 typeBullet = 0;
 
 spd = 0;
-
 velh = 0;
 velv = 0;
-
 grav = 0.3;
 
 angle = 2
@@ -29,3 +27,7 @@ if (global.currentGun.typeGun = 3)
 
 beDestroy = false;
 destroyTimer = destroyTime;
+
+// Particles
+particleTypeId = noone;
+particleSystem = noone;
