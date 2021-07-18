@@ -32,6 +32,7 @@
     {"id":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},"order":1,},
     {"id":{"name":"sMiniDust","path":"sprites/sMiniDust/sMiniDust.yy",},"order":21,},
     {"id":{"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},"order":34,},
+    {"id":{"name":"oWater","path":"objects/oWater/oWater.yy",},"order":18,},
     {"id":{"name":"DropItems","path":"scripts/DropItems/DropItems.yy",},"order":3,},
     {"id":{"name":"sSlime","path":"sprites/sSlime/sSlime.yy",},"order":14,},
     {"id":{"name":"sWall","path":"sprites/sWall/sWall.yy",},"order":0,},
@@ -120,8 +121,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

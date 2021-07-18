@@ -20,6 +20,9 @@ switch (state)
 	#region FREE STATE
 	case PlStates.free:
 		
+		grav = .3;
+		walkspd = 2;
+		
 		knockBackCol = true;
 		
 		// Movement
@@ -46,6 +49,11 @@ switch (state)
 		{
 			velv *= .5;
 		}
+		
+		// Swim state
+		var water = place_meeting(x, y, oWater);
+		if (water)
+			state = PlStates.swim;
 		
 	break;
 	#endregion
@@ -76,16 +84,43 @@ switch (state)
 		
 	break;
 	#endregion
+	
+	#region SWIM STATE
+	case PlStates.swim:
+		
+		walkspd = 1;
+		grav = .1;
+		
+		var move = right - left;
+		velh = (move * walkspd) + gunKickX;
+		gunKickX = 0;
+		if (move = 0) velh = lerp(velh, 0, 0.2);
+		
+		velv += gunKickY;
+		gunKickY = 0;
+		velv *= 0.6;
+		
+		if (keyboard_check(vk_space)) velv = -0.6;
+		
+		// Free state
+		var water = place_meeting(x, y, oWater);
+		if (!water)
+		{
+			velv -= 1;
+			state = PlStates.free;
+		}
+		
+	break;
+	#endregion
 }
 
 // Gravity
 velv += grav;
 
 
-
 #region Animation
 
-if (velh != 0 && ground)
+if ((velh != 0 && ground) && state != PlStates.swim)
 {
 	runPartDelay--;
 	sprite_index = sFrogRun;

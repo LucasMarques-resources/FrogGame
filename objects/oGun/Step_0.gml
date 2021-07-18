@@ -48,6 +48,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
+					gunKickY = lengthdir_y(1.7, other.image_angle - 180);
 				}
 				
 			break;
@@ -79,6 +80,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(1.5, other.image_angle - 180);
+					gunKickY = lengthdir_y(1.5, other.image_angle - 180);
 				}
 				
 			break;
@@ -116,6 +118,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
+					gunKickY = lengthdir_y(3.5, other.image_angle - 180);
 				}
 				
 			break;
@@ -143,6 +146,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
+					gunKickY = lengthdir_y(1.7, other.image_angle - 180);
 				}
 				
 			break;
@@ -170,6 +174,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (oFrog)
 				{
 					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
+					gunKickY = lengthdir_y(3.5, other.image_angle - 180);
 				}
 				
 			break;
