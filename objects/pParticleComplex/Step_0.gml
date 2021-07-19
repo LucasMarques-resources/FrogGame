@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+var colWater = place_meeting(x, y, oWater);
+
 switch (particleType)
 {
 	case TYPES_PARTICLE.normal:
@@ -11,8 +13,25 @@ switch (particleType)
 		part_emitter_region(partSystem, partEmitter, x, x, y, y, ps_shape_ellipse, ps_distr_gaussian);
 		
 		part_emitter_burst(partSystem, partEmitter, partType, 1);
+		
+		if (colWater) instance_destroy();
 	
 	break;
+}
+
+if (colWater)
+{
+	grav = .1;
+	bouncingValue = .4;
+
+	velh = lerp(velh, 0, 0.1);
+	velv = lerp(velv, 0, 0.1);
+}
+else
+{
+	grav = gravD;
+	bouncingValue = bouncingValueD;
+	angleRotate = angleRotateD;
 }
 
 if (scaleDown)

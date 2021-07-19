@@ -17,7 +17,8 @@ else
 	}
 	else
 	{
-		image_speed = 1;
+		if (state != PlStates.swim) image_speed = 1;
+		
 		draw_sprite_ext(
 		sprite_index,
 		image_index,

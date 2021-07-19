@@ -88,6 +88,10 @@ switch (state)
 	#region SWIM STATE
 	case PlStates.swim:
 		
+		image_speed = 0.5;
+		
+		sprite_index = sFrogRun;
+		
 		walkspd = 1;
 		grav = .1;
 		
@@ -132,7 +136,7 @@ if ((velh != 0 && ground) && state != PlStates.swim)
 		runPartDelay = runPartTime;
 	}
 }
-else
+else if (state != PlStates.swim)
 {
 	runPartDelay = runPartTime;
 	if (!global.hasGun) sprite_index = sFrog;

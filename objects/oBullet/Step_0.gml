@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+colWater = place_meeting(x, y, oWater);
+
 switch (typeBullet)
 {
 	// Normal
@@ -8,10 +10,17 @@ switch (typeBullet)
 	{
 		destroyTimer--;
 		
-		spd = 6;
+		if (colWater)
+		{
+			spd = 3;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 6;
 		
-		x += lengthdir_x(spd, direction);
-		y += lengthdir_y(spd, direction);
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
 
 		// Collision with something
 		with (instance_place(x, y, pShootable))
@@ -39,7 +48,14 @@ switch (typeBullet)
 		particleSystem = part_system_create();
 		part_particles_create(particleSystem, x, y, particleTypeId, 1);
 		
-		spd = 5;
+		if (colWater)
+		{
+			spd = 2;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 5;
 		
 		x += lengthdir_x(spd, direction);
 		y += lengthdir_y(spd, direction);
@@ -91,7 +107,14 @@ switch (typeBullet)
 		
 		destroyTimer--;
 		
-		spd = 6;
+		if (colWater)
+		{
+			spd = 3;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 6;
 		
 		x += lengthdir_x(spd, direction);
 		y += lengthdir_y(spd, direction);
@@ -116,11 +139,24 @@ switch (typeBullet)
 	// Grenade Launcher
 	case 3:
 		
+		if (colWater)
+		{	
+			velh = lerp(velh, 0, 0.08);
+			velv = lerp(velv, 0, 0.08);
+			grav = .1;
+			bouncingValue = .8;
+			angleRotate = 3;
+		}
+		else
+		{
+			grav = .3;
+			bouncingValue = .6;
+			angleRotate = 6;
+		}
+		
 		velv += grav;
 		
-		image_angle += sign(velh) * 6;
-		
-		var bouncingValue = .6;
+		image_angle += sign(velh) * angleRotate;
 		
 		// Horizontal Collision WALL & BOX
 		if (place_meeting(x, y + velv, pCollider) || place_meeting(x, y + velv, pBox))
@@ -169,7 +205,7 @@ switch (typeBullet)
 			}
 		}
 		
-		// Destroy timer
+		// Destroy
 		if (beDestroy)
 		{
 			destroyTimer--;
@@ -182,7 +218,14 @@ switch (typeBullet)
 		
 		destroyTimer--;
 		
-		spd = 6;
+		if (colWater)
+		{
+			spd = 3;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 6;
 		
 		x += lengthdir_x(spd, direction);
 		y += lengthdir_y(spd, direction);

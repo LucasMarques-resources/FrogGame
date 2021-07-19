@@ -13,8 +13,14 @@ function Raycast(size, obj, dir){
 		
 	// Colliding with the some object
 	var _other = collision_line(x, y, xx, yy, obj, 1, 1);
+	var _collider = collision_line(x, y, xx, yy, pCollider, 1, 1);
 		
-	draw_line_color(x, y, xx, yy, c_red, c_red);
+	draw_line_color(oExplosionDamager.x, oExplosionDamager.y, xx, yy, c_white, c_white);
+	
+	if (_collider && _collider.destructible)
+	{
+		return true;
+	}
 	
 	if (_other)
 	{	

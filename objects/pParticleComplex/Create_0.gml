@@ -2,7 +2,7 @@
 // You can write your code in this editor
 velh = 0;
 velv = 0;
-grav = 0.4
+grav = 0.4;
 ground = 0;
 bouncingValue = .4;
 rotate = true;
@@ -29,3 +29,8 @@ enum TYPES_PARTICLE
 }
 
 particleType = TYPES_PARTICLE.normal;
+
+// Default values
+gravD = grav;
+bouncingValueD = bouncingValue;
+angleRotateD = angleRotate;
