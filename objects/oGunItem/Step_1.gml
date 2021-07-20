@@ -23,6 +23,8 @@ if (place_meeting(x + velh, y, pBox)) {
 	velh = 0;
 }
 
+x += velh;
+
 // Vertical Collision WALL
 if (place_meeting(x, y + velv, pCollider)) {
 	repeat (abs(velv) + 1) {
@@ -46,3 +48,5 @@ if (place_meeting(x, y + velv, pBox)) {
 	velv = 0;
 	velh = 0;
 }
+
+y += velv;

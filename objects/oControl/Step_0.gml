@@ -17,7 +17,7 @@ if (doAutoTile)
 	{
 		with (raycastWallsChecked[| i])
 		{
-			image_index = AutoTile();
+			if (destructible) image_index = AutoTile();
 		}
 	}
 	doAutoTile = false;

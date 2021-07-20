@@ -106,8 +106,6 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 							image_angle = direction;
 						}
 						global.ammo--;
-						//show_message("i" + string(i));
-						//show_message("ammo" + string(global.ammo));
 					}
 					if (ammoShotgunCount = 1) ammoShotgunCount = 4;
 				}

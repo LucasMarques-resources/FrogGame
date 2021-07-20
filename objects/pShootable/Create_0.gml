@@ -8,6 +8,7 @@ hitFrom = 0;
 flash = 0;
 colShootable = false;
 beingDragged = false;
+colWater = false;
 
 // Damager
 damagerCrea = true;
@@ -26,3 +27,7 @@ uniqueEntityDropList = choose
 	-1,
 	-1
 )
+
+// Default values
+gravD = grav;
+VknockBackD = VknockBack;

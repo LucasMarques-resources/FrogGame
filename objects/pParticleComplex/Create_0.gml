@@ -13,6 +13,7 @@ invulnerable = invulnerableNumber;
 angleRotate = 5;
 collideBoxes = true;
 scaleDown = false;
+colWater = false;
 
 // Particle
 partSystem = noone;

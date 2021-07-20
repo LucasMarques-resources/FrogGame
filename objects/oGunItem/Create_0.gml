@@ -24,7 +24,7 @@ velv = 0;
 
 yStart = y;
 
-grav = 0.3;
+grav = .3;
 
 // Ammo
 switch (typeItem)

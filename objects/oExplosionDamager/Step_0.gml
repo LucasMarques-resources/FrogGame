@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-//show_message(damagerRadius);
+show_debug_message("damagerRadius" + string(damagerRadius));
 // Check walls to auto tiling
 var _list = ds_list_create();
 var _num = collision_circle_list(x, y, damagerRadius + 64, pCollider, false, true, _list, false);
@@ -34,29 +34,23 @@ ds_list_destroy(_list);
 
 // Take damage to shootables
 var list = ds_list_create();
-var num = collision_circle_list(x, y, damagerRadius - 10, pShootable, false, true, list, false);
+var num = collision_circle_list(x, y, damagerRadius, pShootable, false, true, list, false);
 if (num > 0)
 {
+	//show_message("CIRCLE");
 	for (var i = 0; i < num; ++i)
 	{
 		with (list[| i])
 		{
-			if (!item)
+			explosionDirection = point_direction(x, y, list[| i].x, list[| i].y);
+			var r = Raycast(damagerRadius, list[| i], explosionDirection);
+			if (r) with (r)
 			{
-				with (other)
-				{					
-					var c = Raycast(damagerRadius - 10, pCollider, point_direction(x, y, other.x, other.y));
-					if (c) break;
-					
-					with (other)
-					{
-						hp -= 5;
-						colShootable = true;
-						knockBack = 2;
-						hitFrom = other.direction;
-						if (oBox) createFireParticles = true;
-					}
-				}
+				hp -= 5;
+				colShootable = true;
+				knockBack = irandom_range(2, 3.5);
+				hitFrom = other.explosionDirection;
+				if (oBox) createFireParticles = true;
 			}
 		}
 	}

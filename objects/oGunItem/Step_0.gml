@@ -5,6 +5,17 @@ image_index = typeItem;
 
 var radius = point_distance(x, y, oFrog.x, oFrog.y);
 
+var colWater = place_meeting(x, y, oWater);
+
+if (colWater)
+{
+	grav = .1;
+	
+	velh = lerp(velh, 0, 0.15);
+	velv = lerp(velv, 0, 0.15);
+}
+else grav = .3;
+
 // Create text
 if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oText))
 {	
@@ -29,36 +40,7 @@ if (!(radius < 25))
 	if (textObj) textObj.itemCreator = noone;
 	instance_destroy(textObj);
 }
-/*
-// Create gun
-if (instance_exists(textObj))
-{
-	if (keyboard_check_pressed(ord("E")))
-	{
-		textCrea = true;
-		
-		with (instance_create_layer(oGun.x, oGun.y - 10, "Instances", oGunItem))
-		{
-			image_xscale = oFrog.image_xscale;
-			if (image_xscale = 1) var dir = 45; else dir = 135;
-			
-			velh = lengthdir_x(3, dir);
-			velv = lengthdir_y(3, dir);
-			
-			itemOwnAmmo = oGun.ownAmmo;
-			typeItem = oGun.typeGun;
-		}
 
-		instance_destroy(oGun);
-
-		global.currentGun = noone;
-		global.hasGun = false;
-		instance_destroy(textObj);
-		
-		pickUpGun = true;
-	}
-}
-*/
 
 if (!global.hasGun && pickUpGun)
 {
@@ -76,9 +58,12 @@ if (!global.hasGun && pickUpGun)
 	global.hasGun = true;
 }
 
-
-if (velv != 0) velv += grav; // Floating
-else y = yStart + sin(get_timer() / 400000) * 3;
-
-x += velh;
-y += velv;
+if (!colWater)
+{
+	if (velv != 0) velv += grav; // Floating
+	else y = yStart + sin(get_timer() / 400000) * 3;
+} else
+{
+	mask_index = sGunItemMask;
+	velv += grav;
+}

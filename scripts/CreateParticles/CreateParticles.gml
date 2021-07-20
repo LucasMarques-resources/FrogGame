@@ -55,23 +55,21 @@ function CreateParticles(xx, yy, amount, sprite, invNumb, angRotate, bounceValue
 	
 				case TYPES_PARTICLE.fire:
 					
-					partSystem = part_system_create();
+						partSystem = part_system_create();
 		
-					partEmitter = part_emitter_create(partSystem);
+						partEmitter = part_emitter_create(partSystem);
 		
-					partType = part_type_create();
-					part_type_sprite(partType, sParticle, false, false, false);
-					part_type_life(partType, room_speed / 6, room_speed / 4);
-					part_type_size(partType, partSizeMin, partSizeMax, 0, 0);
-					part_type_orientation(partType, 0, 359, 0, 20, 1);
-					part_type_color2(partType, c_red, c_yellow)
-					part_type_blend(partType, true);
-					part_type_direction(partType, 70, 100, 1, 1);
-					part_type_speed(partType, 0.5, 1, .01, .01);
-					part_type_alpha3(partType, 0.6, 0.3, 0);
-		
-		
-	
+						partType = part_type_create();
+						part_type_sprite(partType, sParticle, false, false, false);
+						part_type_life(partType, room_speed / 6, room_speed / 4);
+						part_type_size(partType, partSizeMin, partSizeMax, 0, 0);
+						part_type_orientation(partType, 0, 359, 0, 20, 1);
+						part_type_color2(partType, c_red, c_yellow)
+						part_type_blend(partType, true);
+						part_type_direction(partType, 70, 100, 1, 1);
+						part_type_speed(partType, 0.5, 1, .01, .01);
+						part_type_alpha3(partType, 0.6, 0.3, 0);
+					
 				break;
 			}
 		}

@@ -48,7 +48,7 @@ if (create)
 			}
 			
 			var expo = instance_create_layer(x, y, "Particles", oExplosionDamager)
-			if (colWater) expo.damagerRadius = 26;
+			if (colWater) expo.damagerRadius = 30;
 			else expo.damagerRadius = 40;
 			
 			ScreenShake(7, 6);

@@ -7,10 +7,13 @@ ground = place_meeting(x, y + 1, pCollider) || place_meeting(x, y + 1, pBox);
 
 #region Input
 
-var left, right, jump
-left = keyboard_check(vk_left) || keyboard_check(ord("A"));
-right = keyboard_check(vk_right) || keyboard_check(ord("D"));
-jump = keyboard_check_pressed(vk_space) || keyboard_check(ord("C"));
+var left, right, down, up, jump, jumpCheck
+left = keyboard_check(ord("A"));
+right = keyboard_check(ord("D"));
+down = keyboard_check(ord("S"));
+up = keyboard_check(ord("W"));
+jump = keyboard_check_pressed(vk_space);
+jumpCheck = keyboard_check(vk_space);
 jumpRel = keyboard_check_released(vk_space);
 
 #endregion
@@ -103,8 +106,8 @@ switch (state)
 		velv += gunKickY;
 		gunKickY = 0;
 		velv *= 0.6;
-		
-		if (keyboard_check(vk_space)) velv = -0.6;
+
+		velv = (down - (jumpCheck || up)) * 0.6;
 		
 		// Free state
 		var water = place_meeting(x, y, oWater);
@@ -152,4 +155,3 @@ invulnerable = max(invulnerable - 1, 0);
 #endregion
 
 //show_debug_message(state);
-

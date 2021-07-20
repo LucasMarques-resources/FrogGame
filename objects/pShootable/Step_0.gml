@@ -1,6 +1,26 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+colWater = place_meeting(x, y, oWater);
+
+if (colWater)
+{
+	grav = .1;
+	VknockBack = true;
+
+	if (!item)
+	{
+		velh = lerp(velh, 0, 0.15);
+		velv = lerp(velv, 0, 0.15);
+	}
+}
+else
+{
+	grav = gravD;
+	if (VknockBackD) VknockBack = VknockBackD;
+	else VknockBack = false;
+}
+
 if (!instance_place(x, y, pDamager))
 {
 	colDamager = true;
