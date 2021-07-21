@@ -25,7 +25,6 @@ if (itemCreator != noone)
 {
 	with (itemCreator)
 	{
-		show_debug_message(id);
 		if (keyboard_check_pressed(ord("E")))
 		{
 			textCrea = true;

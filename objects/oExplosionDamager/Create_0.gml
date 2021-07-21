@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-damagerRadius = 40;
+damagerRadius = 30;
 
 autoTiling = false;
 wallsToAutoTiling = ds_list_create();
@@ -9,4 +9,4 @@ wallsToAutoTiling = ds_list_create();
 explosionDirection = 0;
 
 raycastCheck = false;
-wall = noone;
+wallsDir = 0;

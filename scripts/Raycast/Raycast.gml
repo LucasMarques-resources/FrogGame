@@ -5,18 +5,22 @@ function Raycast(size, obj, dir){
 	/// @arg collision_object
 	/// @arg line_direction
 	
-	var xx = x + lengthdir_x(size, dir);
-	var yy = y + lengthdir_y(size, dir);
+	for (var i = 0; i < size; i++)
+	{
+		var xx = x + lengthdir_x(i, dir);
+		var yy = y + lengthdir_y(i, dir);
 		
-	// Colliding with the some object
-	var _other = collision_line(x, y, xx, yy, obj, 1, 1);
+		// Colliding with the some object
+		var _other = collision_line(x, y, xx, yy, obj, 1, 1);
+		var _coll = collision_line(x, y, xx, yy, pCollider, 1, 1);
+
+		draw_line_color(x, y, xx, yy, c_red, c_red);
 		
-	draw_line_color(oExplosionDamager.x, oExplosionDamager.y, xx, yy, c_white, c_white);
-	
-	if (_other)
-	{	
-		return _other;
+		if (_other || (_coll && !_coll.destructible))
+		{	
+			return _other;
+			break;
+		}
 	}
-	
 	return false;
 }
