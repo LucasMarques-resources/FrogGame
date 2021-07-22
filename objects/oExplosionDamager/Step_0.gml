@@ -51,17 +51,20 @@ if (num > 0)
 {
 	for (var i = 0; i < num; ++i)
 	{
-		var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y));
-		if (r) with (r)
+		if (list[| i].destructible)
 		{
-			hp -= 5;
-			colShootable = true;
-			knockBack = irandom_range(2, 3.5);
-			hitFrom = other.explosionDirection;
-			if (oBox) createFireParticles = true;
+			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y));
+			if (r) with (r)
+			{
+				hp -= 5;
+				colShootable = true;
+				knockBack = irandom_range(2, 3.5);
+				hitFrom = other.explosionDirection;
+				if (oBox) createFireParticles = true;
+			}
 		}
 	}
 }
 ds_list_destroy(list);
 
-//instance_destroy();
+instance_destroy();
