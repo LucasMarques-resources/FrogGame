@@ -10,8 +10,8 @@ if (colWater)
 
 	if (!item)
 	{
-		velh = lerp(velh, 0, 0.15);
-		velv = lerp(velv, 0, 0.15);
+		velh = lerp(velh, 0, 0.1);
+		velv = lerp(velv, 0, 0.1);
 	}
 }
 else

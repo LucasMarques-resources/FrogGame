@@ -4,6 +4,7 @@ event_inherited();
 
 VknockBack = flyEnemy;
 ground = place_meeting(x, y + 1, pCollider);
+colWater = place_meeting(x, y, oWater);
 
 // States
 switch (state)

@@ -14,8 +14,17 @@ function PlayerKnockBack(){
 			other.createDust = false;
 		}
 		// Knock back player state
-		state = PlStates.knockBack;
-		if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
-		else knockBackDir = 45;
+		if (!colWater)
+		{
+			state = PlStates.knockBack;
+			
+			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
+			else knockBackDir = 45;
+		}
+		else
+		{
+			state = PlStates.knockBackWater;
+			knockBackDir = point_direction(x, y, other.x, other.y) - 180;
+		}
 	}
 }
