@@ -3,7 +3,8 @@
 
 #region COLLISION WITH pSHOOTABLE
 // Horizontal Collision
-if (place_meeting(x + velh, y, pShootable))
+var col = instance_place(x + velh, y, pShootable)
+if (col && col.colBox)
 {
 	repeat (abs(velh) + 1) {
 	    if (place_meeting(x + sign(velh), y, pShootable))
@@ -19,7 +20,8 @@ if (place_meeting(x + velh, y, pShootable))
 }
 	
 // Vertical Collision pSHOOTABLE
-if (place_meeting(x, y + velv, pShootable))
+var col = instance_place(x, y + velv, pShootable)
+if (col && col.colBox)
 {
 	repeat (abs(velv) + 1) {
 		if (place_meeting(x, y + sign(velv), pShootable))

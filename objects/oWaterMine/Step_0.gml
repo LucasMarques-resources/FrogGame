@@ -9,7 +9,13 @@ if (instance_exists(oFrog))
 	{
 		activated = true;
 	}
-	if (place_meeting(x, y, oFrog)) instance_destroy();
+	var p = instance_place(x, y, pShootable);
+	if (place_meeting(x, y, oFrog) || (p && p.destructible)) && activateCol
+	{
+		timerToExplode = 10;
+		activated = true;
+		activateCol = false;
+	}
 }
 
 if (activated)
@@ -25,6 +31,7 @@ if (activated)
 	}
 	if (timerToExplode <= 0)
 	{
+		ScreenShake(10, 10);
 		instance_destroy();
 	}
 }
