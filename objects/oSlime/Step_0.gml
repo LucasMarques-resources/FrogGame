@@ -3,7 +3,7 @@
 
 event_inherited();
 
-if (state = STATES.chase)
+if (state = STATES.chase && !colWater)
 {
 	timerJump--;
 	if (timerJump <= 0)

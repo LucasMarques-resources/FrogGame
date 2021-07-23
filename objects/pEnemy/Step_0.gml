@@ -183,6 +183,18 @@ switch (state)
 	#endregion
 }
 
+// Water
+if (colWater)
+{
+	if (!flyEnemyD) flyEnemy = true;
+	if (customAttackD)	customAttack = false;
+}
+else
+{
+	if (!flyEnemyD) flyEnemy = false;
+	if (customAttackD) customAttack = true;
+}
+
 // Normal player collision with enemy
 if (customAttack && !instance_exists(colAttack))
 {

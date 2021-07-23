@@ -41,3 +41,7 @@ enum STATES
 }
 
 state = STATES.waiting;
+
+// Default values
+flyEnemyD = flyEnemy;
+customAttackD = customAttack;

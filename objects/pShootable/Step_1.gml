@@ -24,7 +24,7 @@ if (hp <= 0 && destructible)
 HorizontalCollision(pCollider, colBounce, .3);
 
 // Horizontal Collision BOX
-HorizontalCollision(pBox, colBounce, .3);
+if (colBox) HorizontalCollision(pBox, colBounce, .3);
 
 // Horizontal Collision FROG
 if (!enemy && colFrog) HorizontalCollision(oFrog, false, 0);
@@ -35,7 +35,7 @@ x += velh;
 VerticalCollision(pCollider, colBounce, .3, false);
 
 // Vertical Collision BOX
-VerticalCollision(pBox, false, .0, false);
+if (colBox) VerticalCollision(pBox, false, .0, false);
 
 // Vertical Collision FROG
 if (!enemy && colFrog) VerticalCollision(oFrog, false, .0, false);
