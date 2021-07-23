@@ -32,3 +32,9 @@ else
 		)
 	}
 }
+
+with (oExplosionDamager)
+{
+	draw_circle(x, y, damagerRadius + 16, false);
+	draw_circle_color(x, y, damagerRadius - 10, c_red, c_red, false);
+}

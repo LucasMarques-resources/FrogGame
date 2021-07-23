@@ -10,6 +10,18 @@ if (autoTiling)
 	{
 		ds_list_add(oControl.raycastWallsChecked, wallsToAutoTiling[| i]);
 		oControl.doAutoTile = true;
+		with (wallsToAutoTiling[| i])
+		{
+			if (destructible)
+			{
+				var rand = choose(0, 1);
+				if (rand = 1)
+				{
+					raycastCheck = true;
+					hp -= hp;
+				}
+			}
+		}
 	}
 }
 

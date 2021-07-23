@@ -3,7 +3,7 @@
 
 // Check walls to auto tiling
 var _list = ds_list_create();
-var _num = collision_circle_list(x, y, damagerRadius + 64, pCollider, false, true, _list, false);
+var _num = collision_circle_list(x, y, damagerRadius + 16, pCollider, false, true, _list, false);
 if (_num > 0)
 {
 	for (var i = 0; i < _num; ++i)
