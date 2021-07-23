@@ -33,6 +33,7 @@ else
 	}
 }
 
+/*
 with (oExplosionDamager)
 {
 	draw_circle(x, y, damagerRadius + 16, false);

@@ -188,7 +188,7 @@ switch (typeBullet)
 		// Collision ENEMY
 		if (collideWithEnemy)
 		{
-			with (instance_place(x, y, pEnemy))
+			with (instance_place(x, y, pShootable))
 			{
 				colShootable = true;
 				hitFrom = other.direction;

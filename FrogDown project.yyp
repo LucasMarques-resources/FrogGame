@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"sWaterMine","path":"sprites/sWaterMine/sWaterMine.yy",},"order":38,},
     {"id":{"name":"pItem","path":"objects/pItem/pItem.yy",},"order":5,},
     {"id":{"name":"sJumpSideParticle","path":"sprites/sJumpSideParticle/sJumpSideParticle.yy",},"order":5,},
     {"id":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"order":2,},
@@ -70,6 +71,7 @@
     {"id":{"name":"oMiniExplosion","path":"objects/oMiniExplosion/oMiniExplosion.yy",},"order":5,},
     {"id":{"name":"oFireDamager","path":"objects/oFireDamager/oFireDamager.yy",},"order":13,},
     {"id":{"name":"sFrogGun","path":"sprites/sFrogGun/sFrogGun.yy",},"order":1,},
+    {"id":{"name":"oWaterMine","path":"objects/oWaterMine/oWaterMine.yy",},"order":19,},
     {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"order":0,},
     {"id":{"name":"sSnakeDie","path":"sprites/sSnakeDie/sSnakeDie.yy",},"order":4,},
     {"id":{"name":"oFallParticle","path":"objects/oFallParticle/oFallParticle.yy",},"order":3,},
