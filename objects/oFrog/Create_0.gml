@@ -33,7 +33,7 @@ runPartDelay = runPartTime;
 // Water
 colWater = false;
 knockBackWater = true;
-timerKnockWater = room_speed / 3;
+timerKnockWater = room_speed / 4;
 timeJumpWater = 3;
 timerJumpWater = timeJumpWater;
 

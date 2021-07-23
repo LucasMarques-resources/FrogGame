@@ -6,6 +6,13 @@ show_debug_overlay(true);
 ground = place_meeting(x, y + 1, pCollider) || place_meeting(x, y + 1, pBox);
 colWater = place_meeting(x, y, oWater);
 
+// Set physics values to normal
+if (!colWater)
+{
+	grav = .3;
+	walkspd = 2;
+}
+
 #region Input
 
 var left, right, down, up, jump, jumpCheck
@@ -23,9 +30,6 @@ switch (state)
 {
 	#region FREE STATE
 	case PlStates.free:
-		
-		grav = .3;
-		walkspd = 2;
 		
 		knockBackCol = true;
 		knockBackWater = true;
@@ -136,17 +140,13 @@ switch (state)
 		grav = .1;
 		
 		flash = 1;
+		
 		invulnerable = 60;
 		timerKnockWater--;
 		
 		// Knock back
-		if (knockBackWater)
-		{
-			velh = lengthdir_x(1, knockBackDir);
-			velv = lengthdir_y(1, knockBackDir);
-			
-			knockBackWater = false;
-		}
+		velh = lengthdir_x(1, knockBackDir);
+		velv = lengthdir_y(1, knockBackDir) + grav;
 		
 		// Change state
 		if (timerKnockWater <= 0)
@@ -155,6 +155,7 @@ switch (state)
 			if (colWater) state = PlStates.swim;
 			else state = PlStates.free;
 			timerKnockGround = 2;
+			timerKnockWater = room_speed / 4;
 		}
 		
 	break;
@@ -163,7 +164,7 @@ switch (state)
 
 // Gravity
 velv += grav;
-
+show_debug_message("flash " + string(flash));
 
 #region Animation
 
