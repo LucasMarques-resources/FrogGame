@@ -40,7 +40,11 @@ if (colShootable)
 {
 	// knock back
 	if (HknockBack) velh = lengthdir_x(knockBack, hitFrom);
-	if (VknockBack) velv = lengthdir_y(knockBack, hitFrom);
+	if (VknockBack)
+	{
+		if (pBox) knockBack *= 0.7;
+		velv = lengthdir_y(knockBack, hitFrom);
+	}
 	image_index = 0;
 	state = STATES.hurt;
 	flash = 10;

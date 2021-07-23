@@ -20,7 +20,7 @@ if (hp <= 0 && destructible)
 
 #region COLLISIONS
 
-// Horizontal Collision WALL
+// Horizontal Collision pCOLLIDER
 HorizontalCollision(pCollider, colBounce, .3);
 
 // Horizontal Collision BOX
@@ -31,8 +31,8 @@ if (!enemy && colFrog) HorizontalCollision(oFrog, false, 0);
 
 x += velh;
 
-// Vertical Collision WALL
-VerticalCollision(pCollider, colBounce, .3, false);
+// Vertical Collision pCOLLIDER
+VerticalCollision(pCollider, colBounceV, .3, false);
 
 // Vertical Collision BOX
 if (colBox) VerticalCollision(pBox, false, .0, false);
