@@ -58,8 +58,8 @@ if (num > 0)
 			{
 				hp -= 5;
 				colShootable = true;
-				knockBack = irandom_range(2, 3.5);
-				hitFrom = other.explosionDirection;
+				knockBack = irandom_range(2.3, 3.7);
+				hitFrom = point_direction(other.x, other.y, x, y);
 				if (oBox) createFireParticles = true;
 			}
 		}
