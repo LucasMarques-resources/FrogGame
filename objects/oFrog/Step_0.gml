@@ -164,7 +164,6 @@ switch (state)
 
 // Gravity
 velv += grav;
-show_debug_message("flash " + string(flash));
 
 #region Animation
 

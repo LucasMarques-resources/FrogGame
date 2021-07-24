@@ -17,18 +17,10 @@ collideWithEnemy = true;
 
 destroyTime = 14;
 
-// Initial force to grenade launcher bullet
-if (global.currentGun.typeGun = 3)
-{
-	velh = lengthdir_x(4, point_direction(x, y, mouse_x, mouse_y));
-	velv = lengthdir_y(7, point_direction(x, y, mouse_x, mouse_y));
-	destroyTime = 5;
-}
-
 damage = 1;
 
 beDestroy = false;
-setDestroyTimer = true;
+setCreateValues = true;
 destroyTimer = destroyTime;
 
 // Particles

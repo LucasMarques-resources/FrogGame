@@ -23,9 +23,10 @@ grav = .3;
 switch (typeItem)
 {
 	case GUN_TYPES.normal: itemOwnAmmo = 30; break; // Normal
-	case GUN_TYPES.fire : itemOwnAmmo = 10; break; // Fire
-	case GUN_TYPES.shotgun : itemOwnAmmo = 600; break;  // Shotgun
+	case GUN_TYPES.fire: itemOwnAmmo = 10; break; // Fire
+	case GUN_TYPES.shotgun: itemOwnAmmo = 600; break;  // Shotgun
 	case GUN_TYPES.nadeLauncher: itemOwnAmmo = 5; break;  // Grenade launcher
 	case GUN_TYPES.machineGun: itemOwnAmmo = 3000; break;  // MachineGun
 	case GUN_TYPES.sniper: itemOwnAmmo = 5; break;  // Sniper
+	case GUN_TYPES.thunder: itemOwnAmmo = 10; break;  // Thunder gun
 }

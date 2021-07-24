@@ -54,5 +54,18 @@ if (create)
 			ScreenShake(7, 6);
 		
 		break;
+		
+		case GUN_TYPES.thunder:
+			
+			instance_create_layer(x, y, "Particles", oMiniExplosion);
+			
+			repeat(2)
+			{
+				instance_create_layer(x, y - room_height, "Top", oThunder);
+				
+				ScreenShake(7, 6);
+			}
+			
+		break;
 	}
 }

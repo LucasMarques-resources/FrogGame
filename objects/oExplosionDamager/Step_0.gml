@@ -31,7 +31,7 @@ if (_num > 0)
 	}
 }
 ds_list_destroy(_list);
-
+/*
 var list = ds_list_create();
 var num = collision_circle_list(x, y, damagerRadius, pCollider, false, true, list, false);
 if (num > 0)
@@ -43,7 +43,7 @@ if (num > 0)
 	}
 }
 ds_list_destroy(list);
-
+*/
 // Take damage to shootables
 var list = ds_list_create();
 var num = collision_circle_list(x, y, damagerRadius, pShootable, false, true, list, false);

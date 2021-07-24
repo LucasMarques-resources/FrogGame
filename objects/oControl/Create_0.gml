@@ -47,8 +47,12 @@ enum GUN_TYPES
 	shotgun,
 	nadeLauncher,
 	machineGun,
-	sniper
+	sniper,
+	thunder
 }
+
+// Thunders
+createThunderDamager = true;
 
 // Create BedRock
 with (instance_create_layer(0, room_height - 12, "ColWall", pCollider))

@@ -34,8 +34,4 @@ else
 }
 
 /*
-with (oExplosionDamager)
-{
-	draw_circle(x, y, damagerRadius + 16, false);
-	draw_circle_color(x, y, damagerRadius - 10, c_red, c_red, false);
-}
+	draw_ellipse(mouse_x - 50 / 2, mouse_y - room_height, mouse_x + 50 / 2, mouse_y + 50 / 2, false);
