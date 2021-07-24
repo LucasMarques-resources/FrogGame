@@ -134,7 +134,8 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oBox","path":"objects/oBox/oBox.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":64.0,"y":112.0,"resourceVersion":"1.0","name":"inst_7C2F3260","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":800,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Col","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
-        {"properties":[],"isDnd":false,"objectId":{"name":"oWater","path":"objects/oWater/oWater.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":10.0,"scaleY":2.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":160.0,"y":64.0,"resourceVersion":"1.0","name":"inst_27CB2FB3","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oWater","path":"objects/oWater/oWater.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":9.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":160.0,"y":96.0,"resourceVersion":"1.0","name":"inst_27CB2FB3","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oSlime","path":"objects/oSlime/oSlime.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":304.0,"y":32.0,"resourceVersion":"1.0","name":"inst_3BC3F064","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":900,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":16,"gridY":16,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Water","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":1000,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Down","tags":[],"resourceType":"GMRInstanceLayer",},
     {"spriteId":null,"colour":4285546551,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.5,"vspeed":0.5,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":1100,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMRBackgroundLayer",},
@@ -241,6 +242,7 @@
     {"name":"inst_344DCFF3","path":"rooms/RoomTest/RoomTest.yy",},
     {"name":"inst_60730A1D","path":"rooms/RoomTest/RoomTest.yy",},
     {"name":"inst_2E35D97E","path":"rooms/RoomTest/RoomTest.yy",},
+    {"name":"inst_3BC3F064","path":"rooms/RoomTest/RoomTest.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

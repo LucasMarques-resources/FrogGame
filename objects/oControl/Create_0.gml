@@ -39,6 +39,17 @@ objAmmoBeingAdded = noone;
 doAutoTile = false;
 raycastWallsChecked = ds_list_create();
 
+// Gun Types
+enum GUN_TYPES
+{
+	normal,
+	fire,
+	shotgun,
+	nadeLauncher,
+	machineGun,
+	sniper
+}
+
 // Create BedRock
 with (instance_create_layer(0, room_height - 12, "ColWall", pCollider))
 {

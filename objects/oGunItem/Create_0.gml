@@ -2,14 +2,7 @@
 // You can write your code in this editor
 image_speed = 0;
 
-enum TYPES
-{
-	normal,
-	fire,
-	shotgun,
-	nadeLauncher,
-	machineGun
-}
+
 
 textCrea = true;
 textObj = noone;
@@ -29,9 +22,10 @@ grav = .3;
 // Ammo
 switch (typeItem)
 {
-	case 0: itemOwnAmmo = 30; break; // Normal
-	case 1: itemOwnAmmo = 10; break; // Fire
-	case 2: itemOwnAmmo = 600; break;  // Shotgun
-	case 3: itemOwnAmmo = 5; break;  // Grenade launcher
-	case 4: itemOwnAmmo = 3000; break;  // MachineGun
+	case GUN_TYPES.normal: itemOwnAmmo = 30; break; // Normal
+	case GUN_TYPES.fire : itemOwnAmmo = 10; break; // Fire
+	case GUN_TYPES.shotgun : itemOwnAmmo = 600; break;  // Shotgun
+	case GUN_TYPES.nadeLauncher: itemOwnAmmo = 5; break;  // Grenade launcher
+	case GUN_TYPES.machineGun: itemOwnAmmo = 3000; break;  // MachineGun
+	case GUN_TYPES.sniper: itemOwnAmmo = 5; break;  // Sniper
 }

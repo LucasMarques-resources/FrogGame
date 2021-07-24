@@ -7,7 +7,7 @@ ownAmmo = global.ammo;
 if (instance_exists(oFrog) && global.hasGun)
 {
 	x = oFrog.x;
-	y = oFrog.y - 4;
+	y = oFrog.y - 5;
 	
 	image_angle = point_direction(x, y, mouse_x, mouse_y);
 }

@@ -6,7 +6,7 @@ colWater = place_meeting(x, y, oWater);
 switch (typeBullet)
 {
 	// Normal
-	case 0:
+	case GUN_TYPES.normal:
 	{
 		destroyTimer--;
 		
@@ -39,7 +39,7 @@ switch (typeBullet)
 	
 	break;
 	// Fire
-	case 1:
+	case GUN_TYPES.fire:
 		
 		destroyTimer--;
 		
@@ -103,7 +103,7 @@ switch (typeBullet)
 	break;
 	
 	// Shotgun
-	case 2:
+	case GUN_TYPES.shotgun:
 		
 		destroyTimer--;
 		
@@ -137,7 +137,7 @@ switch (typeBullet)
 	break;
 	
 	// Grenade Launcher
-	case 3:
+	case GUN_TYPES.nadeLauncher:
 		
 		if (colWater)
 		{	
@@ -214,7 +214,7 @@ switch (typeBullet)
 	break;
 	
 	// Machine gun
-	case 4:
+	case GUN_TYPES.machineGun:
 		
 		destroyTimer--;
 		
@@ -246,11 +246,61 @@ switch (typeBullet)
 		}
 		
 	break;
+	
+	case GUN_TYPES.sniper:
+		
+		damage = 3;
+		
+		if (colWater)
+		{
+			spd = 4;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 7;
+		
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
+
+		// Collision with something
+		with (instance_place(x, y, pShootable))
+		{
+			if (shootable)
+			{
+				hp -= other.damage;
+				colShootable = true;
+				hitFrom = other.direction;
+				if (hp < 1) other.create = false;
+					
+				instance_destroy(other);
+			}
+		}
+		
+	break;
 }
 
 // Being destroyed
 if (destroyTimer <= 0) instance_destroy();
 
+// Destroying walls
+if (typeBullet != GUN_TYPES.nadeLauncher)
+{
+	with (instance_place(x, y, pCollider))
+	{
+		if (destructible)
+		{
+			hp -= other.damage;
+			with (other)
+			{
+				//CreateParticles(x, y, 3, sDestroyedBulletParticle, 50, 4, .2, .3, 2, false, false, room_speed / 1.8, 0, 0, 0);
+			}
+		}
+		instance_destroy(other);
+	}
+}
+
+if (typeBullet = GUN_TYPES.sniper) instance_destroy();
 
 x += velh;
 y += velv;

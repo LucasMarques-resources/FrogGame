@@ -15,6 +15,12 @@ typeGun = 0;
 ownAmmo = 0;
 ammoShotgunCount = 4;
 
+sniperBulletRange = 150;
+sniperRaycastChecked = false;
+sniperRaycastCheckedX = 0;
+sniperRaycastCheckedY = 0;
+
+
 //drawInitialBulletSprite = false;
 
 // Number of bullets particle object to create

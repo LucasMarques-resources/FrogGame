@@ -1,14 +1,14 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function Raycast(size, obj, dir){
+function Raycast(size, obj, dir, xxx, yyy){
 	/// @arg line_size
 	/// @arg collision_object
 	/// @arg line_direction
 	
 	for (var i = 0; i < size; i++)
 	{
-		var xx = x + lengthdir_x(i, dir);
-		var yy = y + lengthdir_y(i, dir);
+		var xx = xxx + lengthdir_x(i, dir);
+		var yy = yyy + lengthdir_y(i, dir);
 		
 		// Colliding with the some object
 		var _other = collision_line(x, y, xx, yy, obj, 1, 1);

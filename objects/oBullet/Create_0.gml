@@ -25,7 +25,10 @@ if (global.currentGun.typeGun = 3)
 	destroyTime = 5;
 }
 
+damage = 1;
+
 beDestroy = false;
+setDestroyTimer = true;
 destroyTimer = destroyTime;
 
 // Particles

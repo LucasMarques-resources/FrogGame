@@ -11,7 +11,7 @@ if (create)
 			
 		break;
 		
-		case 1:
+		case GUN_TYPES.fire:
 			
 			//part_type_destroy(particleTypeId);
 			//part_particles_clear(particleSystem);
@@ -23,13 +23,13 @@ if (create)
 			
 		break;
 		// Shotgun
-		case 2:
+		case GUN_TYPES.shotgun:
 		
 			with (instance_create_layer(x, y, "Particles", oMiniExplosion)) image_xscale = 1.5; image_yscale = image_xscale;
 		
 		break;
 		// Grenade Launcher
-		case 3:
+		case GUN_TYPES.nadeLauncher:
 		
 			with (instance_create_layer(x, y, "Particles", oExplosion))
 			{

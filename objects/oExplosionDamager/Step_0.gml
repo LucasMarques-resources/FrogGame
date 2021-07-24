@@ -53,7 +53,7 @@ if (num > 0)
 	{
 		if (list[| i].destructible)
 		{
-			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y));
+			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y), x, y);
 			if (r) with (r)
 			{
 				hp -= 5;

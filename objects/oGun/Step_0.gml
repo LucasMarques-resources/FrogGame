@@ -54,7 +54,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			break;
 			
 			// Fire
-			case 1:
+			case GUN_TYPES.fire:
 				
 				recoil = 5;
 				ScreenShake(2, 6);
@@ -86,7 +86,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			break;
 			
 			// Shotgun
-			case 2:
+			case GUN_TYPES.shotgun:
 				
 				recoil = 8;
 				ScreenShake(3, 6);
@@ -122,7 +122,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			break;
 			
 			// Grenade Launcher
-			case 3:
+			case GUN_TYPES.nadeLauncher:
 				
 				recoil = 5;
 				ScreenShake(2, 6);
@@ -150,7 +150,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 			break;
 			
 			// Machine Gun
-			case 4:
+			case GUN_TYPES.machineGun:
 				
 				recoil = 6;
 				ScreenShake(2, 4);
@@ -173,6 +173,38 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				{
 					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
 					gunKickY = lengthdir_y(3.5, other.image_angle - 180);
+				}
+				
+			break;
+			
+			// Sniper
+			case GUN_TYPES.sniper:
+				
+				recoil = 7;
+				ScreenShake(4, 8);
+				
+				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
+				
+				if (sniperRaycastChecked)
+				{
+					with (instance_create_layer(sniperRaycastCheckedX, sniperRaycastCheckedY, "Bullets", oBullet))
+					{
+						typeBullet = other.typeGun;
+						global.ammo--;
+						direction = other.image_angle + random_range(-1, 1);
+						image_index = typeBullet;
+						image_angle = direction;
+					}
+					sniperRaycastChecked = false;
+				}
+				
+				firingDelay = 50;
+	
+				// Player gun kick
+				with (oFrog)
+				{
+					gunKickX = lengthdir_x(3.7, other.image_angle - 180);
+					gunKickY = lengthdir_y(3.7, other.image_angle - 180);
 				}
 				
 			break;

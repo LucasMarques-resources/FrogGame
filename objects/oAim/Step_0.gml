@@ -6,15 +6,11 @@ y = mouse_y;
 switch (global.currentGun.typeGun)
 {
 	// Normal
-	case 0:
-		sprite_index = sAim;
-	break;
-	// Gun
-	case 1:
+	default:
 		sprite_index = sAim;
 	break;
 	// Shotgun
-	case 2:
+	case GUN_TYPES.shotgun:
 		sprite_index = sAimShotgun;
 	break;
 }
