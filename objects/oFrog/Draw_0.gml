@@ -33,5 +33,5 @@ else
 	}
 }
 
-/*
-	draw_ellipse(mouse_x - 50 / 2, mouse_y - room_height, mouse_x + 50 / 2, mouse_y + 50 / 2, false);
+
+//draw_rectangle(mouse_x - 50, mouse_y - room_height, mouse_x + 50, mouse_y + room_height, false);

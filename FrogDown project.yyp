@@ -130,9 +130,9 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
     {"roomId":{"name":"RoomTest3","path":"rooms/RoomTest3/RoomTest3.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

@@ -3,7 +3,7 @@
 
 // Check walls to auto tiling
 var _list = ds_list_create();
-var _num = collision_circle_list(x, y, damagerRadius + 16, pCollider, false, true, _list, false);
+var _num = collision_rectangle_list(x - 70, y - room_height, x + 70, y + room_height, pCollider, false, true, _list, false);
 if (_num > 0)
 {
 	for (var i = 0; i < _num; ++i)
@@ -16,7 +16,7 @@ ds_list_destroy(_list);
 
 // Destroying Walls
 var _list = ds_list_create();
-var _num = collision_circle_list(x, y, damagerRadius - 10, pCollider, false, true, _list, false);
+var _num = collision_rectangle_list(x - 50, y - room_height, x + 50, y + room_height, pCollider, false, true, _list, false);
 if (_num > 0)
 {
 	for (var i = 0; i < _num; ++i)
@@ -34,7 +34,7 @@ ds_list_destroy(_list);
 
 // Take damage to shootables
 var list = ds_list_create();
-var num = collision_circle_list(x, y, damagerRadius, pShootable, false, true, list, false);
+var num = collision_rectangle_list(x - 50, y - room_height, x + 50, y + room_height, pShootable, false, true, list, false);
 if (num > 0)
 {
 	for (var i = 0; i < num; ++i)
