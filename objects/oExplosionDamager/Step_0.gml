@@ -1,36 +1,28 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// Check walls to auto tiling
-var _list = ds_list_create();
-var _num = collision_circle_list(x, y, damagerRadius + 16, pCollider, false, true, _list, false);
-if (_num > 0)
-{
-	for (var i = 0; i < _num; ++i)
-	{
-		// Add the walls's id to the list
-		ds_list_add(wallsToAutoTiling, _list[| i]);
-	}
-}
-ds_list_destroy(_list);
-
 // Destroying Walls
 var _list = ds_list_create();
 var _num = collision_circle_list(x, y, damagerRadius - 10, pCollider, false, true, _list, false);
 if (_num > 0)
 {
-	for (var i = 0; i < _num; ++i)
+	for (var i = 0; i < _num; i++)
 	{
-		if (_list[| i].sprite_index != sBedRock)
+		var r = Raycast(damagerRadius - 10, _list[| i], point_direction(x, y, _list[| i].x, _list[| i].y), x, y);
+		if (r && r.destructible)
 		{
-			// Is to do auto tiling
-			other.autoTiling = true;
-			// Destroy
-			with (_list[| i]) if (destructible) instance_destroy();
+			with (r)
+			{
+				// Is to do auto tiling
+				other.autoTiling = true;
+				// Destroy
+				instance_destroy();
+			}
 		}
 	}
 }
 ds_list_destroy(_list);
+
 /*
 var list = ds_list_create();
 var num = collision_circle_list(x, y, damagerRadius, pCollider, false, true, list, false);

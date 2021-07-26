@@ -8,6 +8,8 @@ arrayPosX[0] = x;
 arrayPosY[0] = y;
 glowArrayAngle[0] = 270;
 
+createThunderDamager = true;
+
 for (var i = 1; i < trailParts; i++)
 {
 	var diversion = irandom_range(0, 40);

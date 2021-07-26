@@ -8,13 +8,14 @@ for (var i = 0; i < trailParts-1; i++)
 	draw_sprite_ext(sThunderLight, 0, arrayPosX[i], arrayPosY[i], scale, scale, glowArrayAngle[i], color, 0.1);
 	draw_line_width(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], lineScale);
 	
-	if ((collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pCollider, 0, 0) || collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0)))
+	if ((collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pCollider, 0, 0)
+	|| collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0)))
 	{
-		if (oControl.createThunderDamager)
+		if (createThunderDamager)
 		{
 			var expo = instance_create_layer(arrayPosX[i], arrayPosY[i], "Particles", oThunderDamager);
 			expo.damagerRadius = 40;
-			oControl.createThunderDamager = false;
+			createThunderDamager = false;
 		}
 		break;
 	}

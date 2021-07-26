@@ -10,3 +10,7 @@ explosionDirection = 0;
 
 raycastCheck = false;
 wallsDir = 0;
+
+createExplosionDamager = true;
+
+createExplosionDamagerAutoTiling = false;

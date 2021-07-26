@@ -21,12 +21,15 @@ if (_num > 0)
 {
 	for (var i = 0; i < _num; ++i)
 	{
-		if (_list[| i].sprite_index != sBedRock)
+		// Destroy
+		with (_list[| i])
 		{
-			// Is to do auto tiling
-			other.autoTiling = true;
-			// Destroy
-			with (_list[| i]) if (destructible) instance_destroy();
+			if (destructible)
+			{
+				// Is to do auto tiling
+				other.autoTiling = true;
+				instance_destroy();
+			}
 		}
 	}
 }
@@ -41,9 +44,9 @@ if (num > 0)
 	{
 		if (list[| i].destructible)
 		{
-			with (list[| i])
+			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y), x, y);
+			if (r) with (r)
 			{
-				//show_message("TAKING DAMAGE    2");
 				hp -= 5;
 				colShootable = true;
 				knockBack = irandom_range(2.3, 3.7);

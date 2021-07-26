@@ -1,10 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-// If to auto tiling
-
 if (autoTiling)
 {
+	// Check walls to auto tiling
+	var _list = ds_list_create();
+	var _num = collision_circle_list(x, y, damagerRadius + 16, pCollider, false, true, _list, false);
+	if (_num > 0)
+	{
+		for (var i = 0; i < _num; ++i)
+		{
+			// Add the walls's id to the list
+			ds_list_add(wallsToAutoTiling, _list[| i]);
+		}
+	}
+	ds_list_destroy(_list);
+		
 	// Run by all the walls to auto tiling
 	for (var i = 0; i < ds_list_size(wallsToAutoTiling); i++)
 	{
@@ -14,12 +25,9 @@ if (autoTiling)
 		{
 			if (destructible)
 			{
-				var rand = choose(0, 1);
-				if (rand = 1)
-				{
-					raycastCheck = true;
-					hp -= hp;
-				}
+				hp -= hp;
+				raycastCheck = false;
+				destroyTimerDown = true;
 			}
 		}
 	}

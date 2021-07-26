@@ -17,7 +17,7 @@ function Raycast(size, obj, dir, xxx, yyy){
 		draw_line_color(x, y, xx, yy, c_red, c_red);
 		
 		if (_other || (_coll && !_coll.destructible))
-		{	
+		{
 			return _other;
 			break;
 		}
