@@ -6,17 +6,7 @@ if (destructible)
 	if (hp <= 0 && raycastCheck)
 	{
 		var _list = ds_list_create();
-		if (oFrog.image_xscale = 1)
-		{
-			var x1 = x;
-			var x2 = x + 16;
-		}
-		else
-		{
-			var x1 = x - 16;
-			var x2 = x;
-		}
-		var _num = collision_rectangle_list(x1, y - 10, x2, y, pCollider, false, true, _list, false);
+		var _num = collision_rectangle_list(choose(x, x-16), y - 10, choose(x, x+16), y, pCollider, false, true, _list, false);
 		if (_num > 0)
 		{
 			for (var i = 0; i < _num; ++i)

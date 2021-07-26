@@ -15,11 +15,8 @@ if (autoTiling)
 			if (destructible)
 			{
 				var rand = irandom_range(0, 100);
-				if (rand < 20)
-				{
-					raycastCheck = true;
-					hp -= hp;
-				}
+				raycastCheck = true;
+				hp -= hp;
 			}
 		}
 	}

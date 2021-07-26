@@ -226,7 +226,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 40;
+				firingDelay = 100;
 	
 				// Player gun kick
 				with (oFrog)

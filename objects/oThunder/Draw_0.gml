@@ -13,12 +13,12 @@ for (var i = 0; i < trailParts-1; i++)
 		if (oControl.createThunderDamager)
 		{
 			var expo = instance_create_layer(arrayPosX[i], arrayPosY[i], "Particles", oThunderDamager);
-			expo.damagerRadius = 50;
+			expo.damagerRadius = 40;
 			oControl.createThunderDamager = false;
 		}
 		break;
 	}
-	with (collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0))
+	/*with (collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0))
 	{
 		if (destructible)
 		{
@@ -29,6 +29,7 @@ for (var i = 0; i < trailParts-1; i++)
 			if (oBox) createFireParticles = true;
 		}
 	}
+	*/
 }
 
 draw_sprite_ext(sThunderLightBall, 0, arrayPosX[0], arrayPosY[0], 2, 2, 0, color, 0.1);
