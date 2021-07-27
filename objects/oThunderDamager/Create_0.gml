@@ -10,3 +10,6 @@ explosionDirection = 0;
 
 raycastCheck = false;
 wallsDir = 0;
+
+xRadius = 25;
+yRadius = 70;

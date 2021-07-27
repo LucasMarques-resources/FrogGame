@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Damagers",
+    "path": "folders/Objects/Damagers.yy",
   },
   "resourceVersion": "1.0",
   "name": "oExplosionDamager",

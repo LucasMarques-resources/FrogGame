@@ -18,5 +18,6 @@ if (doAutoTileWall)
 	}
 	ds_list_destroy(_list);
 	with (oControl) doAutoTile = true;
+	
 	doAutoTileWall = false;
 }

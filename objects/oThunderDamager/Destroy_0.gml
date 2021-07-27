@@ -2,23 +2,30 @@
 // You can write your code in this editor
 
 // If to auto tiling
-
 if (autoTiling)
 {
-	// Run by all the walls to auto tiling
-	for (var i = 0; i < ds_list_size(wallsToAutoTiling); i++)
+	// Check walls to auto tiling
+	var _list = ds_list_create();
+	var damgRad = damagerRadius + 20;
+	var _num = collision_rectangle_list(x - (xRadius + 20), y - room_height, x + (xRadius + 20), y + (yRadius + 20) , pCollider, false, true, _list, false);
+	if (_num > 0)
 	{
-		ds_list_add(oControl.raycastWallsChecked, wallsToAutoTiling[| i]);
-		oControl.doAutoTile = true;
-		with (wallsToAutoTiling[| i])
+		for (var i = 0; i < _num; ++i)
 		{
-			if (destructible)
+			// Add the walls's id to the list
+			with (_list[| i])
 			{
-				raycastCheck = true;
-				hp -= hp;
+				if (destructible)
+				{
+					hp -= hp;
+					raycastCheck = false;
+					destroyTimerDown = true;
+					image_index = AutoTile();
+				}
 			}
 		}
 	}
+	ds_list_destroy(_list);
 }
 
 ds_list_destroy(wallsToAutoTiling);

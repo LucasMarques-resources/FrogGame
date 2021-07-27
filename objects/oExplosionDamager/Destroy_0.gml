@@ -11,11 +11,20 @@ if (autoTiling)
 		for (var i = 0; i < _num; ++i)
 		{
 			// Add the walls's id to the list
-			ds_list_add(wallsToAutoTiling, _list[| i]);
+			with (_list[| i])
+			{
+				if (destructible)
+				{
+					hp -= hp;
+					raycastCheck = false;
+					destroyTimerDown = true;
+					image_index = AutoTile();
+				}
+			}
 		}
 	}
 	ds_list_destroy(_list);
-		
+	/*
 	// Run by all the walls to auto tiling
 	for (var i = 0; i < ds_list_size(wallsToAutoTiling); i++)
 	{
@@ -31,6 +40,7 @@ if (autoTiling)
 			}
 		}
 	}
+	*/
 }
 
 ds_list_destroy(wallsToAutoTiling);

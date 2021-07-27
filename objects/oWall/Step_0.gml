@@ -3,7 +3,6 @@
 
 if (destructible)
 {
-	
 	if (hp <= 0 && raycastCheck)
 	{
 		var _list = ds_list_create();
@@ -32,7 +31,7 @@ if (destructible)
 			if (destroyTimer <= 0)
 			{
 				doAutoTileWall = true;
-				instance_destroy();			
+				instance_destroy();	
 			}
 		}
 	}

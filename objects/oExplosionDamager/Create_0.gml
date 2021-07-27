@@ -11,6 +11,7 @@ explosionDirection = 0;
 raycastCheck = false;
 wallsDir = 0;
 
-createExplosionDamager = true;
-
-createExplosionDamagerAutoTiling = false;
+with (oControl)
+{
+	raycastWallsChecked = ds_list_create();
+}

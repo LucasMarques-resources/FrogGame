@@ -14,12 +14,11 @@ for (var i = 0; i < trailParts-1; i++)
 		if (createThunderDamager)
 		{
 			var expo = instance_create_layer(arrayPosX[i], arrayPosY[i], "Particles", oThunderDamager);
-			expo.damagerRadius = 40;
 			createThunderDamager = false;
 		}
 		break;
-	}
-	/*with (collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0))
+	}/*
+	with (collision_line(arrayPosX[i], arrayPosY[i], arrayPosX[i+1], arrayPosY[i+1], pShootable, 0, 0))
 	{
 		if (destructible)
 		{

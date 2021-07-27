@@ -59,9 +59,10 @@ if (create)
 			
 			instance_create_layer(x, y, "Particles", oMiniExplosion);
 			
-			repeat(2)
+			for (var i = 0; i <= 1; i++)
 			{
-				instance_create_layer(x, y - room_height, "Top", oThunder);
+				var thunder = instance_create_layer(x, y - room_height, "Top", oThunder);
+				thunder.createThunderDamager = i;
 				
 				ScreenShake(7, 6);
 			}

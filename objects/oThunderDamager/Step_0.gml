@@ -1,22 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// Check walls to auto tiling
-var _list = ds_list_create();
-var _num = collision_rectangle_list(x - (damagerRadius + 20), y - room_height, x + (damagerRadius + 20), y + room_height, pCollider, false, true, _list, false);
-if (_num > 0)
-{
-	for (var i = 0; i < _num; ++i)
-	{
-		// Add the walls's id to the list
-		if (_list[| i].destructible) ds_list_add(wallsToAutoTiling, _list[| i]);
-	}
-}
-ds_list_destroy(_list);
-
+show_message(id);
 // Destroying Walls
 var _list = ds_list_create();
-var _num = collision_rectangle_list(x - damagerRadius, y - room_height, x + damagerRadius, y + room_height, pCollider, false, true, _list, false);
+var _num = collision_rectangle_list(x - xRadius, y - yRadius, x + xRadius, y + yRadius, pCollider, false, true, _list, false);
 if (_num > 0)
 {
 	for (var i = 0; i < _num; ++i)
@@ -28,6 +15,7 @@ if (_num > 0)
 			{
 				// Is to do auto tiling
 				other.autoTiling = true;
+				// Destroy
 				instance_destroy();
 			}
 		}
@@ -37,14 +25,14 @@ ds_list_destroy(_list);
 
 // Take damage to shootables
 var list = ds_list_create();
-var num = collision_rectangle_list(x - damagerRadius, y - room_height, x + damagerRadius, y + room_height, pShootable, false, true, list, false);
+var num = collision_rectangle_list(x - (xRadius + 20), y - (yRadius + 20), x + (xRadius + 20), y + (yRadius + 20), pShootable, false, true, list, false);
 if (num > 0)
 {
 	for (var i = 0; i < num; ++i)
 	{
 		if (list[| i].destructible)
 		{
-			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y), x, y);
+			var r = Raycast(90, list[| i], point_direction(x, y, list[| i].x, list[| i].y), x, y);
 			if (r) with (r)
 			{
 				hp -= 5;

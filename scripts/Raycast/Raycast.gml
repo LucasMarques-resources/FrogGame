@@ -11,12 +11,14 @@ function Raycast(size, obj, dir, xxx, yyy){
 		var yy = yyy + lengthdir_y(i, dir);
 		
 		// Colliding with the some object
-		var _other = collision_line(x, y, xx, yy, obj, 1, 1);
-		var _coll = collision_line(x, y, xx, yy, pCollider, 1, 1);
+		var _other = collision_line(xxx, yyy, xx, yy, obj, 1, 1);
+		var _coll = collision_line(xxx, yyy, xx, yy, pCollider, 1, 1);
 
-		draw_line_color(x, y, xx, yy, c_red, c_red);
+		draw_line_color(x, x, xx, yy, c_red, c_red);
 		
-		if (_other || (_coll && !_coll.destructible))
+		if (_coll && !_coll.destructible) break;
+		
+		if (_other)
 		{
 			return _other;
 			break;
