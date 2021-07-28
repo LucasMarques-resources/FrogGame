@@ -6,7 +6,6 @@ if (autoTiling)
 {
 	// Check walls to auto tiling
 	var _list = ds_list_create();
-	var damgRad = damagerRadius + 20;
 	var _num = collision_rectangle_list(x - (xRadius + 20), y - room_height, x + (xRadius + 20), y + (yRadius + 20) , pCollider, false, true, _list, false);
 	if (_num > 0)
 	{

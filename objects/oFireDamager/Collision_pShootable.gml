@@ -6,12 +6,12 @@ if (!other.item)
 	{
 		other.image_blend = c_red;
 
-		if (other.colDamager)
+		if (other.colFireDamager)
 		{
 			loseHpTimerD = loseHpTimeD;
 			losingHpTimerD = losingHpTimeD;
 		}
-		other.colDamager = false;
+		other.colFireDamager = false;
 	
 		loseHpTimerD--;
 		losingHpTimerD--;
@@ -28,20 +28,21 @@ if (!other.item)
 		
 			loseHpTimerD = loseHpTimeD;
 		}
-		show_debug_message(losingHpTimerD);
+		//show_debug_message(losingHpTimerD);
 	
 		// Stop damaging
 		if (losingHpTimerD <= 0)
 		{
-			other.damagerCrea = true;
-			other.beingDamaged = false;
+			other.damagerFireCrea = true;
+			other.beingFireDamaged = false;
+			other.wasThundered = false;
 			instance_destroy();
 			losingHpTimerD = losingHpTimeD;
 		}
 	}
 	else
 	{
-		if (!other.beingDamaged)
+		if (!other.beingFireDamaged)
 		{
 			with (other)
 			{	
@@ -61,7 +62,7 @@ if (!other.item)
 				{
 					followId = other.id;
 				}
-				beingDamaged = true;
+				beingFireDamaged = true;
 			}
 		}
 	}

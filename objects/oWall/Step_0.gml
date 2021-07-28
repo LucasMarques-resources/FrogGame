@@ -30,7 +30,6 @@ if (destructible)
 			destroyTimer--;
 			if (destroyTimer <= 0)
 			{
-				doAutoTileWall = true;
 				instance_destroy();	
 			}
 		}

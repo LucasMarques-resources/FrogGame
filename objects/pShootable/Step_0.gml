@@ -3,6 +3,7 @@
 
 colWater = place_meeting(x, y, oWater);
 
+// Water (values)
 if (colWater)
 {
 	grav = .1;
@@ -21,13 +22,15 @@ else
 	else VknockBack = false;
 }
 
-if (!instance_place(x, y, pDamager))
+// Set values to normal
+if (!instance_place(x, y, oFireDamager))
 {
-	colDamager = true;
-	beingDamaged = false;
+	colFireDamager = true;
+	beingFireDamaged = false;
 	image_blend = c_white;
 }
 
+// Set beingDragged to false
 with (oFrog)
 {
 	if (!place_meeting(x + velh, y, pBox))
@@ -36,9 +39,9 @@ with (oFrog)
 	}
 }
 
+// Knock back and hurt state
 if (colShootable)
 {
-	// knock back
 	if (HknockBack) velh = lengthdir_x(knockBack, hitFrom);
 	if (VknockBack)
 	{
@@ -51,5 +54,20 @@ if (colShootable)
 	colShootable = false;
 }
 
-//show_debug_message(damagerCrea);
+// If was thundered
+if (wasThundered)
+{
+	beingFireDamaged = true;
+	if (damagerFireCrea)
+	{
+		with (instance_create_layer(x, y, "Instances", oFireDamager))
+		{
+			show_message(id);
+			followId = other.id;
+		}
+		damagerFireCrea = false;
+	}
+}
+
+//show_debug_message(damagerFireCrea);
 if (collision) velv += grav;

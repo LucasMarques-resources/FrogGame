@@ -57,12 +57,12 @@ if (create)
 		
 		case GUN_TYPES.thunder:
 			
-			instance_create_layer(x, y, "Particles", oMiniExplosion);
+			instance_create_layer(x, y, "Particles", oExplosion);
 			
 			for (var i = 0; i <= 1; i++)
 			{
 				var thunder = instance_create_layer(x, y - room_height, "Top", oThunder);
-				thunder.createThunderDamager = i;
+				thunder.createThunderDamager = true;
 				
 				ScreenShake(7, 6);
 			}

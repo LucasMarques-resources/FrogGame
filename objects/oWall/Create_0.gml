@@ -9,4 +9,4 @@ raycastCheck = false;
 destroyTimer = choose(room_speed / 2, room_speed / 3, room_speed / 4);
 destroyTimerDown = false;
 
-doAutoTileWall = false;
+doAutoTileWall = true;

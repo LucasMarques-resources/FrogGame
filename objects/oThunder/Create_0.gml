@@ -12,7 +12,7 @@ createThunderDamager = true;
 
 for (var i = 1; i < trailParts; i++)
 {
-	var diversion = irandom_range(0, 40);
+	var diversion = irandom_range(0, 30);
 	var dir = irandom_range(270-diversion, 270+diversion);
 	var length = random_range(1, 20);
 	var leX = lengthdir_x(length, dir);
