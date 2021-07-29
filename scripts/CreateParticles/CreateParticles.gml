@@ -1,12 +1,12 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function CreateParticles(xx, yy, amount, sprite, invNumb, angRotate, bounceValue, grav, vel, colWithBoxes, randomScale, invTimer, _partType, _partSizeMin, _partSizeMax, _scaleDown){
+function CreateParticles(xx, yy, amount, sprite, invNumb, scale, bounceValue, grav, vel, colWithBoxes, randomScale, invTimer, _partType, _partSizeMin, _partSizeMax, _scaleDown){
 	/// @arg x
 	/// @arg y
 	/// @arg amount
 	/// @arg sprite
 	/// @arg invulnerableNumber
-	/// @arg angleRotate
+	/// @arg scale
 	/// @arg bouncingValue
 	/// @arg grav
 	/// @arg vel
@@ -27,7 +27,7 @@ function CreateParticles(xx, yy, amount, sprite, invNumb, angRotate, bounceValue
 			direction = _angle;
 			image_index = i;
 			invulnerableNumber = invNumb;
-			angleRotate = angRotate;
+			angleRotate = 7;
 			bouncingValue = bounceValue;
 			grav = grav;
 			velh += lengthdir_x(vel, _angle);
@@ -44,6 +44,11 @@ function CreateParticles(xx, yy, amount, sprite, invNumb, angRotate, bounceValue
 			if (randomScale)
 			{
 				image_xscale = random_range(1, 1.4);
+				image_yscale = image_xscale;
+			}
+			else
+			{
+				image_xscale = scale;
 				image_yscale = image_xscale;
 			}
 			

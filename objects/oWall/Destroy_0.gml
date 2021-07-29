@@ -2,7 +2,7 @@
 // You can write your code in this editor
 var amount = irandom_range(4, 6);
 
-CreateParticles(x, y, amount, sGrassTileParticles, 100, 7, .2, .3, 2.5, true, false, room_speed / 1.8, 0, 0, 0, true);
+CreateParticles(x, y, amount, sGrassTileParticles, 100, 1, .2, .3, 2.5, true, false, room_speed / 1.8, 0, 0, 0, true);
 
 if (doAutoTileWall)
 {

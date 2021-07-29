@@ -24,7 +24,7 @@ else
 
 				draw_line_color(x, y, xx, yy, c_red, c_red);
 
-				if (((_other && !_other.item) || _coll))
+				if (_other || _coll)
 				{
 					sniperRaycastChecked = true;
 					sniperRaycastCheckedX = xx;

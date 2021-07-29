@@ -9,11 +9,8 @@ if (colWater)
 	grav = .1;
 	VknockBack = true;
 
-	if (!item)
-	{
-		velh = lerp(velh, 0, 0.1);
-		velv = lerp(velv, 0, 0.1);
-	}
+	velh = lerp(velh, 0, 0.1);
+	velv = lerp(velv, 0, 0.1);
 }
 else
 {
@@ -62,7 +59,6 @@ if (wasThundered)
 	{
 		with (instance_create_layer(x, y, "Instances", oFireDamager))
 		{
-			show_message(id);
 			followId = other.id;
 		}
 		damagerFireCrea = false;

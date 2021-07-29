@@ -1,7 +1,8 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description desc
 
-if (destructible)
+if (destroyed) instance_destroy();
+
+if (destructible && !destructibleCustom)
 {
 	if (hp <= 0 && raycastCheck)
 	{

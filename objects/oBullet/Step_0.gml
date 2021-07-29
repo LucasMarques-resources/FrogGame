@@ -64,39 +64,36 @@ switch (typeBullet)
 		// Collision with something
 		with (instance_place(x, y, pShootable))
 		{
-			if (!item)
-			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				if (hp < 1) other.create = false;
+			hp--;
+			colShootable = true;
+			hitFrom = other.direction;
+			if (hp < 1) other.create = false;
 				
-				if (damagerFireCrea)
+			if (damagerFireCrea)
+			{
+				/*var xx = x;
+				var yy = y;
+				if (enemy)
 				{
-					/*var xx = x;
-					var yy = y;
-					if (enemy)
-					{
-						xx = x;
-						yy = y;
-					}
-					else
-					{
-						xx = x + sprite_width / 2;
-						yy = y + sprite_height / 2;
-					}*/
-					with (instance_create_layer(x, y, "Instances", oFireDamager))
-					{
-						show_message("CREA FIRE DAMAGER");
-						followId = other.id;
-					}
-
-					colFireDamager = true;
-					damagerFireCrea = false;
+					xx = x;
+					yy = y;
 				}
-				beingFireDamaged = true;
-				instance_destroy(other);
+				else
+				{
+					xx = x + sprite_width / 2;
+					yy = y + sprite_height / 2;
+				}*/
+				with (instance_create_layer(x, y, "Instances", oFireDamager))
+				{
+					followId = other.id;
+				}
+
+				colFireDamager = true;
+				damagerFireCrea = false;
 			}
+			beingFireDamaged = true;
+			instance_destroy(other);
+			
 			if (beingFireDamaged) resetDestroyDamagerTimer = true;
 		}
 		
@@ -279,7 +276,8 @@ switch (typeBullet)
 		{
 			if (shootable)
 			{
-				hp -= other.damage;
+				if (pBox) hp -= hp;
+				else hp -= other.damage;
 				colShootable = true;
 				hitFrom = other.direction;
 				if (hp < 1) other.create = false;

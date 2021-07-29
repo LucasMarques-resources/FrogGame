@@ -36,8 +36,8 @@
     {"propertyId":{"name":"destructible","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Environment",
+    "path": "folders/Objects/Environment.yy",
   },
   "resourceVersion": "1.0",
   "name": "oWood",

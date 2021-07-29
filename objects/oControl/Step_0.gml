@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+show_debug_overlay(true);
+
 // Switch by debug mode
 if (keyboard_check_pressed(vk_f1)) global.debugMode = !global.debugMode;
 
@@ -55,6 +57,6 @@ if (global.createWalls)
 	if (mouse_check_button_pressed(mb_left))
 	{
 		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
-		instance_create_layer(mouse_x, mouse_y, "Particles", oThunder);
+		instance_create_layer(mouse_x, mouse_y, "Particles", oRock);
 	}
 }

@@ -1,6 +1,39 @@
 /// @description Insert description here
 // You can write your code in this editor
-event_inherited();
+
+colWater = place_meeting(x, y, oWater);
+
+// Water (values)
+if (colWater)
+{
+	grav = .1;
+
+	velh = lerp(velh, 0, 0.05);
+	velv = lerp(velv, 0, 0.05);
+}
+else
+{
+	grav = gravD;
+}
+
+// Set values to normal
+if (!instance_place(x, y, oFireDamager))
+{
+	colFireDamager = true;
+	beingFireDamaged = false;
+	image_blend = c_white;
+}
+
+// Set beingDragged to false
+with (oFrog)
+{
+	if (!place_meeting(x + velh, y, pBox))
+	{
+		other.beingDragged = false;
+	}
+}
+
+velv += grav;
 
 timerCatch--;
 

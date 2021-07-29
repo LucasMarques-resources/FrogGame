@@ -16,7 +16,8 @@ if (_num > 0)
 				// Is to do auto tiling
 				other.autoTiling = true;
 				// Destroy
-				instance_destroy();
+				destroyed = true;
+				hp -= 2;
 			}
 		}
 	}

@@ -1,8 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-show_debug_overlay(true);
-
 ground = place_meeting(x, y + 1, pCollider) || place_meeting(x, y + 1, pBox);
 colWater = place_meeting(x, y, oWater);
 

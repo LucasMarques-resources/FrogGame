@@ -13,7 +13,7 @@ if (autoTiling)
 			// Add the walls's id to the list
 			with (_list[| i])
 			{
-				if (destructible)
+				if (destructible && !destructibleCustom)
 				{
 					hp -= hp;
 					raycastCheck = false;
