@@ -1,14 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-draw_sprite_ext(
-	sprite_index,
-	image_index,
-	floor(x),
-	floor(y),
-	image_xscale,
-	image_yscale,
-	image_angle,
-	image_blend,
-	image_alpha
-)
+
+
+shader_set(shOutLine);
+
+var texelW = texture_get_texel_width(sprite_get_texture(sprite_index, image_index));
+var texelH = texture_get_texel_height(sprite_get_texture(sprite_index, image_index));
+
+shader_set_uniform_f(uniformHandle, texelW, texelH);
+draw_self();
+
+shader_reset();

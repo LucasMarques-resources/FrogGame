@@ -2,15 +2,12 @@
 // You can write your code in this editor
 image_speed = 0;
 
-
-
 textCrea = true;
 textObj = noone;
 
 itemOwnAmmo = 40;
 
 pickUpGun = false;
-gunItemToPickUp = noone;
 
 velh = 0;
 velv = 0;
@@ -30,3 +27,5 @@ switch (typeItem)
 	case GUN_TYPES.sniper: itemOwnAmmo = 5; break;  // Sniper
 	case GUN_TYPES.thunder: itemOwnAmmo = 10; break;  // Thunder gun
 }
+
+uniformHandle = shader_get_uniform(shOutLine, "texturePixel");
