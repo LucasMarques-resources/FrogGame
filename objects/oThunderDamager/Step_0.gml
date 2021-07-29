@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-//show_message(id);
+
 // Destroying Walls
 var _list = ds_list_create();
 var _num = collision_rectangle_list(x - xRadius, y - yRadius, x + xRadius, y + yRadius, pCollider, false, true, _list, false);
@@ -16,7 +16,8 @@ if (_num > 0)
 				// Is to do auto tiling
 				other.autoTiling = true;
 				// Destroy
-				instance_destroy();
+				destroyed = true;
+				hp -= 2;
 			}
 		}
 	}

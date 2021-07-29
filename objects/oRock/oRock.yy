@@ -42,6 +42,7 @@
     {"propertyId":{"name":"doAutoTileWall","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"destructibleCustom","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"destroyed","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"realDestruction","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Environment",

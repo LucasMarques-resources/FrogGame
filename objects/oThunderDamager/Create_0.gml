@@ -4,7 +4,7 @@
 damagerRadius = 30;
 
 autoTiling = false;
-wallsToAutoTiling = ds_list_create();
+
 
 explosionDirection = 0;
 

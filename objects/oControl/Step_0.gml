@@ -57,6 +57,6 @@ if (global.createWalls)
 	if (mouse_check_button_pressed(mb_left))
 	{
 		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
-		instance_create_layer(mouse_x, mouse_y, "Particles", oRock);
+		instance_create_layer(mouse_x, mouse_y, "Col", oRock);
 	}
 }

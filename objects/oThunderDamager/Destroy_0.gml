@@ -14,7 +14,7 @@ if (autoTiling)
 			// Add the walls's id to the list
 			with (_list[| i])
 			{
-				if (destructible)
+				if (destructible && realDestruction)
 				{
 					hp -= hp;
 					raycastCheck = false;
@@ -26,5 +26,3 @@ if (autoTiling)
 	}
 	ds_list_destroy(_list);
 }
-
-ds_list_destroy(wallsToAutoTiling);

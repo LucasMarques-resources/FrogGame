@@ -37,7 +37,6 @@ if (num > 0)
 				colShootable = true;
 				knockBack = irandom_range(2.3, 3.7);
 				hitFrom = point_direction(other.x, other.y, x, y);
-				if (oBox) createFireParticles = true;
 			}
 		}
 	}
