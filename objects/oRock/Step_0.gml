@@ -7,17 +7,7 @@ if (hp <= 0)
 	instance_destroy();
 }
 
-if (velv > 1 && timerDestroyEnvironment <= 0)
-{
-	
-	timerDestroyEnvActivated = true;
-}
-
-if (timerDestroyEnvActivated)
-{
-	timerDestroyEnvironment--;
-}
-
-
+if (velv > 3.5) can = true;
+else can = false;
 
 velv += grav;

@@ -27,5 +27,3 @@ switch (typeItem)
 	case GUN_TYPES.sniper: itemOwnAmmo = 5; break;  // Sniper
 	case GUN_TYPES.thunder: itemOwnAmmo = 10; break;  // Thunder gun
 }
-
-uniformHandle = shader_get_uniform(shOutLine, "texturePixel");

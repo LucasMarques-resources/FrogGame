@@ -5,7 +5,6 @@ velh = 0;
 velv = 0;
 grav = .4;
 
-timerDestroyEnvironment = 0;
-timerDestroyEnvActivated = false;
+can = false;
 
 ground = place_meeting(x, y + 1, pCollider);
