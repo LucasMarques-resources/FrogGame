@@ -27,7 +27,7 @@ switch (typeBullet)
 		// Collision with something
 		with (instance_place(x, y, pShootable))
 		{
-			if (shootable)
+			if (destructible)
 			{
 				hp--;
 				colShootable = true;
@@ -120,7 +120,7 @@ switch (typeBullet)
 		// Collision with something
 		with (instance_place(x, y, pShootable))
 		{
-			if (shootable)
+			if (destructible)
 			{
 				hp--;
 				colShootable = true;
@@ -240,7 +240,7 @@ switch (typeBullet)
 		// Collision with something
 		with (instance_place(x, y, pShootable))
 		{
-			if (shootable)
+			if (destructible)
 			{
 				hp--;
 				colShootable = true;
@@ -271,16 +271,16 @@ switch (typeBullet)
 		velh = lengthdir_x(spd, direction);
 		velv = lengthdir_y(spd, direction);
 
-		// Collision with something
+		// Collision with pShootable
 		with (instance_place(x, y, pShootable))
 		{
-			if (shootable)
+			if (destructible)
 			{
-				if (pBox) hp -= hp;
-				else hp -= other.damage;
+				hp -= other.damage;
 				colShootable = true;
 				hitFrom = other.direction;
 				if (hp < 1) other.create = false;
+				if (box) hp -= hp;
 					
 				instance_destroy(other);
 			}

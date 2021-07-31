@@ -189,6 +189,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				{
 					with (instance_create_layer(sniperRaycastCheckedX, sniperRaycastCheckedY, "Bullets", oBullet))
 					{
+						show_message(id);
 						typeBullet = other.typeGun;
 						DecreaseAmmoOnGrid(other.typeGun);
 						direction = other.image_angle + random_range(-1, 1);
