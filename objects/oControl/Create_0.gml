@@ -36,6 +36,12 @@ ammoBeingAddedCrea = true;
 ammoBeingAddedCreaRepeat = true;
 objAmmoBeingAdded = noone;
 
+// Guns
+global.gunsSlots = 1;
+global.gunsGrid = ds_grid_create(2, 3);
+ds_grid_clear(global.gunsGrid, -4);
+
+// Walls
 doAutoTile = false;
 raycastWallsChecked = ds_list_create();
 
@@ -50,9 +56,6 @@ enum GUN_TYPES
 	sniper,
 	thunder
 }
-
-// Thunders
-createThunderDamager = true;
 
 // Create BedRock
 with (instance_create_layer(0, room_height - 12, "ColWall", pCollider))

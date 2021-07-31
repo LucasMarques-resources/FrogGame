@@ -33,10 +33,15 @@ draw_set_valign(fa_center);
 if (global.hasGun)
 {
 	// Draw gun
-	draw_sprite_ext(sGunItem, global.currentGun.typeGun, 10, 23, 1, 1, 0, c_white, 1);
-
-	// Draw ammo
-	draw_text(25, 23, global.ammo);
+	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+	{
+		if (global.gunsGrid[# i, 0] != -4)
+		{
+			draw_sprite_ext(sGunItem, global.gunsGrid[# i, 1], 30 * i, 23, 1, 1, 0, c_white, 1);
+			// Draw ammo
+			draw_text(25 * i, 23, global.gunsGrid[# i, 2]);
+		}
+	}
 	
 	if (global.ammo < 10)
 	{
@@ -110,6 +115,18 @@ if (global.lifeAdded)
 		textString = "1 LIFE";
 	}
 	global.lifeAdded = false;
+}
+
+// Draw guns grid
+for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+{
+	var sep = string_height("ab");
+	var val = 10;
+	
+	for (var j = 0; j < ds_grid_height(global.gunsGrid); j++)
+	{
+		draw_text_ext(40 * i, 25 + (val * j) + val, global.gunsGrid[# i, j], sep, val);
+	}
 }
 
 draw_set_font(-1);

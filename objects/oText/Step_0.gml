@@ -56,6 +56,8 @@ if (itemCreator != noone)
 					global.currentGun = self;
 		
 					ownAmmo = other.itemOwnAmmo;
+					
+					AddGunToGrid(id, ownAmmo);
 		
 					global.ammo = ownAmmo;
 				}

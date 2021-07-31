@@ -19,7 +19,8 @@ if (other.timerCatch <= 0)
 			
 			if (global.hasGun)
 			{
-				global.ammo += other.ammo;
+				global.currentGun.ownAmmo += 10;
+				show_message(global.currentGun.ownAmmo);
 				global.ammoAdd = other.ammo;
 				oControl.ammoBeingAdded += other.ammo;
 				oControl.ammoBeingAddedCrea = true;

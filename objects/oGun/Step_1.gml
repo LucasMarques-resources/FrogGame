@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-ownAmmo = global.ammo;
+ownAmmo = GetGunAmmoOnGrid(typeGun);
 
 // Updating image angle and postion
 if (instance_exists(oFrog) && global.hasGun)
