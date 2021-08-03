@@ -15,11 +15,13 @@ if (keyboard_check_pressed(vk_f1)) global.debugMode = !global.debugMode;
 // DEBUG mode
 if (global.debugMode)
 {
+	global.drawGunsGrid = true;
 	if (keyboard_check_pressed(vk_f2)) global.drawGrid = !global.drawGrid;
 	if (keyboard_check_pressed(vk_f3)) global.createWalls = !global.createWalls;
 } else
 {
 	global.drawGrid = false;
+	global.drawGunsGrid = false;
 	global.createWalls = false;
 }
 
@@ -40,55 +42,21 @@ if (doAutoTile)
 	doAutoTile = false;
 }
 
-// Change gun with mouse
-/*if (mouse_wheel_up() || mouse_wheel_down())
-{			
-	instance_destroy(oGun);
-	
-	global.hasGun = false;
-	
-	show_message(global.currentGun);
-			
-	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
-	{
-		if (!global.hasGun)
-		{
-			if (global.gunsGrid[# i, 0] != global.currentGun.id)
-			{
-				show_message(" 1 "+ string(global.gunsGrid[# i, 0]));
-				show_message(" 2 "+ string(global.currentGun.id));
-				
-				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
-				{
-					typeGun = global.gunsGrid[# i, 1];
-					global.currentGun = self;
-		
-					ownAmmo = global.gunsGrid[# i, 2];
-					
-					AddGunToGrid(global.currentGun, ownAmmo);
-		
-					global.ammo = ownAmmo;
-				}
-				if (!instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
-				global.hasGun = true;
-			} 
-		}
-	}
-}*/
-
 if (mouse_wheel_up())
 {
 	instance_destroy(oGun);
 	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
-		//show_message(global.currentGun.id);
-		//show_message(global.gunsGrid[# i, 0]);
 		if (global.gunsGrid[# i, 0] == global.currentGun.id)
 		{
-			//show_message(global.gunsGrid[# i, 0]);
 			global.currentGunPos = i;
 			var _currentGunPos = global.currentGunPos - 1;
+
+			if (_currentGunPos < 0)
+			{
+				_currentGunPos = ds_grid_width(global.gunsGrid) - 1;
+			}
 			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
 			{
 				global.gunsGrid[# _currentGunPos, 0] = id;
@@ -107,13 +75,15 @@ if (mouse_wheel_down())
 	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
-		//show_message(global.currentGun.id);
-		//show_message(global.gunsGrid[# i, 0]);
 		if (global.gunsGrid[# i, 0] == global.currentGun.id)
 		{
-			//show_message(global.gunsGrid[# i, 0]);
 			global.currentGunPos = i;
 			var _currentGunPos = global.currentGunPos + 1;
+
+			if (_currentGunPos = ds_grid_width(global.gunsGrid))
+			{
+				_currentGunPos = 0;
+			}
 			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
 			{
 				global.gunsGrid[# _currentGunPos, 0] = id;

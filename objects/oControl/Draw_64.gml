@@ -118,14 +118,17 @@ if (global.lifeAdded)
 }
 
 // Draw guns grid
-for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+if (global.drawGunsGrid)
 {
-	var sep = string_height("ab");
-	var val = 10;
-	
-	for (var j = 0; j < ds_grid_height(global.gunsGrid); j++)
+	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
-		draw_text_ext(40 * i, 25 + (val * j) + val, global.gunsGrid[# i, j], sep, val);
+		var sep = string_height("ab");
+		var val = 10;
+	
+		for (var j = 0; j < ds_grid_height(global.gunsGrid); j++)
+		{
+			draw_text_ext(40 * i, 25 + (val * j) + val, global.gunsGrid[# i, j], sep, val);
+		}
 	}
 }
 

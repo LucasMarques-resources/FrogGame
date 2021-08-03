@@ -29,5 +29,16 @@ function AddGunToGrid(idd, ammo)
 		}
 	}
 	
+	for (var i = 0; i < gridW; i++)
+	{
+		if (global.gunsGrid[# i, 0] == global.currentGun.id)
+		{
+			global.gunsGrid[# i, 0] = idd;
+			global.gunsGrid[# i, 1] = idd.typeGun;
+			global.gunsGrid[# i, 2] = idd.ownAmmo;
+			return true;
+		}
+	}
+	
 	return false;
 }
