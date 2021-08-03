@@ -36,7 +36,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid(other.typeGun);
+					DecreaseAmmoOnGrid(id);
 					direction = other.image_angle + random_range(-2, 3);
 					image_index = typeBullet;
 					image_angle = direction;
@@ -68,7 +68,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid(other.typeGun);
+					DecreaseAmmoOnGrid(id);
 					direction = other.image_angle + random_range(-2, 3);
 					image_index = typeBullet;
 					image_angle = direction;
@@ -105,7 +105,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 							image_index = typeBullet;
 							image_angle = direction;
 						}
-						DecreaseAmmoOnGrid(other.typeGun);
+						DecreaseAmmoOnGrid(id);
 					}
 					if (ammoShotgunCount = 1) ammoShotgunCount = 4;
 				}
@@ -132,7 +132,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid(other.typeGun);
+					DecreaseAmmoOnGrid(id);
 					direction = other.image_angle + random_range(-2, 3);
 					image_index = typeBullet;
 					image_angle = direction;
@@ -160,7 +160,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid(other.typeGun);
+					DecreaseAmmoOnGrid(id);
 					direction = other.image_angle + random_range(-7, 7);
 					image_index = typeBullet;
 					image_angle = direction;
@@ -191,7 +191,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					{
 						show_message(id);
 						typeBullet = other.typeGun;
-						DecreaseAmmoOnGrid(other.typeGun);
+						DecreaseAmmoOnGrid(id);
 						direction = other.image_angle + random_range(-1, 1);
 						image_index = typeBullet;
 						image_angle = direction;
@@ -221,7 +221,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid(other.typeGun);
+					DecreaseAmmoOnGrid(id);
 					direction = other.image_angle + random_range(-2, 3);
 					image_index = typeBullet;
 					image_angle = direction;

@@ -22,3 +22,5 @@ textCurrent = "";
 w = 0;
 h = 0;
 border = 5;
+
+createGunItem = false;

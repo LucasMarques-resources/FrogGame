@@ -28,22 +28,31 @@ if (itemCreator != noone)
 		if (keyboard_check_pressed(ord("E")))
 		{
 			textCrea = true;
-		
-			with (instance_create_layer(oGun.x, oGun.y - 10, "Instances", oGunItem))
+			
+			for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 			{
-				image_xscale = oFrog.image_xscale;
-				if (image_xscale = 1) var dir = 45; else dir = 135;
+				// If there is empty space
+				if (global.gunsGrid[# i, 1] != -4) createGunItem = true;
+				else createGunItem = false;
+			}
 			
-				velh = lengthdir_x(3, dir);
-				velv = lengthdir_y(3, dir);
+			if (createGunItem)
+			{
+				with (instance_create_layer(oGun.x, oGun.y - 10, "Instances", oGunItem))
+				{
+					image_xscale = oFrog.image_xscale;
+					if (image_xscale = 1) var dir = 45; else dir = 135;
 			
-				itemOwnAmmo = oGun.ownAmmo;
-				typeItem = oGun.typeGun;
+					velh = lengthdir_x(3, dir);
+					velv = lengthdir_y(3, dir);
+			
+					itemOwnAmmo = oGun.ownAmmo;
+					typeItem = oGun.typeGun;
+				}
 			}
 
 			instance_destroy(oGun);
 
-			global.currentGun = noone;
 			global.hasGun = false;
 			other.itemCreator = noone;
 			instance_destroy(other);
@@ -53,11 +62,12 @@ if (itemCreator != noone)
 				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
 				{
 					typeGun = other.typeItem;
-					global.currentGun = self;
-		
+					
 					ownAmmo = other.itemOwnAmmo;
 					
 					AddGunToGrid(id, ownAmmo);
+					
+					global.currentGun = self;
 		
 					global.ammo = ownAmmo;
 				}
@@ -65,7 +75,6 @@ if (itemCreator != noone)
 				instance_destroy();
 				global.hasGun = true;
 			}
-
 		}
 	}
 }

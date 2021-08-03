@@ -38,7 +38,8 @@ objAmmoBeingAdded = noone;
 
 // Guns
 global.gunsSlots = 1;
-global.gunsGrid = ds_grid_create(2, 3);
+global.currentGunPos = 0;
+global.gunsGrid = ds_grid_create(3, 3);
 ds_grid_clear(global.gunsGrid, -4);
 
 // Walls
