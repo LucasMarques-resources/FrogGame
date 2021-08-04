@@ -32,7 +32,7 @@ if (itemCreator != noone)
 			for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 			{
 				// If there is empty space
-				if (global.gunsGrid[# i, 1] != -4) createGunItem = true;
+				if (global.gunsGrid[# i, 1] != GUN_TYPES.none) createGunItem = true;
 				else createGunItem = false;
 			}
 			

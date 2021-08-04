@@ -104,6 +104,7 @@
     {"id":{"name":"sBox1","path":"sprites/sBox1/sBox1.yy",},"order":17,},
     {"id":{"name":"sMarker","path":"sprites/sMarker/sMarker.yy",},"order":23,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
+    {"id":{"name":"oGunItemUI","path":"objects/oGunItemUI/oGunItemUI.yy",},"order":13,},
     {"id":{"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},"order":1,},
     {"id":{"name":"AutoTile","path":"scripts/AutoTile/AutoTile.yy",},"order":9,},
     {"id":{"name":"CleanParticles","path":"scripts/CleanParticles/CleanParticles.yy",},"order":11,},

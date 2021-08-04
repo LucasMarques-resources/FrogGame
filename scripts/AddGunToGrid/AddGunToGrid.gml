@@ -20,7 +20,7 @@ function AddGunToGrid(idd, ammo)
 	for (var i = 0; i < gridW; i++)
 	{
 		// If there is empty space
-		if (global.gunsGrid[# i, 0] == -4)
+		if (global.gunsGrid[# i, 0] == 0)
 		{
 			global.gunsGrid[# i, 0] = idd;
 			global.gunsGrid[# i, 1] = idd.typeGun;

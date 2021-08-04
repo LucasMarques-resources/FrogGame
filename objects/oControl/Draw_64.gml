@@ -35,7 +35,7 @@ if (global.hasGun)
 	// Draw gun
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
-		if (global.gunsGrid[# i, 0] != -4)
+		if (global.gunsGrid[# i, 0] != GUN_TYPES.none)
 		{
 			draw_sprite_ext(sGunItem, global.gunsGrid[# i, 1], 30 * i, 23, 1, 1, 0, c_white, 1);
 			// Draw ammo

@@ -37,10 +37,10 @@ ammoBeingAddedCreaRepeat = true;
 objAmmoBeingAdded = noone;
 
 // Guns
+createGunItemUI = true;
 global.gunsSlots = 1;
 global.currentGunPos = 0;
-global.gunsGrid = ds_grid_create(3, 3);
-ds_grid_clear(global.gunsGrid, -4);
+global.gunsGrid = ds_grid_create(2, 3);
 
 // Walls
 doAutoTile = false;
@@ -49,6 +49,7 @@ raycastWallsChecked = ds_list_create();
 // Gun Types
 enum GUN_TYPES
 {
+	none,
 	normal,
 	fire,
 	shotgun,

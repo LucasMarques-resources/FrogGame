@@ -3,6 +3,7 @@
 
 show_debug_overlay(true);
 
+#region DEBUGS
 if (global.currentGun)
 {
 	show_debug_message("global.currentGun " + string(global.currentGun));
@@ -18,12 +19,30 @@ if (global.debugMode)
 	global.drawGunsGrid = true;
 	if (keyboard_check_pressed(vk_f2)) global.drawGrid = !global.drawGrid;
 	if (keyboard_check_pressed(vk_f3)) global.createWalls = !global.createWalls;
-} else
+	if (keyboard_check_pressed(vk_f4))
+	{
+		global.gunsSlots = real(get_string("guns slots", 0));
+		ds_grid_resize(global.gunsGrid, global.gunsSlots, ds_grid_height(global.gunsGrid));
+	}
+}
+else
 {
 	global.drawGrid = false;
 	global.drawGunsGrid = false;
 	global.createWalls = false;
 }
+
+// Create objects debug
+if (global.createWalls)
+{
+	if (mouse_check_button_pressed(mb_left))
+	{
+		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
+		instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oRock);
+	}
+}
+
+#endregion
 
 // Auto tile
 if (doAutoTile)
@@ -43,27 +62,30 @@ if (doAutoTile)
 }
 
 if (mouse_wheel_up())
-{
-	instance_destroy(oGun);
-	
+{	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
 		if (global.gunsGrid[# i, 0] == global.currentGun.id)
 		{
 			global.currentGunPos = i;
 			var _currentGunPos = global.currentGunPos - 1;
-
+			
 			if (_currentGunPos < 0)
 			{
 				_currentGunPos = ds_grid_width(global.gunsGrid) - 1;
 			}
-			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+			if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
 			{
-				global.gunsGrid[# _currentGunPos, 0] = id;
-				global.currentGun = self;
-				global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
-				global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-				return true;
+				instance_destroy(oGun);
+				
+				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+				{
+					global.gunsGrid[# _currentGunPos, 0] = id;
+					global.currentGun = self;
+					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
+					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+					return true;
+				}
 			}
 		}
 	}
@@ -71,8 +93,6 @@ if (mouse_wheel_up())
 
 if (mouse_wheel_down())
 {
-	instance_destroy(oGun);
-	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
 		if (global.gunsGrid[# i, 0] == global.currentGun.id)
@@ -84,13 +104,18 @@ if (mouse_wheel_down())
 			{
 				_currentGunPos = 0;
 			}
-			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+			if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
 			{
-				global.gunsGrid[# _currentGunPos, 0] = id;
-				global.currentGun = self;
-				global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
-				global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-				return true;
+				instance_destroy(oGun);
+				
+				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+				{
+					global.gunsGrid[# _currentGunPos, 0] = id;
+					global.currentGun = self;
+					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
+					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+					return true;
+				}
 			}
 		}
 	}
@@ -115,13 +140,3 @@ if (global.addLife)
 
 // Destroying oAim when player have not a gun
 if (instance_exists(oAim) && !global.hasGun) instance_destroy(oAim);
-
-// Create walls DEBUG
-if (global.createWalls)
-{
-	if (mouse_check_button_pressed(mb_left))
-	{
-		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
-		instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oRock);
-	}
-}
