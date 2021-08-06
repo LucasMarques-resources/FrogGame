@@ -27,8 +27,8 @@ draw = false;
 xItem = 0;
 yItem = 0;
 
-timeNoAmmo = room_speed / 1.3;
-timerNoAmmo = timeNoAmmo;
+timeNoAmmo = room_speed / 1.6;
+timerNoAmmo = 0;
 
 // Ammo added
 ammoBeingAdded = 0;
@@ -42,15 +42,11 @@ global.gunsSlots = 1;
 global.currentGunPos = 0;
 global.gunsGrid = ds_grid_create(2, 3);
 
-// Walls
-doAutoTile = false;
-raycastWallsChecked = ds_list_create();
-
-// Gun Types
+// Guns Type
 enum GUN_TYPES
 {
 	none,
-	normal,
+	rifle,
 	fire,
 	shotgun,
 	nadeLauncher,
@@ -58,6 +54,19 @@ enum GUN_TYPES
 	sniper,
 	thunder
 }
+
+// Guns name
+global.gunsName = ds_map_create();
+global.gunsName[? GUN_TYPES.rifle] = "Rifle"
+global.gunsName[? GUN_TYPES.fire] = "Fire gun"
+global.gunsName[? GUN_TYPES.shotgun] = "Shotgun"
+global.gunsName[? GUN_TYPES.nadeLauncher] = "Grenade Launcher"
+global.gunsName[? GUN_TYPES.sniper] = "Sniper"
+global.gunsName[? GUN_TYPES.thunder] = "Thunder gun"
+
+// Walls
+doAutoTile = false;
+raycastWallsChecked = ds_list_create();
 
 // Create BedRock
 with (instance_create_layer(0, room_height - 12, "ColWall", pCollider))

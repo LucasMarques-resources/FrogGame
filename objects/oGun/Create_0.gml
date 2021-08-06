@@ -20,8 +20,19 @@ sniperRaycastChecked = false;
 sniperRaycastCheckedX = 0;
 sniperRaycastCheckedY = 0;
 
+// Updating image angle and postion
+if (instance_exists(oFrog) && global.hasGun)
+{
+	x = oFrog.x;
+	y = oFrog.y - 6;
+	
+	image_angle = point_direction(x, y, mouse_x, mouse_y);
+}
 
 //drawInitialBulletSprite = false;
 
 // Number of bullets particle object to create
 bulletsShootedNumb = 1;
+
+// Change de sprite depending on the type
+image_index = typeGun;

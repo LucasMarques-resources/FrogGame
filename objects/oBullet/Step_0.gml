@@ -8,7 +8,7 @@ var dir = point_direction(x, y, mouse_x, mouse_y);
 switch (typeBullet)
 {
 	// Normal
-	case GUN_TYPES.normal:
+	case GUN_TYPES.rifle:
 	{
 		destroyTimer--;
 		

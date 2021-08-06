@@ -21,7 +21,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	//drawInitialBulletSprite = true;
 	
 	// Create bullet
-	if (global.ammo > 0)
+	if (global.currentGun.ownAmmo > 0)
 	{
 		switch (typeGun)
 		{

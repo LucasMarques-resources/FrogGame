@@ -1,10 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_font(fontText);
-draw_set_halign(fa_left);
-draw_set_valign(fa_center);
+DrawSetText(color1, fontText, fa_left, fa_center, alpha);
 
-if (!normalText && !textTop) draw_text_color(x, y, textString, cor1, cor2, cor3, cor4, alpha);
+if (!normalText && !textTop) draw_text(xx, yy, textString);
 
 if (normalText)
 {
@@ -13,17 +11,14 @@ if (normalText)
 	// Draw the box
 	draw_set_colour(c_black);
 	draw_set_alpha(0.5);
-	draw_roundrect_ext(x - halfw - border, y - h, x + halfw + border, y, 10, 10, false);
+	draw_roundrect_ext(xx - halfw - border, yy - h, xx + halfw + border, yy, 10, 10, false);
 	draw_set_alpha(1);
 
-	DrawSetText(c_white, fntMiniText, fa_center, fa_top);
+	DrawSetText(color1, fntMiniText, fa_center, fa_top, alpha);
 	// Shadow
-	draw_text_color(x + 1, (y - h) + 1, textCurrent, c_gray, c_gray, c_gray, c_gray, 1);
+	if (textShadow) draw_text_color(xx + 1, (yy - h) + 1, textCurrent, colorShadow, colorShadow, colorShadow, colorShadow, alpha);
 	// Draw text
-	draw_text(x + 1, y - h, textCurrent);
+	draw_text(xx + 1, yy - h, textCurrent);
 }
 
-draw_set_halign(-1);
-draw_set_valign(-1);
-draw_set_colour(c_white);
-draw_set_font(-1);
+DrawSetText(c_white, -1, -1, -1, 1);

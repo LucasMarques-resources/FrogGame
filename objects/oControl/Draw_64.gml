@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+#region LIFES UI
 // Draw life top UI
 draw_sprite_ext(
 	sLifeTopUI,
@@ -25,64 +26,107 @@ for (var i = 0; i < global.plHp; i++)
 {
 	draw_sprite(sLifeUI, 0, 9 + 12 * i, 7);
 }
+#endregion
 
+#region GUNS UI
 draw_set_font(fntText);
 draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 
+var xTop = 5;
+var yTop = 35;
+
 if (global.hasGun)
-{
+{	
 	// Draw gun
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
 		if (global.gunsGrid[# i, 0] != GUN_TYPES.none)
 		{
-			draw_sprite_ext(sGunItem, global.gunsGrid[# i, 1], 30 * i, 23, 1, 1, 0, c_white, 1);
-			// Draw ammo
-			draw_text(25 * i, 23, global.gunsGrid[# i, 2]);
+			if (createGunItemUI)
+			{
+				instance_create_layer(0, 0, "Instances", oGunItemUI);
+				createGunItemUI = false;
+			}
 		}
 	}
 	
-	if (global.ammo < 10)
+	draw_set_font(fntMiniText);
+	
+	// Current gun name
+	draw_text_color(xTop + 1, yTop + 1, string(global.gunsName[? global.currentGun.typeGun]) + ": ", c_black, c_black, c_black, c_black, 1);
+	draw_text(xTop, yTop, string(global.gunsName[? global.currentGun.typeGun]) + ": ");
+	
+	var gunNameWidth = string_width(global.gunsName[? global.currentGun.typeGun]);
+	
+	draw_set_font(fntText);
+	// Draw current game ammo
+	draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo), c_black, c_black, c_black, c_black, 1);
+	draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo));
+	draw_set_font(fntMiniText);
+	
+	if (global.currentGun.ownAmmo < 10)
 	{
 		skipDraw--;
-	
+		
+		var ammoMessagesX = 45;
+		
 		// Low ammo message
-		if (global.ammo > 0)
+		if (global.currentGun.ownAmmo > 0)
 		{
-			if (abs(skipDraw) mod 11 < 4)
-			{
-				// Skip draw
-			}
+			if (abs(skipDraw) mod 11 < 4){ /*Skip draw*/ }
 			else
 			{
-				draw_text(35, 23, "low ammo");
+				draw_text_color(xTop + 1, ammoMessagesX + 1, "low ammo", c_black, c_black, c_black, c_black, 1);
+				draw_text_color(xTop, ammoMessagesX, "low ammo", c_red, c_red, c_red, c_red, 1);
 			}
-		} // No ammo message
-		if (global.ammo <= 0)
+		}
+		// No ammo message
+		if (global.currentGun.ownAmmo <= 0)
 		{
+			if (abs(skipDraw) mod 11 < 4){ /*Skip draw*/ }
+			else
+			{
+				draw_text_color(xTop + 1, ammoMessagesX + 1, "EMPTY", c_black, c_black, c_black, c_black, 1);
+				draw_text_color(xTop, ammoMessagesX, "EMPTY", c_red, c_red, c_red, c_red, 1);
+			}
+			
 			timerNoAmmo--;
-		
+
 			if (draw && timerNoAmmo <= 0)
 			{
-				with (instance_create_layer(25, 23, "Instances", oText))
+				with (instance_create_layer(oFrog.x - 10, oFrog.y - 10, "Instances", oText))
 				{
-					textTop = true;
-					textString = "no ammo";
+					textTop = false;
+					fontText = fntMiniText;
+					color1 = c_red;
+					textString = "EMPTY";
 				}
 				timerNoAmmo = timeNoAmmo;
 				draw = false;
 			}
 		}
 	}
+	draw_set_font(fntText);
 }
 
 // Draw ammo added on top
 if (global.ammoAdded && ammoBeingAddedCrea && ammoBeingAddedCreaRepeat)
 {
-	objAmmoBeingAdded = instance_create_layer(25, 23, "Instances", oText);
-	objAmmoBeingAdded.textTop = true;
-	objAmmoBeingAdded.yMove = false;
+	objAmmoBeingAdded = instance_create_layer(0, 0, "Instances", oText);
+	with (objAmmoBeingAdded)
+	{
+		draw_set_font(fntMiniText);
+		xx = string_width(global.gunsName[? global.currentGun.typeGun]) + 20;
+		yy = yTop + 1;
+		textTop = true;
+		fontText = fntText;
+		textShadow = true;
+		colorShadow = c_black;
+		decreaseAlpha = false;
+		decreaseAlphaTimer = room_speed / 3;
+		yMove = false;
+	}
 	
 	ammoBeingAddedCreaRepeat = false;
 	ammoBeingAddedCrea = false;
@@ -96,11 +140,12 @@ if (global.ammoAdded)
 	// Reset alpha
 	if (objAmmoBeingAdded) objAmmoBeingAdded.alpha = 1;
 	
-	with (instance_create_layer(oFrog.x - 7, oFrog.y - 20, "Instances", oText))
+	with (instance_create_layer(oFrog.x - 7, oFrog.y - 15, "Instances", oText))
 	{
 		textTop = false;
 		fontText = fntMiniText;
 		textString = string(global.ammoAdd) + " ammo";
+		decreaseAlpha = false;
 	}
 	global.ammoAdded = false;
 }
@@ -131,8 +176,8 @@ if (global.drawGunsGrid)
 		}
 	}
 }
-
 draw_set_font(-1);
+#endregion
 
 // Draw DEBUG mode state
 draw_set_halign(fa_right);

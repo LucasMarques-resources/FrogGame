@@ -61,6 +61,7 @@ if (doAutoTile)
 	doAutoTile = false;
 }
 
+#region CHANGE WEAPON
 if (mouse_wheel_up())
 {	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
@@ -120,7 +121,7 @@ if (mouse_wheel_down())
 		}
 	}
 }
-
+#endregion
 
 // Add lifes
 /*

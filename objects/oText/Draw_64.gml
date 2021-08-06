@@ -1,11 +1,15 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_set_font(fntText);
-draw_set_halign(fa_left);
-draw_set_valign(fa_center);
+DrawSetText(color1, fontText, fa_left, fa_center, alpha);
 
-if (!normalText && textTop) draw_text_color(x + (string_length(global.ammo) * 5) + 5, floor(y), textString, cor1, cor2, cor3, cor4, alpha);
+if (!normalText && textTop)
+{
+	if (textShadow)
+	{
+		draw_text_color(xx + 1, floor(yy) + 1, textString, colorShadow, colorShadow, colorShadow, colorShadow, alpha);
+		draw_text(xx, floor(yy), textString);
+	}
+	else draw_text(xx, floor(yy), textString);
+}
 
-draw_set_halign(-1);
-draw_set_valign(-1);
-draw_set_font(-1);
+DrawSetText(c_white, -1, -1, -1, 1);

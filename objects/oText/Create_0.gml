@@ -2,12 +2,18 @@
 // You can write your code in this editor
 textString = "TEST";
 alpha = 1;
+decreaseAlpha = true;
+decreaseAlphaTimer = room_speed / 1.5;
 yMove = true;
 textTop = true;
-cor1 = c_white;
-cor2 = c_white;
-cor3 = c_white;
-cor4 = c_white;
+color1 = c_white;
+colorShadow = c_gray;
+
+textShadow = true;
+
+xx = x;
+yy = y;
+
 fontText = fntText;
 depth = 100;
 

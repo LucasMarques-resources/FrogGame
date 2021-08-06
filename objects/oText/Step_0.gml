@@ -1,10 +1,20 @@
 /// @description Insert description here
 // You can write your code in this editor
+
 if (!normalText)
 {
-	if (yMove) y -= 0.2;
+	if (yMove) yy -= 0.2;
 	else textString = " +" + string(oControl.ammoBeingAdded);
-	alpha -= 0.02;
+	if (decreaseAlpha) alpha -= 0.02;
+	else
+	{
+		decreaseAlphaTimer--;
+		
+		if (decreaseAlphaTimer <= 0)
+		{
+			alpha -= 0.03;
+		}
+	}
 
 	if (alpha <= 0)
 	{
