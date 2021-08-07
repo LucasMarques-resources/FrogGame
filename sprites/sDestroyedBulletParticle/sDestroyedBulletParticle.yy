@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Guns",
+    "path": "folders/Sprites/Guns.yy",
   },
   "resourceVersion": "1.0",
   "name": "sDestroyedBulletParticle",

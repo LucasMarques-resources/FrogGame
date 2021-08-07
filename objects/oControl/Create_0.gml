@@ -8,6 +8,7 @@ global.drawGrid = false;
 
 global.hasGun = false;
 global.currentGun = noone;
+GunsStatusGrid();
 
 global.ammoAdded = false;
 global.ammoAdd = 0;

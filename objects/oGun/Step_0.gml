@@ -15,7 +15,7 @@ recoil = max(0, recoil - 1);
 
 //drawInitialBulletSprite = false;
 
-// Shooting
+#region Shooting
 if (mouse_check_button(mb_left) && firingDelay < 0)
 {
 	//drawInitialBulletSprite = true;
@@ -25,35 +25,14 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	{
 		switch (typeGun)
 		{
-			// CASE NORMAL
+			// CASE DEFAULT
 			default:
-			
-				recoil = 5;
-				ScreenShake(2, 6);
 				
-				//with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
-			
-				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
-				{
-					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid();
-					direction = other.image_angle + random_range(-2, 3);
-					image_index = typeBullet;
-					image_angle = direction;
-				}
-				
-				firingDelay = firingDelayArray[typeGun];
-	
-				// Player gun kick
-				with (oFrog)
-				{
-					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
-					gunKickY = lengthdir_y(1.7, other.image_angle - 180);
-				}
+				CreateBullet(5, 2, 6, 1.7, 1.7, -2, 3);
 				
 			break;
 			
-			// Fire
+			#region Fire
 			case GUN_TYPES.fire:
 				
 				recoil = 5;
@@ -74,7 +53,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = firingDelayArray[typeGun];
+				firingDelay = global.gunsGridStatus[typeGun, 0];
 	
 				// Player gun kick
 				with (oFrog)
@@ -84,8 +63,9 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				}
 				
 			break;
+			#endregion
 			
-			// Shotgun
+			#region Shotgun
 			case GUN_TYPES.shotgun:
 				
 				recoil = 8;
@@ -105,7 +85,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					DecreaseAmmoOnGrid();
 				}
 				
-				firingDelay = firingDelayArray[typeGun];
+				firingDelay = global.gunsGridStatus[typeGun, 0];
 				
 				// Player gun kick
 				with (oFrog)
@@ -115,64 +95,23 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				}
 				
 			break;
+			#endregion
 			
 			// Grenade Launcher
 			case GUN_TYPES.nadeLauncher:
 				
-				recoil = 5;
-				ScreenShake(2, 6);
-				
-				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
-			
-				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
-				{
-					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid();
-					direction = other.image_angle + random_range(-2, 3);
-					image_index = typeBullet;
-					image_angle = direction;
-				}
-				
-				firingDelay = firingDelayArray[typeGun];
-	
-				// Player gun kick
-				with (oFrog)
-				{
-					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
-					gunKickY = lengthdir_y(1.7, other.image_angle - 180);
-				}
+				CreateBullet(5, 2, 6, 1.7, 1.7, -2, -3);
 				
 			break;
 			
 			// Machine Gun
 			case GUN_TYPES.machineGun:
 				
-				recoil = 6;
-				ScreenShake(2, 4);
-				
-				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
-				
-				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
-				{
-					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid();
-					direction = other.image_angle + random_range(-7, 7);
-					image_index = typeBullet;
-					image_angle = direction;
-				}
-				
-				firingDelay = firingDelayArray[typeGun];
-				
-				// Player gun kick
-				with (oFrog)
-				{
-					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
-					gunKickY = lengthdir_y(3.5, other.image_angle - 180);
-				}
+				CreateBullet(6, 2, 4, 3.5, 3.5, -7, 7);
 				
 			break;
 			
-			// Sniper
+			#region Sniper
 			case GUN_TYPES.sniper:
 				
 				recoil = 7;
@@ -182,19 +121,19 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				
 				if (sniperRaycastChecked)
 				{
-					with (instance_create_layer(sniperRaycastCheckedX, sniperRaycastCheckedY, "Bullets", oBullet))
+					with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 					{
 						typeBullet = other.typeGun;
-						direction = other.image_angle + random_range(-1, 1);
+						DecreaseAmmoOnGrid();
+						direction = other.image_angle + random_range(-2, 3);
 						image_index = typeBullet;
 						image_angle = direction;
 					}
-					DecreaseAmmoOnGrid();
 					sniperRaycastChecked = false;
 				}
 				
-				firingDelay = firingDelayArray[typeGun];
-	
+				firingDelay = global.gunsGridStatus[typeGun, 0];
+				
 				// Player gun kick
 				with (oFrog)
 				{
@@ -203,32 +142,12 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				}
 				
 			break;
+			#endregion
 			
 			// Thunder gun
 			case GUN_TYPES.thunder:
 				
-				recoil = 5;
-				ScreenShake(2, 6);
-				
-				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
-			
-				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
-				{
-					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid();
-					direction = other.image_angle + random_range(-2, 3);
-					image_index = typeBullet;
-					image_angle = direction;
-				}
-				
-				firingDelay = firingDelayArray[typeGun];
-	
-				// Player gun kick
-				with (oFrog)
-				{
-					gunKickX = lengthdir_x(1.7, other.image_angle - 180);
-					gunKickY = lengthdir_y(1.7, other.image_angle - 180);
-				}
+				CreateBullet(5, 2, 6, 1.7, 1.7, -2, 3);
 				
 			break;
 		}
@@ -257,10 +176,11 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 	else
 	{
 		// Create mini dust
+		
 		with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 		oControl.draw = true;
 		
-		firingDelay = 10;
+		firingDelay = global.gunsGridStatus[typeGun, 0];
 	
 		// Player gun kick
 		with (oFrog)
@@ -269,6 +189,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 		}
 	}
 }
+#endregion
 
 // Recoil
 x -= lengthdir_x(recoil, image_angle);

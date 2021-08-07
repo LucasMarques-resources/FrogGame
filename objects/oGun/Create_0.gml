@@ -3,17 +3,6 @@
 image_speed = 0;
 
 firingDelay = 0;
-#region FIRING DELAY ARRAY
-firingDelayArray = array_create(GUN_TYPES.total - 1, -1);
-firingDelayArray[GUN_TYPES.none] = 0;
-firingDelayArray[GUN_TYPES.rifle] = 10;
-firingDelayArray[GUN_TYPES.fire] = 17;
-firingDelayArray[GUN_TYPES.shotgun] = 20;
-firingDelayArray[GUN_TYPES.nadeLauncher] = 40;
-firingDelayArray[GUN_TYPES.machineGun] = 7;
-firingDelayArray[GUN_TYPES.sniper] = 50;
-firingDelayArray[GUN_TYPES.thunder] = 70;
-#endregion
 
 recoil = 0;
 invulnerable = 0;

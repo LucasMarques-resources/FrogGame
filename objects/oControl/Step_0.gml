@@ -85,22 +85,12 @@ if (mouse_wheel_up() && changeWeapon)
 					global.currentGun = self;
 					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
 					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-					firingDelay = firingDelayArray[typeGun];
+					firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
 					other.changeWeapon = false;
 					return true;
 				}
 			}
 		}
-	}
-}
-
-if (!changeWeapon)
-{
-	timerChangeWeapon--;
-	if (timerChangeWeapon <= 0)
-	{
-		changeWeapon = true;
-		timerChangeWeapon = timeChangeWeapon;
 	}
 }
 
@@ -128,13 +118,24 @@ if (mouse_wheel_down() && changeWeapon)
 					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
 					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
 					other.changeWeapon = false;
-					firingDelay = firingDelayArray[typeGun];
+					firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
 					return true;
 				}
 			}
 		}
 	}
 }
+
+if (!changeWeapon)
+{
+	timerChangeWeapon--;
+	if (timerChangeWeapon <= 0)
+	{
+		changeWeapon = true;
+		timerChangeWeapon = timeChangeWeapon;
+	}
+}
+
 #endregion
 
 // Add lifes

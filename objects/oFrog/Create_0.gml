@@ -25,6 +25,7 @@ jumping = false;
 knockBackCol = true;
 knockBackDir = 0;
 
+// Animation
 flash = 0;
 invulnerable = 0;
 runPartTime = room_speed * 0.5;
