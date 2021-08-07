@@ -58,6 +58,12 @@ enum GUN_TYPES
 	thunder,
 	total
 }
+// Guns status
+enum GUN_STATUS
+{
+	firingDelay,
+	loaderAmmo
+}
 
 // Guns name
 global.gunsName = ds_map_create();

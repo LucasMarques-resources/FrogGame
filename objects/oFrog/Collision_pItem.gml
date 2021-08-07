@@ -19,10 +19,10 @@ if (other.timerCatch <= 0)
 			
 			if (global.hasGun)
 			{
-				global.currentGun.ownAmmo += 10;
+				global.currentGun.ownAmmo += global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.loaderAmmo];
 				AddAmmoToGrid(global.currentGun.ownAmmo);
-				global.ammoAdd = other.ammo;
-				oControl.ammoBeingAdded += other.ammo;
+				global.ammoAdd = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.loaderAmmo];
+				oControl.ammoBeingAdded += global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.loaderAmmo];
 				oControl.ammoBeingAddedCrea = true;
 				oControl.xItem = other.x;
 				oControl.yItem = other.y;

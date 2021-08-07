@@ -121,19 +121,19 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				
 				if (sniperRaycastChecked)
 				{
-					with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
+					with (instance_create_layer(sniperRaycastCheckedX, sniperRaycastCheckedY, "Bullets", oBullet))
 					{
 						typeBullet = other.typeGun;
-						DecreaseAmmoOnGrid();
-						direction = other.image_angle + random_range(-2, 3);
+						direction = other.image_angle + random_range(-1, 1);
 						image_index = typeBullet;
 						image_angle = direction;
 					}
+					DecreaseAmmoOnGrid();
 					sniperRaycastChecked = false;
 				}
 				
 				firingDelay = global.gunsGridStatus[typeGun, 0];
-				
+	
 				// Player gun kick
 				with (oFrog)
 				{
