@@ -60,6 +60,7 @@ if (global.hasGun)
 	var gunNameWidth = string_width(global.gunsName[? global.currentGun.typeGun]);
 	
 	draw_set_font(fntText);
+	
 	// Draw current game ammo
 	draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo), c_black, c_black, c_black, c_black, 1);
 	draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo));
@@ -116,9 +117,10 @@ if (global.ammoAdded && ammoBeingAddedCrea && ammoBeingAddedCreaRepeat)
 	objAmmoBeingAdded = instance_create_layer(0, 0, "Instances", oText);
 	with (objAmmoBeingAdded)
 	{
+		var ammoAddedWidth = string_width(string(global.currentGun.ownAmmo));
 		draw_set_font(fntMiniText);
-		xx = string_width(global.gunsName[? global.currentGun.typeGun]) + 20;
-		yy = yTop + 1;
+		xx = string_width(global.gunsName[? global.currentGun.typeGun]) + ammoAddedWidth + 7;
+		yy = 35 + 1;
 		textTop = true;
 		fontText = fntText;
 		textShadow = true;

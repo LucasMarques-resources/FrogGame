@@ -52,8 +52,6 @@ if (!global.hasGun && pickUpGun)
 		ownAmmo = other.itemOwnAmmo;
 		
 		AddGunToGrid(id, ownAmmo);
-		
-		global.ammo = ownAmmo;
 	}
 	if (!instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
 	instance_destroy();

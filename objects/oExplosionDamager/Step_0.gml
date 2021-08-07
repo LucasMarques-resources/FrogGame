@@ -24,25 +24,12 @@ if (_num > 0)
 }
 ds_list_destroy(_list);
 
-/*
-var list = ds_list_create();
-var num = collision_circle_list(x, y, damagerRadius, pCollider, false, true, list, false);
-if (num > 0)
-{
-	//show_message("CIRCLE");
-	for (var i = 0; i < num; ++i)
-	{
-		wallsDir = point_direction(x, y, list[| i].x, list[| i].y);
-	}
-}
-ds_list_destroy(list);
-*/
 // Take damage to shootables
 var list = ds_list_create();
 var num = collision_circle_list(x, y, damagerRadius, pShootable, false, true, list, false);
 if (num > 0)
 {
-	for (var i = 0; i < num; ++i)
+	for (var i = 0; i < num; i++)
 	{
 		if (list[| i].destructible)
 		{

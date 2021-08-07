@@ -65,5 +65,4 @@ if (wasThundered)
 	}
 }
 
-//show_debug_message(damagerFireCrea);
 if (collision) velv += grav;

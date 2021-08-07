@@ -13,7 +13,6 @@ grav = 0.3;
 
 typeGun = 0;
 ownAmmo = 0;
-ammoShotgunCount = 4;
 
 sniperBulletRange = 150;
 sniperRaycastChecked = false;

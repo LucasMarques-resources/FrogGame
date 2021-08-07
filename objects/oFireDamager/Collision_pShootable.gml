@@ -27,7 +27,6 @@ if (other.id = followId)
 		
 		loseHpTimerD = loseHpTimeD;
 	}
-	//show_debug_message(losingHpTimerD);
 	
 	// Stop damaging
 	if (losingHpTimerD <= 0)

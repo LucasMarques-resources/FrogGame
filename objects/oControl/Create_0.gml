@@ -9,7 +9,6 @@ global.drawGrid = false;
 global.hasGun = false;
 global.currentGun = noone;
 
-global.ammo = 0;
 global.ammoAdded = false;
 global.ammoAdd = 0;
 
@@ -41,6 +40,9 @@ createGunItemUI = true;
 global.gunsSlots = 1;
 global.currentGunPos = 0;
 global.gunsGrid = ds_grid_create(2, 3);
+decreaseChangeWeapon = false;
+timerChangeWeapon = room_speed * 2;
+changeWeapon = true;
 
 // Guns Type
 enum GUN_TYPES
