@@ -40,8 +40,8 @@ createGunItemUI = true;
 global.gunsSlots = 1;
 global.currentGunPos = 0;
 global.gunsGrid = ds_grid_create(2, 3);
-decreaseChangeWeapon = false;
-timerChangeWeapon = room_speed * 2;
+timeChangeWeapon = room_speed / 5;
+timerChangeWeapon = timeChangeWeapon;
 changeWeapon = true;
 
 // Guns Type
@@ -54,7 +54,8 @@ enum GUN_TYPES
 	nadeLauncher,
 	machineGun,
 	sniper,
-	thunder
+	thunder,
+	total
 }
 
 // Guns name

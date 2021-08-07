@@ -62,7 +62,7 @@ if (doAutoTile)
 }
 
 #region CHANGE WEAPON
-if (mouse_wheel_up())
+if (mouse_wheel_up() && changeWeapon)
 {	
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
@@ -85,6 +85,8 @@ if (mouse_wheel_up())
 					global.currentGun = self;
 					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
 					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+					firingDelay = firingDelayArray[typeGun];
+					other.changeWeapon = false;
 					return true;
 				}
 			}
@@ -92,7 +94,17 @@ if (mouse_wheel_up())
 	}
 }
 
-if (mouse_wheel_down())
+if (!changeWeapon)
+{
+	timerChangeWeapon--;
+	if (timerChangeWeapon <= 0)
+	{
+		changeWeapon = true;
+		timerChangeWeapon = timeChangeWeapon;
+	}
+}
+
+if (mouse_wheel_down() && changeWeapon)
 {
 	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
@@ -115,6 +127,8 @@ if (mouse_wheel_down())
 					global.currentGun = self;
 					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
 					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+					other.changeWeapon = false;
+					firingDelay = firingDelayArray[typeGun];
 					return true;
 				}
 			}

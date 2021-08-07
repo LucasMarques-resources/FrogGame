@@ -42,7 +42,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 10;
+				firingDelay = firingDelayArray[typeGun];
 	
 				// Player gun kick
 				with (oFrog)
@@ -74,7 +74,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 17;
+				firingDelay = firingDelayArray[typeGun];
 	
 				// Player gun kick
 				with (oFrog)
@@ -105,7 +105,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					DecreaseAmmoOnGrid();
 				}
 				
-				firingDelay = 20;
+				firingDelay = firingDelayArray[typeGun];
 				
 				// Player gun kick
 				with (oFrog)
@@ -133,7 +133,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 40;
+				firingDelay = firingDelayArray[typeGun];
 	
 				// Player gun kick
 				with (oFrog)
@@ -161,7 +161,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 7;
+				firingDelay = firingDelayArray[typeGun];
 				
 				// Player gun kick
 				with (oFrog)
@@ -193,7 +193,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					sniperRaycastChecked = false;
 				}
 				
-				firingDelay = 50;
+				firingDelay = firingDelayArray[typeGun];
 	
 				// Player gun kick
 				with (oFrog)
@@ -221,7 +221,7 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 					image_angle = direction;
 				}
 				
-				firingDelay = 100;
+				firingDelay = firingDelayArray[typeGun];
 	
 				// Player gun kick
 				with (oFrog)
