@@ -62,17 +62,17 @@ enum GUN_TYPES
 enum GUN_STATUS
 {
 	firingDelay,
-	loaderAmmo
+	maxAmmo
 }
 
 // Guns name
 global.gunsName = ds_map_create();
-global.gunsName[? GUN_TYPES.rifle] = "Rifle"
-global.gunsName[? GUN_TYPES.fire] = "Fire gun"
-global.gunsName[? GUN_TYPES.shotgun] = "Shotgun"
-global.gunsName[? GUN_TYPES.nadeLauncher] = "Grenade Launcher"
-global.gunsName[? GUN_TYPES.sniper] = "Sniper"
-global.gunsName[? GUN_TYPES.thunder] = "Thunder gun"
+global.gunsName[? GUN_TYPES.rifle] = "Rifle";
+global.gunsName[? GUN_TYPES.fire] = "Fire gun";
+global.gunsName[? GUN_TYPES.shotgun] = "Shotgun";
+global.gunsName[? GUN_TYPES.nadeLauncher] = "Grenade Launcher";
+global.gunsName[? GUN_TYPES.sniper] = "Sniper";
+global.gunsName[? GUN_TYPES.thunder] = "Thunder gun";
 
 // Walls
 doAutoTile = false;

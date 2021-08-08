@@ -5,7 +5,7 @@ image_speed = 0;
 textCrea = true;
 textObj = noone;
 
-itemOwnAmmo = 40;
+itemOwnAmmo = 0;
 
 pickUpGun = false;
 
@@ -16,14 +16,11 @@ yStart = y;
 
 grav = .3;
 
-// Ammo
-switch (typeItem)
+// Item initial ammo
+for (var i = 1; i < GUN_TYPES.total; i++)
 {
-	case GUN_TYPES.rifle: itemOwnAmmo = 30; break; // Rifle
-	case GUN_TYPES.fire: itemOwnAmmo = 10; break; // Fire
-	case GUN_TYPES.shotgun: itemOwnAmmo = 600; break;  // Shotgun
-	case GUN_TYPES.nadeLauncher: itemOwnAmmo = 5; break;  // Grenade launcher
-	case GUN_TYPES.machineGun: itemOwnAmmo = 3000; break;  // MachineGun
-	case GUN_TYPES.sniper: itemOwnAmmo = 5; break;  // Sniper
-	case GUN_TYPES.thunder: itemOwnAmmo = 10; break;  // Thunder gun
+	if (typeItem == i)
+	{
+		itemOwnAmmo = global.gunsGridStatus[i, GUN_STATUS.maxAmmo];	
+	}
 }

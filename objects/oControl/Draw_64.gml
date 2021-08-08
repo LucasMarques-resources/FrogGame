@@ -62,8 +62,8 @@ if (global.hasGun)
 	draw_set_font(fntText);
 	
 	// Draw current game ammo
-	draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo), c_black, c_black, c_black, c_black, 1);
-	draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo));
+	draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]), c_black, c_black, c_black, c_black, 1);
+	draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
 	draw_set_font(fntMiniText);
 	
 	if (global.currentGun.ownAmmo < 10)
