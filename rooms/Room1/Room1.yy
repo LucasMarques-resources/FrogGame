@@ -22,6 +22,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oFlyBugBig","path":"objects/oFlyBugBig/oFlyBugBig.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":560.0,"y":48.0,"resourceVersion":"1.0","name":"inst_6EC43F6D","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSlime","path":"objects/oSlime/oSlime.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":328.0,"y":96.0,"resourceVersion":"1.0","name":"inst_5CE001FE","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oSlime","path":"objects/oSlime/oSlime.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":208.0,"y":96.0,"resourceVersion":"1.0","name":"inst_78208B65","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"oSnake","path":"objects/oSnake/oSnake.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":168.0,"y":128.0,"resourceVersion":"1.0","name":"inst_7D7341D8","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":300,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Enemy","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oLoader","path":"objects/oLoader/oLoader.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":116.0,"y":30.0,"resourceVersion":"1.0","name":"inst_46C6E4AF","tags":[],"resourceType":"GMRInstance",},
@@ -45,7 +46,7 @@
             {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.rifle","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":28.0,"y":60.0,"resourceVersion":"1.0","name":"inst_1C00D171","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
-            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.sniper","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.fire","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":72.0,"y":60.0,"resourceVersion":"1.0","name":"inst_6B636E84","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":4,"gridY":4,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -388,6 +389,7 @@
     {"name":"inst_30D32C06","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_10CD1F3A","path":"rooms/Room1/Room1.yy",},
     {"name":"inst_6B636E84","path":"rooms/Room1/Room1.yy",},
+    {"name":"inst_7D7341D8","path":"rooms/Room1/Room1.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
