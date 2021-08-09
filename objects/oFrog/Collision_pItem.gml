@@ -19,16 +19,26 @@ if (other.timerCatch <= 0)
 			
 			if (global.hasGun)
 			{
-				global.currentGun.ownAmmo += 10;
-				AddAmmoToGrid(global.currentGun.ownAmmo);
-				global.ammoAdd = 10;
-				oControl.ammoBeingAdded += 10;
-				oControl.ammoBeingAddedCrea = true;
-				oControl.xItem = other.x;
-				oControl.yItem = other.y;
-				global.ammoAdded = true;
+				var _ammoToAdd = round((0.20 * global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
 				
-				instance_destroy(other);
+				if ((global.currentGun.ownAmmo + _ammoToAdd) >= global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo])
+				{
+					_ammoToAdd = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo] - global.currentGun.ownAmmo;
+				}
+				
+				if (_ammoToAdd > 0)
+				{
+					global.currentGun.ownAmmo += _ammoToAdd;
+					AddAmmoToGrid(global.currentGun.ownAmmo);
+					global.ammoAdd = _ammoToAdd;
+					oControl.ammoBeingAdded += _ammoToAdd;
+					oControl.ammoBeingAddedCrea = true;
+					oControl.xItem = other.x;
+					oControl.yItem = other.y;
+					global.ammoAdded = true;
+				
+					instance_destroy(other);
+				}
 			}
 		
 		break;

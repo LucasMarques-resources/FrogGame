@@ -118,8 +118,9 @@ if (global.ammoAdded && ammoBeingAddedCrea && ammoBeingAddedCreaRepeat)
 	with (objAmmoBeingAdded)
 	{
 		var ammoAddedWidth = string_width(string(global.currentGun.ownAmmo));
+		var gunMaxAmmoWidth = string_width("/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
 		draw_set_font(fntMiniText);
-		xx = string_width(global.gunsName[? global.currentGun.typeGun]) + ammoAddedWidth + 7;
+		xx = string_width(global.gunsName[? global.currentGun.typeGun]) + ammoAddedWidth + gunMaxAmmoWidth + 7;
 		yy = 35 + 1;
 		textTop = true;
 		fontText = fntText;
