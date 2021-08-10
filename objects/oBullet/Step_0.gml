@@ -32,13 +32,13 @@ switch (typeBullet)
 				hp--;
 				colShootable = true;
 				hitFrom = other.direction;
+				knockBack = 4.5;
 				if (hp < 1) other.create = false;
 					
 				instance_destroy(other);
 			}
 		}
 	}
-	
 	break;
 	// Fire
 	case GUN_TYPES.fire:
@@ -58,8 +58,8 @@ switch (typeBullet)
 		}
 		else spd = 5;
 		
-		x += lengthdir_x(spd, direction);
-		y += lengthdir_y(spd, direction);
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
 
 		// Collision with something
 		with (instance_place(x, y, pShootable))
@@ -114,8 +114,8 @@ switch (typeBullet)
 		}
 		else spd = 6;
 		
-		x += lengthdir_x(spd, direction);
-		y += lengthdir_y(spd, direction);
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
 
 		// Collision with something
 		with (instance_place(x, y, pShootable))
@@ -171,7 +171,7 @@ switch (typeBullet)
 			repeat (abs(velv) + 1) {
 				if (place_meeting(x, y + sign(velv), pCollider) || place_meeting(x, y + velv, pBox))
 				    break;
-				y += sign(velv);
+				velv = sign(velv);
 			}
 			velv *= -bouncingValue;
 			velh = lerp(velh, 0, 0.7);
@@ -185,7 +185,7 @@ switch (typeBullet)
 			repeat (abs(velh) + 1) {
 				if (place_meeting(x, y + sign(velh), pCollider) || place_meeting(x, y + velh, pBox))
 				    break;
-				x += sign(velh);
+				velh = sign(velh);
 			}
 			velh *= -bouncingValue;
 			
@@ -234,8 +234,8 @@ switch (typeBullet)
 		}
 		else spd = 6;
 		
-		x += lengthdir_x(spd, direction);
-		y += lengthdir_y(spd, direction);
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
 
 		// Collision with something
 		with (instance_place(x, y, pShootable))

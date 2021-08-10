@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-createThunderDamager = true;
+
 // Variables
 velh = 0;
 velv = 0;
@@ -20,7 +20,9 @@ resetDestroyDamagerTimer = false;
 // Drop list
 entityDropList = 0;
 
+// Thunder
 wasThundered = false;
+createThunderDamager = true;
 
 uniqueEntityDropList = choose
 (
