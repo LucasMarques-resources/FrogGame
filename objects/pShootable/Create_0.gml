@@ -10,6 +10,7 @@ flash = 0;
 colShootable = false;
 beingDragged = false;
 colWater = false;
+createDust = true;
 
 // Fire damager
 damagerFireCrea = true;

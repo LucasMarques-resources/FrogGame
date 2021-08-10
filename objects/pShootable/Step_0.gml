@@ -9,8 +9,8 @@ if (colWater)
 	grav = .1;
 	VknockBack = true;
 
-	velh = lerp(velh, 0, 0.1);
-	velv = lerp(velv, 0, 0.1);
+	velh = lerp(velh, 0, 0.2);
+	velv = lerp(velv, 0, 0.2);
 }
 else
 {

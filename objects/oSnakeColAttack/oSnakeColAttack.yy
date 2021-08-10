@@ -30,8 +30,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Objects/Enemys.yy",
+    "name": "Snake",
+    "path": "folders/Objects/Enemys/Snake.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSnakeColAttack",

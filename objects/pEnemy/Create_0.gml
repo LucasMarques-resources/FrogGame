@@ -27,7 +27,6 @@ grav = 0.3;
 
 tookHit = false;
 damagePlayer = false;
-createDust = true;
 createColAttack = true;
 
 hurtTime = hurtTimer;

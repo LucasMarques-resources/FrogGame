@@ -67,6 +67,7 @@
     {"id":{"name":"oExplosionDamager","path":"objects/oExplosionDamager/oExplosionDamager.yy",},"order":2,},
     {"id":{"name":"sGun","path":"sprites/sGun/sGun.yy",},"order":0,},
     {"id":{"name":"CreateParticleSystem","path":"scripts/CreateParticleSystem/CreateParticleSystem.yy",},"order":6,},
+    {"id":{"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},"order":7,},
     {"id":{"name":"sFlyBugBig","path":"sprites/sFlyBugBig/sFlyBugBig.yy",},"order":1,},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":1,},
     {"id":{"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},"order":1,},
@@ -107,7 +108,6 @@
     {"id":{"name":"sMarker","path":"sprites/sMarker/sMarker.yy",},"order":2,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"oGunItemUI","path":"objects/oGunItemUI/oGunItemUI.yy",},"order":3,},
-    {"id":{"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},"order":1,},
     {"id":{"name":"AutoTile","path":"scripts/AutoTile/AutoTile.yy",},"order":9,},
     {"id":{"name":"CleanParticles","path":"scripts/CleanParticles/CleanParticles.yy",},"order":11,},
     {"id":{"name":"pBox","path":"objects/pBox/pBox.yy",},"order":0,},
@@ -125,9 +125,9 @@
     {"id":{"name":"sParticle","path":"sprites/sParticle/sParticle.yy",},"order":6,},
     {"id":{"name":"sGunItemMask","path":"sprites/sGunItemMask/sGunItemMask.yy",},"order":2,},
     {"id":{"name":"sExplosion4","path":"sprites/sExplosion4/sExplosion4.yy",},"order":3,},
-    {"id":{"name":"oSnake","path":"objects/oSnake/oSnake.yy",},"order":2,},
+    {"id":{"name":"oSnake","path":"objects/oSnake/oSnake.yy",},"order":0,},
     {"id":{"name":"oLife","path":"objects/oLife/oLife.yy",},"order":1,},
-    {"id":{"name":"oSnakeColAttack","path":"objects/oSnakeColAttack/oSnakeColAttack.yy",},"order":3,},
+    {"id":{"name":"oSnakeColAttack","path":"objects/oSnakeColAttack/oSnakeColAttack.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
@@ -144,8 +144,8 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"RoomTest3","path":"rooms/RoomTest3/RoomTest3.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"RoomTest3","path":"rooms/RoomTest3/RoomTest3.yy",},},
     {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
   ],
   "Folders": [
@@ -185,6 +185,7 @@
     {"folderPath":"folders/Sprites/Frog/Particles.yy","order":4,"resourceVersion":"1.0","name":"Particles","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/UI.yy","order":46,"resourceVersion":"1.0","name":"UI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Guns.yy","order":14,"resourceVersion":"1.0","name":"Guns","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Enemys/Snake.yy","order":5,"resourceVersion":"1.0","name":"Snake","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

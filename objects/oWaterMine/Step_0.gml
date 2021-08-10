@@ -31,7 +31,6 @@ if (activated)
 	}
 	if (timerToExplode <= 0)
 	{
-		ScreenShake(10, 10);
 		instance_destroy();
 	}
 }

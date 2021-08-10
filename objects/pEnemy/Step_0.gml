@@ -117,9 +117,9 @@ switch (state)
 			// Damaging the player
 			if (instance_exists(colAttack) && oFrog.state != PlStates.knockBack && damagePlayer && colAtt && !colAtt.disable)
 			{
-				global.plHp--;
 				ScreenShake(2, 6);
 				damagePlayer = false;
+				global.plHp--;
 				PlayerKnockBack();
 			}
 			
@@ -200,8 +200,8 @@ if (customAttack && !instance_exists(colAttack))
 {
 	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
 	{
-		global.plHp--;
 		ScreenShake(2, 6);
+		global.plHp--;
 		PlayerKnockBack();
 	}
 }

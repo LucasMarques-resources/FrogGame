@@ -40,8 +40,8 @@
     {"propertyId":{"name":"VknockBack","path":"objects/pShootable/pShootable.yy",},"objectId":{"name":"pShootable","path":"objects/pShootable/pShootable.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Objects/Enemys.yy",
+    "name": "Snake",
+    "path": "folders/Objects/Enemys/Snake.yy",
   },
   "resourceVersion": "1.0",
   "name": "oSnake",
