@@ -49,7 +49,7 @@ switch (state)
 		
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
 		var attack = place_meeting(x, y, oFrog);
-		var attackRadius = collision_circle(x, y - 10, radiusAttack, oFrog, false, true);
+		var attackRadius = collision_circle(x, y - 5, radiusAttack, oFrog, false, true);
 		
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);

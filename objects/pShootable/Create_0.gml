@@ -28,8 +28,11 @@ createThunderDamager = true;
 uniqueEntityDropList = choose
 (
 	[oLife],
+	[oLife],
 	[oLoader],
 	[oLoader],
+	-1,
+	-1,
 	-1,
 	-1
 )
