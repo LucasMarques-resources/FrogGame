@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-damagerFireCrea = true;
 
 if (entityDropList != -1)
 {

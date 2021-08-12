@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+// Being destroyed if touched on water
 if (place_meeting(x, y, oWater))
 {
 	instance_destroy();

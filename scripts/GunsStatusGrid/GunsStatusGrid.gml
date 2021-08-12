@@ -14,7 +14,7 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.gunName] = "Rifle";
 	
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.firingDelay] = 17;
-	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.maxAmmo] = 5;
+	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.maxAmmo] = 100;
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.gunName] = "Fire gun";
 	
 	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.firingDelay] = 20;

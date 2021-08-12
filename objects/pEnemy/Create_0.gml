@@ -31,11 +31,14 @@ createColAttack = true;
 
 hurtTime = hurtTimer;
 
+firingDelay = 0;
+
 enum STATES
 {
 	waiting,
 	chase,
 	attack,
+	shoot,
 	hurt
 }
 

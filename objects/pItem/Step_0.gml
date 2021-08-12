@@ -16,14 +16,6 @@ else
 	grav = gravD;
 }
 
-// Set values to normal
-if (!instance_place(x, y, oFireDamager))
-{
-	colFireDamager = true;
-	beingFireDamaged = false;
-	image_blend = c_white;
-}
-
 // Set beingDragged to false
 with (oFrog)
 {

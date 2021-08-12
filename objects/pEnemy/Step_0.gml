@@ -50,6 +50,7 @@ switch (state)
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
 		var attack = place_meeting(x, y, oFrog);
 		var attackRadius = collision_circle(x, y - 5, radiusAttack, oFrog, false, true);
+		var shooterEnemyRadius = collision_circle(x, y - 5, radiusShooterEnemy, oFrog, false, true);
 		
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
@@ -63,24 +64,31 @@ switch (state)
 		dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 		
 		// Attacking
-		if (!customAttack)
+		if (!shooterEnemy)
 		{
-			if (attack && oFrog.invulnerable = 0)
+			if (!customAttack)
 			{
-				state = STATES.attack;
-				image_index = 0;
-				global.plHp--;
-				ScreenShake(2, 6);
+				if (attack && oFrog.invulnerable = 0)
+				{
+					state = STATES.attack;
+					image_index = 0;
+					global.plHp--;
+					ScreenShake(2, 6);
+				}
 			}
-		}
-		else // Custom attack
+			else // Custom attack
+			{
+				if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
+				{
+					createColAttack = true;
+					state = STATES.attack;
+					image_index = 0;
+				}
+			}
+		} // Shooter Enemy
+		else if (shooterEnemyRadius)
 		{
-			if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
-			{
-				createColAttack = true;
-				state = STATES.attack;
-				image_index = 0;
-			}
+			state = STATES.shoot;
 		}
 	
 	break;
@@ -149,6 +157,41 @@ switch (state)
 				image_index = 0;
 			}
 		}
+		
+	break;
+	#endregion
+	
+	#region SHOOT
+	case STATES.shoot:
+		
+		velh = lerp(velh, 0, 0.01);
+		velv = lerp(velv, 0, 0.01);
+		
+		firingDelay--;
+		
+		if (firingDelay <= 0)
+		{
+			var dir = point_direction(x, y, oFrog.x, oFrog.y - 10);
+			for (var i = 1; i > -(numberOfBullets - 1); i--)
+			{
+				with (instance_create_layer(x, y, "Bullets", oEnemyBullet))
+				{
+					show_debug_message(dir);
+					spd = other.spd;
+					spdD = spd;
+					if (other.numberOfBullets == 1) direction = dir;
+					else direction = dir + i * 12;
+					image_angle = direction;
+				}
+			}
+			firingDelay = firingDelayD;
+		}
+		
+		// Moving to player
+		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
+		
+		velh += lengthdir_x(vel_Chase, dir);
+		if (flyEnemy) velv += lengthdir_y(vel_Chase, dir);
 		
 	break;
 	#endregion

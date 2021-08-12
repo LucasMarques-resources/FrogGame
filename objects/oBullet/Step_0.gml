@@ -90,8 +90,8 @@ switch (typeBullet)
 
 				colFireDamager = true;
 				damagerFireCrea = false;
+				beingFireDamaged = true;
 			}
-			beingFireDamaged = true;
 			instance_destroy(other);
 			
 			if (beingFireDamaged) resetDestroyDamagerTimer = true;
