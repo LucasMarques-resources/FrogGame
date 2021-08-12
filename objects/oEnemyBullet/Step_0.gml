@@ -38,6 +38,16 @@ switch (typeBullet)
 				instance_destroy(other);
 			}
 		}
+		if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
+		{
+			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
+			
+			ScreenShake(2, 6);
+			global.plHp--;
+			PlayerKnockBack();
+			
+			instance_destroy();
+		}
 	}
 	break;
 }

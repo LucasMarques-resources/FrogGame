@@ -14,8 +14,6 @@ angleRotate = 6;
 
 collideWithEnemy = true;
 
-damage = 1;
-
 beDestroy = false;
 setCreateValues = true;
 destroyTimer = destroyTime;
@@ -25,6 +23,8 @@ particleTypeId = noone;
 particleSystem = noone;
 
 colWater = false;
+
+dirKnock = 0;
 
 // Default values
 spdD = spd;

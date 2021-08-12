@@ -2,8 +2,6 @@
 // You can write your code in this editor
 event_inherited();
 
-vel_Chase = 0;
-
 flash = 0;
 
 velh = 0;
@@ -47,3 +45,4 @@ state = STATES.waiting;
 // Default values
 flyEnemyD = flyEnemy;
 customAttackD = customAttack;
+vel_ChaseD = vel_Chase;

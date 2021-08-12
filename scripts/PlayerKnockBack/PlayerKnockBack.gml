@@ -4,15 +4,19 @@ function PlayerKnockBack()
 {
 	with (oFrog)
 	{
-		if (other.createDust)
+		if (other == pEnemy)
 		{
-			// Hurt enemy when jumping above him
-			other.hp--;
-			other.tookHit = true;
+			if (other.createDust)
+			{
+				// Hurt enemy when jumping above him
+				other.hp--;
+				other.tookHit = true;
 				
-			// Create mini explosion
-			instance_create_layer(x, y - 10, "Particles", oDust);
-			other.createDust = false;
+				// Create mini explosion
+				instance_create_layer(x, y - 10, "Particles", oDust);
+				other.createDust = false;
+			}
+		
 		}
 		// Knock back player state
 		if (!colWater)

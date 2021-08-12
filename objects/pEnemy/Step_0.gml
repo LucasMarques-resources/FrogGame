@@ -42,7 +42,8 @@ switch (state)
 	case STATES.chase:
 		
 		sprite_index = spriteChase;
-		vel_Chase = velChase;
+		
+		vel_Chase = vel_ChaseD;
 		
 		// Decrease timer custom attack
 		timerCustomAttack--;
@@ -55,8 +56,8 @@ switch (state)
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
 		
-		velh += lengthdir_x(vel_Chase, dir);
-		if (flyEnemy) velv += lengthdir_y(vel_Chase, dir);
+		velh = lengthdir_x(vel_Chase, dir);
+		if (flyEnemy) velv = lengthdir_y(vel_Chase, dir);
 		
 		// Waiting
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
@@ -190,8 +191,8 @@ switch (state)
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
 		
-		velh += lengthdir_x(vel_Chase, dir);
-		if (flyEnemy) velv += lengthdir_y(vel_Chase, dir);
+		velh = lengthdir_x(vel_Chase, dir);
+		if (flyEnemy) velv = lengthdir_y(vel_Chase, dir);
 		
 	break;
 	#endregion
@@ -255,8 +256,6 @@ if (!flyEnemy)
 	velv += grav;
 	if (ground) velv = 0;
 }
-
-
 
 // Fliping
 if (velh != 0 && state != STATES.hurt) image_xscale = sign(velh);
