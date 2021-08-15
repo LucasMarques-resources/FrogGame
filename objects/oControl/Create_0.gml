@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+randomize();
+
 // DEBUG
 global.debugMode = false;
 global.createWalls = false;
@@ -56,6 +58,7 @@ enum GUN_TYPES
 	machineGun,
 	sniper,
 	thunder,
+	iceGun,
 	total
 }
 // Guns status

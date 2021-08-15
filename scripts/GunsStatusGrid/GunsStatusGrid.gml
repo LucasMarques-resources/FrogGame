@@ -36,4 +36,8 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.thunder, GUN_STATUS.firingDelay] = 70;
 	global.gunsGridStatus[GUN_TYPES.thunder, GUN_STATUS.maxAmmo] = 3;
 	global.gunsGridStatus[GUN_TYPES.thunder, GUN_STATUS.gunName] = "Thunder gun";
+	
+	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.firingDelay] = 40;
+	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.maxAmmo] = 5;
+	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.gunName] = "Ice gun";
 }

@@ -49,7 +49,6 @@ switch (state)
 		timerCustomAttack--;
 		
 		var chaseGetOut = collision_circle(x, y, radiusChaseGetOut, oFrog, false, true);
-		var attack = place_meeting(x, y, oFrog);
 		var attackRadius = collision_circle(x, y - 5, radiusAttack, oFrog, false, true);
 		var shooterEnemyRadius = collision_circle(x, y - 5, radiusShooterEnemy, oFrog, false, true);
 		
@@ -67,17 +66,7 @@ switch (state)
 		// Attacking
 		if (!shooterEnemy)
 		{
-			if (!customAttack)
-			{
-				if (attack && oFrog.invulnerable = 0)
-				{
-					state = STATES.attack;
-					image_index = 0;
-					global.plHp--;
-					ScreenShake(2, 6);
-				}
-			}
-			else // Custom attack
+			if (customAttack) // Custom attack
 			{
 				if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
 				{
@@ -143,8 +132,6 @@ switch (state)
 		}
 		else // Normal attack
 		{
-			image_blend = c_red;
-			
 			// Player knock back
 			PlayerKnockBack();
 		
@@ -152,7 +139,6 @@ switch (state)
 			if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
 			{
 				createDust = true;
-				image_blend = c_white;
 				state = STATES.chase;
 				timerAttack = timeAttack;
 				image_index = 0;
@@ -202,14 +188,14 @@ switch (state)
 		
 		hurtTimer--;
 		
-		if (spriteHurt) sprite_index = spriteHurt;
-		
 		tookHit = true;
 		
 		if (instance_exists(colAttack)) instance_destroy(colAttack);
 		
 		if (spriteHurt)
 		{
+			sprite_index = spriteHurt;
+			
 			if (image_index > image_number - 1)
 			{
 				velh = 0;
@@ -220,6 +206,7 @@ switch (state)
 		{
 			velh = 0;
 			state = STATES.chase;
+			image_blend = c_white;
 			hurtTimer = hurtTime;
 		}
 		
@@ -240,14 +227,14 @@ else
 }
 
 // Normal player collision with enemy
-if (customAttack && !instance_exists(colAttack))
+if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
 {
-	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
-	{
-		ScreenShake(2, 6);
-		global.plHp--;
-		PlayerKnockBack();
-	}
+	hp--;
+	flash = 10;
+	ScreenShake(2, 6);
+	global.plHp--;
+	state = STATES.hurt;
+	PlayerKnockBack();
 }
 
 // Add gravity to some enemies
@@ -258,6 +245,6 @@ if (!flyEnemy)
 }
 
 // Fliping
-if (velh != 0 && state != STATES.hurt) image_xscale = sign(velh);
+if (velh != 0 && state != STATES.hurt && !beingIceDamaged) image_xscale = sign(velh);
 
 //show_debug_message(state);

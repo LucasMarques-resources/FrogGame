@@ -9,7 +9,7 @@ if (state = STATES.chase && !colWater)
 	if (timerJump <= 0)
 	{
 		velv -= 5;
-		velh += lengthdir_x(1, point_direction(x, y, oFrog.x, oFrog.y));
+		velh += lengthdir_x(spd, point_direction(x, y, oFrog.x, oFrog.y));
 		timerJump = room_speed;
 	}
 }

@@ -30,4 +30,7 @@ draw_circle_color(x, y, radiusChase, c_yellow, c_yellow, false);
 // Area to get out of the chase
 draw_circle_color(x, y, radiusChaseGetOut, c_gray, c_gray, false);
 draw_set_alpha(1);
+*/
 
+DrawSetText(c_white, fntText, fa_center, fa_bottom, 1);
+draw_text(x, y - 10, string(hp));

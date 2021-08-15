@@ -150,6 +150,13 @@ if (mouse_check_button(mb_left) && firingDelay < 0)
 				CreateBullet(5, 2, 6, 1.7, 1.7, -2, 3);
 				
 			break;
+			
+			// Ice gun
+			case GUN_TYPES.iceGun:
+			
+				CreateBullet(5, 2, 6, 1.7, 1.7, -2, -3);
+				
+			break;
 		}
 		
 		for (var i = 0; i < bulletsShootedNumb; i++)

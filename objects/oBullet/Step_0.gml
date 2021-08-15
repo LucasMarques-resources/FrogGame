@@ -7,7 +7,7 @@ var dir = point_direction(x, y, mouse_x, mouse_y);
 
 switch (typeBullet)
 {
-	// Normal
+	#region RIFLE
 	case GUN_TYPES.rifle:
 	{
 		destroyTimer--;
@@ -40,7 +40,9 @@ switch (typeBullet)
 		}
 	}
 	break;
-	// Fire
+	#endregion
+	
+	#region FIRE
 	case GUN_TYPES.fire:
 		
 		destroyTimer--;
@@ -64,33 +66,37 @@ switch (typeBullet)
 		// Collision with something
 		with (instance_place(x, y, pShootable))
 		{
-			hp--;
-			colShootable = true;
-			hitFrom = other.direction;
-			if (hp < 1) other.create = false;
-				
-			if (damagerFireCrea)
+			if (destructible)
 			{
-				/*var xx = x;
-				var yy = y;
-				if (enemy)
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				if (hp < 1) other.create = false;
+				
+				if (damagerFireCrea)
 				{
-					xx = x;
-					yy = y;
-				}
-				else
-				{
-					xx = x + sprite_width / 2;
-					yy = y + sprite_height / 2;
-				}*/
-				with (instance_create_layer(x, y, "Instances", oFireDamager))
-				{
-					followId = other.id;
-				}
+					/*var xx = x;
+					var yy = y;
+					if (enemy)
+					{
+						xx = x;
+						yy = y;
+					}
+					else
+					{
+						xx = x + sprite_width / 2;
+						yy = y + sprite_height / 2;
+					}*/
+					with (instance_create_layer(x, y, "Instances", oFireDamager))
+					{
+						followId = other.id;
+						other.fireDamagerId = id;
+					}
 
-				colFireDamager = true;
-				damagerFireCrea = false;
-				beingFireDamaged = true;
+					colFireDamager = true;
+					damagerFireCrea = false;
+					beingFireDamaged = true;
+				}
 			}
 			instance_destroy(other);
 			
@@ -99,8 +105,9 @@ switch (typeBullet)
 		
 		
 	break;
+	#endregion
 	
-	// Shotgun
+	#region SHOTGUN
 	case GUN_TYPES.shotgun:
 		
 		destroyTimer--;
@@ -133,8 +140,9 @@ switch (typeBullet)
 		}
 	
 	break;
+	#endregion
 	
-	// Grenade Launcher
+	#region GRENADE LAUNCHER
 	case GUN_TYPES.nadeLauncher:
 		
 		if (setCreateValues)
@@ -219,8 +227,9 @@ switch (typeBullet)
 		}
 		
 	break;
+	#endregion
 	
-	// Machine gun
+	#region MACHINE GUN
 	case GUN_TYPES.machineGun:
 		
 		destroyTimer--;
@@ -253,8 +262,9 @@ switch (typeBullet)
 		}
 		
 	break;
+	#endregion
 	
-	// Sniper
+	#region SNIPER
 	case GUN_TYPES.sniper:
 		
 		damage = 3;
@@ -287,8 +297,9 @@ switch (typeBullet)
 		}
 		
 	break;
+	#endregion
 	
-	// Thunder gun
+	#region THUNDER GUN
 	case GUN_TYPES.thunder:
 		
 		if (setCreateValues)
@@ -319,6 +330,53 @@ switch (typeBullet)
 		if (place_meeting(x, y, pCollider) || place_meeting(x, y, pShootable)) instance_destroy();
 		
 	break;
+	#endregion
+	
+	#region ICE GUN
+	case GUN_TYPES.iceGun:
+		
+		destroyTimer--;
+		
+		if (colWater)
+		{
+			spd = 3;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 6;
+		
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
+
+		// Collision with something
+		with (instance_place(x, y, pShootable))
+		{
+			if (destructible)
+			{
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				knockBack = 4.5;
+				if (hp < 1) other.create = false;
+				
+				if (damagerIceCrea)
+				{
+					with (instance_create_layer(x, y, "Bullets", oIceDamager))
+					{
+						followId = other.id;
+						followIdXscale = other.image_xscale;
+						frozenImageSpeed = other.image_speed;
+					}
+					damagerIceCrea = false;
+				}
+				
+				instance_destroy(other);
+			}
+		}
+		
+	break;
+	#endregion
 }
 
 // Being destroyed

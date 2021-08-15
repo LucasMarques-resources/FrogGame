@@ -17,6 +17,11 @@ damagerFireCrea = true;
 colFireDamager = true;
 beingFireDamaged = false;
 resetDestroyDamagerTimer = false;
+fireDamagerId = noone;
+
+// Ice Damager
+damagerIceCrea = true;
+beingIceDamaged = false;
 
 // Drop list
 entityDropList = 0;
