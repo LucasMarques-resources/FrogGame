@@ -357,7 +357,7 @@ switch (typeBullet)
 				hp--;
 				colShootable = true;
 				hitFrom = other.direction;
-				knockBack = 4.5;
+				knockBack = 2;
 				if (hp < 1) other.create = false;
 				
 				if (damagerIceCrea)
@@ -367,9 +367,12 @@ switch (typeBullet)
 						followId = other.id;
 						followIdXscale = other.image_xscale;
 						frozenImageSpeed = other.image_speed;
+						other.iceDamagerId = id;
 					}
 					damagerIceCrea = false;
 				}
+				
+				if (beingIceDamaged) iceDamagerId.resetDestroyIceDamagerTimer = true;
 				
 				instance_destroy(other);
 			}

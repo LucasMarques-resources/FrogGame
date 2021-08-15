@@ -7,6 +7,7 @@ followIdXscale = 0;
 
 frozenImageSpeed = 1;
 
-destroyFireDamagerTimer = room_speed * 3;
+destroyIceDamagerTimer = room_speed * 3;
+destroyIceDamagerTimerD = destroyIceDamagerTimer;
 
-resetDestroyFireDamagerTimer = false;
+resetDestroyIceDamagerTimer = false;

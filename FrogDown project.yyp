@@ -134,6 +134,7 @@
     {"id":{"name":"sGunItemMask","path":"sprites/sGunItemMask/sGunItemMask.yy",},"order":2,},
     {"id":{"name":"sExplosion4","path":"sprites/sExplosion4/sExplosion4.yy",},"order":3,},
     {"id":{"name":"oSnake","path":"objects/oSnake/oSnake.yy",},"order":0,},
+    {"id":{"name":"sIceParticle","path":"sprites/sIceParticle/sIceParticle.yy",},"order":7,},
     {"id":{"name":"oLife","path":"objects/oLife/oLife.yy",},"order":1,},
     {"id":{"name":"oSnakeColAttack","path":"objects/oSnakeColAttack/oSnakeColAttack.yy",},"order":1,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},

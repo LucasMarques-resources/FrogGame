@@ -59,6 +59,7 @@ else
 			with (instance_create_layer(xx, yy, "Instances", oFireDamager))
 			{
 				followId = other.id;
+				other.fireDamagerId = id;
 			}
 			beingFireDamaged = true;
 		}

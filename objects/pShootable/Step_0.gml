@@ -20,7 +20,7 @@ else
 }
 
 // Set values to normal
-if (!instance_place(x, y, oFireDamager))
+if (!beingFireDamaged)
 {
 	colFireDamager = true;
 	beingFireDamaged = false;

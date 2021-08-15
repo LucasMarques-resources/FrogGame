@@ -15,8 +15,11 @@ if (place_meeting(x + velh, y, pBox))
 	}
 	with (instance_place(x + velh, y, pBox))
 	{
-		velh = sign(other.velh);
-		beingDragged = true;
+		if (!beingIceDamaged)
+		{
+			velh = sign(other.velh);
+			beingDragged = true;
+		}
 	}
 	velh = 0;
 }

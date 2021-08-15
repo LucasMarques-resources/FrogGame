@@ -2,11 +2,18 @@
 // You can write your code in this editor
 
 if (instance_exists(followId))
-{	
+{
+	if (resetDestroyIceDamagerTimer)
+	{
+		destroyIceDamagerTimer = destroyIceDamagerTimerD;
+		resetDestroyIceDamagerTimer = false;
+	}
+	
 	with (followId)
 	{
 		image_xscale = other.followIdXscale;
 		
+		// Destroy fire damager
 		if (beingFireDamaged)
 		{
 			instance_destroy(fireDamagerId);
@@ -33,9 +40,9 @@ if (instance_exists(followId))
 	
 } else instance_destroy();
 
-destroyFireDamagerTimer--;
+destroyIceDamagerTimer--;
 
-if (destroyFireDamagerTimer <= 0)
+if (destroyIceDamagerTimer <= 0)
 {
 	with (followId)
 	{

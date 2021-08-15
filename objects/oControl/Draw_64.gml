@@ -175,7 +175,7 @@ if (global.drawGunsGrid)
 	
 		for (var j = 0; j < ds_grid_height(global.gunsGrid); j++)
 		{
-			draw_text_ext(40 * i, 25 + (val * j) + val, global.gunsGrid[# i, j], sep, val);
+			draw_text_ext(40 * i, 35 + (val * j) + val, global.gunsGrid[# i, j], sep, val);
 		}
 	}
 }

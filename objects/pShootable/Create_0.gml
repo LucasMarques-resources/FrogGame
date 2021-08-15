@@ -22,6 +22,7 @@ fireDamagerId = noone;
 // Ice Damager
 damagerIceCrea = true;
 beingIceDamaged = false;
+iceDamagerId = noone;
 
 // Drop list
 entityDropList = 0;

@@ -36,3 +36,31 @@ if ((object_index = oLoader && global.hasGun) && (object_index != oLife || (obje
 		velh += lengthdir_x(0.2, point_direction(x, y, oFrog.x, oFrog.y));
 	}
 }
+/*
+var radius = point_distance(x, y, oFrog.x, oFrog.y);
+
+// Create text
+if (radius < 20 && global.hasGun && !instance_exists(oText))
+{	
+	if (textCrea)
+	{
+		with (instance_create_layer(x, y - 10, layer, oText))
+		{
+			other.textObj = self;
+			itemCreator = other.id;
+			normalText = true;
+			textString = "PRESS E";
+			length = string_length(textString);
+		}
+		textCrea = false;
+	}	
+}
+
+// Destroy text object when player leaves radius
+if (!(radius < 25))
+{
+	textCrea = true;
+	if (textObj) textObj.itemCreator = noone;
+	instance_destroy(textObj);
+}
+*/
