@@ -21,4 +21,14 @@ if (normalText)
 	draw_text(xx + 1, yy - h, textCurrent);
 }
 
+if (objCreator != noone)
+{	
+	with (objCreator)
+	{
+		shader_set(shOutLine);
+		draw_self();
+		shader_reset();
+	}
+}
+
 DrawSetText(c_white, -1, -1, -1, 1);

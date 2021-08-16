@@ -29,13 +29,13 @@ velv += grav;
 
 timerCatch--;
 
-if ((object_index = oLoader && global.hasGun) && (object_index != oLife || (object_index = oLife && global.plHp < global.plTotalHp)))
+/*if ((object_index = oLoader && global.hasGun) && (object_index != oLife || (object_index = oLife && global.plHp < global.plTotalHp)))
 {
 	if (collision_rectangle(x - 15, y - 5, x + 15, y + 5, oFrog, false, true))
 	{
 		velh += lengthdir_x(0.2, point_direction(x, y, oFrog.x, oFrog.y));
 	}
-}
+}*/
 
 // Create text
 if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && global.hasGun && !instance_exists(oControl.pressEtextObj))
@@ -50,6 +50,7 @@ if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && global.hasGun && !instance_ex
 			textString = "PRESS E";
 			length = string_length(textString);
 			xFollow = true;
+			itemPressEobj = true;
 		}
 		textCrea = false;
 	}	
@@ -67,58 +68,6 @@ if (instance_exists(oControl.pressEtextObj))
 				textCrea = true;
 				instance_destroy(oControl.pressEtextObj);
 				oControl.pressEtextObj = noone;
-			}
-		}
-	}
-}
-
-// Press E
-if (instance_exists(oControl.pressEtextObj) && oControl.pressEtextObj.objCreator == id && keyboard_check_pressed(ord("E")))
-{
-	if (timerCatch <= 0)
-	{
-		with (oControl.pressEtextObj.objCreator)
-		{
-			// Switch by item types
-			switch (object_index)
-			{
-				case oLife:
-			
-					if (global.plHp < global.plTotalHp && oFrog.invulnerable = 0)
-					{
-						global.plHp++;
-						global.lifeAdded = true;
-						instance_destroy();
-					}
-		
-				break;
-				case oLoader:
-			
-					if (global.hasGun)
-					{
-						var _ammoToAdd = round((0.20 * global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
-				
-						if ((global.currentGun.ownAmmo + _ammoToAdd) >= global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo])
-						{
-							_ammoToAdd = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo] - global.currentGun.ownAmmo;
-						}
-				
-						if (_ammoToAdd > 0)
-						{
-							global.currentGun.ownAmmo += _ammoToAdd;
-							AddAmmoToGrid(global.currentGun.ownAmmo);
-							global.ammoAdd = _ammoToAdd;
-							oControl.ammoBeingAdded += _ammoToAdd;
-							oControl.ammoBeingAddedCrea = true;
-							oControl.xItem = x;
-							oControl.yItem = y;
-							global.ammoAdded = true;
-				
-							instance_destroy();
-						}
-					}
-		
-				break;
 			}
 		}
 	}

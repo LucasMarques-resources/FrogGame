@@ -19,6 +19,7 @@ fontText = fntText;
 depth = 100;
 
 objCreator = noone;
+gunItemPressEobj = false;
 itemPressEobj = false;
 
 normalText = false;
@@ -32,3 +33,5 @@ h = 0;
 border = 5;
 
 createGunItem = false;
+
+uniformHandle = shader_get_uniform(shOutLine, "texturePixel");

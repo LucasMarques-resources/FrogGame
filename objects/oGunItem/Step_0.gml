@@ -28,7 +28,7 @@ if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oControl.press
 			normalText = true;
 			textString = "PRESS E";
 			length = string_length(textString);
-			itemPressEobj = true;
+			gunItemPressEobj = true;
 		}
 		textCrea = false;
 	}	

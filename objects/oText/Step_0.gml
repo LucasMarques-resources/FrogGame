@@ -40,7 +40,7 @@ if (instance_exists(objCreator))
 	}
 }
 
-if (itemPressEobj)
+if (gunItemPressEobj)
 {
 	if (objCreator != noone)
 	{	
@@ -93,6 +93,67 @@ if (itemPressEobj)
 					if (!instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
 					instance_destroy();
 					global.hasGun = true;
+				}
+			}
+		}
+	}
+}
+else if (itemPressEobj)
+{
+	// Press E
+	if (objCreator != noone)
+	{	
+		with (objCreator)
+		{
+			if (keyboard_check_pressed(ord("E")))
+			{
+				// Switch by item types
+				switch (object_index)
+				{
+					case oLife:
+			
+						if (global.plHp < global.plTotalHp && oFrog.invulnerable = 0)
+						{
+							global.plHp++;
+							global.lifeAdded = true;
+							
+							instance_destroy();
+							
+							other.objCreator = noone;
+							instance_destroy(other);
+						}
+		
+					break;
+					case oLoader:
+			
+						if (global.hasGun)
+						{
+							var _ammoToAdd = round((0.20 * global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
+				
+							if ((global.currentGun.ownAmmo + _ammoToAdd) >= global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo])
+							{
+								_ammoToAdd = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo] - global.currentGun.ownAmmo;
+							}
+				
+							if (_ammoToAdd > 0)
+							{
+								global.currentGun.ownAmmo += _ammoToAdd;
+								AddAmmoToGrid(global.currentGun.ownAmmo);
+								global.ammoAdd = _ammoToAdd;
+								oControl.ammoBeingAdded += _ammoToAdd;
+								oControl.ammoBeingAddedCrea = true;
+								oControl.xItem = x;
+								oControl.yItem = y;
+								global.ammoAdded = true;
+							
+								instance_destroy();
+								
+								other.objCreator = noone;
+								instance_destroy(other);
+							}
+						}
+						
+					break;
 				}
 			}
 		}
