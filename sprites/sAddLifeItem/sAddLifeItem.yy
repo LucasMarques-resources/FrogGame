@@ -24,15 +24,15 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"0c8a6136-3951-4661-a3a3-c5d558936933","path":"sprites/sLife/sLife.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"0c8a6136-3951-4661-a3a3-c5d558936933","path":"sprites/sLife/sLife.yy",},"LayerId":{"name":"1230bb90-5595-40e6-bdf9-4875f07a93a2","path":"sprites/sLife/sLife.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"resourceVersion":"1.0","name":"0c8a6136-3951-4661-a3a3-c5d558936933","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"b88be9fd-881b-489d-9076-db6d1a74de52","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"b88be9fd-881b-489d-9076-db6d1a74de52","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},"LayerId":{"name":"d72cee57-2e59-4374-aa3d-6386d8c17257","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sAddLifeItem","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},"resourceVersion":"1.0","name":"b88be9fd-881b-489d-9076-db6d1a74de52","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sLife","path":"sprites/sLife/sLife.yy",},
+    "spriteId": {"name":"sAddLifeItem","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 10.0,
+    "playbackSpeed": 30.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"929afa76-ec02-4fdf-92da-1151dd5596fe","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"0c8a6136-3951-4661-a3a3-c5d558936933","path":"sprites/sLife/sLife.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b6b8dbe9-de82-43bd-8c03-172bcdf8abcf","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"b88be9fd-881b-489d-9076-db6d1a74de52","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,14 +58,14 @@
     "yorigin": 5,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sLife","path":"sprites/sLife/sLife.yy",},
+    "parent": {"name":"sAddLifeItem","path":"sprites/sAddLifeItem/sAddLifeItem.yy",},
     "resourceVersion": "1.3",
-    "name": "sLife",
+    "name": "sAddLifeItem",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1230bb90-5595-40e6-bdf9-4875f07a93a2","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d72cee57-2e59-4374-aa3d-6386d8c17257","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Items.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sLife",
+  "name": "sAddLifeItem",
   "tags": [],
   "resourceType": "GMSprite",
 }

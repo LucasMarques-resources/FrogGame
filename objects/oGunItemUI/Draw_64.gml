@@ -15,13 +15,13 @@ if (global.hasGun)
 
 				shader_set_uniform_f(uniformHandle, texelW, texelH);
 			
-				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 23, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
 			
 				shader_reset();
 			}
 			else
 			{
-				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 23, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
 			}
 		}
 	}

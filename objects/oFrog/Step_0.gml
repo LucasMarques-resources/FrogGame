@@ -68,7 +68,6 @@ switch (state)
 	case PlStates.knockBack:
 		
 		flash = 1;
-		invulnerable = 60;
 		timerKnockGround--;
 		
 		// Knock back
@@ -139,7 +138,6 @@ switch (state)
 		
 		flash = 1;
 		
-		invulnerable = 60;
 		timerKnockWater--;
 		
 		// Knock back

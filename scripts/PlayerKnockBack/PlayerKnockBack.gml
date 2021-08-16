@@ -4,6 +4,8 @@ function PlayerKnockBack()
 {
 	with (oFrog)
 	{
+		invulnerable = 70;
+		
 		if (other == pEnemy)
 		{
 			if (other.createDust)

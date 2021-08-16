@@ -4,8 +4,4 @@ event_inherited();
 
 sprite_index = imgIndex;
 
-uniqueEntityDropList = choose
-(
-	[oLife],
-	[oLoader, oLoader, oLoader, oLoader]
-)
+uniqueEntityDropList = UniqueEntityDropList();

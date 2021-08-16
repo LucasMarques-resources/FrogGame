@@ -33,5 +33,3 @@ h = 0;
 border = 5;
 
 createGunItem = false;
-
-uniformHandle = shader_get_uniform(shOutLine, "texturePixel");

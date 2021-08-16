@@ -19,6 +19,7 @@ global.plHp = 4;
 global.plTotalHp = 4;
 global.addLife = false;
 global.lifeAdded = false;
+global.newlifeAdded = false;
 
 global.lifeTopXscale = 1;
 

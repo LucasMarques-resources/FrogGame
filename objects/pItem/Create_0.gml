@@ -14,5 +14,7 @@ textCrea = true;
 
 timerCatch = room_speed;
 
+uniformHandle = shader_get_uniform(shOutLine, "texturePixel");
+
 // Default values
 gravD = grav;

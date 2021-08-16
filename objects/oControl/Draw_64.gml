@@ -34,7 +34,7 @@ draw_set_halign(fa_left);
 draw_set_valign(fa_center);
 
 var xTop = 5;
-var yTop = 35;
+var yTop = 36;
 
 if (global.hasGun)
 {	
@@ -154,15 +154,18 @@ if (global.ammoAdded)
 }
 
 // Draw lifes added
-if (global.lifeAdded)
+if (global.lifeAdded || global.newlifeAdded)
 {
 	with (instance_create_layer(oFrog.x - 7, oFrog.y - 20, "Instances", oText))
 	{
 		textTop = false;
 		fontText = fntMiniText;
-		textString = "1 LIFE";
+		decreaseAlpha = false;
+		if (global.lifeAdded) textString = "1 LIFE";
+		else if (global.newlifeAdded) textString = "+1 SLOT"
 	}
 	global.lifeAdded = false;
+	global.newlifeAdded = false;
 }
 
 // Draw guns grid

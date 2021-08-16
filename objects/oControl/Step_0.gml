@@ -62,96 +62,91 @@ if (doAutoTile)
 }
 
 #region CHANGE WEAPON
-if (mouse_wheel_up() && changeWeapon)
-{	
-	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
-	{
-		if (global.gunsGrid[# i, 0] == global.currentGun.id)
+if (global.currentGun)
+{
+	if (mouse_wheel_up() && changeWeapon)
+	{	
+		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 		{
-			global.currentGunPos = i;
-			var _currentGunPos = global.currentGunPos - 1;
+			if (global.gunsGrid[# i, 0] == global.currentGun.id)
+			{
+				global.currentGunPos = i;
+				var _currentGunPos = global.currentGunPos - 1;
 			
-			if (_currentGunPos < 0)
-			{
-				_currentGunPos = ds_grid_width(global.gunsGrid) - 1;
-			}
-			if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
-			{
-				instance_destroy(oGun);
-				
-				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+				if (_currentGunPos < 0)
 				{
-					global.gunsGrid[# _currentGunPos, 0] = id;
-					global.currentGun = self;
-					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
-					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-					firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
-					other.changeWeapon = false;
-					return true;
+					_currentGunPos = ds_grid_width(global.gunsGrid) - 1;
+				}
+				if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
+				{
+					instance_destroy(oGun);
+				
+					with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+					{
+						global.gunsGrid[# _currentGunPos, 0] = id;
+						global.currentGun = self;
+						global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
+						global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+						firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
+						other.changeWeapon = false;
+						return true;
+					}
 				}
 			}
 		}
 	}
-}
 
-if (mouse_wheel_down() && changeWeapon)
-{
-	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+	if (mouse_wheel_down() && changeWeapon)
 	{
-		if (global.gunsGrid[# i, 0] == global.currentGun.id)
+		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 		{
-			global.currentGunPos = i;
-			var _currentGunPos = global.currentGunPos + 1;
+			if (global.gunsGrid[# i, 0] == global.currentGun.id)
+			{
+				global.currentGunPos = i;
+				var _currentGunPos = global.currentGunPos + 1;
 
-			if (_currentGunPos = ds_grid_width(global.gunsGrid))
-			{
-				_currentGunPos = 0;
-			}
-			if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
-			{
-				instance_destroy(oGun);
-				
-				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+				if (_currentGunPos = ds_grid_width(global.gunsGrid))
 				{
-					global.gunsGrid[# _currentGunPos, 0] = id;
-					global.currentGun = self;
-					global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
-					global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-					other.changeWeapon = false;
-					firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
-					return true;
+					_currentGunPos = 0;
+				}
+				if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
+				{
+					instance_destroy(oGun);
+				
+					with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+					{
+						global.gunsGrid[# _currentGunPos, 0] = id;
+						global.currentGun = self;
+						global.currentGun.typeGun = global.gunsGrid[# _currentGunPos, 1];
+						global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+						other.changeWeapon = false;
+						firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
+						return true;
+					}
 				}
 			}
 		}
 	}
-}
 
-if (!changeWeapon)
-{
-	timerChangeWeapon--;
-	if (timerChangeWeapon <= 0)
+	if (!changeWeapon)
 	{
-		changeWeapon = true;
-		timerChangeWeapon = timeChangeWeapon;
+		timerChangeWeapon--;
+		if (timerChangeWeapon <= 0)
+		{
+			changeWeapon = true;
+			timerChangeWeapon = timeChangeWeapon;
+		}
 	}
 }
-
 #endregion
-
-// Add lifes
-/*
-if (global.plHp > global.plTotalHp)
-{
-	global.addLife = true;
-}
-else global.addLife = false;
-*/
 
 // Adding lifes
 if (global.addLife)
 {
 	global.plTotalHp++;
 	addedLifes++;
+	
+	global.addLife = false;
 }
 
 // Destroying oAim when player have not a gun

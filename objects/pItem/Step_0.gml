@@ -38,22 +38,25 @@ timerCatch--;
 }*/
 
 // Create text
-if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && global.hasGun && !instance_exists(oControl.pressEtextObj))
+if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && !instance_exists(oControl.pressEtextObj))
 {
-	if (textCrea)
+	if ((itemToGun && global.hasGun) || (!itemToGun))
 	{
-		with (instance_create_layer(x, y - 10, layer, oText))
+		if (textCrea)
 		{
-			oControl.pressEtextObj = id;
-			objCreator = other.id;
-			normalText = true;
-			textString = "PRESS E";
-			length = string_length(textString);
-			xFollow = true;
-			itemPressEobj = true;
+			with (instance_create_layer(x, y - 10, layer, oText))
+			{
+				oControl.pressEtextObj = id;
+				objCreator = other.id;
+				normalText = true;
+				textString = "PRESS E";
+				length = string_length(textString);
+				xFollow = true;
+				itemPressEobj = true;
+			}
+			textCrea = false;
 		}
-		textCrea = false;
-	}	
+	}
 }
 
 // Destroy text object when player leaves radius

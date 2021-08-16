@@ -113,7 +113,7 @@ switch (state)
 			
 			var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
 			// Damaging the player
-			if (instance_exists(colAttack) && oFrog.state != PlStates.knockBack && damagePlayer && colAtt && !colAtt.disable)
+			if (instance_exists(colAttack) && oFrog.state != PlStates.knockBack && damagePlayer && colAtt && !colAtt.disable && oFrog.invulnerable = 0)
 			{
 				ScreenShake(2, 6);
 				damagePlayer = false;

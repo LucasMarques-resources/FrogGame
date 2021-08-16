@@ -31,17 +31,7 @@ entityDropList = 0;
 wasThundered = false;
 createThunderDamager = true;
 
-uniqueEntityDropList = choose
-(
-	[oLife],
-	[oLife],
-	[oLoader],
-	[oLoader],
-	-1,
-	-1,
-	-1,
-	-1
-)
+uniqueEntityDropList = UniqueEntityDropList();
 
 // Default values
 gravD = grav;
