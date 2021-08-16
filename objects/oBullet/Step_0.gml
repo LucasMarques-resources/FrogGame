@@ -339,12 +339,12 @@ switch (typeBullet)
 		
 		if (colWater)
 		{
-			spd = 3;
+			spd = 2;
 			
 			velh = lerp(velh, 0, 0.03);
 			velv = lerp(velv, 0, 0.03);
 		}
-		else spd = 6;
+		else spd = 5;
 		
 		velh = lengthdir_x(spd, direction);
 		velv = lengthdir_y(spd, direction);

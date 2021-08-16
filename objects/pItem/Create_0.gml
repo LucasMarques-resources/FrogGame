@@ -10,6 +10,8 @@ colShootable = false;
 beingDragged = false;
 colWater = false;
 
+textCrea = true;
+
 timerCatch = room_speed;
 
 // Default values

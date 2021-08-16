@@ -6,8 +6,8 @@ show_debug_overlay(true);
 #region DEBUGS
 if (global.currentGun)
 {
-	show_debug_message("global.currentGun " + string(global.currentGun));
-	show_debug_message("global.currentGun ID " + string(global.currentGun.id));
+	//show_debug_message("global.currentGun " + string(global.currentGun));
+	//show_debug_message("global.currentGun ID " + string(global.currentGun.id));
 }
 
 // Switch by debug mode

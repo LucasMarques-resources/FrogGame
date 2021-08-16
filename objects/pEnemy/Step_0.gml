@@ -163,7 +163,6 @@ switch (state)
 			{
 				with (instance_create_layer(x, y, "Bullets", oEnemyBullet))
 				{
-					show_debug_message(dir);
 					spd = other.spd;
 					spdD = spd;
 					if (other.numberOfBullets == 1) direction = dir;

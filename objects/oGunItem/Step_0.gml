@@ -17,30 +17,36 @@ if (colWater)
 else grav = .3;
 
 // Create text
-if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oText))
-{	
+if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oControl.pressEtextObj))
+{
 	if (textCrea)
-	{
+	{	
 		with (instance_create_layer(x, y - 10, layer, oText))
 		{
-			other.textObj = self;
-			itemCreator = other.id;
+			oControl.pressEtextObj = id;
+			objCreator = other.id;
 			normalText = true;
 			textString = "PRESS E";
 			length = string_length(textString);
+			itemPressEobj = true;
 		}
 		textCrea = false;
 	}	
 }
 
 // Destroy text object when player leaves radius
-if (!(radius < 25))
+if (instance_exists(oControl.pressEtextObj))
 {
-	textCrea = true;
-	if (textObj) textObj.itemCreator = noone;
-	instance_destroy(textObj);
+	with (oControl.pressEtextObj.objCreator)
+	{
+		if (!(point_distance(x, y, oFrog.x, oFrog.y) < 25))
+		{
+			textCrea = true;
+			instance_destroy(oControl.pressEtextObj);
+			oControl.pressEtextObj = noone;
+		}
+	}
 }
-
 
 if (!global.hasGun && pickUpGun)
 {
@@ -62,7 +68,8 @@ if (!colWater)
 {
 	if (velv != 0) velv += grav; // Floating
 	else y = yStart + sin(get_timer() / 400000) * 3;
-} else
+}
+else
 {
 	mask_index = sGunItemMask;
 	velv += grav;

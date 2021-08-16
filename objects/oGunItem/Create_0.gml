@@ -3,7 +3,6 @@
 image_speed = 0;
 
 textCrea = true;
-textObj = noone;
 
 itemOwnAmmo = 0;
 

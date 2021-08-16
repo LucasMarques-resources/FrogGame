@@ -13,11 +13,13 @@ textShadow = true;
 
 xx = x;
 yy = y;
+xFollow = false;
 
 fontText = fntText;
 depth = 100;
 
-itemCreator = noone;
+objCreator = noone;
+itemPressEobj = false;
 
 normalText = false;
 

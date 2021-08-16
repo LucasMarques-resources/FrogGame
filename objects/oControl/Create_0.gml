@@ -22,6 +22,8 @@ global.lifeAdded = false;
 
 global.lifeTopXscale = 1;
 
+pressEtextObj = noone;
+
 addedLifes = 0;
 
 skipDraw = 60;
