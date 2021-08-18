@@ -9,14 +9,14 @@ flash = oFrog.flash;
 
 firingDelay--;
 
-var dir = point_direction(x, y, mouse_x, mouse_y);
+var dir = image_angle;
 
 recoil = max(0, recoil - 1);
 
 //drawInitialBulletSprite = false;
 
 #region Shooting
-if (mouse_check_button(mb_left) && firingDelay < 0 && !global.plRoll)
+if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && firingDelay < 0 && !global.plRoll)
 {
 	//drawInitialBulletSprite = true;
 	

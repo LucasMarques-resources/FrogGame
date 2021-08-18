@@ -7,7 +7,7 @@ function PickUpItem()
 	{	
 		with (objCreator)
 		{
-			if (keyboard_check_pressed(ord("E")))
+			if (keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face3))
 			{
 				// Switch by item types
 				switch (object_index)

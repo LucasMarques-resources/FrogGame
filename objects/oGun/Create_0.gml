@@ -7,6 +7,7 @@ firingDelay = 0;
 recoil = 0;
 invulnerable = 0;
 flash = 0;
+controllerAngle = 0;
 
 velh = 0;
 velv = 0;
@@ -21,7 +22,7 @@ sniperRaycastCheckedX = 0;
 sniperRaycastCheckedY = 0;
 
 // Updating image angle and postion
-if (instance_exists(oFrog) && global.hasGun)
+if (instance_exists(oFrog) && global.hasGun && !oFrog.controller)
 {
 	x = oFrog.x;
 	y = oFrog.y - 6;

@@ -23,6 +23,8 @@ ground = true;
 timerKnockGround = 2;
 jumping = false;
 
+controller = 0;
+
 // Roll
 velRoll = 2;
 rollDir = 0;

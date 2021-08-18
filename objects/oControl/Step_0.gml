@@ -64,7 +64,7 @@ if (doAutoTile)
 #region CHANGE WEAPON
 if (global.currentGun && !global.plRoll)
 {
-	if (mouse_wheel_up() && changeWeapon)
+	if ((mouse_wheel_up() || gamepad_button_check_pressed(0, gp_shoulderr)) && changeWeapon)
 	{	
 		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 		{
@@ -79,6 +79,7 @@ if (global.currentGun && !global.plRoll)
 				}
 				if (global.gunsGrid[# _currentGunPos, 0] != GUN_TYPES.none)
 				{
+					gunAngle = oGun.image_angle;
 					instance_destroy(oGun);
 				
 					with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
@@ -89,6 +90,11 @@ if (global.currentGun && !global.plRoll)
 						global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
 						firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
 						other.changeWeapon = false;
+						// TODO: SOLVE GUN ANGLE BUG
+						/*if (oFrog.controller)
+						{
+							image_angle = controllerAngle;
+						}*/
 						return true;
 					}
 				}
@@ -96,7 +102,7 @@ if (global.currentGun && !global.plRoll)
 		}
 	}
 
-	if (mouse_wheel_down() && changeWeapon)
+	if ((mouse_wheel_down() || gamepad_button_check_pressed(0, gp_shoulderl)) && changeWeapon)
 	{
 		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 		{

@@ -113,6 +113,7 @@
     {"id":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"order":8,},
     {"id":{"name":"oDust","path":"objects/oDust/oDust.yy",},"order":1,},
     {"id":{"name":"UniqueEntityDropList","path":"scripts/UniqueEntityDropList/UniqueEntityDropList.yy",},"order":18,},
+    {"id":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},"order":3,},
     {"id":{"name":"fireDamager","path":"sprites/fireDamager/fireDamager.yy",},"order":0,},
     {"id":{"name":"sExplosion2","path":"sprites/sExplosion2/sExplosion2.yy",},"order":1,},
     {"id":{"name":"sBox1","path":"sprites/sBox1/sBox1.yy",},"order":0,},
@@ -162,6 +163,7 @@
     {"roomId":{"name":"RoomTest3","path":"rooms/RoomTest3/RoomTest3.yy",},},
     {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
+    {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

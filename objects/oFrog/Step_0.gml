@@ -36,15 +36,54 @@ if (state != PlStates.roll)
 
 #region Input
 
-var left, right, down, up, jump, jumpCheck, roll
+var left, right, down, up, jump, jumpCheck, roll, shoot
 left = keyboard_check(ord("A"));
 right = keyboard_check(ord("D"));
 down = keyboard_check(ord("S"));
 up = keyboard_check(ord("W"));
 jump = keyboard_check_pressed(vk_space);
-jumpCheck = keyboard_check(vk_space);
-jumpRel = keyboard_check_released(vk_space);
+jumpCheck = keyboard_check(vk_space) || gamepad_button_check(0, gp_face1);
 roll = mouse_check_button_pressed(mb_right);
+jumpRel = keyboard_check_released(vk_space) || gamepad_button_check_released(0, gp_face1);
+shoot = mouse_check_button(mb_left);
+
+if (left) || (right) || (jump) || (roll) || (shoot) || (up) controller = 0;
+if (abs(gamepad_axis_value(0, gp_axislh)) > 0.2)
+{
+	left = abs(min(gamepad_axis_value(0, gp_axislh), 0));
+	right = max(gamepad_axis_value(0, gp_axislh), 0);
+	controller = 1;
+}
+
+if (gamepad_button_check_pressed(0, gp_face1))
+{
+	jump = 1;
+	controller = 1;
+}
+if (gamepad_button_check(0, gp_shoulderrb))
+{
+	shoot = 1;
+	controller = 1;
+}
+if ((gamepad_axis_value(0, gp_axislv)) > 0.2)
+{
+	down = 1;
+	controller = 1;
+}
+if ((gamepad_axis_value(0, gp_axislv)) < -0.2)
+{
+	up = 1;
+	controller = 1;
+}
+if (gamepad_button_check(0, gp_shoulderlb))
+{
+	roll = 1;
+	controller = 1;
+}
+
+show_debug_message(controller);
+// Create aim
+if (!controller && !instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
 
 #endregion
 
@@ -155,7 +194,7 @@ switch (state)
 		{
 			timerJumpWater = timeJumpWater;
 			gunKickY = 0;
-			velv = -3;
+			velv = -4;
 			state = PlStates.free;
 		}
 		
@@ -262,8 +301,22 @@ if (state != PlStates.roll)
 
 	if (global.hasGun) sprite_index = sFrogGun;
 	
-	var aimSide = sign(mouse_x - x);
-	if (aimSide != 0) image_xscale = aimSide;
+	if (!controller)
+	{
+		var aimSide = sign(mouse_x - x);
+		if (aimSide != 0) image_xscale = aimSide;
+	}
+	else
+	{
+		if (!global.hasGun)
+		{
+			if (velh != 0) image_xscale = sign(velh);
+		}
+		else
+		{
+			image_xscale = oGun.image_yscale;
+		}
+	}
 }
 
 invulnerable = max(invulnerable - 1, 0);

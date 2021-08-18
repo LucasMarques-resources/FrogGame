@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function CreateBullet(_recoil, _screenShakeMag, _screenShakeFrames, plKnockBackX, plKnockBackY, angRandMin, angRandMax)
 {
-	var dir = point_direction(x, y, mouse_x, mouse_y);
+	var dir = image_angle;
 	
 	recoil = _recoil;
 	ScreenShake(_screenShakeMag, _screenShakeFrames);

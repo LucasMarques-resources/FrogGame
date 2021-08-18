@@ -9,7 +9,23 @@ if (instance_exists(oFrog) && global.hasGun)
 	x = oFrog.x;
 	y = oFrog.y - 6;
 	
-	if (!global.plRoll) image_angle = point_direction(x, y, mouse_x, mouse_y);
+	if (!global.plRoll)
+	{
+		if (oFrog.controller == 0)
+		{
+			image_angle = point_direction(x, y, mouse_x, mouse_y);
+		}
+		else
+		{
+			var controllerh = gamepad_axis_value(0, gp_axislh);
+			var controllerv = gamepad_axis_value(0, gp_axislv);
+			if (abs(controllerh) > 0.2) || (abs(controllerv) > 0.2)
+			{
+				controllerAngle = point_direction(0, 0, controllerh, controllerv);
+			}
+			image_angle = controllerAngle;
+		}
+	}
 }
 
 if (global.plRoll)

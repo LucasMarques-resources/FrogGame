@@ -31,7 +31,7 @@ global.lifeTopXscale = 1;
 pressEtextObj = noone;
 
 addedLifes = 0;
-
+gunAngle = 0;
 skipDraw = 60;
 draw = false;
 xItem = 0;
