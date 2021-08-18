@@ -2,7 +2,7 @@
   "bboxMode": 0,
   "collisionKind": 1,
   "type": 0,
-  "origin": 4,
+  "origin": 0,
   "preMultiplyAlpha": false,
   "edgeFiltering": false,
   "collisionTolerance": 0,
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"944dda85-1438-474d-927a-2c149c477acd","path":"sprites/sIceDamager/sIceDamager.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"944dda85-1438-474d-927a-2c149c477acd","path":"sprites/sIceDamager/sIceDamager.yy",},"LayerId":{"name":"0c4128bb-a0ae-4a3d-99ef-6863d75ef495","path":"sprites/sIceDamager/sIceDamager.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sIceDamager","path":"sprites/sIceDamager/sIceDamager.yy",},"resourceVersion":"1.0","name":"944dda85-1438-474d-927a-2c149c477acd","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"013ac7fd-4a17-4cb3-a2b0-79eb8f9af080","path":"sprites/iceCube/iceCube.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"013ac7fd-4a17-4cb3-a2b0-79eb8f9af080","path":"sprites/iceCube/iceCube.yy",},"LayerId":{"name":"d9339cc5-d793-4409-93f6-063818ce84b4","path":"sprites/iceCube/iceCube.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"iceCube","path":"sprites/iceCube/iceCube.yy",},"resourceVersion":"1.0","name":"013ac7fd-4a17-4cb3-a2b0-79eb8f9af080","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sIceDamager","path":"sprites/sIceDamager/sIceDamager.yy",},
+    "spriteId": {"name":"iceCube","path":"sprites/iceCube/iceCube.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"eb0963b0-dd31-4557-88da-498a3b1c92b7","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"944dda85-1438-474d-927a-2c149c477acd","path":"sprites/sIceDamager/sIceDamager.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"3d030102-8440-4a5b-98ca-2a52ae31217b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"013ac7fd-4a17-4cb3-a2b0-79eb8f9af080","path":"sprites/iceCube/iceCube.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -54,18 +54,18 @@
     "backdropHeight": 768,
     "backdropXOffset": 0.0,
     "backdropYOffset": 0.0,
-    "xorigin": 18,
-    "yorigin": 17,
+    "xorigin": 0,
+    "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sIceDamager","path":"sprites/sIceDamager/sIceDamager.yy",},
+    "parent": {"name":"iceCube","path":"sprites/iceCube/iceCube.yy",},
     "resourceVersion": "1.3",
-    "name": "sIceDamager",
+    "name": "iceCube",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"0c4128bb-a0ae-4a3d-99ef-6863d75ef495","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d9339cc5-d793-4409-93f6-063818ce84b4","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
@@ -73,7 +73,7 @@
     "path": "folders/Sprites/Damagers.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sIceDamager",
+  "name": "iceCube",
   "tags": [],
   "resourceType": "GMSprite",
 }

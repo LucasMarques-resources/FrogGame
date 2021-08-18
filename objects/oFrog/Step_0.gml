@@ -10,10 +10,33 @@ if (!colWater)
 	grav = .3;
 	walkspd = 2;
 }
+else
+{
+	image_speed = 0.5;
+	velh = lerp(velh, velh / 2, 0.2);
+	velv = lerp(velv, velv / 2, 0.2);
+	grav = .1;
+	walkspd = 1;
+}
+
+if (doRollStateDelay)
+{
+	rollStateDelay--;
+	if (rollStateDelay <= 0)
+	{
+		rollStateDelay = rollStateTime;
+		doRollStateDelay = false;
+	}
+}
+
+if (state != PlStates.roll)
+{
+	global.plRoll = false;
+}
 
 #region Input
 
-var left, right, down, up, jump, jumpCheck
+var left, right, down, up, jump, jumpCheck, roll
 left = keyboard_check(ord("A"));
 right = keyboard_check(ord("D"));
 down = keyboard_check(ord("S"));
@@ -21,6 +44,7 @@ up = keyboard_check(ord("W"));
 jump = keyboard_check_pressed(vk_space);
 jumpCheck = keyboard_check(vk_space);
 jumpRel = keyboard_check_released(vk_space);
+roll = mouse_check_button_pressed(mb_right);
 
 #endregion
 
@@ -60,6 +84,14 @@ switch (state)
 		// Swim state
 		if (colWater)
 			state = PlStates.swim;
+			
+		// Roll state
+		if (roll && !doRollStateDelay)
+		{
+			image_index = 0;
+			rollDir = image_xscale;
+			state = PlStates.roll;
+		}
 		
 	break;
 	#endregion
@@ -95,7 +127,6 @@ switch (state)
 	#region SWIM STATE
 	case PlStates.swim:
 		
-		image_speed = 0.5;
 		sprite_index = sFrogRun;
 		
 		timerJumpWater--;
@@ -128,6 +159,14 @@ switch (state)
 			state = PlStates.free;
 		}
 		
+		// Roll state
+		if (roll && !doRollStateDelay)
+		{
+			image_index = 0;
+			rollDir = image_xscale;
+			state = PlStates.roll;
+		}
+		
 	break;
 	#endregion
 	
@@ -156,6 +195,44 @@ switch (state)
 		
 	break;
 	#endregion
+	
+	#region ROLL STATE
+	case PlStates.roll:
+		
+		sprite_index = sFrogRoll;
+		
+		global.plRoll = true;
+		global.plRollDir = rollDir;
+		
+		var _velRoll = velRoll;
+		var _vRollDir = 45;
+		
+		if (colWater)
+		{
+			_velRoll = floor(velRoll/1.5);
+			_vRollDir = 25;
+		}
+		
+		velh = rollDir * _velRoll;
+		
+		if (vRollForce)
+		{
+			velv = lengthdir_y(_velRoll * 1.5, _vRollDir);
+			vRollForce = false;
+		}
+		global.plRollVel = _velRoll;
+		
+		// Animation end (go to free state)
+		if (image_index >= image_number - 1)
+		{
+			state = PlStates.free;
+			vRollForce = true;
+			doRollStateDelay = true;
+			global.plRoll = false;
+		}
+		
+	break;
+	#endregion
 }
 
 // Gravity
@@ -163,28 +240,31 @@ velv += grav;
 
 #region Animation
 
-if ((velh != 0 && ground) && state != PlStates.swim)
+if (state != PlStates.roll)
 {
-	runPartDelay--;
-	sprite_index = sFrogRun;
-	if (runPartDelay <= 0) 
+	if ((velh != 0 && ground) && state != PlStates.swim)
 	{
-		var part = instance_create_layer(x - (sign(velh) * 10), y, "Particles", oRunParticle);
-		part.image_xscale = sign(velh);
+		runPartDelay--;
+		sprite_index = sFrogRun;
+		if (runPartDelay <= 0) 
+		{
+			var part = instance_create_layer(x - (sign(velh) * 10), y, "Particles", oRunParticle);
+			part.image_xscale = sign(velh);
 		
-		runPartDelay = runPartTime;
+			runPartDelay = runPartTime;
+		}
 	}
-}
-else if (state != PlStates.swim)
-{
-	runPartDelay = runPartTime;
-	if (!global.hasGun) sprite_index = sFrog;
-}
+	else if (state != PlStates.swim)
+	{
+		runPartDelay = runPartTime;
+		if (!global.hasGun) sprite_index = sFrog;
+	}
 
-if (global.hasGun) sprite_index = sFrogGun;
-
-var aimSide = sign(mouse_x - x);
-if (aimSide != 0) image_xscale = aimSide;
+	if (global.hasGun) sprite_index = sFrogGun;
+	
+	var aimSide = sign(mouse_x - x);
+	if (aimSide != 0) image_xscale = aimSide;
+}
 
 invulnerable = max(invulnerable - 1, 0);
 

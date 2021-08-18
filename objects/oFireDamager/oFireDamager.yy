@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sFireDamager",
-    "path": "sprites/sFireDamager/sFireDamager.yy",
+    "name": "fireDamager",
+    "path": "sprites/fireDamager/fireDamager.yy",
   },
   "solid": false,
   "visible": true,

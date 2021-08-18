@@ -38,7 +38,7 @@ switch (typeBullet)
 				instance_destroy(other);
 			}
 		}
-		if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
+		if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
 		{
 			dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 			

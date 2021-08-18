@@ -15,8 +15,13 @@ GunsStatusGrid();
 global.ammoAdded = false;
 global.ammoAdd = 0;
 
+// Player
 global.plHp = 4;
 global.plTotalHp = 4;
+global.plRoll = false;
+global.plRollDir = 0;
+global.plRollVel = 0;
+
 global.addLife = false;
 global.lifeAdded = false;
 global.newlifeAdded = false;
@@ -69,7 +74,8 @@ enum GUN_STATUS
 {
 	firingDelay,
 	maxAmmo,
-	gunName
+	gunName,
+	aim
 }
 
 // Guns name

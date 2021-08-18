@@ -7,4 +7,3 @@ if (temp && !ground)
 {
 	instance_create_layer(x, y, "Particles", oFallParticle);
 }
-

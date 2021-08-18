@@ -7,7 +7,8 @@ enum PlStates
 	free,
 	knockBack,
 	swim,
-	knockBackWater
+	knockBackWater,
+	roll
 }
 
 state = PlStates.free;
@@ -21,6 +22,14 @@ walkspd = 2;
 ground = true;
 timerKnockGround = 2;
 jumping = false;
+
+// Roll
+velRoll = 2;
+rollDir = 0;
+vRollForce = true;
+doRollStateDelay = false;
+rollStateTime = 20;
+rollStateDelay = rollStateTime;
 
 knockBackCol = true;
 knockBackDir = 0;

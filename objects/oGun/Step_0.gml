@@ -16,7 +16,7 @@ recoil = max(0, recoil - 1);
 //drawInitialBulletSprite = false;
 
 #region Shooting
-if (mouse_check_button(mb_left) && firingDelay < 0)
+if (mouse_check_button(mb_left) && firingDelay < 0 && !global.plRoll)
 {
 	//drawInitialBulletSprite = true;
 	

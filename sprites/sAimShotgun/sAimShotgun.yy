@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 2,
-  "bbox_right": 12,
+  "bbox_right": 14,
   "bbox_top": 2,
-  "bbox_bottom": 12,
+  "bbox_bottom": 14,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -24,18 +24,18 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"2ac91a9f-a105-46ac-a879-8c9ffab73fb4","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2ac91a9f-a105-46ac-a879-8c9ffab73fb4","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":{"name":"d7b8e498-7df6-4d71-a7bb-9f78036582bd","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"2ac91a9f-a105-46ac-a879-8c9ffab73fb4","tags":[],"resourceType":"GMSpriteFrame",},
-    {"compositeImage":{"FrameId":{"name":"2d4c902e-3978-4664-8393-d6185086af66","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"2d4c902e-3978-4664-8393-d6185086af66","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":{"name":"d7b8e498-7df6-4d71-a7bb-9f78036582bd","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"2d4c902e-3978-4664-8393-d6185086af66","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"bf2e4c4d-eb31-4890-871b-8939a3acc3df","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"bf2e4c4d-eb31-4890-871b-8939a3acc3df","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":{"name":"c222e657-aada-4737-8444-6654ce0f4895","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"bf2e4c4d-eb31-4890-871b-8939a3acc3df","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"2d432764-a6e0-4ba3-9263-30e87f249720","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"2d432764-a6e0-4ba3-9263-30e87f249720","path":"sprites/sAimShotgun/sAimShotgun.yy",},"LayerId":{"name":"c222e657-aada-4737-8444-6654ce0f4895","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","name":"2d432764-a6e0-4ba3-9263-30e87f249720","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sAimShotgun","path":"sprites/sAimShotgun/sAimShotgun.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 2.0,
+    "playbackSpeed": 10.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,
@@ -44,8 +44,8 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"d9209bbd-ae0e-4f44-83a1-825a8b679db3","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2ac91a9f-a105-46ac-a879-8c9ffab73fb4","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
-            {"id":"b8809d18-408a-436e-8dc8-571d051f5827","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2d4c902e-3978-4664-8393-d6185086af66","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"99168ce4-fe3b-4507-a0c5-bab2a2c7425c","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"bf2e4c4d-eb31-4890-871b-8939a3acc3df","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"664ef286-22a7-4a8e-a066-7e53443eee64","Key":1.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"2d432764-a6e0-4ba3-9263-30e87f249720","path":"sprites/sAimShotgun/sAimShotgun.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -69,7 +69,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d7b8e498-7df6-4d71-a7bb-9f78036582bd","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c222e657-aada-4737-8444-6654ce0f4895","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {

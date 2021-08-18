@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sIceDamager",
-    "path": "sprites/sIceDamager/sIceDamager.yy",
+    "name": "iceCube",
+    "path": "sprites/iceCube/iceCube.yy",
   },
   "solid": false,
   "visible": true,

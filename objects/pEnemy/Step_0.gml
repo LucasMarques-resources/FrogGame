@@ -113,7 +113,7 @@ switch (state)
 			
 			var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
 			// Damaging the player
-			if (instance_exists(colAttack) && oFrog.state != PlStates.knockBack && damagePlayer && colAtt && !colAtt.disable && oFrog.invulnerable = 0)
+			if (instance_exists(colAttack) && !global.plRoll && damagePlayer && colAtt && !colAtt.disable && oFrog.invulnerable = 0)
 			{
 				ScreenShake(2, 6);
 				damagePlayer = false;
@@ -226,7 +226,7 @@ else
 }
 
 // Normal player collision with enemy
-if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0)
+if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
 {
 	hp--;
 	flash = 10;

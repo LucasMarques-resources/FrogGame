@@ -2,7 +2,7 @@
 
 ScreenShake(10, 10);
 
-if (instance_exists(oFrog))
+if (instance_exists(oFrog) && !global.plRoll)
 {
 	if (point_distance(x, y, oFrog.x, oFrog.y) < radius)
 	{
