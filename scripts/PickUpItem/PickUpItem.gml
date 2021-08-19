@@ -28,7 +28,7 @@ function PickUpItem()
 					break;
 					case oLoader:
 			
-						if (global.hasGun)
+						if (global.hasGun && !global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo])
 						{
 							var _ammoToAdd = round((0.20 * global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
 				

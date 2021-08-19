@@ -62,11 +62,19 @@ if (global.hasGun)
 	draw_set_font(fntText);
 	
 	// Draw current game ammo
-	draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]), c_black, c_black, c_black, c_black, 1);
-	draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
+	if (!global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo])
+	{
+		draw_text_color(xTop + gunNameWidth + 1, yTop + 2, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]), c_black, c_black, c_black, c_black, 1);
+		draw_text(xTop + gunNameWidth, yTop + 1, " " + string(global.currentGun.ownAmmo) + "/" + string(global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.maxAmmo]));
+	}
+	else // Draw infinite symbol
+	{
+		draw_sprite(sInfiniteSymbol, 0, xTop + gunNameWidth + 5, yTop + 1);
+	}
+	
 	draw_set_font(fntMiniText);
 	
-	if (global.currentGun.ownAmmo < 10)
+	if ((!global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo]) && global.currentGun.ownAmmo < 10)
 	{
 		skipDraw--;
 		

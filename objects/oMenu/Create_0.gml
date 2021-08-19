@@ -18,3 +18,5 @@ menu[0] = "Quit";
 
 menuItems = array_length_1d(menu);
 menuCursor = 2;
+
+menuTop = menuY - ((menuItemHeight * 1.5) * menuItems);

@@ -28,7 +28,13 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 			// CASE DEFAULT
 			default:
 				
-				CreateBullet(5, 2, 6, 1.7, 1.7, -2, 3);
+				CreateBullet(5, 2, 6, 1.5, 1.5, -2, 3);
+				
+			break;
+			
+			case GUN_TYPES.revolver:
+				
+				CreateBullet(3, 2, 5, 1, 1, -1, 1);
 				
 			break;
 			
@@ -53,7 +59,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 					image_angle = direction;
 				}
 				
-				firingDelay = global.gunsGridStatus[typeGun, 0];
+				firingDelay = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.firingDelay];
 	
 				// Player gun kick
 				with (oFrog)
@@ -85,7 +91,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 					DecreaseAmmoOnGrid();
 				}
 				
-				firingDelay = global.gunsGridStatus[typeGun, 0];
+				firingDelay = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.firingDelay];
 				
 				// Player gun kick
 				with (oFrog)
@@ -132,7 +138,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 					sniperRaycastChecked = false;
 				}
 				
-				firingDelay = global.gunsGridStatus[typeGun, 0];
+				firingDelay = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.firingDelay];
 	
 				// Player gun kick
 				with (oFrog)
@@ -187,7 +193,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 		with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 		oControl.draw = true;
 		
-		firingDelay = global.gunsGridStatus[typeGun, 0];
+		firingDelay = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.firingDelay];
 	
 		// Player gun kick
 		with (oFrog)

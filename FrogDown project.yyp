@@ -97,6 +97,7 @@
     {"id":{"name":"Raycast","path":"scripts/Raycast/Raycast.yy",},"order":8,},
     {"id":{"name":"oMiniExplosion","path":"objects/oMiniExplosion/oMiniExplosion.yy",},"order":5,},
     {"id":{"name":"oFireDamager","path":"objects/oFireDamager/oFireDamager.yy",},"order":1,},
+    {"id":{"name":"sInfiniteSymbol","path":"sprites/sInfiniteSymbol/sInfiniteSymbol.yy",},"order":15,},
     {"id":{"name":"sFrogGun","path":"sprites/sFrogGun/sFrogGun.yy",},"order":1,},
     {"id":{"name":"oWaterMine","path":"objects/oWaterMine/oWaterMine.yy",},"order":4,},
     {"id":{"name":"sLife","path":"sprites/sLife/sLife.yy",},"order":0,},

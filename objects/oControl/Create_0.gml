@@ -59,6 +59,7 @@ changeWeapon = true;
 enum GUN_TYPES
 {
 	none,
+	revolver,
 	rifle,
 	fire,
 	shotgun,
@@ -72,6 +73,7 @@ enum GUN_TYPES
 // Guns status
 enum GUN_STATUS
 {
+	infiniteAmmo,
 	firingDelay,
 	maxAmmo,
 	gunName,

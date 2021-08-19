@@ -7,6 +7,41 @@ var dir = point_direction(x, y, mouse_x, mouse_y);
 
 switch (typeBullet)
 {
+	#region REVOLVER
+	case GUN_TYPES.revolver:
+	{
+		destroyTimer--;
+		
+		if (colWater)
+		{
+			spd = 2;
+			
+			velh = lerp(velh, 0, 0.03);
+			velv = lerp(velv, 0, 0.03);
+		}
+		else spd = 5;
+		
+		velh = lengthdir_x(spd, direction);
+		velv = lengthdir_y(spd, direction);
+
+		// Collision with something
+		with (instance_place(x, y, pShootable))
+		{
+			if (destructible)
+			{
+				hp--;
+				colShootable = true;
+				hitFrom = other.direction;
+				knockBack = 3;
+				if (hp < 1) other.create = false;
+					
+				instance_destroy(other);
+			}
+		}
+	}
+	break;
+	#endregion
+	
 	#region RIFLE
 	case GUN_TYPES.rifle:
 	{

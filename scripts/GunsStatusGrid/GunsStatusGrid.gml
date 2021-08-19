@@ -10,6 +10,12 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.none, GUN_STATUS.gunName] = 0;
 	global.gunsGridStatus[GUN_TYPES.none, GUN_STATUS.aim] = 0;
 	
+	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.infiniteAmmo] = true;
+	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.firingDelay] = 20;
+	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.maxAmmo] = 1;
+	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.gunName] = "Revolver";
+	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.aim] = sAim;
+	
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.firingDelay] = 10;
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.maxAmmo] = 100;
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.gunName] = "Rifle";

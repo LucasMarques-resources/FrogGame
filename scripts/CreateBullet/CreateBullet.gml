@@ -12,13 +12,13 @@ function CreateBullet(_recoil, _screenShakeMag, _screenShakeFrames, plKnockBackX
 	with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 	{
 		typeBullet = other.typeGun;
-		DecreaseAmmoOnGrid();
+		if (!global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo]) DecreaseAmmoOnGrid();
 		direction = other.image_angle + random_range(angRandMin, angRandMax);
 		image_index = typeBullet;
 		image_angle = direction;
 	}
 				
-	firingDelay = global.gunsGridStatus[typeGun, 0];
+	firingDelay = global.gunsGridStatus[typeGun, GUN_STATUS.firingDelay];
 	
 	// Player gun kick
 	with (oFrog)

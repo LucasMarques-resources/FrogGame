@@ -23,6 +23,19 @@ if (menuControl)
 		ScreenShake(4, 30);
 		menuControl = false;
 	}
+	
+	var mouseYgui = device_mouse_y_to_gui(0);
+	if (mouseYgui < menuY) && (mouseYgui > menuTop)
+	{
+		menuCursor = (menuY - mouseYgui) div (menuItemHeight * 1.5);
+		if (mouse_check_button_pressed(mb_left))
+		{
+			menuXtarget = global.guiWidth + 200;
+			menuCommitted = menuCursor;
+			ScreenShake(4, 20);
+			menuControl = false;
+		}
+	}
 }
 
 if (menuX > global.guiWidth + 150) && (menuCommitted != -1)
