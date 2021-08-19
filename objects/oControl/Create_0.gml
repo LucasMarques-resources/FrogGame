@@ -90,9 +90,12 @@ doAutoTile = false;
 raycastWallsChecked = ds_list_create();
 
 // Create BedRock
-with (instance_create_layer(0, room_height - 12, "BedRock", pCollider))
+if (layer_exists("BedRock"))
 {
-	sprite_index = sBedRock;
-	image_xscale = room_width / 16;
-	destructible = false;
+	with (instance_create_layer(0, room_height - 12, "BedRock", pCollider))
+	{
+		sprite_index = sBedRock;
+		image_xscale = room_width / 16;
+		destructible = false;
+	}
 }

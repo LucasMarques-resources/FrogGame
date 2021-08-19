@@ -2,7 +2,8 @@
 // You can write your code in this editor
 if (instance_exists(target))
 {
-	viewX = oFrog.x;
+	if (instance_exists(oFrog)) viewX = oFrog.x;
+	else viewX = (room_width / 2);
 	viewY = (140 / 2) + 4;
 	viewX = clamp(viewX, 0 + (272 / 2), room_width - (280 / 2));
 	

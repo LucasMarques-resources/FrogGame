@@ -90,7 +90,7 @@ if (global.currentGun && !global.plRoll)
 						global.currentGun.ownAmmo = global.gunsGrid[# _currentGunPos, 2];
 						firingDelay = global.gunsGridStatus[typeGun, 0] / 3;
 						other.changeWeapon = false;
-						// TODO: SOLVE GUN ANGLE BUG
+						// TODO: solve gun angle bug
 						/*if (oFrog.controller)
 						{
 							image_angle = controllerAngle;
