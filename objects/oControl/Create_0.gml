@@ -99,3 +99,6 @@ if (layer_exists("BedRock"))
 		destructible = false;
 	}
 }
+
+// Create oTransition
+if (!instance_exists(oTransition) && layer_exists("Top")) instance_create_layer(0, 0, "Top", oTransition);

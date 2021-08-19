@@ -1,12 +1,11 @@
 /// @description desc
+InitGame();
 
-guiWidth = display_get_gui_width();
-guiHeight = display_get_gui_height();
 guiMargin = 10;
 
-menuX = guiWidth + 200;
-menuY = guiHeight - guiMargin;
-menuXtarget = guiWidth - guiMargin;
+menuX = global.guiWidth + 200;
+menuY = global.guiHeight - guiMargin;
+menuXtarget = global.guiWidth - guiMargin;
 menuSpeed = 25; // lower is faster
 menuFont = fntText;
 menuItemHeight = font_get_size(fntText);

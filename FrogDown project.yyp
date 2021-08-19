@@ -47,6 +47,7 @@
     {"id":{"name":"AddAmmoToGrid","path":"scripts/AddAmmoToGrid/AddAmmoToGrid.yy",},"order":3,},
     {"id":{"name":"oRock","path":"objects/oRock/oRock.yy",},"order":5,},
     {"id":{"name":"oIceDamager","path":"objects/oIceDamager/oIceDamager.yy",},"order":4,},
+    {"id":{"name":"Transition","path":"scripts/Transition/Transition.yy",},"order":19,},
     {"id":{"name":"AddGunToGrid","path":"scripts/AddGunToGrid/AddGunToGrid.yy",},"order":4,},
     {"id":{"name":"sRockSmall","path":"sprites/sRockSmall/sRockSmall.yy",},"order":6,},
     {"id":{"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},"order":4,},
@@ -148,7 +149,7 @@
     {"id":{"name":"sIceParticle","path":"sprites/sIceParticle/sIceParticle.yy",},"order":7,},
     {"id":{"name":"oLife","path":"objects/oLife/oLife.yy",},"order":1,},
     {"id":{"name":"oSnakeColAttack","path":"objects/oSnakeColAttack/oSnakeColAttack.yy",},"order":1,},
-    {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
+    {"id":{"name":"rOne","path":"rooms/rOne/rOne.yy",},"order":0,},
   ],
   "Options": [
     {"name":"Linux","path":"options/linux/options_linux.yy",},
@@ -166,7 +167,7 @@
   "RoomOrderNodes": [
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
     {"roomId":{"name":"RoomTest3","path":"rooms/RoomTest3/RoomTest3.yy",},},
-    {"roomId":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"roomId":{"name":"rOne","path":"rooms/rOne/rOne.yy",},},
     {"roomId":{"name":"RoomTest","path":"rooms/RoomTest/RoomTest.yy",},},
   ],
   "Folders": [
