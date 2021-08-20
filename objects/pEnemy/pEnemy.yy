@@ -28,7 +28,7 @@
   "properties": [
     {"varType":3,"value":"True","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"flyEnemy","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"sprite_width * 2","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"radiusChase","tags":[],"resourceType":"GMObjectProperty",},
-    {"varType":0,"value":"sprite_width * 3","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"radiusChaseGetOut","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"sprite_width * 5","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"radiusChaseGetOut","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"15","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"radiusAttack","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"vel_Chase","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"sprite_index","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"spriteChase","tags":[],"resourceType":"GMObjectProperty",},

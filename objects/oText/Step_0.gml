@@ -41,11 +41,14 @@ if (instance_exists(objCreator))
 }
 
 // PRESS E (pick up items)
-if (gunItemPressEobj)
+if (!global.plRoll)
 {
-	PickUpGunItem();
-}
-else if (itemPressEobj)
-{
-	PickUpItem();
+	if (gunItemPressEobj)
+	{
+		PickUpGunItem();
+	}
+	else if (itemPressEobj)
+	{
+		PickUpItem();
+	}
 }

@@ -38,7 +38,7 @@ timerCatch--;
 }*/
 
 // Create text
-if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && !instance_exists(oControl.pressEtextObj))
+if (point_distance(x, y, oFrog.x, oFrog.y) < 25 && !instance_exists(oControl.pressEtextObj) && !global.plRoll)
 {
 	if ((itemToGun && global.hasGun) || (!itemToGun))
 	{

@@ -28,32 +28,10 @@ global.newlifeAdded = false;
 
 global.lifeTopXscale = 1;
 
-pressEtextObj = noone;
-
-addedLifes = 0;
-gunAngle = 0;
-skipDraw = 60;
-draw = false;
-xItem = 0;
-yItem = 0;
-
-timeNoAmmo = room_speed / 1.6;
-timerNoAmmo = 0;
-
-// Ammo added
-ammoBeingAdded = 0;
-ammoBeingAddedCrea = true;
-ammoBeingAddedCreaRepeat = true;
-objAmmoBeingAdded = noone;
-
 // Guns
-createGunItemUI = true;
 global.gunsSlots = 1;
 global.currentGunPos = 0;
 global.gunsGrid = ds_grid_create(2, 3);
-timeChangeWeapon = room_speed / 5;
-timerChangeWeapon = timeChangeWeapon;
-changeWeapon = true;
 
 // Guns Type
 enum GUN_TYPES
@@ -86,21 +64,3 @@ for (var i = 0; i < GUN_TYPES.total; i++)
 {
 	global.gunsName[? i] = global.gunsGridStatus[i, GUN_STATUS.gunName];
 }
-
-// Walls
-doAutoTile = false;
-raycastWallsChecked = ds_list_create();
-
-// Create BedRock
-if (layer_exists("BedRock"))
-{
-	with (instance_create_layer(0, room_height - 12, "BedRock", pCollider))
-	{
-		sprite_index = sBedRock;
-		image_xscale = room_width / 16;
-		destructible = false;
-	}
-}
-
-// Create oTransition
-if (!instance_exists(oTransition) && layer_exists("Top")) instance_create_layer(0, 0, "Top", oTransition);

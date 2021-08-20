@@ -30,12 +30,15 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"oControl","path":"objects/oControl/oControl.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":0.0,"resourceVersion":"1.0","name":"inst_55DDAE9B","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oFrog","path":"objects/oFrog/oFrog.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":26.0,"y":96.0,"resourceVersion":"1.0","name":"inst_72B8FE95","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
-            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.rifle","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.revolver","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":90.0,"y":82.0,"resourceVersion":"1.0","name":"inst_2E9AEBFC","tags":[],"resourceType":"GMRInstance",},
         {"properties":[
             {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.rifle","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":682.0,"y":74.0,"resourceVersion":"1.0","name":"inst_72204765","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"oLevelTransition","path":"objects/oLevelTransition/oLevelTransition.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":814.0,"y":72.0,"resourceVersion":"1.0","name":"inst_7D448D84","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.thunder","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":197.0,"y":58.0,"resourceVersion":"1.0","name":"inst_7C8635E7","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":600,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":4,"gridY":4,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Instances","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":700,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"BedRock","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -439,6 +442,7 @@
     {"name":"inst_1A243220","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_155216B7","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_319339D0","path":"rooms/rOne/rOne.yy",},
+    {"name":"inst_7C8635E7","path":"rooms/rOne/rOne.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

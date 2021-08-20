@@ -22,7 +22,7 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.aim] = sAim;
 	
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.firingDelay] = 17;
-	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.maxAmmo] = 100;
+	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.maxAmmo] = 30;
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.gunName] = "Fire gun";
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.aim] = sAim;
 	

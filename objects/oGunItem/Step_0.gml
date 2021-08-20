@@ -17,7 +17,7 @@ if (colWater)
 else grav = .3;
 
 // Create text
-if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oControl.pressEtextObj))
+if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oControl.pressEtextObj) && !global.plRoll)
 {
 	if (textCrea)
 	{	
