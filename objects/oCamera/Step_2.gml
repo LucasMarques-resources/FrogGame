@@ -5,7 +5,7 @@ if (instance_exists(target))
 	if (instance_exists(oFrog)) viewX = oFrog.x;
 	else viewX = (room_width / 2);
 	viewY = (140 / 2) + 4;
-	viewX = clamp(viewX, 0 + (272 / 2), room_width - (280 / 2));
+	viewX = clamp(viewX, 0 + (global.gameWidth / 2), room_width - (global.gameWidth / 2));
 	
 	// Screen sahke
 	viewX += random_range(-shake_remain, shake_remain);
