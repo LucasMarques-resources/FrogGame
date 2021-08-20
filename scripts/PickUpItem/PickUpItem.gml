@@ -67,6 +67,18 @@ function PickUpItem()
 						instance_destroy(other);
 						
 					break;
+					case oBackPack:
+						
+						global.gunsSlots++;
+						global.gunSlotAdded = true;
+						ds_grid_resize(global.gunsGrid, global.gunsSlots, ds_grid_height(global.gunsGrid));
+						
+						instance_destroy();
+								
+						other.objCreator = noone;
+						instance_destroy(other);
+						
+					break;
 				}
 			}
 		}

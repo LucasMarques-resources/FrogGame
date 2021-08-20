@@ -26,12 +26,14 @@ global.addLife = false;
 global.lifeAdded = false;
 global.newlifeAdded = false;
 
-global.lifeTopXscale = 1;
+global.gunSlotAdded = false;
+
+addedLifes = 0;
 
 // Guns
-global.gunsSlots = 1;
+global.gunsSlots = 2;
 global.currentGunPos = 0;
-global.gunsGrid = ds_grid_create(2, 3);
+global.gunsGrid = ds_grid_create(global.gunsSlots, 3);
 
 // Guns Type
 enum GUN_TYPES

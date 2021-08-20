@@ -8,7 +8,7 @@ draw_sprite_ext(
 	image_index,
 	floor(2),
 	floor(1),
-	global.lifeTopXscale + (0.18 * addedLifes) + (0.01 * addedLifes),
+	1 + (0.18 * addedLifes) + (0.01 * addedLifes),
 	image_yscale,
 	image_angle,
 	image_blend,
@@ -174,6 +174,20 @@ if (global.lifeAdded || global.newlifeAdded)
 	}
 	global.lifeAdded = false;
 	global.newlifeAdded = false;
+}
+
+// Draw gun slot added
+if (global.gunSlotAdded)
+{
+	with (instance_create_layer(oFrog.x - 10, oFrog.y - 20, "Instances", oText))
+	{
+		textTop = false;
+		fontText = fntMiniText;
+		decreaseAlpha = false;
+		textString = "+1 GUN SLOT";
+	}
+	
+	global.gunSlotAdded = false;
 }
 
 // Draw guns grid

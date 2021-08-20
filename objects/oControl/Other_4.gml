@@ -2,7 +2,6 @@
 
 pressEtextObj = noone;
 
-addedLifes = 0;
 gunAngle = 0;
 skipDraw = 60;
 draw = false;
