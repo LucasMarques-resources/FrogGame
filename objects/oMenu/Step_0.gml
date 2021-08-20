@@ -16,13 +16,29 @@ if (menuControl)
 		menuCursor--;
 		if (menuCursor < 0) menuCursor = menuItems - 1;
 	}
-	if (keyboard_check_pressed(vk_enter))
+	if (keyboard_check_pressed(vk_enter) || gamepad_button_check_pressed(0, gp_face1))
 	{
 		menuXtarget = global.guiWidth + 200;
 		menuCommitted = menuCursor;
 		ScreenShake(4, 30);
 		menuControl = false;
 	}
+	
+	// GAMEPAD
+	if ((gamepad_axis_value(0, gp_axislv)) > 0.2 && gamepadDelay)
+	{
+		menuCursor--;
+		if (menuCursor < 0) menuCursor = menuItems-1;
+		gamepadDelay = false;
+	}
+	
+	if ((gamepad_axis_value(0, gp_axislv)) < -0.2 && gamepadDelay)
+	{
+		menuCursor++;
+		if (menuCursor >= menuItems) menuCursor = 0;
+		gamepadDelay = false;
+	}
+	if ((gamepad_axis_value(0, gp_axislv)) = 0) gamepadDelay = true;
 	
 	var mouseYgui = device_mouse_y_to_gui(0);
 	if (mouseYgui < menuY) && (mouseYgui > menuTop)
