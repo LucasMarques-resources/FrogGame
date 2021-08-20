@@ -24,7 +24,7 @@ if (menuControl)
 		menuControl = false;
 	}
 	
-	// GAMEPAD
+	// Gamepad
 	if ((gamepad_axis_value(0, gp_axislv)) > 0.2 && gamepadDelay)
 	{
 		menuCursor--;
@@ -61,7 +61,7 @@ if (menuX > global.guiWidth + 150) && (menuCommitted != -1)
 		// TODO: transition
 		case 2: default:
 			
-			SlideTransition(TRANS_MODE.GOTO, rOne);
+			Transition(TRANS_MODE.GOTO, rOne);
 			
 		break;
 		case 1:

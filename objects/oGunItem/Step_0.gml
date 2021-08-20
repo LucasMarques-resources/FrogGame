@@ -39,11 +39,14 @@ if (instance_exists(oControl.pressEtextObj))
 {
 	with (oControl.pressEtextObj.objCreator)
 	{
-		if (!(point_distance(x, y, oFrog.x, oFrog.y) < 25))
+		if (object_index == oGunItem)
 		{
-			textCrea = true;
-			instance_destroy(oControl.pressEtextObj);
-			oControl.pressEtextObj = noone;
+			if (!(point_distance(x, y, oFrog.x, oFrog.y) < 25))
+			{
+				textCrea = true;
+				instance_destroy(oControl.pressEtextObj);
+				oControl.pressEtextObj = noone;
+			}
 		}
 	}
 }

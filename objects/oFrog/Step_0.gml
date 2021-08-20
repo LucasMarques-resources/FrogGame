@@ -81,7 +81,6 @@ if (gamepad_button_check(0, gp_shoulderlb))
 	controller = 1;
 }
 
-show_debug_message(controller);
 // Create aim
 if (!controller && !instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
 

@@ -8,8 +8,6 @@ function PickUpGunItem()
 		{
 			if (keyboard_check_pressed(ord("E")) || gamepad_button_check_pressed(0, gp_face3))
 			{
-				textCrea = true;
-			
 				for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 				{
 					// If there is empty space
