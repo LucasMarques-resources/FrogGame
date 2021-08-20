@@ -8,7 +8,8 @@ enum PlStates
 	knockBack,
 	swim,
 	knockBackWater,
-	roll
+	roll,
+	stopped
 }
 
 state = PlStates.free;

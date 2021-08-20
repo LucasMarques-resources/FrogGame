@@ -271,6 +271,14 @@ switch (state)
 		
 	break;
 	#endregion
+	
+	#region STOPPED
+	case PlStates.stopped:
+		
+		velh = 0;
+		
+	break;
+	#endregion
 }
 
 // Gravity
