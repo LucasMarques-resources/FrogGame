@@ -55,13 +55,22 @@ gunKickY = 0;
 
 if (global.currentGun != -4)
 {
-	with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 	{
-		typeGun = global.currentGun.typeGun;
+		if (global.gunsGrid[# i, 0] == global.currentGun.id)
+		{
+			global.currentGunPos = i;
+			var _currentGunPos = global.currentGunPos;
+			
+			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+			{
+				global.gunsGrid[# _currentGunPos, 0] = id;
+				typeGun = global.gunsGrid[# _currentGunPos, 1];
 		
-		ownAmmo = global.currentGun.ownAmmo;
+				ownAmmo = global.gunsGrid[# _currentGunPos, 2];
 		
-		AddGunToGrid(id, ownAmmo);
-		global.currentGun = self;
+				global.currentGun = self;
+			}
+		}
 	}
 }
