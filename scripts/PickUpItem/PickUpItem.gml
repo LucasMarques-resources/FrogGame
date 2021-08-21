@@ -24,7 +24,7 @@ function PickUpItem()
 							other.objCreator = noone;
 							instance_destroy(other);
 						}
-		
+						
 					break;
 					case oLoader:
 			
@@ -74,7 +74,16 @@ function PickUpItem()
 						ds_grid_resize(global.gunsGrid, global.gunsSlots, ds_grid_height(global.gunsGrid));
 						
 						instance_destroy();
-								
+						
+						other.objCreator = noone;
+						instance_destroy(other);
+						
+					break;
+					case oChest:
+						
+						activateChest = true;
+						
+						drawOutLine = false;
 						other.objCreator = noone;
 						instance_destroy(other);
 						

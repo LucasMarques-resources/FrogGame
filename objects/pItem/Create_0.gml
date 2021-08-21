@@ -14,6 +14,8 @@ textCrea = true;
 
 timerCatch = room_speed;
 
+drawOutLine = false;
+
 uniformHandle = shader_get_uniform(shOutLine, "texturePixel");
 
 // Default values

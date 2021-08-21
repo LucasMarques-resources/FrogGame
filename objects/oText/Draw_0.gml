@@ -27,9 +27,7 @@ if (objCreator != noone)
 	
 	with (objCreator)
 	{
-		shader_set(shOutLine);
-		draw_self();
-		shader_reset();
+		drawOutLine = true;
 	}
 }
 

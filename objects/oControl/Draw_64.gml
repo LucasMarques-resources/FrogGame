@@ -57,7 +57,7 @@ if (global.hasGun)
 	draw_text_color(xTop + 1, yTop + 1, string(global.gunsName[? global.currentGun.typeGun]) + ": ", c_black, c_black, c_black, c_black, 1);
 	draw_text(xTop, yTop, string(global.gunsName[? global.currentGun.typeGun]) + ": ");
 	
-	var gunNameWidth = string_width(global.gunsName[? global.currentGun.typeGun]);
+	var gunNameWidth = string_width(string(global.gunsName[? global.currentGun.typeGun]));
 	
 	draw_set_font(fntText);
 	

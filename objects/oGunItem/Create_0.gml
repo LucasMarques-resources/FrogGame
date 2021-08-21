@@ -15,11 +15,15 @@ yStart = y;
 
 grav = .3;
 
+drawOutLine = false;
+
+uniformHandle = shader_get_uniform(shOutLine, "texturePixel");
+
 // Item initial ammo
 for (var i = 1; i < GUN_TYPES.total; i++)
 {
 	if (typeItem == i)
 	{
-		itemOwnAmmo = global.gunsGridStatus[i, GUN_STATUS.maxAmmo];	
+		itemOwnAmmo = global.gunsGridStatus[i, GUN_STATUS.maxAmmo];
 	}
 }

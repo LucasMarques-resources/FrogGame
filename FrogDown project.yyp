@@ -1,6 +1,7 @@
 {
   "resources": [
     {"id":{"name":"sWaterMine","path":"sprites/sWaterMine/sWaterMine.yy",},"order":2,},
+    {"id":{"name":"oChest","path":"objects/oChest/oChest.yy",},"order":4,},
     {"id":{"name":"pItem","path":"objects/pItem/pItem.yy",},"order":5,},
     {"id":{"name":"PickUpItem","path":"scripts/PickUpItem/PickUpItem.yy",},"order":16,},
     {"id":{"name":"sFlyBugRedBig","path":"sprites/sFlyBugRedBig/sFlyBugRedBig.yy",},"order":4,},
@@ -71,6 +72,7 @@
     {"id":{"name":"oThunder","path":"objects/oThunder/oThunder.yy",},"order":10,},
     {"id":{"name":"oFlyBugBig","path":"objects/oFlyBugBig/oFlyBugBig.yy",},"order":1,},
     {"id":{"name":"sSnakeHurt","path":"sprites/sSnakeHurt/sSnakeHurt.yy",},"order":5,},
+    {"id":{"name":"sChest","path":"sprites/sChest/sChest.yy",},"order":4,},
     {"id":{"name":"fntText","path":"fonts/fntText/fntText.yy",},"order":0,},
     {"id":{"name":"sFrogMenu","path":"sprites/sFrogMenu/sFrogMenu.yy",},"order":6,},
     {"id":{"name":"pParticleComplex","path":"objects/pParticleComplex/pParticleComplex.yy",},"order":7,},

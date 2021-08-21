@@ -31,7 +31,7 @@ if (radius < 25 && global.hasGun && velh == 0 && !instance_exists(oControl.press
 			gunItemPressEobj = true;
 		}
 		textCrea = false;
-	}	
+	}
 }
 
 // Destroy text object when player leaves radius
@@ -46,6 +46,7 @@ if (instance_exists(oControl.pressEtextObj))
 				textCrea = true;
 				instance_destroy(oControl.pressEtextObj);
 				oControl.pressEtextObj = noone;
+				drawOutLine = false;
 			}
 		}
 	}

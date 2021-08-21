@@ -71,6 +71,7 @@ if (instance_exists(oControl.pressEtextObj))
 				textCrea = true;
 				instance_destroy(oControl.pressEtextObj);
 				oControl.pressEtextObj = noone;
+				drawOutLine = false;
 			}
 		}
 	}
