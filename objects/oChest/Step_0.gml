@@ -17,7 +17,7 @@ if (activateChest)
 				velh = lengthdir_x(3, dir);
 				velv = lengthdir_y(3, dir);
 				
-				typeItem = irandom_range(1, GUN_TYPES.total);
+				typeItem = irandom_range(1, GUN_TYPES.total - 1);
 				itemOwnAmmo = global.gunsGridStatus[typeItem, GUN_STATUS.maxAmmo];
 			}
 			createChestItem = false;
@@ -32,7 +32,7 @@ if (createChestItem)
 	{
 		if (textCrea)
 		{
-			with (instance_create_layer(x, y - 20, layer, oText))
+			with (instance_create_layer(x, y, layer, oText))
 			{
 				oControl.pressEtextObj = id;
 				other.pressEtextObjId = id;
@@ -40,7 +40,7 @@ if (createChestItem)
 				normalText = true;
 				textString = "PRESS E";
 				length = string_length(textString);
-				xFollow = true;
+				followYtextMargin = 20;
 				itemPressEobj = true;
 			}
 			textCrea = false;
@@ -51,9 +51,9 @@ if (createChestItem)
 // Destroy text object when player leaves radius
 if (instance_exists(oControl.pressEtextObj))
 {
-	if (pressEtextObjId == oControl.pressEtextObj)
+	with (oControl.pressEtextObj.objCreator)
 	{
-		with (oControl.pressEtextObj.objCreator)
+		if (object_index = oChest)
 		{
 			if (!(point_distance(x, y, oFrog.x, oFrog.y) < 25))
 			{

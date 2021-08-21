@@ -11,6 +11,9 @@ colShootable = false;
 beingDragged = false;
 colWater = false;
 createDust = true;
+statePrevious = 0;
+xTo = x;
+yTo = y;
 
 // Fire damager
 damagerFireCrea = true;

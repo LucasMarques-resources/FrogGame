@@ -34,6 +34,8 @@ if (state != PlStates.roll)
 	global.plRoll = false;
 }
 
+if (global.plHp < 0) global.plHp = 0;
+
 #region Input
 
 var left, right, down, up, jump, jumpCheck, roll, shoot

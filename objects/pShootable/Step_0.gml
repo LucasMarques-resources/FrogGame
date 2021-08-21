@@ -38,12 +38,15 @@ with (oFrog)
 
 // Knock back and hurt state
 if (colShootable)
-{
+{	
 	var _knockBack = knockBack;
 	if (beingIceDamaged)
 	{
 		_knockBack = knockBack / 6;
 	}
+	
+	//xTo = x + lengthdir_x(_knockBack, hitFrom);
+	//yTo = y + lengthdir_y(_knockBack, hitFrom);
 	
 	if (HknockBack) velh = lengthdir_x(_knockBack, hitFrom);
 	if (VknockBack)
@@ -51,7 +54,9 @@ if (colShootable)
 		if (pBox) _knockBack *= 0.7;
 		velv = lengthdir_y(_knockBack, hitFrom);
 	}
+	
 	image_index = 0;
+	statePrevious = state;
 	state = STATES.hurt;
 	flash = 10;
 	colShootable = false;

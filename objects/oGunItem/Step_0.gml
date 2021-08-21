@@ -39,7 +39,7 @@ if (instance_exists(oControl.pressEtextObj))
 {
 	with (oControl.pressEtextObj.objCreator)
 	{
-		if (object_index == oGunItem)
+		if (object_index = oGunItem)
 		{
 			if (!(point_distance(x, y, oFrog.x, oFrog.y) < 25))
 			{

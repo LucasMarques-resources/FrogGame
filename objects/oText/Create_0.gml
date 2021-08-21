@@ -14,6 +14,7 @@ textShadow = true;
 xx = x;
 yy = y;
 xFollow = false;
+followYtextMargin = 10;
 
 fontText = fntText;
 depth = 100;

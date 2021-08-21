@@ -23,7 +23,7 @@ if (normalText)
 
 if (objCreator != noone)
 {
-	yy = objCreator.y - 10;
+	yy = objCreator.y - followYtextMargin;
 	
 	with (objCreator)
 	{
