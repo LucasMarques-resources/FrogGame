@@ -9,70 +9,16 @@ switch (typeBullet)
 {
 	#region DEFAULT
 	default:
-	
-	destroyTimer--;
-		
-	if (colWater)
 	{
-		spd = 3;
-			
-		velh = lerp(velh, 0, 0.03);
-		velv = lerp(velv, 0, 0.03);
+		SetBulletType(3, 6, 4.5);
 	}
-	else spd = 6;
-		
-	velh = lengthdir_x(spd, direction);
-	velv = lengthdir_y(spd, direction);
-
-	// Collision with something
-	with (instance_place(x, y, pShootable))
-	{
-		if (destructible)
-		{
-			hp--;
-			colShootable = true;
-			hitFrom = other.direction;
-			knockBack = 4.5;
-			if (hp < 1) other.create = false;
-					
-			instance_destroy(other);
-		}
-	}
-	
 	break;
 	#endregion
 	
 	#region REVOLVER
 	case GUN_TYPES.revolver:
 	{
-		destroyTimer--;
-		
-		if (colWater)
-		{
-			spd = 2;
-			
-			velh = lerp(velh, 0, 0.03);
-			velv = lerp(velv, 0, 0.03);
-		}
-		else spd = 5;
-		
-		velh = lengthdir_x(spd, direction);
-		velv = lengthdir_y(spd, direction);
-
-		// Collision with something
-		with (instance_place(x, y, pShootable))
-		{
-			if (destructible)
-			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				knockBack = 3;
-				if (hp < 1) other.create = false;
-					
-				instance_destroy(other);
-			}
-		}
+		SetBulletType(2, 5, 3);
 	}
 	break;
 	#endregion
@@ -80,34 +26,7 @@ switch (typeBullet)
 	#region RIFLE
 	case GUN_TYPES.rifle:
 	{
-		destroyTimer--;
-		
-		if (colWater)
-		{
-			spd = 3;
-			
-			velh = lerp(velh, 0, 0.03);
-			velv = lerp(velv, 0, 0.03);
-		}
-		else spd = 6;
-		
-		velh = lengthdir_x(spd, direction);
-		velv = lengthdir_y(spd, direction);
-
-		// Collision with something
-		with (instance_place(x, y, pShootable))
-		{
-			if (destructible)
-			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				knockBack = 4.5;
-				if (hp < 1) other.create = false;
-					
-				instance_destroy(other);
-			}
-		}
+		SetBulletType(3, 6, 4.5);
 	}
 	break;
 	#endregion
@@ -179,36 +98,9 @@ switch (typeBullet)
 	
 	#region SHOTGUN
 	case GUN_TYPES.shotgun:
-		
-		destroyTimer--;
-		
-		if (colWater)
-		{
-			spd = 3;
-			
-			velh = lerp(velh, 0, 0.03);
-			velv = lerp(velv, 0, 0.03);
-		}
-		else spd = 6;
-		
-		velh = lengthdir_x(spd, direction);
-		velv = lengthdir_y(spd, direction);
-
-		// Collision with something
-		with (instance_place(x, y, pShootable))
-		{
-			if (destructible)
-			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				knockBack = 4.5;
-				if (hp < 1) other.create = false;
-					
-				instance_destroy(other);
-			}
-		}
-	
+	{
+		SetBulletType(3, 6, 4.5);
+	}	
 	break;
 	#endregion
 	
@@ -301,36 +193,9 @@ switch (typeBullet)
 	
 	#region MACHINE GUN
 	case GUN_TYPES.machineGun:
-		
-		destroyTimer--;
-		
-		if (colWater)
-		{
-			spd = 3;
-			
-			velh = lerp(velh, 0, 0.03);
-			velv = lerp(velv, 0, 0.03);
-		}
-		else spd = 6;
-		
-		velh = lengthdir_x(spd, direction);
-		velv = lengthdir_y(spd, direction);
-
-		// Collision with something
-		with (instance_place(x, y, pShootable))
-		{
-			if (destructible)
-			{
-				hp--;
-				colShootable = true;
-				hitFrom = other.direction;
-				knockBack = 4.5;
-				if (hp < 1) other.create = false;
-					
-				instance_destroy(other);
-			}
-		}
-		
+	{
+		SetBulletType(3, 6, 4.5);
+	}	
 	break;
 	#endregion
 	

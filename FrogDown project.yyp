@@ -120,6 +120,7 @@
     {"id":{"name":"sBox2","path":"sprites/sBox2/sBox2.yy",},"order":1,},
     {"id":{"name":"sBullet","path":"sprites/sBullet/sBullet.yy",},"order":5,},
     {"id":{"name":"oSlime","path":"objects/oSlime/oSlime.yy",},"order":4,},
+    {"id":{"name":"SetBulletType","path":"scripts/SetBulletType/SetBulletType.yy",},"order":20,},
     {"id":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"order":8,},
     {"id":{"name":"oDust","path":"objects/oDust/oDust.yy",},"order":1,},
     {"id":{"name":"UniqueEntityDropList","path":"scripts/UniqueEntityDropList/UniqueEntityDropList.yy",},"order":18,},
