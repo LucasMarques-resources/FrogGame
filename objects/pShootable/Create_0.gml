@@ -11,6 +11,7 @@ colShootable = false;
 beingDragged = false;
 colWater = false;
 createDust = true;
+state = 0;
 statePrevious = 0;
 xTo = x;
 yTo = y;

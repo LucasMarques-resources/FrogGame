@@ -48,6 +48,7 @@ enum GUN_TYPES
 	sniper,
 	thunder,
 	iceGun,
+	drumGun,
 	total
 }
 // Guns status

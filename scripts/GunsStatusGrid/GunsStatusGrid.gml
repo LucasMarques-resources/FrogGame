@@ -55,4 +55,9 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.maxAmmo] = 5;
 	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.gunName] = "Ice gun";
 	global.gunsGridStatus[GUN_TYPES.iceGun, GUN_STATUS.aim] = sAim;
+	
+	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.firingDelay] = 5;
+	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.maxAmmo] = 600;
+	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.gunName] = "Drum Gun";
+	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.aim] = sAim;
 }

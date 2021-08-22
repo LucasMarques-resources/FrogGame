@@ -163,6 +163,13 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 				CreateBullet(5, 2, 6, 1.7, 1.7, -2, -3);
 				
 			break;
+			
+			// Drum gun
+			case GUN_TYPES.drumGun:
+				
+				CreateBullet(5, 2, 4, 3.5, 3.5, -7, 7);
+				
+			break;
 		}
 		
 		for (var i = 0; i < bulletsShootedNumb; i++)
