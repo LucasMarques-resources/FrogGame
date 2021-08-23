@@ -62,7 +62,7 @@ if (doAutoTile)
 }
 
 #region CHANGE WEAPON
-if (global.currentGun && !global.plRoll)
+if (global.currentGun && !global.plRoll && global.changeWeapon)
 {
 	if ((mouse_wheel_up() || gamepad_button_check_pressed(0, gp_shoulderr)) && changeWeapon)
 	{	

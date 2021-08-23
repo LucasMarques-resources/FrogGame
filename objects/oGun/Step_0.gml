@@ -170,6 +170,16 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 				CreateBullet(5, 2, 4, 3.5, 3.5, -7, 7);
 				
 			break;
+			
+			// Trident
+			case GUN_TYPES.trident:
+				
+				velh = lengthdir_x(5, (dir - 180));
+				velv = lengthdir_y(5, (dir - 180));
+				
+				createTrident = true;
+				
+			break;
 		}
 		
 		for (var i = 0; i < bulletsShootedNumb; i++)
@@ -210,6 +220,28 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 	}
 }
 #endregion
+
+// Create trident
+if (createTrident)
+{
+	if (mouse_check_button_released(mb_left))
+	{
+		global.changeWeapon = false;
+		with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oTrident))
+		{
+			image_angle = other.image_angle;
+			
+			for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+			{
+				if (global.gunsGrid[# i, 0] == global.currentGun.id)
+				{
+					tridentGunGridPos = i;
+				}
+			}
+		}
+		instance_destroy();
+	}
+}
 
 // Recoil
 x -= lengthdir_x(recoil, image_angle);

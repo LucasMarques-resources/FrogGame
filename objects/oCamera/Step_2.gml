@@ -2,9 +2,14 @@
 // You can write your code in this editor
 if (instance_exists(target))
 {
-	if (instance_exists(oFrog)) viewX = oFrog.x;
+	if (instance_exists(oFrog))
+	{
+		viewX = oFrog.x;
+		viewY = oFrog.y;
+	}
 	else viewX = (room_width / 2);
-	viewY = (140 / 2) + 4;
+	
+	viewY = clamp(viewY, 0 + (global.gameHeight / 2), room_height - (global.gameHeight / 2));
 	viewX = clamp(viewX, 0 + (global.gameWidth / 2), room_width - (global.gameWidth / 2));
 	
 	// Screen sahke

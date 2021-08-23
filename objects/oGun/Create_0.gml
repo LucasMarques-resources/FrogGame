@@ -21,6 +21,9 @@ sniperRaycastChecked = false;
 sniperRaycastCheckedX = 0;
 sniperRaycastCheckedY = 0;
 
+// Trident
+createTrident = false;
+
 // Updating image angle and postion
 if (instance_exists(oFrog) && global.hasGun && !oFrog.controller)
 {

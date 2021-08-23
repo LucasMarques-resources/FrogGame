@@ -10,18 +10,18 @@ if (global.hasGun)
 			{
 				shader_set(shOutLine);
 			
-				var texelW = texture_get_texel_width(sprite_get_texture(sprite_index, image_index));
-				var texelH = texture_get_texel_height(sprite_get_texture(sprite_index, image_index));
+				var texelW = texture_get_texel_width(sprite_get_texture(sGunItem,  global.gunsGrid[# i, 1]));
+				var texelH = texture_get_texel_height(sprite_get_texture(sGunItem,  global.gunsGrid[# i, 1]));
 
 				shader_set_uniform_f(uniformHandle, texelW, texelH);
 			
-				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(sGunItem, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
 			
 				shader_reset();
 			}
 			else
 			{
-				draw_sprite_ext(sprite_index, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
+				draw_sprite_ext(sGunItem, global.gunsGrid[# i, 1], (30 * i) + 10, 25, 1, 1, 0, c_white, 1);
 			}
 		}
 	}

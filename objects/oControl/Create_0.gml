@@ -22,6 +22,8 @@ global.plRoll = false;
 global.plRollDir = 0;
 global.plRollVel = 0;
 
+global.changeWeapon = true;
+
 global.addLife = false;
 global.lifeAdded = false;
 global.newlifeAdded = false;
@@ -49,6 +51,7 @@ enum GUN_TYPES
 	thunder,
 	iceGun,
 	drumGun,
+	trident,
 	total
 }
 // Guns status

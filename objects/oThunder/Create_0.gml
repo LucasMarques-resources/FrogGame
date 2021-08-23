@@ -4,6 +4,8 @@ alarm[0] = irandom_range(15, 35);
 
 trailParts = 90;
 
+randomDiversion = true;
+
 arrayPosX[0] = x;
 arrayPosY[0] = y;
 glowArrayAngle[0] = 270;
@@ -12,7 +14,8 @@ createThunderDamager = true;
 
 for (var i = 1; i < trailParts; i++)
 {
-	var diversion = irandom_range(0, 30);
+	if (randomDiversion) var diversion = irandom_range(0, 30);
+	else var diversion = 0;
 	var dir = irandom_range(270-diversion, 270+diversion);
 	var length = random_range(1, 20);
 	var leX = lengthdir_x(length, dir);

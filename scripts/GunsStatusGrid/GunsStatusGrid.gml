@@ -60,4 +60,9 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.maxAmmo] = 600;
 	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.gunName] = "Drum Gun";
 	global.gunsGridStatus[GUN_TYPES.drumGun, GUN_STATUS.aim] = sAim;
+		
+	global.gunsGridStatus[GUN_TYPES.trident, GUN_STATUS.firingDelay] = 5;
+	global.gunsGridStatus[GUN_TYPES.trident, GUN_STATUS.maxAmmo] = 1;
+	global.gunsGridStatus[GUN_TYPES.trident, GUN_STATUS.gunName] = "Trident";
+	global.gunsGridStatus[GUN_TYPES.trident, GUN_STATUS.aim] = sAim;
 }
