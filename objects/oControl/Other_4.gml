@@ -30,6 +30,7 @@ raycastWallsChecked = ds_list_create();
 // Create BedRock
 if (layer_exists("BedRock"))
 {
+	// Creating bedrock at the bottom of the room
 	with (instance_create_layer(0, room_height - 12, "BedRock", pCollider))
 	{
 		sprite_index = sBedRock;
@@ -37,18 +38,27 @@ if (layer_exists("BedRock"))
 		destructible = false;
 	}
 	
+	// Creating bedrock at the beginning of the room
 	with (instance_create_layer(-16, -32, "BedRock", pCollider))
 	{
 		sprite_index = sBedRock;
 		image_yscale = (room_height / 16) + 32;
 		destructible = false;
 	}
+	
+	// Creating bedrock at the end of the room
 	with (instance_create_layer(room_width, -32, "BedRock", pCollider))
 	{
 		sprite_index = sBedRock;
 		image_yscale = (room_height / 16) + 32;
 		destructible = false;
 	}
+}
+
+// Creating level transition at the end of the room
+with (instance_create_layer(room_width + 10, 0, "Instances", oLevelTransition))
+{
+	image_yscale = (room_height / 16);
 }
 
 // Create oTransition
