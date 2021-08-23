@@ -1,4 +1,4 @@
-/// @description desc
+ /// @description desc
 
 pressEtextObj = noone;
 
@@ -34,6 +34,19 @@ if (layer_exists("BedRock"))
 	{
 		sprite_index = sBedRock;
 		image_xscale = room_width / 16;
+		destructible = false;
+	}
+	
+	with (instance_create_layer(-16, -32, "BedRock", pCollider))
+	{
+		sprite_index = sBedRock;
+		image_yscale = (room_height / 16) + 32;
+		destructible = false;
+	}
+	with (instance_create_layer(room_width, -32, "BedRock", pCollider))
+	{
+		sprite_index = sBedRock;
+		image_yscale = (room_height / 16) + 32;
 		destructible = false;
 	}
 }

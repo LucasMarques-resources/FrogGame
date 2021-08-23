@@ -16,6 +16,7 @@ angleRotate = 6;
 collideWithEnemy = true;
 
 destroyTime = 14;
+setBulletDestroyTimer = true;
 
 damage = 1;
 

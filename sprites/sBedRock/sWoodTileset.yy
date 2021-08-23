@@ -10,12 +10,12 @@
   "bbox_left": 0,
   "bbox_right": 15,
   "bbox_top": 0,
-  "bbox_bottom": 15,
+  "bbox_bottom": 31,
   "HTile": false,
   "VTile": false,
   "For3D": false,
   "width": 16,
-  "height": 16,
+  "height": 32,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"c3eb546b-7325-4d1a-afd9-cad7c8329ca3","path":"sprites/sBedRock/sBedRock.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"c3eb546b-7325-4d1a-afd9-cad7c8329ca3","path":"sprites/sBedRock/sBedRock.yy",},"LayerId":{"name":"cd9f4b0f-6055-403f-a111-d383a82a7595","path":"sprites/sBedRock/sBedRock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},"resourceVersion":"1.0","name":"c3eb546b-7325-4d1a-afd9-cad7c8329ca3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"6f5ec403-2480-4452-99ac-3878c9015ae5","path":"sprites/sWoodTileset/sWoodTileset.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"6f5ec403-2480-4452-99ac-3878c9015ae5","path":"sprites/sWoodTileset/sWoodTileset.yy",},"LayerId":{"name":"74beb3be-21bd-4f5a-9937-cb88b6de3e23","path":"sprites/sWoodTileset/sWoodTileset.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},"resourceVersion":"1.0","name":"6f5ec403-2480-4452-99ac-3878c9015ae5","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},
+    "spriteId": {"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 10.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"30ba7c14-373c-4d42-bca3-e7ee5fc2a959","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"c3eb546b-7325-4d1a-afd9-cad7c8329ca3","path":"sprites/sBedRock/sBedRock.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"d73ad227-3aef-4caf-9435-5e933eebd8e9","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"6f5ec403-2480-4452-99ac-3878c9015ae5","path":"sprites/sWoodTileset/sWoodTileset.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,18 +58,18 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sBedRock","path":"sprites/sBedRock/sBedRock.yy",},
+    "parent": {"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},
     "resourceVersion": "1.3",
-    "name": "sBedRock",
+    "name": "sWoodTileset",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cd9f4b0f-6055-403f-a111-d383a82a7595","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"74beb3be-21bd-4f5a-9937-cb88b6de3e23","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": {
     "left": 0,
-    "top": 5,
+    "top": 16,
     "right": 0,
     "bottom": 0,
     "guideColour": [
@@ -97,7 +97,7 @@
     "path": "folders/Sprites/Tiles.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sBedRock",
+  "name": "sWoodTileset",
   "tags": [],
   "resourceType": "GMSprite",
 }
