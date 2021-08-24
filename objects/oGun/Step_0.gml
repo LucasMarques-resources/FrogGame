@@ -175,7 +175,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 			case GUN_TYPES.trident:
 				
 				bulletsShootedNumb = 0;
-				show_debug_message("DAW");
+				
 				if (!global.plRoll)
 				{
 					velh = lengthdir_x(6, (dir - 180));

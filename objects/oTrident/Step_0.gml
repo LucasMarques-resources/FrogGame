@@ -50,7 +50,7 @@ else
 		
 		backToPlayerDelay--;
 		
-		if ((backToPlayerDelay <= (backToPlayerDelayD/2)) && (point_distance(x, y, oFrog.x, oFrog.y) < 10))
+		if ((backToPlayerDelay <= (backToPlayerDelayD/2)) && (point_distance(x, y, oFrog.x, oFrog.y) < 20))
 		{
 			backToPlayerDelay = 0;
 		}
