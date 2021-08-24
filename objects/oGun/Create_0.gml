@@ -12,6 +12,7 @@ controllerAngle = 0;
 velh = 0;
 velv = 0;
 grav = 0.3;
+tridentSetNormalPos = true;
 
 typeGun = 0;
 ownAmmo = 0;

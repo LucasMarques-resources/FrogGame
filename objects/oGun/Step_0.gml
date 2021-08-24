@@ -175,9 +175,13 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 			case GUN_TYPES.trident:
 				
 				bulletsShootedNumb = 0;
+				show_debug_message("DAW");
+				if (!global.plRoll)
+				{
+					velh = lengthdir_x(6, (dir - 180));
+					velv = lengthdir_y(6, (dir - 180));
+				}
 				
-				velh = lengthdir_x(6, (dir - 180));
-				velv = lengthdir_y(6, (dir - 180));
 				
 				createTrident = true;
 				
@@ -221,7 +225,23 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 	}
 }
 #endregion
-
+if (global.plRoll)
+{
+	if (typeGun == GUN_TYPES.trident)
+	{
+		if (tridentSetNormalPos)
+		{
+			velh = lengthdir_x(6, dir);
+			velv = lengthdir_y(6, dir);
+			tridentSetNormalPos = false;
+		}
+		if (!tridentSetNormalPos)
+		{
+			velh = 0;
+			velv = 0;
+		}
+	}
+}
 // Create trident
 if (createTrident)
 {
