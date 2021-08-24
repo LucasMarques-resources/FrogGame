@@ -173,9 +173,9 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 			
 			// Trident
 			case GUN_TYPES.trident:
-				
-				velh = lengthdir_x(10, (dir - 180));
-				velv = lengthdir_y(10, (dir - 180));
+
+				velh = lengthdir_x(6, (dir - 180));
+				velv = lengthdir_y(6, (dir - 180));
 				
 				createTrident = true;
 				
