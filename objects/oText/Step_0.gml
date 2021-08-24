@@ -41,7 +41,7 @@ if (instance_exists(objCreator))
 }
 
 // PRESS E (pick up items)
-if (!global.plRoll)
+if (!global.plRoll && global.changeWeapon)
 {
 	if (gunItemPressEobj)
 	{

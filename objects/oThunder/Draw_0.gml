@@ -13,7 +13,7 @@ for (var i = 0; i < trailParts-1; i++)
 	{
 		if (createThunderDamager)
 		{
-			var expo = instance_create_layer(arrayPosX[i], arrayPosY[i], "Particles", oThunderDamager);
+			instance_create_layer(arrayPosX[i], arrayPosY[i], "Particles", oThunderDamager);
 			createThunderDamager = false;
 		}
 		break;
