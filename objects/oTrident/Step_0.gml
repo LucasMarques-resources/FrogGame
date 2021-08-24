@@ -6,17 +6,20 @@ if (!collided)
 	image_angle = point_direction(x, y, x + velh, y + velv);
 	
 	// Collision with something
-	with (instance_place(x, y, pShootable))
+	if (giveDamage)
 	{
-		if (destructible)
+		with (instance_place(x, y, pShootable))
 		{
-			hp -= 10;
-			colShootable = true;
-			hitFrom = other.image_angle;
-			knockBack = 4;
-			if (hp < 1) other.create = false;
+			if (destructible)
+			{
+				hp -= 10;
+				colShootable = true;
+				hitFrom = other.image_angle;
+				knockBack = 4;
+				if (hp < 1) other.create = false;
+				other.giveDamage = false;
+			}
 		}
-		collided = true;
 	}
 }
 else

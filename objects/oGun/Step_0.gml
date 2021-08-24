@@ -173,7 +173,9 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 			
 			// Trident
 			case GUN_TYPES.trident:
-
+				
+				bulletsShootedNumb = 0;
+				
 				velh = lengthdir_x(6, (dir - 180));
 				velv = lengthdir_y(6, (dir - 180));
 				
@@ -206,7 +208,6 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 	else
 	{
 		// Create mini dust
-		
 		with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 		oControl.draw = true;
 		
@@ -239,6 +240,7 @@ if (createTrident)
 				}
 			}
 		}
+		createTrident = false;
 		instance_destroy();
 	}
 }

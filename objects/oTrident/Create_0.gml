@@ -11,6 +11,7 @@ backToPlayerDelay = room_speed * 2;
 backToPlayerDelayD = backToPlayerDelay;
 
 collision = true;
+giveDamage = true;
 
 tridentGunGridPos = 0;
 
