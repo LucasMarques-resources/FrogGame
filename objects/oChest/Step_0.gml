@@ -17,7 +17,8 @@ if (activateChest)
 				velh = lengthdir_x(3, dir);
 				velv = lengthdir_y(3, dir);
 				
-				typeItem = irandom_range(1, GUN_TYPES.total - 1);
+				if (other.randomItem) typeItem = irandom_range(1, GUN_TYPES.total - 1);
+				else typeItem = other.itemToSpawn;
 				itemOwnAmmo = global.gunsGridStatus[typeItem, GUN_STATUS.maxAmmo];
 			}
 			createChestItem = false;

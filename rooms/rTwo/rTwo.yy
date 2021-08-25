@@ -3,7 +3,7 @@
   "volume": 1.0,
   "parentRoom": null,
   "views": [
-    {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":240,"hview":140,"xport":0,"yport":0,"wport":1200,"hport":700,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
+    {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":240,"hview":144,"xport":0,"yport":0,"wport":1200,"hport":700,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1366,"hview":768,"xport":0,"yport":0,"wport":1366,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1366,"hview":768,"xport":0,"yport":0,"wport":1366,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
     {"inherit":false,"visible":false,"xview":0,"yview":0,"wview":1366,"hview":768,"xport":0,"yport":0,"wport":1366,"hport":768,"hborder":32,"vborder":32,"hspeed":-1,"vspeed":-1,"objectId":null,},
@@ -30,8 +30,9 @@
     {"instances":[],"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":2,"gridY":2,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Items","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[
-            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.rifle","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-          ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":396.0,"y":76.0,"resourceVersion":"1.0","name":"inst_3224321F","tags":[],"resourceType":"GMRInstance",},
+            {"propertyId":{"name":"randomItem","path":"objects/oChest/oChest.yy",},"objectId":{"name":"oChest","path":"objects/oChest/oChest.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+            {"propertyId":{"name":"itemToSpawn","path":"objects/oChest/oChest.yy",},"objectId":{"name":"oChest","path":"objects/oChest/oChest.yy",},"value":"GUN_TYPES.rifle","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"oChest","path":"objects/oChest/oChest.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":408.0,"y":96.0,"resourceVersion":"1.0","name":"inst_142B10E3","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":2,"gridY":2,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Gun","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"oFrog","path":"objects/oFrog/oFrog.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":16.0,"y":96.0,"resourceVersion":"1.0","name":"inst_72B8FE95","tags":[],"resourceType":"GMRInstance",},
@@ -269,7 +270,6 @@
     {"name":"inst_4D14788F","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_3FA926F","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_7E195D3","path":"rooms/rTwo/rTwo.yy",},
-    {"name":"inst_3224321F","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_6C3BAFB1","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_F7DC904","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_3A157315","path":"rooms/rTwo/rTwo.yy",},
@@ -281,6 +281,7 @@
     {"name":"inst_61439EBB","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_57960C56","path":"rooms/rTwo/rTwo.yy",},
     {"name":"inst_225BE93A","path":"rooms/rTwo/rTwo.yy",},
+    {"name":"inst_142B10E3","path":"rooms/rTwo/rTwo.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
