@@ -13,8 +13,8 @@ function DropItems(argument0, argument1, argument2){
 		with (instance_create_layer(argument0, argument1, "Items", argument2[i]))
 		{
 			direction = _angle;
-			velh += lengthdir_x(4, _angle);
-			velv += lengthdir_y(4, _angle);
+			velh += lengthdir_x(irandom_range(1, 5), _angle);
+			velv += lengthdir_y(irandom_range(1, 5), _angle);
 		}
 	}
 }
