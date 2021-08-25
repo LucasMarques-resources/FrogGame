@@ -41,7 +41,7 @@ if (state = STATES.attack)
 	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
 	{
 		hp--;
-		flash = 10;
+		flash = 7;
 		ScreenShake(2, 6);
 		global.plHp--;
 		state = STATES.hurt;
