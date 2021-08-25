@@ -3,13 +3,56 @@
 
 event_inherited();
 
-if (state = STATES.chase && !colWater)
+show_debug_message("state" + string(state));
+
+if (state = STATES.attack)
 {
-	timerJump--;
-	if (timerJump <= 0)
+	if (jump)
 	{
-		velv -= 5;
-		velh += lengthdir_x(spd, point_direction(x, y, oFrog.x, oFrog.y));
-		timerJump = room_speed;
+		var dir = ((sign(x - oFrog.x)) * -1);
+		if (dir == 1) var _dir = 45;
+		else if (dir == -1) var _dir = 135;
+		velh = lengthdir_x(point_distance(x, y, oFrog.x, oFrog.y) / 14, _dir);
+		velv -= 4;
+		
+		ground = false;
+		
+		jump = false;
+		jumped = true;
 	}
+	if (jumped)
+	{
+		timerGetBackToChaseState--;
+	}
+	if (timerGetBackToChaseState <= 0)
+	{
+		getBackToChaseState = true;
+	}
+	if (getBackToChaseState && (place_meeting(x, y + velv, pCollider) || ground))
+	{
+		timerCustomAttack = timeCustomAttack;
+		state = STATES.chase;
+		jump = true;
+		jumped = false;
+		getBackToChaseState = false;
+		timerGetBackToChaseState = 30;
+	}
+	
+	if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
+	{
+		hp--;
+		flash = 10;
+		ScreenShake(2, 6);
+		global.plHp--;
+		state = STATES.hurt;
+		PlayerKnockBack();
+	}
+	
+}
+else
+{
+	jump = true;
+	jumped = false;
+	getBackToChaseState = false;
+	timerGetBackToChaseState = 30;
 }

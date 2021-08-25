@@ -55,8 +55,11 @@ switch (state)
 		// Moving to player
 		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
 		
-		velh = lengthdir_x(vel_Chase, dir);
-		if (flyEnemy) velv = lengthdir_y(vel_Chase, dir);
+		if (!stopChase)
+		{
+			velh = lengthdir_x(vel_Chase, dir);
+			if (flyEnemy) velv = lengthdir_y(vel_Chase, dir);
+		}
 		
 		// Waiting
 		if (!chaseGetOut && !tookHit) state = STATES.waiting;
@@ -66,7 +69,7 @@ switch (state)
 		// Attacking
 		if (!shooterEnemy)
 		{
-			if (customAttack) // Custom attack
+			if (customAttack || ownCustomAttack) // Custom attack
 			{
 				if (attackRadius && oFrog.invulnerable = 0 && timerCustomAttack <= 0)
 				{
@@ -87,61 +90,64 @@ switch (state)
 	#region ATTACK
 	case STATES.attack:
 		
-		timerAttack--;
-		tookHit = true;
-		
-		// Custom attack
-		if (customAttack)
+		if (!ownCustomAttack)
 		{
-			sprite_index = spriteAttack;
+			timerAttack--;
+			tookHit = true;
 			
-			// Creating collision attack
-			if (createColAttack && image_index >= 2)
+			// Custom attack
+			if (customAttack)
 			{
-				createDust = true;
+				sprite_index = spriteAttack;
+			
+				// Creating collision attack
+				if (createColAttack && image_index >= 2)
+				{
+					createDust = true;
 				
-				var col = instance_create_layer(x, y, "Particles", colAttack);
-				col.image_xscale = image_xscale;
+					var col = instance_create_layer(x, y, "Particles", colAttack);
+					col.image_xscale = image_xscale;
 				
-				// Set player knock back direction to the collision attack direction
-				if (col.image_xscale == 1) dirKnock = 0;
-				else dirKnock = 180;
+					// Set player knock back direction to the collision attack direction
+					if (col.image_xscale == 1) dirKnock = 0;
+					else dirKnock = 180;
 				
-				damagePlayer = true;
-				createColAttack = false;
+					damagePlayer = true;
+					createColAttack = false;
+				}
+			
+				var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
+				// Damaging the player
+				if (instance_exists(colAttack) && !global.plRoll && damagePlayer && colAtt && !colAtt.disable && oFrog.invulnerable = 0)
+				{
+					ScreenShake(2, 6);
+					damagePlayer = false;
+					global.plHp--;
+					PlayerKnockBack();
+				}
+			
+				// Go to waiting state
+				if (image_index >= image_number - 1)
+				{
+					timerCustomAttack = timeCustomAttack;
+					reattackTimer = reattackTime;
+					state = STATES.waiting;
+					image_index = 0;
+				}
 			}
-			
-			var colAtt = instance_place(oFrog.x, oFrog.y, colAttack);
-			// Damaging the player
-			if (instance_exists(colAttack) && !global.plRoll && damagePlayer && colAtt && !colAtt.disable && oFrog.invulnerable = 0)
+			else // Normal attack
 			{
-				ScreenShake(2, 6);
-				damagePlayer = false;
-				global.plHp--;
+				// Player knock back
 				PlayerKnockBack();
-			}
-			
-			// Go to waiting state
-			if (image_index >= image_number - 1)
-			{
-				timerCustomAttack = timeCustomAttack;
-				reattackTimer = reattackTime;
-				state = STATES.waiting;
-				image_index = 0;
-			}
-		}
-		else // Normal attack
-		{
-			// Player knock back
-			PlayerKnockBack();
 		
-			// Coming back to chase state
-			if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
-			{
-				createDust = true;
-				state = STATES.chase;
-				timerAttack = timeAttack;
-				image_index = 0;
+				// Coming back to chase state
+				if ((oFrog.ground && timerAttack <= room_speed * 0.3) || timerAttack <= 0)
+				{
+					createDust = true;
+					state = STATES.chase;
+					timerAttack = timeAttack;
+					image_index = 0;
+				}
 			}
 		}
 		
@@ -187,6 +193,11 @@ switch (state)
 		
 		hurtTimer--;
 		
+		velh = lerp(velh, 0, 0.1);
+		velv = lerp(velv, 0, 0.1);
+		
+		image_blend = c_red;
+		
 		tookHit = true;
 		
 		if (instance_exists(colAttack)) instance_destroy(colAttack);
@@ -198,14 +209,14 @@ switch (state)
 			if (image_index > image_number - 1)
 			{
 				velh = 0;
+				image_blend = c_white;
 				state = STATES.chase;
 			}
 		}
 		else if (hurtTimer <= 0)
 		{
-			velh = 0;
-			state = STATES.chase;
 			image_blend = c_white;
+			state = STATES.chase;
 			hurtTimer = hurtTime;
 		}
 		
@@ -226,7 +237,7 @@ else
 }
 
 // Normal player collision with enemy
-if (place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
+if ((state != STATES.attack) && place_meeting(x, y, oFrog) && oFrog.invulnerable = 0 && !global.plRoll)
 {
 	hp--;
 	flash = 10;

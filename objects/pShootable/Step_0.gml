@@ -58,7 +58,7 @@ if (colShootable)
 	image_index = 0;
 	statePrevious = state;
 	state = STATES.hurt;
-	flash = 10;
+	flash = 7;
 	colShootable = false;
 }
 

@@ -12,7 +12,6 @@ colWater = false;
 timeAttack = room_speed * 0.6;
 timerAttack = timeAttack;
 
-timeCustomAttack = room_speed / 3;
 timerCustomAttack = 0;
 
 reattackTime = 50;
@@ -22,6 +21,8 @@ dirKnock = 0;
 
 ground = true;
 grav = 0.3;
+
+stopChase = false;
 
 tookHit = false;
 damagePlayer = false;

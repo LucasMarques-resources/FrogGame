@@ -129,6 +129,7 @@
     {"id":{"name":"sBox1","path":"sprites/sBox1/sBox1.yy",},"order":0,},
     {"id":{"name":"oFlyBugRedBig","path":"objects/oFlyBugRedBig/oFlyBugRedBig.yy",},"order":6,},
     {"id":{"name":"sMarker","path":"sprites/sMarker/sMarker.yy",},"order":2,},
+    {"id":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},"order":5,},
     {"id":{"name":"oCamera","path":"objects/oCamera/oCamera.yy",},"order":0,},
     {"id":{"name":"oGunItemUI","path":"objects/oGunItemUI/oGunItemUI.yy",},"order":3,},
     {"id":{"name":"AutoTile","path":"scripts/AutoTile/AutoTile.yy",},"order":9,},
@@ -174,6 +175,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},},
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
     {"roomId":{"name":"rOne","path":"rooms/rOne/rOne.yy",},},
     {"roomId":{"name":"rTwo","path":"rooms/rTwo/rTwo.yy",},},
