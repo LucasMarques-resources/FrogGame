@@ -1,5 +1,8 @@
 /// @description desc
 
-Transition(TRANS_MODE.NEXT);
+if (!instance_exists(pEnemy))
+{
+	Transition(TRANS_MODE.NEXT);
 
-with (other) state = PlStates.stopped;
+	with (other) state = PlStates.stopped;
+}
