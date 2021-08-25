@@ -85,6 +85,7 @@
     {"id":{"name":"sFlyBugBig","path":"sprites/sFlyBugBig/sFlyBugBig.yy",},"order":1,},
     {"id":{"name":"oTrident","path":"objects/oTrident/oTrident.yy",},"order":6,},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":1,},
+    {"id":{"name":"rThree","path":"rooms/rThree/rThree.yy",},"order":6,},
     {"id":{"name":"oLevelTransition","path":"objects/oLevelTransition/oLevelTransition.yy",},"order":18,},
     {"id":{"name":"sGunItem","path":"sprites/sGunItem/sGunItem.yy",},"order":1,},
     {"id":{"name":"oGun","path":"objects/oGun/oGun.yy",},"order":4,},
@@ -175,10 +176,11 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},},
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
     {"roomId":{"name":"rOne","path":"rooms/rOne/rOne.yy",},},
     {"roomId":{"name":"rTwo","path":"rooms/rTwo/rTwo.yy",},},
+    {"roomId":{"name":"rThree","path":"rooms/rThree/rThree.yy",},},
+    {"roomId":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},

@@ -31,7 +31,7 @@ raycastWallsChecked = ds_list_create();
 if (layer_exists("BedRock"))
 {
 	// Creating bedrock at the bottom of the room
-	with (instance_create_layer(0, room_height - 12, "BedRock", pCollider))
+	with (instance_create_layer(0, room_height - 16, "BedRock", pCollider))
 	{
 		sprite_index = sBedRock;
 		image_xscale = room_width / 16;

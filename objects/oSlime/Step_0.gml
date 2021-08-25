@@ -12,7 +12,13 @@ if (state = STATES.attack)
 		var dir = ((sign(x - oFrog.x)) * -1);
 		if (dir == 1) var _dir = 45;
 		else if (dir == -1) var _dir = 135;
-		velh = lengthdir_x(point_distance(x, y, oFrog.x, oFrog.y) / 14, _dir);
+		
+		var dist = point_distance(x, y, oFrog.x, oFrog.y);
+		var velH = 3;
+		if (dist <= 50) velH = dist / 16;
+		else velH = 3;
+		
+		velh = lengthdir_x(velH, _dir);
 		velv -= 4;
 		
 		ground = false;
