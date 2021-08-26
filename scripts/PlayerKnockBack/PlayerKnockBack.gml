@@ -25,8 +25,10 @@ function PlayerKnockBack()
 		{
 			state = PlStates.knockBack;
 			
-			if (other.dirKnock > 90 && other.dirKnock < 270) knockBackDir = 135;
-			else knockBackDir = 45;
+			var _knockBackDir = point_direction(x, y, other.x, other.y);
+			
+			if (_knockBackDir > 90 && _knockBackDir < 270) knockBackDir = 45;
+			else knockBackDir = 135;
 		}
 		else
 		{
