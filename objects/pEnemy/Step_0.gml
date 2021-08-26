@@ -14,6 +14,8 @@ switch (state)
 		
 		sprite_index = spriteWaiting;
 		vel_Chase = 0;
+		velh = 0;
+		if (flyEnemy) velv = 0;
 		
 		// Reattack timer
 		if (reattackTimer > 0) reattackTimer--;
@@ -62,7 +64,11 @@ switch (state)
 		}
 		
 		// Waiting
-		if (!chaseGetOut && !tookHit) state = STATES.waiting;
+		if (!chaseGetOut && !tookHit)
+		{
+			state = STATES.waiting;
+			image_index = 0;
+		}
 		
 		dirKnock = point_direction(x, y, oFrog.x, oFrog.y);
 		
@@ -82,6 +88,7 @@ switch (state)
 		else if (shooterEnemyRadius)
 		{
 			state = STATES.shoot;
+			image_index = 0;
 		}
 	
 	break;
@@ -92,6 +99,9 @@ switch (state)
 		
 		if (!ownCustomAttack)
 		{
+			velh = 0;
+			if (!flyEnemy) velv = 0;
+			
 			timerAttack--;
 			tookHit = true;
 			
@@ -206,11 +216,12 @@ switch (state)
 		{
 			sprite_index = spriteHurt;
 			
-			if (image_index > image_number - 1)
+			if (image_index >= image_number - 1)
 			{
 				velh = 0;
 				image_blend = c_white;
 				state = STATES.chase;
+				image_index = 0;
 			}
 		}
 		else if (hurtTimer <= 0)
@@ -244,6 +255,7 @@ if ((state != STATES.attack) && place_meeting(x, y, oFrog) && oFrog.invulnerable
 	ScreenShake(2, 6);
 	global.plHp--;
 	state = STATES.hurt;
+	image_index = 0;
 	PlayerKnockBack();
 }
 

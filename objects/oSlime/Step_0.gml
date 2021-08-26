@@ -50,6 +50,7 @@ if (state = STATES.attack)
 		flash = 7;
 		ScreenShake(2, 6);
 		global.plHp--;
+		image_index = 0;
 		state = STATES.hurt;
 		PlayerKnockBack();
 	}

@@ -55,9 +55,9 @@ if (colShootable)
 		velv = lengthdir_y(_knockBack, hitFrom);
 	}
 	
-	image_index = 0;
 	statePrevious = state;
 	state = STATES.hurt;
+	image_index = 0;
 	flash = 7;
 	colShootable = false;
 }

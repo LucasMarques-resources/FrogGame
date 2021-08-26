@@ -180,12 +180,12 @@
     "children": [],
   },
   "RoomOrderNodes": [
-    {"roomId":{"name":"rFour","path":"rooms/rFour/rFour.yy",},},
+    {"roomId":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},},
     {"roomId":{"name":"rMenu","path":"rooms/rMenu/rMenu.yy",},},
     {"roomId":{"name":"rOne","path":"rooms/rOne/rOne.yy",},},
     {"roomId":{"name":"rTwo","path":"rooms/rTwo/rTwo.yy",},},
     {"roomId":{"name":"rThree","path":"rooms/rThree/rThree.yy",},},
-    {"roomId":{"name":"rTestRoom","path":"rooms/rTestRoom/rTestRoom.yy",},},
+    {"roomId":{"name":"rFour","path":"rooms/rFour/rFour.yy",},},
     {"roomId":{"name":"rParent","path":"rooms/rParent/rParent.yy",},},
   ],
   "Folders": [

@@ -1,6 +1,6 @@
 /// @description desc
 
-if (!instance_exists(pEnemy))
+if (!instance_exists(pEnemy) || global.debugMode)
 {
 	Transition(TRANS_MODE.NEXT);
 
