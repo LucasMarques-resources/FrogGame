@@ -34,7 +34,14 @@ if (state != PlStates.roll)
 	global.plRoll = false;
 }
 
-if (global.plHp < 0) global.plHp = 0;
+// Die state
+if (global.plHp <= 0)
+{
+	state = PlStates.die;
+}
+
+// Create aim
+if (!controller && !instance_exists(oAim) && state != PlStates.die) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
 
 #region Input
 
@@ -57,6 +64,7 @@ if (abs(gamepad_axis_value(0, gp_axislh)) > 0.2)
 	controller = 1;
 }
 
+#region GAMEPAD INPUT
 if (gamepad_button_check_pressed(0, gp_face1))
 {
 	jump = 1;
@@ -82,9 +90,7 @@ if (gamepad_button_check(0, gp_shoulderlb))
 	roll = 1;
 	controller = 1;
 }
-
-// Create aim
-if (!controller && !instance_exists(oAim)) instance_create_layer(mouse_x, mouse_y, "Top", oAim);
+#endregion
 
 #endregion
 
@@ -281,6 +287,57 @@ switch (state)
 		
 	break;
 	#endregion
+	
+	#region DIE
+	case PlStates.die:
+		
+		show_message("DIE STATE");
+		
+		sprite_index = sFrog;
+		flash = 1;
+		global.plDied = true;
+		
+		// Knock back
+		if (knockBackCol)
+		{
+			velh = lengthdir_x(2.5, knockBackDir);
+			velv = lengthdir_y(2.5, knockBackDir)-2;
+			
+			knockBackCol = false;
+		}
+		
+		// Deactivate objects
+		with (all)
+		{
+			if (object_index != oFrog && object_index != oFrogDead && object_index != oControl)
+				instance_deactivate_object(self);
+		}
+		
+		// Destroy aim
+		instance_destroy(oAim);
+		
+		// Create oFrogDead
+		if (!instance_exists(oFrogDead)) instance_create_depth(x, y, depth + 1, oFrogDead);
+	
+		timerDieState--;
+	
+		// Set game speed
+		game_set_speed(15, gamespeed_fps);
+		
+		if (timerDieState <= 0)
+		{
+			// Create death explosion
+			with (instance_create_layer(x, y, "Particles", oExplosion))
+			{
+				scale = 2;
+				scaleMin = 1.7;
+			}
+			game_set_speed(60, gamespeed_fps);
+			instance_destroy();
+		}
+		
+	break;
+	#endregion
 }
 
 // Gravity
@@ -288,7 +345,7 @@ velv += grav;
 
 #region Animation
 
-if (state != PlStates.roll)
+if (state != PlStates.roll && state != PlStates.die)
 {
 	if ((velh != 0 && ground) && state != PlStates.swim)
 	{

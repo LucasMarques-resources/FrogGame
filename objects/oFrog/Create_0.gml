@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+show_message("FROG CREATION EVENT");
 // States
 enum PlStates
 {
@@ -9,7 +9,8 @@ enum PlStates
 	swim,
 	knockBackWater,
 	roll,
-	stopped
+	stopped,
+	die
 }
 
 state = PlStates.free;
@@ -36,6 +37,7 @@ rollStateDelay = rollStateTime;
 
 knockBackCol = true;
 knockBackDir = 0;
+timerDieState = 25;
 
 // Animation
 flash = 0;
@@ -52,25 +54,3 @@ timerJumpWater = timeJumpWater;
 
 gunKickX = 0;
 gunKickY = 0;
-
-if (global.currentGun != -4)
-{
-	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
-	{
-		if (global.gunsGrid[# i, 0] == global.currentGun.id)
-		{
-			global.currentGunPos = i;
-			var _currentGunPos = global.currentGunPos;
-			
-			with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
-			{
-				global.gunsGrid[# _currentGunPos, 0] = id;
-				typeGun = global.gunsGrid[# _currentGunPos, 1];
-		
-				ownAmmo = global.gunsGrid[# _currentGunPos, 2];
-		
-				global.currentGun = self;
-			}
-		}
-	}
-}

@@ -32,6 +32,3 @@ else
 		)
 	}
 }
-
-
-//draw_rectangle(mouse_x - 50, mouse_y - room_height, mouse_x + 50, mouse_y + room_height, false);

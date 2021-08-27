@@ -34,7 +34,9 @@ if (mode != TRANS_MODE.OFF)
 			break;
 			case TRANS_MODE.RESTART:
 				
-				game_restart();
+				show_message("RESTART");
+				room_restart();
+				instance_destroy();
 				
 			break;
 		}

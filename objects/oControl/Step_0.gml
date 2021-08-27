@@ -61,6 +61,12 @@ if (doAutoTile)
 	doAutoTile = false;
 }
 
+if (global.plDied)
+{
+	global.plTotalHpSave = global.plTotalHp;
+	global.gunsSlotsSave = global.gunsSlots;
+}
+
 #region CHANGE WEAPON
 if (global.currentGun && !global.plRoll && global.changeWeapon)
 {

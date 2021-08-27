@@ -1,5 +1,66 @@
  /// @description desc
 
+game_set_speed(60, gamespeed_fps);
+show_message("ROOM START EVENT");
+
+#region RESET VALUES
+if (global.plDied)
+{
+	global.ammoAdded = false;
+	global.ammoAdd = 0;
+	
+	// Player
+	global.plTotalHp = global.plTotalHpSave;
+	global.plHp = global.plTotalHp;
+	global.plRoll = false;
+	global.plRollDir = 0;
+	global.plRollVel = 0;
+
+	global.changeWeapon = true;
+
+	global.addLife = false;
+	global.lifeAdded = false;
+	global.newlifeAdded = false;
+
+	global.gunSlotAdded = false;
+
+	// Guns
+	global.gunsSlots = global.gunsSlotsSave;
+	
+	for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+	{
+		ds_grid_set(global.gunsGrid, i, 2, global.gunsGridStatus[global.gunsGrid[# i, 1], GUN_STATUS.maxAmmo]);
+	}
+	
+}
+#endregion
+global.plDied = false;
+
+if (instance_exists(oFrog))
+{
+	if (global.currentGun != -4)
+	{
+		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
+		{
+			if (global.gunsGrid[# i, 0] == global.currentGun.id)
+			{
+				global.currentGunPos = i;
+				var _currentGunPos = global.currentGunPos;
+			
+				with (instance_create_layer(oFrog.x, oFrog.y, "Gun", oGun))
+				{
+					global.gunsGrid[# _currentGunPos, 0] = id;
+					typeGun = global.gunsGrid[# _currentGunPos, 1];
+		
+					ownAmmo = global.gunsGrid[# _currentGunPos, 2];
+		
+					global.currentGun = self;
+				}
+			}
+		}
+	}
+}
+
 pressEtextObj = noone;
 
 gunAngle = 0;

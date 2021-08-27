@@ -21,6 +21,7 @@ global.plTotalHp = 4;
 global.plRoll = false;
 global.plRollDir = 0;
 global.plRollVel = 0;
+global.plDied = false;
 
 global.changeWeapon = true;
 
@@ -36,6 +37,10 @@ addedLifes = 0;
 global.gunsSlots = 2;
 global.currentGunPos = 0;
 global.gunsGrid = ds_grid_create(global.gunsSlots, 3);
+
+// Save
+global.plTotalHpSave = global.plTotalHp;
+global.gunsSlotsSave = global.gunsSlots;
 
 // Guns Type
 enum GUN_TYPES

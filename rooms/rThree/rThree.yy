@@ -258,8 +258,8 @@
     {"spriteId":null,"colour":4285546551,"x":0,"y":0,"htiled":true,"vtiled":true,"hspeed":0.5,"vspeed":0.5,"stretch":false,"animationFPS":30.0,"animationSpeedType":0,"userdefinedAnimFPS":false,"visible":true,"depth":1200,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMRBackgroundLayer",},
   ],
   "inheritLayers": true,
-  "creationCodeFile": "${project_dir}/rooms/rThree/RoomCreationCode.gml",
-  "inheritCode": false,
+  "creationCodeFile": "${project_dir}/rooms/rParent/RoomCreationCode.gml",
+  "inheritCode": true,
   "instanceCreationOrder": [
     {"name":"inst_72B8FE95","path":"rooms/rThree/rThree.yy",},
     {"name":"inst_2CAA1F54","path":"rooms/rThree/rThree.yy",},
