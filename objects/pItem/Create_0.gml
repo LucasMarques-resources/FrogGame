@@ -1,5 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+destroy = false;
+for (var i = 0; i < ds_list_size(global.itensSaveList); i++)
+{
+	if (global.itensSaveList[| i] == id)
+	{
+		destroy = true;
+		instance_destroy();
+	}
+}
+
 // Variables
 velh = 0;
 velv = 0;

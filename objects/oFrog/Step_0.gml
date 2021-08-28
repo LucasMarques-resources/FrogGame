@@ -291,7 +291,7 @@ switch (state)
 	#region DIE
 	case PlStates.die:
 		
-		show_message("DIE STATE");
+		//show_message("DIE STATE");
 		
 		sprite_index = sFrog;
 		flash = 1;

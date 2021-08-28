@@ -17,4 +17,4 @@ transMode = TRANS_MODE.INTRO;
 percent = 1;
 target = room;
 
-show_message("oTRANSITION CREATE EVENT");
+//show_message("oTRANSITION CREATE EVENT");

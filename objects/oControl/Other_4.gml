@@ -1,7 +1,6 @@
  /// @description desc
 
 game_set_speed(60, gamespeed_fps);
-show_message("ROOM START EVENT");
 
 #region RESET VALUES
 if (global.plDied)
@@ -34,7 +33,9 @@ if (global.plDied)
 	
 }
 #endregion
+
 global.plDied = false;
+global.changeWeapon = true;
 
 if (instance_exists(oFrog))
 {

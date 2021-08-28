@@ -29,6 +29,9 @@
         {"properties":[
             {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.revolver","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
           ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_25FAA5F7","path":"rooms/rParent/rParent.yy",},"frozen":false,"ignore":false,"inheritItemSettings":false,"x":152.0,"y":64.0,"resourceVersion":"1.0","name":"inst_25FAA5F7","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[
+            {"propertyId":{"name":"typeItem","path":"objects/oGunItem/oGunItem.yy",},"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"value":"GUN_TYPES.trident","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+          ],"isDnd":false,"objectId":{"name":"oGunItem","path":"objects/oGunItem/oGunItem.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":{"name":"inst_25FAA5F7","path":"rooms/rParent/rParent.yy",},"frozen":false,"ignore":false,"inheritItemSettings":false,"x":184.0,"y":64.0,"resourceVersion":"1.0","name":"inst_38CF7BB3","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":400,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":2,"gridY":2,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Gun","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[],"visible":true,"depth":500,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":32,"gridY":32,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Environment","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
@@ -355,6 +358,7 @@
     {"name":"inst_25FAA5F7","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_34485143","path":"rooms/rOne/rOne.yy",},
     {"name":"inst_2FD78916","path":"rooms/rOne/rOne.yy",},
+    {"name":"inst_38CF7BB3","path":"rooms/rOne/rOne.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,
