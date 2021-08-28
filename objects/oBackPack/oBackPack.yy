@@ -28,7 +28,7 @@
     {"varType":1,"value":"10","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"ammo","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [
-    {"propertyId":{"name":"itemToGun","path":"objects/pItem/pItem.yy",},"objectId":{"name":"pItem","path":"objects/pItem/pItem.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"itemToGun","path":"objects/pItem/pItem.yy",},"objectId":{"name":"pItem","path":"objects/pItem/pItem.yy",},"value":"False","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Items",

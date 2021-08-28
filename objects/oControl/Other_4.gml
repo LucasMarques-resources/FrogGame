@@ -15,8 +15,6 @@ if (global.plDied)
 	global.plRollDir = 0;
 	global.plRollVel = 0;
 
-	global.changeWeapon = true;
-
 	global.addLife = false;
 	global.lifeAdded = false;
 	global.newlifeAdded = false;

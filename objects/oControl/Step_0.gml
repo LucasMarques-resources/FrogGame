@@ -68,10 +68,11 @@ if (global.plDied)
 }
 
 #region CHANGE WEAPON
+show_debug_message(global.changeWeapon);
 if (global.currentGun && !global.plRoll && global.changeWeapon)
 {
 	if ((mouse_wheel_up() || gamepad_button_check_pressed(0, gp_shoulderr)) && changeWeapon)
-	{	
+	{
 		for (var i = 0; i < ds_grid_width(global.gunsGrid); i++)
 		{
 			if (global.gunsGrid[# i, 0] == global.currentGun.id)
