@@ -181,6 +181,7 @@ switch (state)
 				{
 					spd = other.spd;
 					spdD = spd;
+					typeBullet = other.typeEnemy;
 					if (other.numberOfBullets == 1) direction = dir;
 					else direction = dir + i * 12;
 					image_angle = direction;
@@ -267,6 +268,6 @@ if (!flyEnemy)
 }
 
 // Fliping
-if (velh != 0 && state != STATES.hurt && !beingIceDamaged) image_xscale = sign(velh);
+if (velh != 0 && state != STATES.hurt && !beingIceDamaged && flip) image_xscale = sign(velh);
 
 //show_debug_message(state);

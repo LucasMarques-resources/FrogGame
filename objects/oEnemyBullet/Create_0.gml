@@ -6,6 +6,9 @@ create = true;
 
 typeBullet = 0;
 
+grav = .3;
+gravBullet = false;
+
 velh = 0;
 velv = 0;
 grav = .3;

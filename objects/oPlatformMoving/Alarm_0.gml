@@ -1,0 +1,2 @@
+/// @description desc
+currentSpeed = plataformSpeed;

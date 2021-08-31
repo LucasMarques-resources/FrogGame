@@ -32,6 +32,8 @@ hurtTime = hurtTimer;
 
 firingDelay = 0;
 
+flip = true;
+
 enum STATES
 {
 	waiting,
@@ -42,6 +44,13 @@ enum STATES
 }
 
 state = STATES.waiting;
+
+enum ENEMY_TYPES
+{
+	normal,
+	red,
+	acid
+}
 
 // Default values
 flyEnemyD = flyEnemy;

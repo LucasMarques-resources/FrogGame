@@ -1,7 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-ground = place_meeting(x, y + 1, pCollider) || place_meeting(x, y + 1, pBox);
+ground = false;
+
+var colCollider = instance_place(x, y + 1, pCollider);
+if ((colCollider && colCollider.normalCollider) || place_meeting(x, y + 1, pBox))
+{
+	ground = true;
+}
+with (oPlatformMoving)
+{
+	if (place_meeting(x, y - 1, other)) && !place_meeting(x, y, other)
+	{
+		other.ground = true;
+	}
+}
+
 colWater = place_meeting(x, y, oWater);
 
 // Set physics values to normal

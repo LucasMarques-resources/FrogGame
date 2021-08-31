@@ -21,8 +21,15 @@ switch (typeBullet)
 		}
 		else spd = spdD;
 		
-		velh = lengthdir_x(spd, direction);
-		velv = lengthdir_y(spd, direction);
+		if (gravBullet)
+		{
+			velv += grav;
+		}
+		else
+		{
+			velh = lengthdir_x(spd, direction);
+			velv = lengthdir_y(spd, direction);
+		}
 
 		// Collision with something
 		with (instance_place(x, y, pShootable))

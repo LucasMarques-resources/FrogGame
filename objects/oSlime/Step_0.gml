@@ -3,8 +3,6 @@
 
 event_inherited();
 
-show_debug_message("state" + string(state));
-
 if (state = STATES.attack)
 {
 	if (jump)
