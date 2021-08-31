@@ -53,7 +53,7 @@
     "spriteId": {"name":"sExplosion2","path":"sprites/sExplosion2/sExplosion2.yy",},
     "timeUnits": 1,
     "playback": 1,
-    "playbackSpeed": 15.0,
+    "playbackSpeed": 13.0,
     "playbackSpeedType": 0,
     "autoRecord": true,
     "volume": 1.0,

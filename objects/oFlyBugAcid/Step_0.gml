@@ -17,7 +17,7 @@ if (state = STATES.attack)
 	velh = lerp(velh, 0, 0.1);
 	velv = lerp(velv, 0, 0.1);
 	
-	image_speed = lerp(image_speed, 0, 0.1);
+	image_speed = 0;
 	
 	explodeTimer--;
 	
@@ -32,7 +32,6 @@ if (state = STATES.attack)
 			{
 				spd = irandom_range(1, 2);
 				grav = random_range(.1, .2);
-				spdD = spd;
 				gravBullet = true;
 				typeBullet = other.typeEnemy;
 				direction = i;

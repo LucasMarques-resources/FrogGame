@@ -36,7 +36,9 @@
     {"propertyId":{"name":"typeEnemy","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"ENEMY_TYPES.acid","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"ownCustomAttack","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"radiusAttack","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"20","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
-    {"propertyId":{"name":"vel_Chase","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"2","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"vel_Chase","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"1.2","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"radiusChase","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"sprite_width * 3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"radiusChaseGetOut","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"sprite_width * 6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Enemys",
