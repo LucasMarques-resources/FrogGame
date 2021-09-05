@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (!global.plDied)
+if (!global.plDied && !global.pause)
 {
 	#region LIFES UI
 	// Draw life top UI
@@ -218,3 +218,31 @@ draw_text_transformed(global.gameWidth, 10, string(instance_count), 0.5, 0.5, 0)
 
 draw_set_halign(-1);
 draw_set_valign(-1);
+
+if (global.pause)
+{	
+	draw_rectangle_color(-10, -10, room_width + 10, room_height + 10, c_black, c_black, c_black, c_black, false);
+	
+	draw_set_color(c_white);
+	draw_set_font(fntText);
+	draw_set_halign(fa_center);
+	draw_set_valign(fa_middle);
+	
+	draw_text(global.gameWidth * 0.5, global.gameHeight * 0.3, "...Game Paused...");
+	
+	for (var i = 0; i < array_length(pauseOptions); i++)
+	{
+		var _print = "";
+		if (i == pauseOptionSelected)
+		{
+			_print += "> " + pauseOptions[i] + " <";
+		}
+		else
+		{
+			_print += pauseOptions[i];
+			draw_set_alpha(0.7);
+		}
+		draw_text(global.gameWidth * 0.5, global.gameHeight * 0.4 + 18 + (i * 12), _print);
+		draw_set_alpha(1.0);
+	}
+}

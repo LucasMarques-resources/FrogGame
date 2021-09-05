@@ -22,8 +22,21 @@ if (!drawLeg3 && leg3ExpoCrea)
 }
 if (!drawLeg4 && leg4ExpoCrea)
 {
-	with (instance_create_layer(x, y + 10, "Particles", oExplosion)) sprite_index = sExplosion2;
+	with (instance_create_layer(x - 10, y + 10, "Particles", oExplosion)) sprite_index = sExplosion2;
+	with (instance_create_layer(x, y - 10, "Particles", oExplosion)) sprite_index = sExplosion2;
+	with (instance_create_layer(x + 10, y + 10, "Particles", oExplosion)) sprite_index = sExplosion2;
+	//drawLeftWind = false;
+	//drawRightWind = false;
 	leg4ExpoCrea = false;
+}
+
+if (keyboard_check_pressed(ord("K"))) drawLeg4 = false;
+
+if (!drawLeg4)
+{
+	velChase = 2;
+	grav = .3;
+	attackDownDamagerRadius = 20;
 }
 
 switch (bossState)
@@ -37,34 +50,39 @@ switch (bossState)
 		
 		y = lerp(y, ystart, .1);
 		
-		var xscale = sign(oFrog.x - x);
-		if (xscale != 0) image_xscale = xscale;
+		var _xscale = sign(oFrog.x - x);
+		if (_xscale != 0) see = _xscale;
 		
 		timerChase--;
 		
 		if (timerChase <= 0) bossState = BOSS_STATES.chase;
 		
-		if (!drawLeg1 && createEnemies && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies;
+		// Create enemies state
+		if (!drawLeg2 && createEnemies && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies;
+		if (!drawLeg3 && createEnemies2 && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies2;
+		if (!drawLeg4 && createEnemies3 && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies3;
 		
 	break;
 	
 	case BOSS_STATES.chase:
 	
-		var xscale = sign(oFrog.x - x);
-		if (xscale != 0) image_xscale = xscale;
+		var _xscale = sign(oFrog.x - x);
+		if (_xscale != 0) see = _xscale;
 		
-		var dir = point_direction(x, y, oFrog.x, oFrog.y - oFrog.sprite_height / 2);
+		var dir = point_direction(x, y, oFrog.x, y);
 		var dist = point_distance(x, x, oFrog.x, oFrog.x);
 		
-		velh = lengthdir_x(1, dir);
+		velh = lengthdir_x(velChase, dir);
 		
-		if (dist <= 30)
+		if (dist <= 20)
 		{
 			bossState = BOSS_STATES.attackDown;
 			timerChase = timeChase;
 		}
 		
-		if (!drawLeg1 && createEnemies && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies;
+		// Create enemies state
+		if (!drawLeg2 && createEnemies && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies;
+		if (!drawLeg3 && createEnemies2 && (y - ystart) <= 20) bossState = BOSS_STATES.createEnemies2;
 		
 	break;
 	
@@ -72,10 +90,15 @@ switch (bossState)
 		
 		velv += grav;
 		
+		velh = lerp(velh, 0, 0.1);
+		
 		if (place_meeting(x, y + velv, pCollider))
 		{
 			bossState = BOSS_STATES.idle;
-			with (instance_create_layer(x, y, "Instances", oExplosionDamagerEnemy)) damagerRadius = 15;
+			xscale = 1.5;
+			yscale = 0.5;
+			with (instance_create_layer(x, y, "Instances", oExplosionDamagerEnemy)) damagerRadius = other.attackDownDamagerRadius;
+			instance_create_layer(x, y + 16, "Particles", oImpactParticle);
 			ScreenShake(5, 5);
 		}
 		
@@ -86,15 +109,17 @@ switch (bossState)
 		velh = lerp(velh, 0, 0.1);
 		velv = lerp(velv, 0, 0.1);
 		
-		for (var i = 0; i <= 1; i++)
+		if (drawLeg3)
 		{
-			show_message(i);
-			with (instance_create_layer(x, y, "Enemy", oFlyBugBigBoss))
+			for (var i = 0; i <= 1; i++)
 			{
-				if (i == 1)
+				with (instance_create_layer(x, y, "Enemy", oFlyBugBigBoss))
 				{
-					xGo = -25;
-					yGo = 25;
+					if (i == 1)
+					{
+						xGo = -25;
+						yGo = 25;
+					}
 				}
 			}
 		}
@@ -103,4 +128,100 @@ switch (bossState)
 		createEnemies = false;
 		
 	break;
+	
+	case BOSS_STATES.createEnemies2:
+		
+		for (var i = 0; i <= 1; i++)
+		{
+			with (instance_create_layer(x, y, "Enemy", oFlyBugRedBigBoss))
+			{
+				if (i == 0)
+				{
+					xGo = 25;
+					yGo = -25;
+				}
+				if (i == 1)
+				{
+					xGo = -25;
+					yGo = -25;
+				}
+			}
+		}
+		
+		bossState = BOSS_STATES.idle;
+		createEnemies2 = false;
+		
+	break;
+	
+	case BOSS_STATES.createEnemies3:
+		
+		for (var i = 0; i <= 1; i++)
+		{
+			with (instance_create_layer(x, y, "Enemy", oFlyBugAcidBoss))
+			{
+				if (i == 0)
+				{
+					xGo = 25;
+					yGo = -25;
+				}
+				if (i == 1)
+				{
+					xGo = -25;
+					yGo = -25;
+				}
+			}
+		}
+		
+		bossState = BOSS_STATES.idle;
+		createEnemies3 = false;
+		
+	break;
+	
+	case BOSS_STATES.dead:
+	
+		drawRightWind = false;
+		drawLeftWind = false;
+		drawLeg1 = false;
+		drawLeg2 = false;
+		drawLeg3 = false;
+		drawLeg4 = false;
+		
+		velh = 0;
+		velv = 0;
+		
+		sprite_index = sBossDead;
+		
+		timerDeadExplosionCrea--;
+		timerDead--;
+		
+		if (timerDead <= 0)
+		{
+			instance_create_layer(x, y, "Particles", oExplosionBoss);
+			with (instance_create_layer(x, y, "Particles", oExplosion)) sprite_index = sExplosion2;
+			
+			instance_destroy();
+		}
+		else
+		{
+			if (timerDeadExplosionCrea <= 0)
+			{
+				with (instance_create_layer(x + irandom_range(-15, 15), y + irandom_range(-15, 15), "Particles", oExplosion))
+				{
+					sprite_index = sExplosion2;
+					angleRot = false;
+				}
+				timerDeadExplosionCrea = timeDeadExplosionCrea;
+			}	
+		}
+		
+		
+	break;
+}
+
+xscale = lerp(xscale, 1, 0.15);
+yscale = lerp(yscale, 1, 0.15);
+
+if (hp <= 0)
+{
+	bossState = BOSS_STATES.dead;
 }

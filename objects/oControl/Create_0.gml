@@ -3,6 +3,8 @@
 
 randomize();
 
+global.gameSaveSlot = 0;
+
 // DEBUG
 global.debugMode = false;
 global.createWalls = false;
@@ -14,6 +16,10 @@ GunsStatusGrid();
 
 global.ammoAdded = false;
 global.ammoAdd = 0;
+
+global.pause = false;
+pauseOptions = ["Continue", "Quit to Menu", "Quit to Desktop"];
+pauseOptionSelected = 0;
 
 // Player
 global.plHp = 4;

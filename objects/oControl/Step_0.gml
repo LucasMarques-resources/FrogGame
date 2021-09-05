@@ -44,6 +44,20 @@ if (global.createWalls)
 
 #endregion
 
+if (keyboard_check_pressed(vk_escape)) global.pause = !global.pause;
+
+if (global.pause)
+{
+	with (all)
+	{
+		if (object_index != oControl) instance_deactivate_object(self);
+	}
+}
+else
+{
+	instance_activate_all();
+}
+
 // Auto tile
 if (doAutoTile)
 {

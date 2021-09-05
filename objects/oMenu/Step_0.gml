@@ -59,15 +59,14 @@ if (menuX > global.guiWidth + 150) && (menuCommitted != -1)
 	switch (menuCommitted)
 	{
 		// TODO: transition
-		case 2: default:
+		case 1: default:
 			
 			Transition(TRANS_MODE.GOTO, rOne);
 			
 		break;
-		case 1:
-			
-		break;
 		case 0:
+			
+			game_end();
 			
 		break;
 	}

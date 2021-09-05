@@ -1,7 +1,7 @@
 /// @description desc
 
 // Horizontal Collision pCOLLIDER
-HorizontalCollision(pCollider, true, .6);
+HorizontalCollision(pCollider, false, 0);
 
 x += velh;
 
