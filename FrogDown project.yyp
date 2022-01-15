@@ -103,7 +103,6 @@
     {"id":{"name":"CreateParticleSystem","path":"scripts/CreateParticleSystem/CreateParticleSystem.yy",},"order":6,},
     {"id":{"name":"sWoodTileset","path":"sprites/sWoodTileset/sWoodTileset.yy",},"order":7,},
     {"id":{"name":"sFlyBugBig","path":"sprites/sFlyBugBig/sFlyBugBig.yy",},"order":1,},
-    {"id":{"name":"oTestObject","path":"objects/oTestObject/oTestObject.yy",},"order":15,},
     {"id":{"name":"oTrident","path":"objects/oTrident/oTrident.yy",},"order":6,},
     {"id":{"name":"sThanksForPlaying","path":"sprites/sThanksForPlaying/sThanksForPlaying.yy",},"order":21,},
     {"id":{"name":"oControl","path":"objects/oControl/oControl.yy",},"order":1,},
