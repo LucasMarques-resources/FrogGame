@@ -25,6 +25,10 @@ ground = true;
 timerKnockGround = 2;
 jumping = false;
 
+dieState = true;
+
+colSpike = false;
+
 controller = 0;
 
 // Roll

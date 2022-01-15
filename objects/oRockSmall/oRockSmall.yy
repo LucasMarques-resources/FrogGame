@@ -29,6 +29,7 @@
     {"propertyId":{"name":"hp","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"6","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"particlesSprite","path":"objects/oRock/oRock.yy",},"objectId":{"name":"oRock","path":"objects/oRock/oRock.yy",},"value":"sRockParticlesSmall","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
     {"propertyId":{"name":"particleScale","path":"objects/oRock/oRock.yy",},"objectId":{"name":"oRock","path":"objects/oRock/oRock.yy",},"value":"1.3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
+    {"propertyId":{"name":"explosionScale","path":"objects/oRock/oRock.yy",},"objectId":{"name":"oRock","path":"objects/oRock/oRock.yy",},"value":"1.3","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
     "name": "Environment",

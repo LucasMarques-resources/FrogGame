@@ -1,5 +1,13 @@
 /// @description desc
 
+for (var i = 0; i < ds_list_size(global.chestSaveList); i++)
+{
+	if (global.chestSaveList[| i] == id)
+	{
+		instance_destroy();
+	}
+}
+
 velh = 0;
 velv = 0;
 grav = .3;

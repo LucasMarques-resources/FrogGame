@@ -17,7 +17,7 @@ if (_num > 0)
 				other.autoTiling = true;
 				// Destroy
 				destroyed = true;
-				hp -= 2;
+				hp -= 5;
 			}
 		}
 	}
@@ -36,7 +36,7 @@ if (num > 0)
 			var r = Raycast(damagerRadius, list[| i], point_direction(x, y, list[| i].x, list[| i].y), x, y);
 			if (r) with (r)
 			{
-				hp -= 5;
+				hp -= 10;
 				colShootable = true;
 				knockBack = irandom_range(2.3, 3.7);
 				hitFrom = point_direction(other.x, other.y, x, y);

@@ -34,6 +34,7 @@
     {"varType":0,"value":"irandom_range(20, 25)","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"particlesAmount","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"sRockParticles","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"particlesSprite","tags":[],"resourceType":"GMObjectProperty",},
     {"varType":0,"value":"1","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"particleScale","tags":[],"resourceType":"GMObjectProperty",},
+    {"varType":0,"value":"1.6","rangeEnabled":false,"rangeMin":0.0,"rangeMax":10.0,"listItems":[],"multiselect":false,"filters":[],"resourceVersion":"1.0","name":"explosionScale","tags":[],"resourceType":"GMObjectProperty",},
   ],
   "overriddenProperties": [
     {"propertyId":{"name":"destructible","path":"objects/pCollider/pCollider.yy",},"objectId":{"name":"pCollider","path":"objects/pCollider/pCollider.yy",},"value":"True","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},

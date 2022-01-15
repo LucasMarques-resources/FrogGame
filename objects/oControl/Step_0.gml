@@ -11,7 +11,7 @@ if (global.currentGun)
 }
 
 // Switch by debug mode
-if (keyboard_check_pressed(vk_f1)) global.debugMode = !global.debugMode;
+//if (keyboard_check_pressed(vk_f1)) global.debugMode = !global.debugMode;
 
 // DEBUG mode
 if (global.debugMode)
@@ -37,8 +37,8 @@ if (global.createWalls)
 {
 	if (mouse_check_button_pressed(mb_left))
 	{
-		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
-		instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oRock);
+		instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oWall);
+		//instance_create_layer((floor(mouse_x / 16) * 16) + 8, (floor(mouse_y / 16) * 16) + 8, "Col", oRock);
 	}
 }
 
@@ -53,7 +53,7 @@ if (global.pause)
 		if (object_index != oControl) instance_deactivate_object(self);
 	}
 }
-else
+else if (!global.plDied)
 {
 	instance_activate_all();
 }
@@ -82,7 +82,7 @@ if (global.plDied)
 }
 
 #region CHANGE WEAPON
-show_debug_message(global.changeWeapon);
+
 if (global.currentGun && !global.plRoll && global.changeWeapon)
 {
 	if ((mouse_wheel_up() || gamepad_button_check_pressed(0, gp_shoulderr)) && changeWeapon)

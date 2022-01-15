@@ -33,10 +33,11 @@ if (num > 0)
 		{
 			with (list[| i])
 			{
-				hp -= 5;
+				hp -= 20;
 				colShootable = true;
 				knockBack = irandom_range(2.3, 3.7);
 				hitFrom = point_direction(other.x, other.y, x, y);
+				instance_destroy(other.oRockCreator);
 			}
 		}
 	}

@@ -9,8 +9,8 @@ if (colWater)
 	grav = .1;
 	VknockBack = true;
 
-	velh = lerp(velh, 0, 0.2);
-	velv = lerp(velv, 0, 0.2);
+	velh = lerp(velh, 0, 0.1);
+	velv = lerp(velv, 0, 0.1);
 }
 else
 {
@@ -48,7 +48,10 @@ if (colShootable)
 	//xTo = x + lengthdir_x(_knockBack, hitFrom);
 	//yTo = y + lengthdir_y(_knockBack, hitFrom);
 	
-	if (HknockBack) velh = lengthdir_x(_knockBack, hitFrom);
+	if (HknockBack)
+	{
+		velh = lengthdir_x(_knockBack, hitFrom);
+	}
 	if (VknockBack)
 	{
 		if (pBox) _knockBack *= 0.7;

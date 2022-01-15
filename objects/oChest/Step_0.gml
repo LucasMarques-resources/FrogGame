@@ -21,6 +21,7 @@ if (activateChest)
 				else typeItem = other.itemToSpawn;
 				itemOwnAmmo = global.gunsGridStatus[typeItem, GUN_STATUS.maxAmmo];
 			}
+			ds_list_add(global.chestSaveList, id);
 			createChestItem = false;
 		}
 	}

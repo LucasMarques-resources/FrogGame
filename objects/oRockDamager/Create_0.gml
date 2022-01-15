@@ -6,3 +6,5 @@ autoTiling = false;
 
 raycastCheck = false;
 wallsDir = 0;
+
+oRockCreator = noone;

@@ -53,7 +53,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 				with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 				{
 					typeBullet = other.typeGun;
-					DecreaseAmmoOnGrid();
+					DecreaseAmmoOnGrid(1);
 					direction = other.image_angle + random_range(-2, 3);
 					image_index = typeBullet;
 					image_angle = direction;
@@ -79,16 +79,33 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 				
 				with (instance_create_layer(x + lengthdir_x(13, dir), y + lengthdir_y(13, dir), "Bullets", oDust)) sprite_index = sMiniDust;
 				
-				for (var i = 1; i > -2; i--)
+				if (oGun.ownAmmo >= 3)
 				{
-					with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
-					{
-						typeBullet = other.typeGun;
-						direction = other.image_angle + random_range(-2, 3) + i * 12;
-						image_index = typeBullet;
-						image_angle = direction;
+					for (var i = 1; i > -2; i--)
+					{	
+						with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+						{
+							typeBullet = other.typeGun;
+							direction = other.image_angle + random_range(-2, 3) + i * 12;
+							image_index = typeBullet;
+							image_angle = direction;
+						}
 					}
-					DecreaseAmmoOnGrid();
+					DecreaseAmmoOnGrid(3);
+				}
+				else
+				{
+					for (var i = 1; i > -(oGun.ownAmmo - 1); i--)
+					{	
+						with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir), "Bullets", oBullet))
+						{
+							typeBullet = other.typeGun;
+							direction = other.image_angle + random_range(-2, 3) + i * 12;
+							image_index = typeBullet;
+							image_angle = direction;
+						}
+					}
+					DecreaseAmmoOnGrid(oGun.ownAmmo);
 				}
 				
 				firingDelay = global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.firingDelay];
@@ -96,8 +113,8 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 				// Player gun kick
 				with (oFrog)
 				{
-					gunKickX = lengthdir_x(3.5, other.image_angle - 180);
-					gunKickY = lengthdir_y(3.5, other.image_angle - 180);
+					gunKickX = lengthdir_x(5, other.image_angle - 180);
+					gunKickY = lengthdir_y(5, other.image_angle - 180);
 				}
 				
 			break;
@@ -134,7 +151,7 @@ if ((mouse_check_button(mb_left) || gamepad_button_check(0, gp_shoulderrb)) && f
 						image_index = typeBullet;
 						image_angle = direction;
 					}
-					DecreaseAmmoOnGrid();
+					DecreaseAmmoOnGrid(1);
 					sniperRaycastChecked = false;
 				}
 				

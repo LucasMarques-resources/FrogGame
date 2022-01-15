@@ -48,6 +48,7 @@ global.gunsGrid = ds_grid_create(global.gunsSlots, 3);
 global.plTotalHpSave = global.plTotalHp;
 global.gunsSlotsSave = global.gunsSlots;
 global.itensSaveList = ds_list_create();
+global.chestSaveList = ds_list_create();
 
 // Guns Type
 enum GUN_TYPES

@@ -17,7 +17,7 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.revolver, GUN_STATUS.aim] = sAim;
 	
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.firingDelay] = 10;
-	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.maxAmmo] = 100;
+	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.maxAmmo] = 150;
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.gunName] = "Rifle";
 	global.gunsGridStatus[GUN_TYPES.rifle, GUN_STATUS.aim] = sAim;
 	
@@ -27,7 +27,7 @@ function GunsStatusGrid()
 	global.gunsGridStatus[GUN_TYPES.fire, GUN_STATUS.aim] = sAim;
 	
 	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.firingDelay] = 20;
-	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.maxAmmo] = 60;
+	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.maxAmmo] = 83;
 	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.gunName] = "Shotgun";
 	global.gunsGridStatus[GUN_TYPES.shotgun, GUN_STATUS.aim] = sAimShotgun;
 	

@@ -4,6 +4,7 @@
 ground = false;
 
 var colCollider = instance_place(x, y + 1, pCollider);
+colSpike = instance_place(x, y + 1, oSpikes);
 if ((colCollider && colCollider.normalCollider) || place_meeting(x, y + 1, pBox))
 {
 	ground = true;
@@ -49,9 +50,15 @@ if (state != PlStates.roll)
 }
 
 // Die state
-if (global.plHp <= 0)
+if (global.plHp <= 0 && (state != PlStates.knockBack || state != PlStates.knockBackWater))
 {
 	state = PlStates.die;
+	if (dieState)
+	{
+		knockBackCol = true;
+		knockBackWater = true;
+		dieState = false;
+	}
 }
 
 // Create aim
@@ -59,7 +66,7 @@ if (!controller && !instance_exists(oAim) && state != PlStates.die) instance_cre
 
 #region Input
 
-var left, right, down, up, jump, jumpCheck, roll, shoot
+var left, right, down, up, jump, jumpCheck, roll, shoot, velH
 left = keyboard_check(ord("A"));
 right = keyboard_check(ord("D"));
 down = keyboard_check(ord("S"));
@@ -119,7 +126,8 @@ switch (state)
 		// Movement
 		var move = right - left;
 
-		velh = (move * walkspd) + gunKickX;
+		velH = (move * walkspd) + gunKickX;
+		velh = lerp(velh, velH, .1);
 		gunKickX = 0;
 
 		// Jumping
@@ -359,7 +367,7 @@ velv += grav;
 
 if (state != PlStates.roll && state != PlStates.die)
 {
-	if ((velh != 0 && ground) && state != PlStates.swim)
+	if ((abs(velh) >= 0.1 && ground) && state != PlStates.swim)
 	{
 		runPartDelay--;
 		sprite_index = sFrogRun;

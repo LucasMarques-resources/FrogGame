@@ -12,7 +12,7 @@ function CreateBullet(_recoil, _screenShakeMag, _screenShakeFrames, plKnockBackX
 	with (instance_create_layer(x + lengthdir_x(10, dir), y + lengthdir_y(10, dir) - 3, "Bullets", oBullet))
 	{
 		typeBullet = other.typeGun;
-		if (!global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo]) DecreaseAmmoOnGrid();
+		if (!global.gunsGridStatus[global.currentGun.typeGun, GUN_STATUS.infiniteAmmo]) DecreaseAmmoOnGrid(1);
 		direction = other.image_angle + random_range(angRandMin, angRandMax);
 		image_index = typeBullet;
 		image_angle = direction;

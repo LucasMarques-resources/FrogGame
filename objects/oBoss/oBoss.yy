@@ -36,8 +36,8 @@
     {"propertyId":{"name":"hp","path":"objects/pShootable/pShootable.yy",},"objectId":{"name":"pShootable","path":"objects/pShootable/pShootable.yy",},"value":"150","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Objects/Enemys.yy",
+    "name": "Boss",
+    "path": "folders/Objects/Enemys/Boss.yy",
   },
   "resourceVersion": "1.0",
   "name": "oBoss",

@@ -6,4 +6,6 @@ event_inherited();
 xGo = 30;
 yGo = 30;
 
-timerSpawn = 60;
+timerSpawn = 30;
+
+inheritedParent = false;

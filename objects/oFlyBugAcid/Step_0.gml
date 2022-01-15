@@ -3,7 +3,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (state = STATES.attack)
+if (state = STATES.attack || state = STATES.hurt)
 {
 	sprite_index = sflyBugAcidAttack;
 	

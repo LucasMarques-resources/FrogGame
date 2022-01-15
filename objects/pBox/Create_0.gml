@@ -3,5 +3,3 @@
 event_inherited();
 
 sprite_index = imgIndex;
-
-uniqueEntityDropList = UniqueEntityDropList();

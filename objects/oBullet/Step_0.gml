@@ -10,7 +10,7 @@ switch (typeBullet)
 	#region DEFAULT
 	default:
 	{
-		SetBulletType(3, 6, 4.5, 14);
+		SetBulletType(3, 6, 2, 14);
 	}
 	break;
 	#endregion
@@ -18,7 +18,7 @@ switch (typeBullet)
 	#region REVOLVER
 	case GUN_TYPES.revolver:
 	{
-		SetBulletType(2, 5, 3, 14);
+		SetBulletType(2, 5, 2, 14);
 	}
 	break;
 	#endregion
@@ -26,7 +26,7 @@ switch (typeBullet)
 	#region RIFLE
 	case GUN_TYPES.rifle:
 	{
-		SetBulletType(3, 6, 4.5, 14);
+		SetBulletType(3, 6, 2.7, 14);
 	}
 	break;
 	#endregion
@@ -99,7 +99,7 @@ switch (typeBullet)
 	#region SHOTGUN
 	case GUN_TYPES.shotgun:
 	{
-		SetBulletType(3, 6, 4.5, 14);
+		SetBulletType(3, 6, 3.5, 14);
 	}	
 	break;
 	#endregion
@@ -169,7 +169,7 @@ switch (typeBullet)
 			{
 				colShootable = true;
 				hitFrom = other.direction;
-				knockBack = 2;
+				knockBack = 1;
 				if (hp < 1) other.create = false;
 			
 				with (other)
@@ -194,7 +194,7 @@ switch (typeBullet)
 	#region MACHINE GUN
 	case GUN_TYPES.machineGun:
 	{
-		SetBulletType(3, 6, 4.5, 14);
+		SetBulletType(3, 6, 2.5, 14);
 	}	
 	break;
 	#endregion
@@ -319,7 +319,7 @@ switch (typeBullet)
 	#region DRUM GUN
 	case GUN_TYPES.drumGun:
 		
-		SetBulletType(3, 6, 4.5, 10);
+		SetBulletType(3, 6, 2.5, 10);
 		
 	break;
 	#endregion

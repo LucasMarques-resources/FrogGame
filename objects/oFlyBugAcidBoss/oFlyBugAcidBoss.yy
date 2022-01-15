@@ -37,8 +37,8 @@
     {"propertyId":{"name":"vel_Chase","path":"objects/pEnemy/pEnemy.yy",},"objectId":{"name":"pEnemy","path":"objects/pEnemy/pEnemy.yy",},"value":"1","resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMOverriddenProperty",},
   ],
   "parent": {
-    "name": "Enemys",
-    "path": "folders/Objects/Enemys.yy",
+    "name": "Boss",
+    "path": "folders/Objects/Enemys/Boss.yy",
   },
   "resourceVersion": "1.0",
   "name": "oFlyBugAcidBoss",

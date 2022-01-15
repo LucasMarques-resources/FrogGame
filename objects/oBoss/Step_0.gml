@@ -131,6 +131,9 @@ switch (bossState)
 	
 	case BOSS_STATES.createEnemies2:
 		
+		velh = lerp(velh, 0, 0.1);
+		velv = lerp(velv, 0, 0.1);
+		
 		for (var i = 0; i <= 1; i++)
 		{
 			with (instance_create_layer(x, y, "Enemy", oFlyBugRedBigBoss))
@@ -138,12 +141,12 @@ switch (bossState)
 				if (i == 0)
 				{
 					xGo = 25;
-					yGo = -25;
+					yGo = -20;
 				}
 				if (i == 1)
 				{
 					xGo = -25;
-					yGo = -25;
+					yGo = -20;
 				}
 			}
 		}
@@ -154,20 +157,23 @@ switch (bossState)
 	break;
 	
 	case BOSS_STATES.createEnemies3:
+	
+		velh = lerp(velh, 0, 0.1);
+		velv = lerp(velv, 0, 0.1);
 		
 		for (var i = 0; i <= 1; i++)
 		{
-			with (instance_create_layer(x, y, "Enemy", oFlyBugAcidBoss))
+			with (instance_create_layer(x, y, "Enemy", oFlyBugRedBig2Boss))
 			{
 				if (i == 0)
 				{
 					xGo = 25;
-					yGo = -25;
+					yGo = -20;
 				}
 				if (i == 1)
 				{
 					xGo = -25;
-					yGo = -25;
+					yGo = -20;
 				}
 			}
 		}

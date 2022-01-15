@@ -4,8 +4,8 @@ timerSpawn--;
 
 if (timerSpawn > 0)
 {
-	x = lerp(x, xstart + xGo, 0.1);
-	y = lerp(y, ystart + yGo, 0.1);
+	velh = lengthdir_x(1, point_direction(xstart, ystart, xstart + xGo, ystart + yGo))
+	velv = lengthdir_y(1, point_direction(xstart, ystart, xstart + xGo, ystart + yGo))
 }
 
 if (timerSpawn <= 0)
