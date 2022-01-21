@@ -174,6 +174,7 @@ switch (bossState)
 				{
 					xGo = -25;
 					yGo = -20;
+					itemToSpawn = oLoader;
 				}
 			}
 		}

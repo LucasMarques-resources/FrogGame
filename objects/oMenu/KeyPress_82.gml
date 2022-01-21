@@ -1,2 +1,2 @@
 /// @description desc
-room_restart();
+if (global.debugMode) room_restart();

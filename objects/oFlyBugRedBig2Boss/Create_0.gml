@@ -9,3 +9,5 @@ yGo = 30;
 timerSpawn = 30;
 
 inheritedParent = false;
+
+itemToSpawn = oLife;

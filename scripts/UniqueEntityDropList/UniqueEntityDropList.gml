@@ -11,10 +11,10 @@ function UniqueEntityDropList()
 		var percent = irandom_range(0, 100);
 		show_debug_message(percent);
 		
-		if (percent <= 40) _uniqueEntityDropList = [oLoader]; //40%
-		if (percent > 40 && percent <= 70) _uniqueEntityDropList = [oLife]; //30%
-		if (percent > 70 && percent <= 80) _uniqueEntityDropList = [oAddLifeItem]; //10%
-		if (percent > 80 && percent <= 85) _uniqueEntityDropList = [oBackPack]; //5%
+		if (percent <= 20) _uniqueEntityDropList = [oLoader]; //30%
+		if (percent > 20 && percent <= 30) _uniqueEntityDropList = [oLife]; //20%
+		if (percent > 30 && percent <= 40) _uniqueEntityDropList = [oAddLifeItem]; //10%
+		if (percent > 40 && percent <= 43) _uniqueEntityDropList = [oBackPack]; //3%
 		
 	}
 	
