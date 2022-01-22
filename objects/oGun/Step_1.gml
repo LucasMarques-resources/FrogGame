@@ -17,8 +17,8 @@ if (instance_exists(oFrog) && global.hasGun)
 		}
 		else
 		{
-			var controllerh = gamepad_axis_value(0, gp_axislh);
-			var controllerv = gamepad_axis_value(0, gp_axislv);
+			var controllerh = gamepad_axis_value(0, gp_axisrh);
+			var controllerv = gamepad_axis_value(0, gp_axisrv);
 			if (abs(controllerh) > 0.2) || (abs(controllerv) > 0.2)
 			{
 				controllerAngle = point_direction(0, 0, controllerh, controllerv);
