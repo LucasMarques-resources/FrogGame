@@ -1,2 +1,2 @@
 # FrogGame
-Mini project
+Little game project
